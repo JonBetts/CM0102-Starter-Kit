@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\ILMerge.3.0.41\build\ILMerge.props" Condition="Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40BCBBBB-AA7A-42DA-B171-894AFB77BE0D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CM0102_Starter_Kit</RootNamespace>
+    <AssemblyName>CM0102StarterKit</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\Fred\Desktop\CM0102 Starter Kit\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>images\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A9EB29CD077BAFCBD388623645E75381C7A6E564</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.1.9, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\SharpZipLib.1.3.1\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CentreMessageBox.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NickPatcherMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NickPatcherMenu.Designer.cs">
+      <DependentUpon>NickPatcherMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VersionMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionMenu.Designer.cs">
+      <DependentUpon>VersionMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayMenu.Designer.cs">
+      <DependentUpon>PlayMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NickPatcherMenu.resx">
+      <DependentUpon>NickPatcherMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayMenu.resx">
+      <DependentUpon>PlayMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionMenu.resx">
+      <DependentUpon>VersionMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="data\luessenhoff_data.zip" />
+    <None Include="data\march_data.zip" />
+    <None Include="data\november_data.zip" />
+    <None Include="data\original_data.zip" />
+    <None Include="data\patched_data.zip" />
+    <None Include="external\cm0102.iso" />
+    <None Include="external\CM0102Loader.exe" />
+    <None Include="external\CM0102Loader.ini" />
+    <None Include="external\events_eng.cfg" />
+    <None Include="external\patch_3.9.68.exe" />
+    <None Include="external\win_cd_emu.cer" />
+    <None Include="external\win_cd_emu_4.1.exe" />
+    <None Include="images\batigol.jpg" />
+    <None Include="images\boca.jpg" />
+    <None Include="images\owen.jpg" />
+    <None Include="images\ruud.jpg" />
+    <None Include="images\logo.ico" />
+    <None Include="LICENSE">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="packages\ILMerge.3.0.41\.signature.p7s" />
+    <None Include="packages\ILMerge.3.0.41\build\ILMerge.props" />
+    <None Include="packages\ILMerge.3.0.41\docs\ilmerge-manual.md" />
+    <None Include="packages\ILMerge.3.0.41\ILMerge.3.0.41.nupkg" />
+    <None Include="packages\SharpZipLib.1.3.1\.signature.p7s" />
+    <None Include="packages\SharpZipLib.1.3.1\SharpZipLib.1.3.1.nupkg" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages\ILMerge.3.0.41\tools\net452\ILMerge.exe" />
+    <Content Include="packages\ILMerge.3.0.41\tools\net452\System.Compiler.dll" />
+    <Content Include="packages\SharpZipLib.1.3.1\images\sharpziplib-nuget-256x256.png" />
+    <Content Include="packages\SharpZipLib.1.3.1\lib\net45\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="packages\SharpZipLib.1.3.1\lib\net45\ICSharpCode.SharpZipLib.pdb" />
+    <Content Include="packages\SharpZipLib.1.3.1\lib\net45\ICSharpCode.SharpZipLib.xml" />
+    <Content Include="packages\SharpZipLib.1.3.1\lib\netstandard2.0\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="packages\SharpZipLib.1.3.1\lib\netstandard2.0\ICSharpCode.SharpZipLib.pdb" />
+    <Content Include="packages\SharpZipLib.1.3.1\lib\netstandard2.0\ICSharpCode.SharpZipLib.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILMerge.3.0.41\build\ILMerge.props'))" />
+  </Target>
+  <Target Name="ILMerge">
+    <Exec Command="$(ILMergeConsolePath) bin\Release\CM0102StarterKit.exe /targetplatform:v4 /ndebug /out:CM0102StarterKit.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
+  </Target>
+</Project>
