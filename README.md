@@ -48,10 +48,7 @@ Hopefully it's all straightforward enough.
 
 ## Troubleshooting
 
-The Starter Kit was made to limit the number of issues you get when setting CM 01/02 up. However, different setups and operating systems may result in issues. One thing I've come across is on Windows 8 - when your resolution is higher than 800x600, it doesn't like starting up in windowed mode ("cannot initialise graphics bla bla").
-I'm still not 100% sure as to the cause of this, but here are a couple of potential ways of solving it:
-- Install the old DirectX runtime files that CM used/uses: https://www.microsoft.com/en-gb/download/details.aspx?id=35
-- BLA BLA BLA
+The Starter Kit was made to limit the number of issues you get when setting CM 01/02 up. However, different setups and operating systems may result in unforeseen issues. One thing I've come across on Windows 8/10 is when your resolution isn't set to some scale of 800x600, it doesn't like starting up in windowed mode ("cannot initialise graphics bla bla"). What I mean is, your main screen resolution (both height and width) have to be the same multiple of the original 800x600 pixels for it to run windowed. I.e. if your resolution's height is 1600 pixels, then the width has to be 1200 (both of them have twice (x2) the amount of pixels than the original 800 by 600). If this all sounds too complex, just try changing your screen resolution in the Windows settings until one of them runs with CM 01/02 windowed! Or just run it full screen. If that doesn't work, you may have some DirectX files missing, so try installing them from the following link: https://www.microsoft.com/en-gb/download/details.aspx?id=35
 
 
 ## Future improvements
@@ -61,7 +58,6 @@ As this is the first iteration of the Starter Kit, there are definitely ways in 
 - Ensure the last saved settings for Nick's Patcher are persisted when you next access the page/tool.
 - Ensure the tool can work with CM 01/02 being installed in a non-default location.
 - Allow modified databases to be kept and named, for switching back to at a later date.
-- Ensure loading image is always animated when work is going on in the background.
 - Change the popup boxes and loader image to fit with the rest of the tool and the game.
 - ... and many more...
 
