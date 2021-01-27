@@ -76,7 +76,7 @@ namespace CM0102_Starter_Kit {
             File.Move(isoFileTemp, isoFile);
 
             string filename = Helper.IsWindowsEightOrHigher() ? "powershell.exe" : Helper.VirtualDriveExe;
-            string arguments = Helper.IsWindowsEightOrHigher() ? "  -WindowStyle Normal -NoExit Mount-DiskImage -ImagePath '" + isoFile + "'"
+            string arguments = Helper.IsWindowsEightOrHigher() ? "  -WindowStyle Hidden Mount-DiskImage -ImagePath '" + isoFile + "'"
                                                                : " " + isoFile + " /wait";
             ProcessStartInfo mountPsi = new ProcessStartInfo {
                 FileName = filename,
