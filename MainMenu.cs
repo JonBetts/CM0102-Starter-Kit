@@ -275,7 +275,11 @@ namespace CM0102_Starter_Kit {
         }
 
         private void InstallVar_Click(object sender, EventArgs e) {
-            if (Directory.Exists(Helper.GameFolder)) {
+            if (!Directory.Exists(Helper.GameFolder)) {
+                Helper.DisplayMessage(this, "Please install CM01/02 first!");
+            } else if (!Helper.IsPatchInstalled()) {
+                Helper.DisplayMessage(this, "Please install the official 3.9.68 patch first!");
+            } else {
                 ShowLoader();
                 string varFile = Path.GetTempFileName();
                 File.WriteAllBytes(varFile, Properties.Resources.events_eng);
@@ -286,38 +290,44 @@ namespace CM0102_Starter_Kit {
 
                 Helper.DisplayMessage(this, "VAR Commentary File successfully installed! Please note this only applies when playing the game in English!");
                 HideLoader();
-            } else {
-                Helper.DisplayMessage(this, "Please install CM01/02 first!");
             }
         }
 
         private void NickPatcher_Click(object sender, EventArgs e) {
-            if (Directory.Exists(Helper.GameFolder)) {
-                Helper.ShowNewScreen(this, nickPatcherMenu);
-            } else {
+            if (!Directory.Exists(Helper.GameFolder)) {
                 Helper.DisplayMessage(this, "Please install CM01/02 first!");
+            } else if (!Helper.IsPatchInstalled()) {
+                Helper.DisplayMessage(this, "Please install the official 3.9.68 patch first!");
+            } else {
+                Helper.ShowNewScreen(this, nickPatcherMenu);
             }
         }
 
         private void Editor_Click(object sender, EventArgs e) {
-            if (Directory.Exists(Helper.GameFolder)) {
-                RunProcess(MethodName.RunEditor);
-            } else {
+            if (!Directory.Exists(Helper.GameFolder)) {
                 Helper.DisplayMessage(this, "Please install CM01/02 first!");
+            } else if (!Helper.IsPatchInstalled()) {
+                Helper.DisplayMessage(this, "Please install the official 3.9.68 patch first!");
+            } else {
+                RunProcess(MethodName.RunEditor);
             }
         }
 
         private void SwitchUpdate_Click(object sender, EventArgs e) {
-            if (Directory.Exists(Helper.GameFolder)) {
-                Helper.ShowNewScreen(this, versionMenu);
-            } else {
+            if (!Directory.Exists(Helper.GameFolder)) {
                 Helper.DisplayMessage(this, "Please install CM01/02 first!");
+            } else if (!Helper.IsPatchInstalled()) {
+                Helper.DisplayMessage(this, "Please install the official 3.9.68 patch first!");
+            } else {
+                Helper.ShowNewScreen(this, versionMenu);
             }
         }
 
         private void PlayGame_Click(object sender, EventArgs e) {
             if (!Directory.Exists(Helper.GameFolder)) {
                 Helper.DisplayMessage(this, "Please install CM01/02 first!");
+            } else if (!Helper.IsPatchInstalled()) {
+                Helper.DisplayMessage(this, "Please install the official 3.9.68 patch first!");
             } else if (!IsCdMounted()) {
                 Helper.DisplayMessage(this, "Please insert the CM01/02 CD first!");
             } else {
