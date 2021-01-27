@@ -47,10 +47,10 @@ Hopefully it's all straightforward enough.
 
 ## Important things to note - PLEASE READ THIS BEFORE STARTING
 
-- You don't need to use any of the standard shortcuts that get added when CM gets installed. Always use the Starter Kit and you'll be grand. If you have any issues because you've been running the game outside of this package then there isn't too much I can do to help.
-- As stated earlier, please, please do not install the game anywhere but the default folder that the installer selects, otherwise nothing will work.
-- On Windows XP and 7, DO NOT eject the CD image manually (i.e. via the Windows context menu). You won't be able to use the Starter Kit again until you restart your computer. It's a minor bug with the virtual drive application I've used.
-- This is an important one! If you are using Nick's Patcher integrated within the kit, the patcher settings won't stay applied when restarting the game from the in-game main menu. To keep playing with Nick's Patcher applied, you will need to 'Exit Game' and then launch the game again via the Starter Kit.
+-   You don't need to use any of the standard shortcuts that get added when CM gets installed. Always use the Starter Kit and you'll be grand. If you have any issues because you've been running the game outside of this package then there isn't too much I can do to help.
+-   As stated earlier, please, please do not install the game anywhere but the default folder that the installer selects, otherwise nothing will work.
+-   On Windows XP and 7, DO NOT eject the CD image manually (i.e. via the Windows context menu). You won't be able to use the Starter Kit again until you restart your computer. It's a minor bug with the virtual drive application I've used.
+-   This is an important one! If you are using Nick's Patcher integrated within the kit, the patcher settings won't stay applied when restarting the game from the in-game main menu. To keep playing with Nick's Patcher applied, you will need to 'Exit Game' and then launch the game again via the Starter Kit.
 
 ## Troubleshooting
 
@@ -60,11 +60,11 @@ The Starter Kit was made to limit the number of issues you get when setting CM 0
 
 As this is the first iteration of the Starter Kit, there are definitely ways in which it can be improved:
 
-- Ensure the last saved settings for Nick's Patcher are persisted when you next access the page/tool.
-- Ensure the tool can work with CM 01/02 being installed in a non-default location.
-- Allow modified databases to be kept and named, for switching back to at a later date.
-- Change the popup boxes and loader image to fit with the rest of the tool and the game.
-- ... and many more...
+-   Ensure the last saved settings for Nick's Patcher are persisted when you next access the page/tool.
+-   Ensure the tool can work with CM 01/02 being installed in a non-default location.
+-   Allow modified databases to be kept and named, for switching back to at a later date.
+-   Change the popup boxes and loader image to fit with the rest of the tool and the game.
+-   ... and many more...
 
 ## Credit
 
