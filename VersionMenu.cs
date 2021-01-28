@@ -39,6 +39,7 @@ namespace CM0102_Starter_Kit {
             bool deleteDataFolder;
 
             switch (version) {
+                default:
                 case VersionName.Original:
                     source = new DirectoryInfo(Helper.OriginalDataFolder);
                     resourceFile = Properties.Resources.original_data;
@@ -67,11 +68,6 @@ namespace CM0102_Starter_Kit {
                 case VersionName.NinetyThree:
                     source = new DirectoryInfo(Helper.NinetyThreeDataFolder);
                     resourceFile = Properties.Resources.luessenhoff_data; // will be ninety_three_data
-                    deleteDataFolder = true;
-                    break;
-                default:
-                    source = new DirectoryInfo(Helper.OriginalDataFolder);
-                    resourceFile = Properties.Resources.original_data;
                     deleteDataFolder = true;
                     break;
             }
@@ -186,10 +182,6 @@ namespace CM0102_Starter_Kit {
 
         private void Loader_Paint(object sender, PaintEventArgs e) {
             Helper.RenderLoader(this, e);
-        }
-
-        private void VersionMenu_Load(object sender, EventArgs e) {
-
         }
 
         private void VersionMenu_FormClosing(object sender, FormClosingEventArgs e) {

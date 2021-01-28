@@ -81,10 +81,6 @@ namespace CM0102_Starter_Kit {
             Helper.RenderLoader(this, e);
         }
 
-        private void PlayMenu_Load(object sender, EventArgs e) {
-
-        }
-
         private void PlayMenu_FormClosing(object sender, FormClosingEventArgs e) {
             e.Cancel = true;
             Exit_Click(sender, e);

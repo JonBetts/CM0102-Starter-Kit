@@ -474,7 +474,6 @@ namespace CM0102_Starter_Kit {
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CM 01/02 Starter Kit - Main Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
-            this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sidenav)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.title_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subtitle_bar)).EndInit();

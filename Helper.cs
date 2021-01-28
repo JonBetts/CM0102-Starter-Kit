@@ -4,7 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-public class Helper {
+public static class Helper {
     public static readonly string ProgramFilesFolder = IsWindowsXpOrLower() ? @"C:\Program Files" : @"C:\Program Files (x86)";
     public static readonly string GameFolder = Path.Combine(ProgramFilesFolder, "Championship Manager 01-02");
     public static readonly string GameDataFolder = Path.Combine(GameFolder, "Data");

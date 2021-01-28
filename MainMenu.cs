@@ -44,16 +44,6 @@ namespace CM0102_Starter_Kit {
         }
 
         private string InstallVirtualDrive() {
-            /*string certificateFile = Helper.EXTERNAL_FOLDER + @"\win_cd_emu.cer";
-            ProcessStartInfo certUtilPsi = new ProcessStartInfo {
-                FileName = "certutil",
-                UseShellExecute = false,
-                Arguments = "-addstore TrustedPublisher " + certificateFile,
-                WindowStyle = ProcessWindowStyle.Minimized
-            };
-            Process certUtilProcess = Process.Start(certUtilPsi);
-            certUtilProcess.WaitForExit();*/
-
             string installFile = Path.GetTempFileName();
             File.WriteAllBytes(installFile, Properties.Resources.win_cd_emu_4_1);
             ProcessStartInfo virtualDrivePsi = new ProcessStartInfo {
@@ -213,7 +203,7 @@ namespace CM0102_Starter_Kit {
 
         private void RunProcess(MethodName methodName) {
             ShowLoader();
-            string result = "";
+            string result;
 
             switch (methodName) {
                 case MethodName.InstallVirtualDrive:
@@ -235,7 +225,7 @@ namespace CM0102_Starter_Kit {
                     result = UnmountAllDrives();
                     break;
                 default:
-                    break;
+                    throw new NotImplementedException("Something went wrong");
             }
             if (!String.IsNullOrEmpty(result)) {
                 Helper.DisplayMessage(this, result);
@@ -371,10 +361,6 @@ namespace CM0102_Starter_Kit {
 
         private void Loader_Paint(object sender, PaintEventArgs e) {
             Helper.RenderLoader(this, e);
-        }
-
-        private void MainMenu_Load(object sender, EventArgs e) {
-
         }
 
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e) {

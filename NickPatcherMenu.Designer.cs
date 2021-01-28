@@ -519,7 +519,6 @@ namespace CM0102_Starter_Kit {
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CM 01/02 Starter Kit - Nick\'s Patcher Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NickPatcherMenu_FormClosing);
-            this.Load += new System.EventHandler(this.NickPatcherMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.starting_year)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currency_inflation)).EndInit();

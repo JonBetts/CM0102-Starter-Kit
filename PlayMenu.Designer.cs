@@ -325,7 +325,6 @@ namespace CM0102_Starter_Kit {
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CM 01/02 Starter Kit - Play Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayMenu_FormClosing);
-            this.Load += new System.EventHandler(this.PlayMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sidenav)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.title_bar)).EndInit();

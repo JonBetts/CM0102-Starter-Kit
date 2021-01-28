@@ -39,7 +39,6 @@ namespace CM0102_Starter_Kit {
                 writer.Write("IncreaseToSevenSubs = " + this.seven_substitutes.Checked.ToString().ToLower() + Environment.NewLine);
                 writer.Write("RemoveForeignPlayerLimit = " + this.foreign_player_limit.Checked.ToString().ToLower() + Environment.NewLine);
                 writer.Write("NoWorkPermits = " + this.work_permits.Checked.ToString().ToLower() + Environment.NewLine);
-                //writer.Write("ChangeTo1280x800 = " + this.resolution.Checked.ToString().ToLower() + Environment.NewLine);
                 writer.Write("ChangeTo1280x800 = false" + Environment.NewLine);
                 writer.Write("AutoLoadPatchFiles = false" + Environment.NewLine);
                 writer.Write("PatchFileDirectory = ." + Environment.NewLine);
@@ -64,10 +63,6 @@ namespace CM0102_Starter_Kit {
 
         private void Loader_Paint(object sender, PaintEventArgs e) {
             Helper.RenderLoader(this, e);
-        }
-
-        private void NickPatcherMenu_Load(object sender, EventArgs e) {
-
         }
 
         private void NickPatcherMenu_FormClosing(object sender, FormClosingEventArgs e) {
