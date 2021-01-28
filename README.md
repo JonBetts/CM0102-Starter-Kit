@@ -24,6 +24,7 @@ It's all very straightforward, but I will give a quick explanation about everyth
 
 <p align="left"><img src="https://i.ibb.co/rmPXHB1/Play-Menu.png"/></p>
 
+
 -   **Insert CD** - On Windows XP and 7 this will install a small virtual drive on your computer that allows us to mount the image file that the game is on. All you need to do is accept the installation of the driver. This isn't necessary on Windows 8 and 10 as they come with this feature built-in. On all versions, it then adds a virtual CD drive to your system and then mounts the CD image onto it. Equivalent to inserting the CD back in the day.
 
 -   **Install Game** - Opens up the installation procedure for the game. As I said above, _please_ ensure you install CM 01/02 in the default folder. All other options are fine to change, but it needs to be in the default location! After installation, the official 3.9.68 patch is automatically installed. Please don't cancel this - the patch is vital to running the game free of errors!
@@ -53,11 +54,8 @@ Hopefully it's all straightforward enough.
 ## Important things to note - PLEASE READ THIS BEFORE STARTING
 
 -   You don't need to use any of the standard shortcuts that get added when CM gets installed. Always use the Starter Kit and you'll be grand. If you have any issues because you've been running the game outside of this package then there isn't too much I can do to help.
-
 -   As stated earlier, please, please do not install the game anywhere but the default folder that the installer selects, otherwise nothing will work.
-
 -   On Windows XP and 7, DO NOT eject the CD image manually (i.e. via the Windows context menu). You won't be able to use the Starter Kit again until you restart your computer. It's a minor bug with the virtual drive application I've used.
-
 -   This is an important one! If you are using Nick's Patcher integrated within the kit, the patcher settings won't stay applied when restarting the game from the in-game main menu. To keep playing with Nick's Patcher applied, you will need to 'Exit Game' and then launch the game again via the Starter Kit.
 
 ## Troubleshooting
