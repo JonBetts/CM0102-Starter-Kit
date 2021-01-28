@@ -24,7 +24,6 @@ It's all very straightforward, but I will give a quick explanation about everyth
 
 <p align="left"><img src="https://i.ibb.co/rmPXHB1/Play-Menu.png"/></p>
 
-
 -   **Insert CD** - On Windows XP and 7 this will install a small virtual drive on your computer that allows us to mount the image file that the game is on. All you need to do is accept the installation of the driver. This isn't necessary on Windows 8 and 10 as they come with this feature built-in. On all versions, it then adds a virtual CD drive to your system and then mounts the CD image onto it. Equivalent to inserting the CD back in the day.
 
 -   **Install Game** - Opens up the installation procedure for the game. As I said above, _please_ ensure you install CM 01/02 in the default folder. All other options are fine to change, but it needs to be in the default location! After installation, the official 3.9.68 patch is automatically installed. Please don't cancel this - the patch is vital to running the game free of errors!
