@@ -39,12 +39,6 @@ namespace CM0102_Starter_Kit {
             bool deleteDataFolder;
 
             switch (version) {
-                default:
-                case VersionName.Original:
-                    source = new DirectoryInfo(Helper.OriginalDataFolder);
-                    resourceFile = Properties.Resources.original_data;
-                    deleteDataFolder = true;
-                    break;
                 case VersionName.Patched:
                     source = new DirectoryInfo(Helper.PatchedDataFolder);
                     resourceFile = Properties.Resources.patched_data;
@@ -68,6 +62,12 @@ namespace CM0102_Starter_Kit {
                 case VersionName.NinetyThree:
                     source = new DirectoryInfo(Helper.NinetyThreeDataFolder);
                     resourceFile = Properties.Resources.luessenhoff_data; // will be ninety_three_data
+                    deleteDataFolder = true;
+                    break;
+                default:
+                case VersionName.Original:
+                    source = new DirectoryInfo(Helper.OriginalDataFolder);
+                    resourceFile = Properties.Resources.original_data;
                     deleteDataFolder = true;
                     break;
             }
@@ -99,10 +99,6 @@ namespace CM0102_Starter_Kit {
             string label;
 
             switch (versionName) {
-                case VersionName.Original:
-                    CopyDataToGame(VersionName.Original);
-                    label = "Original (3.9.60)";
-                    break;
                 case VersionName.Patched:
                     CopyDataToGame(VersionName.Patched);
                     label = "Patched (3.9.68)";
@@ -128,6 +124,8 @@ namespace CM0102_Starter_Kit {
                     label = "1993/94";
                     break;
                 default:
+                case VersionName.Original:
+                    CopyDataToGame(VersionName.Original);
                     label = "Original (3.9.60)";
                     break;
             }
