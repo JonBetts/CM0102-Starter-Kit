@@ -239,7 +239,7 @@ namespace CM0102_Starter_Kit {
 
         private void InstallGame_Click(object sender, EventArgs e) {
             if (Directory.Exists(Helper.GameFolder)) {
-                Helper.DisplayMessage(this, "CM0102 is already installed!");
+                Helper.DisplayMessage(this, "CM01/02 is already installed!");
             } else if (!IsCdMounted()) {
                 Helper.DisplayMessage(this, "Please insert the CM01/02 CD first!");
             } else {
