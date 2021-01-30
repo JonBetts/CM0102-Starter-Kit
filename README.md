@@ -11,7 +11,7 @@ If you do use the Windows XP version, performance may be choppy as it's hard to 
 To get started, all you have to do is extract the zip file anywhere you please - the tool is completely portable. Please read through this document before starting. One thing I need to highlight now is that for any of this to work you need to install CM in the default folder.
 If you don't, the tool will not work properly. I'll hopefully release a version further down the line that can cope with a custom installation location.
 
-If you've downloaded the XP version of the tool, then you will need to make sure you have the Microsoft .NET 3.5 runtime on your computer before running it (https://dotnet.microsoft.com/download/dotnet-framework/net35-sp1).
+If you've downloaded the XP version of the tool, then you will need to make sure you have the Microsoft .NET 3.5 runtime on your computer before running it (https://dotnet.microsoft.com/download/dotnet-framework/net35-sp1). If you don't, it will come up with an error message saying that the application "failed to initialise properly".
 If you have the normal version of the tool, you will need the Microsoft .NET 4.5 runtime. This will usually already be pre-installed on Windows 7, 8 and 10, but if not, you may be advised to
 install it by Windows, so just follow the instructions. Failing that, it can be found here: https://dotnet.microsoft.com/download/dotnet-framework/net45
 
