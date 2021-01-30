@@ -102,18 +102,7 @@ namespace CM0102_Starter_Kit {
 
             string result = "CM01/02 successfully installed!";
             if (Directory.Exists(Helper.GameFolder)) {
-                string loaderExeFile = Path.GetTempFileName();
-                File.WriteAllBytes(loaderExeFile, Properties.Resources.cm0102_loader);
-                File.Copy(loaderExeFile, Helper.CmLoaderExeFile);
-                File.Delete(loaderExeFile);
-
-                string loaderIniFile = Path.GetTempFileName();
-                File.WriteAllText(loaderIniFile, Properties.Resources.cm0102_loader_config);
-                File.Copy(loaderIniFile, Helper.CmLoaderConfigFile);
-                File.Delete(loaderIniFile);
-
-                Helper.RemoveReadOnlyAttribute(new DirectoryInfo(Helper.GameFolder));
-
+                Helper.CopyNickPatcherFiles();
                 InstallPatch();
             } else {
                 result = "Something went wrong during installation!";
@@ -136,7 +125,11 @@ namespace CM0102_Starter_Kit {
 
             string result = "Official 3.9.68 patch successfully installed!";
             if (patchProcess.ExitCode == 0) {
-                Helper.RemoveReadOnlyAttribute(new DirectoryInfo(Helper.GameFolder));
+                if (Helper.IsPatchInstalled()) {
+                    Helper.RemoveReadOnlyAttribute(new DirectoryInfo(Helper.GameFolder));
+                } else {
+                    result = "Official 3.9.68 patch installation was cancelled!";
+                }
             } else {
                 result = "Something went wrong during installation!";
             }
@@ -289,6 +282,9 @@ namespace CM0102_Starter_Kit {
             } else if (!Helper.IsPatchInstalled()) {
                 Helper.DisplayMessage(this, "Please install the official 3.9.68 patch first!");
             } else {
+                if (!File.Exists(Helper.CmLoaderExeFile) || !File.Exists(Helper.CmLoaderConfigFile)) {
+                    Helper.CopyNickPatcherFiles();
+                }
                 Helper.ShowNewScreen(this, nickPatcherMenu);
             }
         }

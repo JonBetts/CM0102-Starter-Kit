@@ -54,6 +54,9 @@ namespace CM0102_Starter_Kit {
         }
 
         private void NickPatcherCm_Click(object sender, EventArgs e) {
+            if (!File.Exists(Helper.CmLoaderExeFile) || !File.Exists(Helper.CmLoaderConfigFile)) {
+               Helper.CopyNickPatcherFiles();
+            }
             if (Helper.IsPatchInstalled()) {
                 LaunchGame(Helper.CmLoaderExeFile, true);
             } else {

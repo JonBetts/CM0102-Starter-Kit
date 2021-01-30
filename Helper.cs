@@ -87,4 +87,20 @@ public static class Helper {
         child.Show();
         parent.Hide();
     }
+
+    public static void CopyNickPatcherFiles() {
+        if (!File.Exists(Helper.CmLoaderExeFile)) {
+            string loaderExeFile = Path.GetTempFileName();
+            File.WriteAllBytes(loaderExeFile, CM0102_Starter_Kit.Properties.Resources.cm0102_loader);
+            File.Copy(loaderExeFile, Helper.CmLoaderExeFile);
+            File.Delete(loaderExeFile);
+        }
+        if (!File.Exists(Helper.CmLoaderConfigFile)) {
+            string loaderIniFile = Path.GetTempFileName();
+            File.WriteAllText(loaderIniFile, CM0102_Starter_Kit.Properties.Resources.cm0102_loader_config);
+            File.Copy(loaderIniFile, Helper.CmLoaderConfigFile);
+            File.Delete(loaderIniFile);
+        }
+        Helper.RemoveReadOnlyAttribute(new DirectoryInfo(Helper.GameFolder));
+    }
 }
