@@ -5,7 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 
 public static class Helper {
-    public static readonly string ProgramFilesFolder = IsWindowsXpOrLower() ? @"C:\Program Files" : @"C:\Program Files (x86)";
+    public static readonly string ProgramFilesFolder = IsWindowsVistaOrLower() ? @"C:\Program Files" : @"C:\Program Files (x86)";
     public static readonly string GameFolder = Path.Combine(ProgramFilesFolder, "Championship Manager 01-02");
     public static readonly string GameDataFolder = Path.Combine(GameFolder, "Data");
     public static readonly string GameDataFolderBackup = Path.Combine(GameFolder, "Data_backup");
@@ -24,9 +24,9 @@ public static class Helper {
     public static readonly string CmLoaderConfigFile = Path.Combine(GameFolder, "CM0102Loader.ini");
     public static readonly string BackupSavesFolder = @"C:\CM0102 Backups";
 
-    public static bool IsWindowsXpOrLower() {
+    public static bool IsWindowsVistaOrLower() {
         OperatingSystem operatingSystem = Environment.OSVersion;
-        return operatingSystem.Platform == PlatformID.Win32NT && operatingSystem.Version.Major == 5;
+        return operatingSystem.Version.Major <= 5 || (operatingSystem.Version.Major == 6 && operatingSystem.Version.Minor == 0);
     }
 
     public static bool IsWindowsEightOrHigher() {

@@ -66,8 +66,8 @@ namespace CM0102_Starter_Kit {
             File.Move(isoFileTemp, isoFile);
 
             string filename = Helper.IsWindowsEightOrHigher() ? "powershell.exe" : Helper.VirtualDriveExe;
-            string arguments = Helper.IsWindowsEightOrHigher() ? "  -WindowStyle Hidden Mount-DiskImage -ImagePath '" + isoFile + "'"
-                                                               : " " + isoFile + " /wait";
+            string arguments = Helper.IsWindowsEightOrHigher() ? "  -WindowStyle Hidden Mount-DiskImage -ImagePath \"" + isoFile + "\""
+                                                               : " \"" + isoFile + "\" /wait";
             ProcessStartInfo mountPsi = new ProcessStartInfo {
                 FileName = filename,
                 UseShellExecute = false,
@@ -152,7 +152,7 @@ namespace CM0102_Starter_Kit {
 
         private string UnmountAllDrives() {
             string filename = Helper.IsWindowsEightOrHigher() ? "powershell.exe" : Helper.VirtualDriveExe;
-            string arguments = Helper.IsWindowsEightOrHigher() ? " -WindowStyle Hidden Dismount-DiskImage -ImagePath '" + isoFile + "'"
+            string arguments = Helper.IsWindowsEightOrHigher() ? " -WindowStyle Hidden Dismount-DiskImage -ImagePath \"" + isoFile + "\""
                                                                : " /unmountall";
             ProcessStartInfo unmountPsi = new ProcessStartInfo {
                 FileName = filename,

@@ -5,15 +5,13 @@
 Welcome to the CM 01/02 Starter Kit!
 
 The purpose of this little tool is to get you up and running as quickly as possible with CM 01/02. No need for worrying about downloading files, applying patches or changing compatibility settings - this tool does everything required to get you setup on an original or updated version of CM!
-Please note the standard version only works with Windows 7, 8 and 10. I have an XP specific version I can upload if there is any desire for it.
-If you do use the Windows XP version, performance may be choppy as it's hard to cater for a 20 year old operating system! I've attempted to make it look and feel like the game interface so it's a bit more familiar.
+Please note that this tool only works with Windows XP, Vista, 7, 8 and 10. Whilst I have done my best to test on each operating system, there will undoubtedly be scenarios and configurations I haven't managed to cater for. Also if you do use an older operating system
+(i.e. XP or Vista) performance may be choppy as it's hard to cater for a 20 year old operating system! I've attempted to make the tool look and feel like the game interface so it's a bit more familiar.
 
-To get started, all you have to do is extract the zip file anywhere you please - the tool is completely portable. Please read through this document before starting. One thing I need to highlight now is that for any of this to work you need to install CM in the default folder.
+To get started, all you have to do is extract the zip file anywhere you like. Please read through this document before starting. One thing I need to highlight now is that for any of this to work you need to install CM in the default folder.
 If you don't, the tool will not work properly. I'll hopefully release a version further down the line that can cope with a custom installation location.
 
-If you've downloaded the XP version of the tool, then you will need to make sure you have the Microsoft .NET 3.5 runtime on your computer before running it (https://dotnet.microsoft.com/download/dotnet-framework/net35-sp1). If you don't, it will come up with an error message saying that the application "failed to initialise properly".
-If you have the normal version of the tool, you will need the Microsoft .NET 4.5 runtime. This will usually already be pre-installed on Windows 7, 8 and 10, but if not, you may be advised to
-install it by Windows, so just follow the instructions. Failing that, it can be found here: https://dotnet.microsoft.com/download/dotnet-framework/net45
+You will need to make sure you have the Microsoft .NET 3.5 runtime on your computer before running the tool. This should come pre-installed on Windows 7, 8 and 10, but XP and Vista may require you to manually install it. I've included the installation file with this tool (dotNetFx35setup.exe). Just run that to install it, and you should be good to go (you will need an internet connection for this though). If you don't install .NET 3.5, it will come up with an error message saying that the application "failed to initialise properly".
 
 ## The basics
 
@@ -27,7 +25,7 @@ It's all very straightforward, but I will give a quick explanation about everyth
 
 <p align="left"><img src="https://i.ibb.co/rmPXHB1/Play-Menu.png"/></p>
 
--   **Insert CD** - On Windows XP and 7 this will install a small virtual drive on your computer that allows us to mount the image file that the game is on. All you need to do is accept the installation of the driver. This isn't necessary on Windows 8 and 10 as they come with this feature built-in.
+-   **Insert CD** - On Windows XP, Vista and 7 this will install a small virtual drive on your computer that allows us to mount the image file that the game is on. All you need to do is accept the installation of the driver. This isn't necessary on Windows 8 and 10 as they come with this feature built-in.
 On all versions, it then adds a virtual CD drive to your system and then mounts the CD image onto it. Equivalent to inserting the CD back in the day.
 
 -   **Install Game** - Opens up the installation procedure for the game. As I said above, _please_ ensure you install CM 01/02 in the default folder. All other options are fine to change, but it needs to be in the default location! After installation, the official 3.9.68 patch is automatically installed.
@@ -61,15 +59,16 @@ Hopefully it's all straightforward enough.
 
 -   You don't need to use any of the standard shortcuts that get added when CM gets installed. Always use the Starter Kit and you'll be grand. If you have any issues because you've been running the game outside of this package then there isn't too much I can do to help.
 -   As stated earlier, please, please do not install the game anywhere but the default folder that the installer selects, otherwise nothing will work.
--   On Windows XP and 7, DO NOT eject the CD image manually (i.e. via the Windows context menu). You won't be able to use the Starter Kit again until you restart your computer. It's a minor bug with the virtual drive application I've used.
+-   On Windows XP, Vista and 7, DO NOT eject the CD image manually (i.e. via the Windows context menu). You won't be able to use the Starter Kit again until you restart your computer. It's a minor bug with the virtual drive application I've used.
 -   This is an important one! If you are using Nick's Patcher integrated within the kit, the patcher settings won't stay applied when restarting the game from the in-game main menu. To keep playing with Nick's Patcher applied, you will need to 'Exit Game' and then launch the game again via the Starter Kit.
 
 ## Troubleshooting
 
-The Starter Kit was made to limit the number of issues you get when setting CM 01/02 up. However, different setups and operating systems may result in unforeseen issues. One thing I've come across on Windows XP/8/10 is when your resolution isn't set to some scale of 800x600,
+The Starter Kit was made to limit the number of issues you get when setting CM 01/02 up. However, different setups and operating systems may result in unforeseen issues. One thing I've come across is when your resolution isn't set to some scale of 800x600,
 it doesn't like starting up in windowed mode ("cannot initialise graphics bla bla"). What I mean is, your main screen resolution (both height and width) have to be the same multiple of the original 800x600 pixels for it to run windowed. I.e. if your resolution's height is 1600 pixels,
 then the width has to be 1200 (both of them have twice (x2) the amount of pixels than the original 800 by 600). If this all sounds too complex, just try changing your screen resolution in the Windows settings until one of them runs with CM 01/02 windowed! Or just run it full screen.
 If that doesn't work, you may have some DirectX files missing, so try installing them from the following link: https://www.microsoft.com/en-gb/download/details.aspx?id=35
+I have also noticed an issue in full screen mode on XP and Vista - I believe there are fixes for this on the forum somewhere (it's been an issue with CM for a long time), so just have a hunt there if you end up coming across it.
 
 ## Future improvements
 

@@ -9,13 +9,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>CM0102_Starter_Kit</RootNamespace>
     <AssemblyName>CM0102StarterKit</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <PublishUrl>C:\Users\Fred\Desktop\CM0102 Starter Kit\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -74,8 +74,8 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.1.9, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>packages\SharpZipLib.1.3.1\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -129,6 +129,9 @@
     <EmbeddedResource Include="NickPatcherMenu.resx">
       <DependentUpon>NickPatcherMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VersionMenu.resx">
+      <DependentUpon>VersionMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlayMenu.resx">
       <DependentUpon>PlayMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,9 +139,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VersionMenu.resx">
-      <DependentUpon>VersionMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="app.manifest" />
@@ -166,27 +166,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="packages\ILMerge.3.0.41\.signature.p7s" />
-    <None Include="packages\ILMerge.3.0.41\build\ILMerge.props" />
-    <None Include="packages\ILMerge.3.0.41\docs\ilmerge-manual.md" />
-    <None Include="packages\ILMerge.3.0.41\ILMerge.3.0.41.nupkg" />
-    <None Include="packages\SharpZipLib.1.3.1\.signature.p7s" />
-    <None Include="packages\SharpZipLib.1.3.1\SharpZipLib.1.3.1.nupkg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages\ILMerge.3.0.41\tools\net452\ILMerge.exe" />
-    <Content Include="packages\ILMerge.3.0.41\tools\net452\System.Compiler.dll" />
-    <Content Include="packages\SharpZipLib.1.3.1\images\sharpziplib-nuget-256x256.png" />
-    <Content Include="packages\SharpZipLib.1.3.1\lib\net45\ICSharpCode.SharpZipLib.dll" />
-    <Content Include="packages\SharpZipLib.1.3.1\lib\net45\ICSharpCode.SharpZipLib.pdb" />
-    <Content Include="packages\SharpZipLib.1.3.1\lib\net45\ICSharpCode.SharpZipLib.xml" />
-    <Content Include="packages\SharpZipLib.1.3.1\lib\netstandard2.0\ICSharpCode.SharpZipLib.dll" />
-    <Content Include="packages\SharpZipLib.1.3.1\lib\netstandard2.0\ICSharpCode.SharpZipLib.pdb" />
-    <Content Include="packages\SharpZipLib.1.3.1\lib\netstandard2.0\ICSharpCode.SharpZipLib.xml" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -203,6 +186,6 @@
     <Error Condition="!Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILMerge.3.0.41\build\ILMerge.props'))" />
   </Target>
   <Target Name="ILMerge">
-    <Exec Command="$(ILMergeConsolePath) bin\Release\CM0102StarterKit.exe /targetplatform:v4 /ndebug /out:CM0102StarterKit.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
+    <Exec Command="$(ILMergeConsolePath) bin\Release\CM0102StarterKit.exe /targetplatform:v2 /ndebug /out:CM0102StarterKit.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
   </Target>
 </Project>
