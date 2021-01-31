@@ -174,7 +174,7 @@ namespace CM0102_Starter_Kit {
             this.version.Name = "version";
             this.version.Size = new System.Drawing.Size(79, 50);
             this.version.TabIndex = 7;
-            this.version.Text = "Version 1.0.0";
+            this.version.Text = "Version 1.0.1";
             this.version.UseVisualStyleBackColor = false;
             // 
             // left_arrow
