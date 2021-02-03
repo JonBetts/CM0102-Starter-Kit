@@ -5,7 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
-    public partial class VersionMenu : Form {
+    public partial class VersionMenu : HidableForm {
         private readonly MainMenu mainMenu;
         private enum VersionName { Original, Patched, March, November, Luessenhoff, NinetyThree }
 
@@ -14,7 +14,7 @@ namespace CM0102_Starter_Kit {
             InitializeComponent();
         }
 
-        private List<Control> GetButtonsToToggle() {
+        protected override List<Control> GetButtonsToToggle() {
             return new List<Control> {
                 this.original_database,
                 this.patched_database,
@@ -25,77 +25,49 @@ namespace CM0102_Starter_Kit {
             };
         }
 
-        private void ShowLoader() {
-            Helper.ShowLoader(this, this.loader, GetButtonsToToggle());
-        }
-
-        private void HideLoader() {
-            Helper.HideLoader(this, this.loader, GetButtonsToToggle());
-        }
-
         private void CopyDataToGame(VersionName version) {
-            DirectoryInfo source;
             byte[] resourceFile;
-            bool deleteDataFolder;
+            bool deleteDataFolder = false;
 
             switch (version) {
                 case VersionName.Patched:
-                    source = new DirectoryInfo(Helper.PatchedDataFolder);
                     resourceFile = Properties.Resources.patched_data;
                     deleteDataFolder = true;
                     break;
                 case VersionName.March:
-                    source = new DirectoryInfo(Helper.MarchDataFolder);
                     resourceFile = Properties.Resources.march_data;
-                    deleteDataFolder = false;
                     break;
                 case VersionName.November:
-                    source = new DirectoryInfo(Helper.NovemberDataFolder);
                     resourceFile = Properties.Resources.november_data;
-                    deleteDataFolder = false;
                     break;
                 case VersionName.Luessenhoff:
-                    source = new DirectoryInfo(Helper.LuessenhoffDataFolder);
                     resourceFile = Properties.Resources.luessenhoff_data;
-                    deleteDataFolder = true;
                     break;
                 case VersionName.NinetyThree:
-                    source = new DirectoryInfo(Helper.NinetyThreeDataFolder);
                     resourceFile = Properties.Resources.luessenhoff_data; // will be ninety_three_data
-                    deleteDataFolder = true;
                     break;
                 default:
                 case VersionName.Original:
-                    source = new DirectoryInfo(Helper.OriginalDataFolder);
                     resourceFile = Properties.Resources.original_data;
                     deleteDataFolder = true;
                     break;
             }
-            if (deleteDataFolder) {
-                // We are just moving to a backup folder for now, just in case
-                if (Directory.Exists(Helper.GameDataFolderBackup)) {
-                    Directory.Delete(Helper.GameDataFolderBackup, true);
-                }
-                Directory.Move(Helper.GameDataFolder, Helper.GameDataFolderBackup);
-                Directory.CreateDirectory(Helper.GameDataFolder);
+            if (deleteDataFolder && Helper.DataFolderExists()) {
+                Directory.Delete(Helper.DataFolder, true);
+            }
+            if (!Helper.DataFolderExists()) {
+                Directory.CreateDirectory(Helper.DataFolder);
             }
             string zipTempFile = Path.GetTempFileName();
             File.WriteAllBytes(zipTempFile, resourceFile);
             string zipFile = Path.ChangeExtension(zipTempFile, ".zip");
             File.Move(zipTempFile, zipFile);
-            new FastZip().ExtractZip(zipFile, Helper.GameFolder, null);
-
-            FileInfo[] files = source.GetFiles();
-            foreach (FileInfo file in files) {
-                file.IsReadOnly = false;
-                File.Copy(file.FullName, Path.Combine(Helper.GameDataFolder, file.Name), true);
-            }
+            new FastZip().ExtractZip(zipFile, Helper.DataFolder, null);
             File.Delete(zipFile);
-            Directory.Delete(source.FullName, true);
         }
 
         private void SwitchVersion(VersionName versionName) {
-            ShowLoader();
+            ShowLoader(this.loader);
             string label;
 
             switch (versionName) {
@@ -129,8 +101,8 @@ namespace CM0102_Starter_Kit {
                     label = "Original (3.9.60)";
                     break;
             }
-            Helper.DisplayMessage(this, label + " database successfully loaded!");
-            HideLoader();
+            DisplayMessage(label + " database successfully loaded!");
+            HideLoader(this.loader);
         }
 
         private void OriginalDatabase_Click(object sender, EventArgs e) {
@@ -142,20 +114,11 @@ namespace CM0102_Starter_Kit {
         }
 
         private void MarchDatabase_Click(object sender, EventArgs e) {
-            if (Helper.IsPatchInstalled()) {
-                SwitchVersion(VersionName.March);
-            } else {
-                Helper.DisplayMessage(this, "You need to install the official 3.9.68 patch to use this version!");
-            }
-
+            SwitchVersion(VersionName.March);
         }
 
         private void NovemberDatabase_Click(object sender, EventArgs e) {
-            if (Helper.IsPatchInstalled()) {
-                SwitchVersion(VersionName.November);
-            } else {
-                Helper.DisplayMessage(this, "You need to install the official 3.9.68 patch to use this version!");
-            }
+            SwitchVersion(VersionName.November);
         }
 
         private void LuessenhoffDatabase_Click(object sender, EventArgs e) {
@@ -167,19 +130,15 @@ namespace CM0102_Starter_Kit {
         }
 
         private void BackButton_Click(object sender, EventArgs e) {
-            Helper.ShowNewScreen(this, mainMenu);
+            ShowNewScreen(mainMenu);
         }
 
         private void LeftArrow_Click(object sender, EventArgs e) {
-            Helper.ShowNewScreen(this, mainMenu);
+            ShowNewScreen(mainMenu);
         }
 
         private void Exit_Click(object sender, EventArgs e) {
             mainMenu.Close();
-        }
-
-        private void Loader_Paint(object sender, PaintEventArgs e) {
-            Helper.RenderLoader(this, e);
         }
 
         private void VersionMenu_FormClosing(object sender, FormClosingEventArgs e) {

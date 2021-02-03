@@ -51,7 +51,6 @@ namespace CM0102_Starter_Kit {
             this.subtitle_bar = new System.Windows.Forms.PictureBox();
             this.back_button = new System.Windows.Forms.Button();
             this.next_button = new System.Windows.Forms.Button();
-            this.copyright = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.loader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.starting_year)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currency_inflation)).BeginInit();
@@ -315,7 +314,7 @@ namespace CM0102_Starter_Kit {
             this.version.Name = "version";
             this.version.Size = new System.Drawing.Size(79, 50);
             this.version.TabIndex = 16;
-            this.version.Text = "Version 1.0.1";
+            this.version.Text = "Version 1.1.0";
             this.version.UseVisualStyleBackColor = false;
             // 
             // left_arrow
@@ -463,20 +462,6 @@ namespace CM0102_Starter_Kit {
             this.next_button.Text = "Next";
             this.next_button.UseVisualStyleBackColor = false;
             // 
-            // copyright
-            // 
-            this.copyright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.copyright.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.copyright.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyright.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(215)))), ((int)(((byte)(16)))));
-            this.copyright.Location = new System.Drawing.Point(9, 506);
-            this.copyright.Margin = new System.Windows.Forms.Padding(0);
-            this.copyright.Name = "copyright";
-            this.copyright.Size = new System.Drawing.Size(79, 60);
-            this.copyright.TabIndex = 20;
-            this.copyright.Text = "© 2020 Jon Betts";
-            this.copyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // NickPatcherMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,7 +496,6 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.subtitle_bar);
             this.Controls.Add(this.back_button);
             this.Controls.Add(this.next_button);
-            this.Controls.Add(this.copyright);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = global::CM0102_Starter_Kit.Properties.Resources.logo;
             this.MaximizeBox = false;
@@ -559,7 +543,6 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.PictureBox subtitle_bar;
         private System.Windows.Forms.Button back_button;
         private System.Windows.Forms.Button next_button;
-        private System.Windows.Forms.Label copyright;
     }
 }
 

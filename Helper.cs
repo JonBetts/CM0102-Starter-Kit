@@ -4,103 +4,47 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-public static class Helper {
-    public static readonly string ProgramFilesFolder = IsWindowsVistaOrLower() ? @"C:\Program Files" : @"C:\Program Files (x86)";
-    public static readonly string GameFolder = Path.Combine(ProgramFilesFolder, "Championship Manager 01-02");
-    public static readonly string GameDataFolder = Path.Combine(GameFolder, "Data");
-    public static readonly string GameDataFolderBackup = Path.Combine(GameFolder, "Data_backup");
-    public static readonly string OriginalDataFolder = Path.Combine(GameFolder, "original_data");
-    public static readonly string PatchedDataFolder = Path.Combine(GameFolder, "patched_data");
-    public static readonly string MarchDataFolder = Path.Combine(GameFolder, "march_data");
-    public static readonly string NovemberDataFolder = Path.Combine(GameFolder, "november_data");
-    public static readonly string NinetyThreeDataFolder = Path.Combine(GameFolder, "ninety_three_data");
-    public static readonly string LuessenhoffDataFolder = Path.Combine(GameFolder, "luessenhoff_data");
-    public static readonly string GameEditorFolder = Path.Combine(GameFolder, "Editor");
-    public static readonly string VirtualDriveFolder = Path.Combine(ProgramFilesFolder, "WinCDEmu");
-    public static readonly string VirtualDriveExe = Path.Combine(VirtualDriveFolder, "batchmnt.exe");
-    public static readonly string ExistingCommentaryFile = Path.Combine(GameDataFolder, "events_eng.cfg");
-    public static readonly string GameExe = "cm0102.exe";
-    public static readonly string CmLoaderExeFile = Path.Combine(GameFolder, "CM0102Loader.exe");
-    public static readonly string CmLoaderConfigFile = Path.Combine(GameFolder, "CM0102Loader.ini");
-    public static readonly string BackupSavesFolder = @"C:\CM0102 Backups";
+namespace CM0102_Starter_Kit {
+    public static class Helper {
+        public static readonly string ProgramFilesFolder = IsWindowsVistaOrLower() ? @"C:\Program Files" : @"C:\Program Files (x86)";
+        public static readonly string DefaultGameFolder = Path.Combine(ProgramFilesFolder, "Championship Manager 01-02");
+        public static readonly string GameFolder = Path.Combine(Directory.GetCurrentDirectory(), "Game");
+        public static readonly string DataFolder = Path.Combine(GameFolder, "Data");
+        public static readonly string CmLoader = Path.Combine(GameFolder, "CM0102Loader.exe");
+        public static readonly string CmLoaderConfig = Path.Combine(GameFolder, "CM0102Loader.ini");
+        public static readonly string CmLoaderCustomConfig = Path.Combine(GameFolder, "CM0102LoaderCustom.ini");
+        public static readonly string CmScout = Path.Combine(GameFolder, "cmscout.exe");
+        public static readonly string ExistingCommentary = Path.Combine(DataFolder, "events_eng.cfg");
+        public static readonly string OfficialEditor = Path.Combine(Path.Combine(GameFolder, "Editor"), "cm0102ed.exe");
+        public static readonly string BackupSavesFolder = @"C:\CM0102 Backups";
 
-    public static bool IsWindowsVistaOrLower() {
-        OperatingSystem operatingSystem = Environment.OSVersion;
-        return operatingSystem.Version.Major <= 5 || (operatingSystem.Version.Major == 6 && operatingSystem.Version.Minor == 0);
-    }
-
-    public static bool IsWindowsEightOrHigher() {
-        OperatingSystem operatingSystem = Environment.OSVersion;
-        return (operatingSystem.Version.Major == 6 && operatingSystem.Version.Minor >= 2) || operatingSystem.Version.Major == 10;
-    }
-
-    private static void ToggleButtons(List<Control> controls, bool toggle) {
-        foreach (Control control in controls) {
-            control.Enabled = toggle;
+        public static bool IsWindowsVistaOrLower() {
+            OperatingSystem operatingSystem = Environment.OSVersion;
+            return operatingSystem.Version.Major <= 5 || (operatingSystem.Version.Major == 6 && operatingSystem.Version.Minor == 0);
         }
-    }
 
-    public static void ShowLoader(Form form, PictureBox loader, List<Control> controls) {
-        form.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-        loader.Visible = true;
-        ToggleButtons(controls, false);
-    }
-
-    public static void HideLoader(Form form, PictureBox loader, List<Control> controls) {
-        form.Cursor = System.Windows.Forms.Cursors.Default;
-        ToggleButtons(controls, true);
-        loader.Visible = false;
-    }
-
-    public static void DisplayMessage(Form form, string message) {
-        using (new CentreMessageBox(form)) {
-            MessageBox.Show(message);
+        public static bool IsWindowsEightOrHigher() {
+            OperatingSystem operatingSystem = Environment.OSVersion;
+            return (operatingSystem.Version.Major == 6 && operatingSystem.Version.Minor >= 2) || operatingSystem.Version.Major == 10;
         }
-    }
 
-    public static void RemoveReadOnlyAttribute(DirectoryInfo currentFolder) {
-        FileInfo[] files = currentFolder.GetFiles();
-        foreach (FileInfo file in files) {
-            file.IsReadOnly = false;
+        public static void RemoveReadOnlyAttribute(DirectoryInfo currentFolder) {
+            FileInfo[] files = currentFolder.GetFiles();
+            foreach (FileInfo file in files) {
+                file.IsReadOnly = false;
+            }
+            DirectoryInfo[] folders = currentFolder.GetDirectories();
+            foreach (DirectoryInfo folder in folders) {
+                RemoveReadOnlyAttribute(folder);
+            }
         }
-        DirectoryInfo[] folders = currentFolder.GetDirectories();
-        foreach (DirectoryInfo folder in folders) {
-            RemoveReadOnlyAttribute(folder);
+
+        public static bool GameFolderExists() {
+            return Directory.Exists(GameFolder);
         }
-    }
 
-    public static void RenderLoader(Form form, PaintEventArgs e) {
-        StringFormat format = new StringFormat {
-            LineAlignment = StringAlignment.Center,
-            Alignment = StringAlignment.Center
-        };
-        e.Graphics.DrawString("Please Wait...", new Font("Verdana", 18, FontStyle.Bold), Brushes.White, form.ClientRectangle, format);
-    }
-
-    public static bool IsPatchInstalled() {
-        return File.Exists(Path.Combine(Helper.GameFolder, "changes.txt"));
-    }
-
-    public static void ShowNewScreen(Form parent, Form child) {
-        child.Left = parent.Left;
-        child.Top = parent.Top;
-        child.Show();
-        parent.Hide();
-    }
-
-    public static void CopyNickPatcherFiles() {
-        if (!File.Exists(Helper.CmLoaderExeFile)) {
-            string loaderExeFile = Path.GetTempFileName();
-            File.WriteAllBytes(loaderExeFile, CM0102_Starter_Kit.Properties.Resources.cm0102_loader);
-            File.Copy(loaderExeFile, Helper.CmLoaderExeFile);
-            File.Delete(loaderExeFile);
+        public static bool DataFolderExists() {
+            return Directory.Exists(DataFolder);
         }
-        if (!File.Exists(Helper.CmLoaderConfigFile)) {
-            string loaderIniFile = Path.GetTempFileName();
-            File.WriteAllText(loaderIniFile, CM0102_Starter_Kit.Properties.Resources.cm0102_loader_config);
-            File.Copy(loaderIniFile, Helper.CmLoaderConfigFile);
-            File.Delete(loaderIniFile);
-        }
-        Helper.RemoveReadOnlyAttribute(new DirectoryInfo(Helper.GameFolder));
     }
 }

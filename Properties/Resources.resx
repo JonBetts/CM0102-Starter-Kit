@@ -124,17 +124,11 @@
   <data name="boca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\boca.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cm0102" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\external\cm0102.iso;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cm0102_loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\external\CM0102Loader.exe;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cm0102_loader_config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\external\CM0102Loader.ini;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="events_eng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\external\events_eng.cfg;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Game" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\external\Game.zip;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\logo.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,13 +151,7 @@
   <data name="patched_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\patched_data.zip;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="patch_3_9_68" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\external\patch_3.9.68.exe;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="ruud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\ruud.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="win_cd_emu_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\external\win_cd_emu_4.1.exe;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

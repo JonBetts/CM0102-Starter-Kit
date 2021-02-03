@@ -86,13 +86,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CentreMessageBox.cs" />
+    <Compile Include="HidableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -125,20 +128,24 @@
     </Compile>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NickPatcherMenu.resx">
       <DependentUpon>NickPatcherMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="VersionMenu.resx">
       <DependentUpon>VersionMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayMenu.resx">
       <DependentUpon>PlayMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="app.manifest" />
@@ -147,13 +154,8 @@
     <None Include="data\november_data.zip" />
     <None Include="data\original_data.zip" />
     <None Include="data\patched_data.zip" />
-    <None Include="external\cm0102.iso" />
-    <None Include="external\CM0102Loader.exe" />
-    <None Include="external\CM0102Loader.ini" />
     <None Include="external\events_eng.cfg" />
-    <None Include="external\patch_3.9.68.exe" />
-    <None Include="external\win_cd_emu.cer" />
-    <None Include="external\win_cd_emu_4.1.exe" />
+    <None Include="external\Game.zip" />
     <None Include="images\batigol.jpg" />
     <None Include="images\boca.jpg" />
     <None Include="images\owen.jpg" />

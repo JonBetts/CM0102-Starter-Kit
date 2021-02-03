@@ -83,52 +83,19 @@ namespace CM0102_Starter_Kit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cm0102 {
-            get {
-                object obj = ResourceManager.GetObject("cm0102", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] cm0102_loader {
-            get {
-                object obj = ResourceManager.GetObject("cm0102_loader", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Year = 2001
-        ///SpeedMultiplier = 4
-        ///CurrencyMultiplier = 1.0
-        ///ColouredAttributes = true
-        ///DisableUnprotectedContracts = true
-        ///HideNonPublicBids = true
-        ///IncreaseToSevenSubs = true
-        ///RemoveForeignPlayerLimit = false
-        ///NoWorkPermits = false
-        ///ChangeTo1280x800 = false
-        ///AutoLoadPatchFiles = false
-        ///PatchFileDirectory = .
-        ///DataDirectory = data
-        ///Debug = false
-        ///.
-        /// </summary>
-        internal static string cm0102_loader_config {
-            get {
-                return ResourceManager.GetString("cm0102_loader_config", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] events_eng {
             get {
                 object obj = ResourceManager.GetObject("events_eng", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Game {
+            get {
+                object obj = ResourceManager.GetObject("Game", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -196,16 +163,6 @@ namespace CM0102_Starter_Kit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] patch_3_9_68 {
-            get {
-                object obj = ResourceManager.GetObject("patch_3_9_68", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] patched_data {
             get {
                 object obj = ResourceManager.GetObject("patched_data", resourceCulture);
@@ -220,16 +177,6 @@ namespace CM0102_Starter_Kit.Properties {
             get {
                 object obj = ResourceManager.GetObject("ruud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] win_cd_emu_4_1 {
-            get {
-                object obj = ResourceManager.GetObject("win_cd_emu_4_1", resourceCulture);
-                return ((byte[])(obj));
             }
         }
     }

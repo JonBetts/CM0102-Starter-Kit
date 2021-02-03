@@ -4,7 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
-    public partial class NickPatcherMenu : Form {
+    public partial class NickPatcherMenu : HidableForm {
         private readonly MainMenu mainMenu;
 
         public NickPatcherMenu(MainMenu mainMenu) {
@@ -12,24 +12,16 @@ namespace CM0102_Starter_Kit {
             InitializeComponent();
         }
 
-        private List<Control> GetButtonsToToggle() {
+        protected override List<Control> GetButtonsToToggle() {
             return new List<Control> {
                 this.apply,
                 this.exit
             };
         }
 
-        private void ShowLoader() {
-            Helper.ShowLoader(this, this.loader, GetButtonsToToggle());
-        }
-
-        private void HideLoader() {
-            Helper.HideLoader(this, this.loader, GetButtonsToToggle());
-        }
-
         private void Apply_Click(object sender, EventArgs e) {
-            ShowLoader();
-            using (StreamWriter writer = new StreamWriter(Helper.CmLoaderConfigFile)) {
+            ShowLoader(this.loader);
+            using (StreamWriter writer = new StreamWriter(Helper.CmLoaderCustomConfig)) {
                 writer.Write("Year = " + this.starting_year.Value + Environment.NewLine);
                 writer.Write("SpeedMultiplier = " + this.game_speed.SelectedItem.ToString().Replace("x", "") + Environment.NewLine);
                 writer.Write("CurrencyMultiplier = " + this.currency_inflation.Value + Environment.NewLine);
@@ -44,25 +36,22 @@ namespace CM0102_Starter_Kit {
                 writer.Write("PatchFileDirectory = ." + Environment.NewLine);
                 writer.Write("DataDirectory = data" + Environment.NewLine);
                 writer.Write("Debug = false" + Environment.NewLine);
+                writer.Write("NoCD = true" + Environment.NewLine);
             }
-            Helper.DisplayMessage(this, "Settings successfully changed!");
-            HideLoader();
+            DisplayMessage("Settings successfully changed!");
+            HideLoader(this.loader);
         }
 
         private void BackButton_Click(object sender, EventArgs e) {
-            Helper.ShowNewScreen(this, mainMenu);
+            ShowNewScreen(mainMenu);
         }
 
         private void LeftArrow_Click(object sender, EventArgs e) {
-            Helper.ShowNewScreen(this, mainMenu);
+            ShowNewScreen(mainMenu);
         }
 
         private void Exit_Click(object sender, EventArgs e) {
             mainMenu.Close();
-        }
-
-        private void Loader_Paint(object sender, PaintEventArgs e) {
-            Helper.RenderLoader(this, e);
         }
 
         private void NickPatcherMenu_FormClosing(object sender, FormClosingEventArgs e) {

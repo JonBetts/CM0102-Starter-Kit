@@ -5,7 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
-    public partial class PlayMenu : Form {
+    public partial class PlayMenu : HidableForm {
         private readonly MainMenu mainMenu;
 
         public PlayMenu(MainMenu mainMenu) {
@@ -13,7 +13,7 @@ namespace CM0102_Starter_Kit {
             InitializeComponent();
         }
 
-        private List<Control> GetButtonsToToggle() {
+        protected override List<Control> GetButtonsToToggle() {
             return new List<Control> {
                 this.standard_cm,
                 this.nick_patcher_cm,
@@ -21,19 +21,12 @@ namespace CM0102_Starter_Kit {
             };
         }
 
-        private void ShowLoader() {
-            Helper.ShowLoader(this, this.loader, GetButtonsToToggle());
-        }
-
-        private void HideLoader() {
-            Helper.HideLoader(this, this.loader, GetButtonsToToggle());
-        }
-
-        private void LaunchGame(string playGameExe, Boolean usesStubProcess) {
-            ShowLoader();
+        private void LaunchGame(string playGameExe, Boolean usesStubProcess, Boolean usesCustomLoader) {
+            ShowLoader(this.loader);
             ProcessStartInfo playPsi = new ProcessStartInfo {
                 FileName = playGameExe,
-                UseShellExecute = false
+                UseShellExecute = false,
+                Arguments = usesCustomLoader ? Helper.CmLoaderCustomConfig : Helper.CmLoaderConfig
             };
             Process playProcess = Process.Start(playPsi);
             playProcess.WaitForExit();
@@ -46,42 +39,31 @@ namespace CM0102_Starter_Kit {
                     process.Close();
                 }
             }
-            HideLoader();
+            HideLoader(this.loader);
         }
 
         private void StandardCm_Click(object sender, EventArgs e) {
-            LaunchGame(Path.Combine(Helper.GameFolder, Helper.GameExe), false);
+            LaunchGame(Helper.CmLoader, true, false);
         }
 
         private void NickPatcherCm_Click(object sender, EventArgs e) {
-            if (!File.Exists(Helper.CmLoaderExeFile) || !File.Exists(Helper.CmLoaderConfigFile)) {
-               Helper.CopyNickPatcherFiles();
-            }
-            if (Helper.IsPatchInstalled()) {
-                LaunchGame(Helper.CmLoaderExeFile, true);
-            } else {
-                Helper.DisplayMessage(this, "The Official 3.9.68 Patch needs to be installed first!");
-            }
+            LaunchGame(Helper.CmLoader, true, true);
         }
 
         private void Cm93_Click(object sender, EventArgs e) {
-            LaunchGame(Path.Combine(Helper.GameFolder, "cm93.exe"), false);
+            LaunchGame(Path.Combine(Helper.GameFolder, "cm93.exe"), false, false);
         }
 
         private void BackButton_Click(object sender, EventArgs e) {
-            Helper.ShowNewScreen(this, mainMenu);
+            ShowNewScreen(mainMenu);
         }
 
         private void LeftArrow_Click(object sender, EventArgs e) {
-            Helper.ShowNewScreen(this, mainMenu);
+            ShowNewScreen(mainMenu);
         }
 
         private void Exit_Click(object sender, EventArgs e) {
             mainMenu.Close();
-        }
-
-        private void Loader_Paint(object sender, PaintEventArgs e) {
-            Helper.RenderLoader(this, e);
         }
 
         private void PlayMenu_FormClosing(object sender, FormClosingEventArgs e) {
