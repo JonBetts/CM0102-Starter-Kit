@@ -55,13 +55,13 @@ namespace CM0102_Starter_Kit {
             this.Hide();
         }
 
-        public void RunExternalProcess(PictureBox loader, string externalProcess) {
+        public void RunExternalProcess(string externalProcess) {
             ProcessStartInfo psi = new ProcessStartInfo {
                 FileName = externalProcess,
                 UseShellExecute = false
             };
             Process process = Process.Start(psi);
-            //process.Close();
+            process.Close();
         }
     }
 

@@ -51,7 +51,7 @@ namespace CM0102_Starter_Kit {
         private string RunEditor() {
             string result = "Please use the Switch Data Update menu to load up a database first!";
             if (Helper.DataFolderExists()) {
-                RunExternalProcess(this.loader, Helper.OfficialEditor);
+                RunExternalProcess(Helper.OfficialEditor);
                 result = "";
             }
             return result;
@@ -136,7 +136,7 @@ namespace CM0102_Starter_Kit {
         }
 
         private void CmScout_Click(object sender, EventArgs e) {
-            RunExternalProcess(this.loader, Helper.CmScout);
+            RunExternalProcess(Helper.CmScout);
         }
 
         private void Exit_Click(object sender, EventArgs e) {
