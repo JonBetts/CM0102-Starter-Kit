@@ -145,7 +145,6 @@ namespace CM0102_Starter_Kit {
 
         private void MainMenu_Load(object sender, EventArgs e) {
             if (!Helper.GameFolderExists()) {
-                ShowLoader(this.loader);
                 Directory.CreateDirectory(Helper.GameFolder);
                 string zipTempFile = Path.GetTempFileName();
                 File.WriteAllBytes(zipTempFile, Properties.Resources.Game);
@@ -161,7 +160,6 @@ namespace CM0102_Starter_Kit {
                         }
                     }
                 }
-                HideLoader(this.loader);
             }
         }
     }
