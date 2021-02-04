@@ -5,12 +5,13 @@
 Welcome to the CM 01/02 Starter Kit!
 
 The purpose of this little tool is to get you up and running as quickly as possible with CM 01/02. No need for worrying about downloading files, installing anything, applying patches or changing compatibility settings - this tool does everything required to get you setup on an original or updated version of CM!
-Please note that this tool only works with Windows XP, Vista, 7, 8 and 10. Whilst I have done my best to test on each operating system, there will undoubtedly be scenarios and configurations I haven't managed to cater for. Also if you do use an older operating system
+Please note that this tool only works with **Windows XP, Vista, 7, 8 and 10**. Whilst I have done my best to test on each operating system, there will undoubtedly be scenarios and configurations I haven't managed to cater for. Also if you do use an older operating system
 (i.e. XP or Vista) performance may be choppy as it's hard to cater for a 20 year old operating system! I've attempted to make the tool look and feel like the game interface so it's a bit more familiar.
 
-To get started, all you have to do is extract the zip file anywhere you like.
+You will need to make sure you have the **Microsoft .NET 3.5** runtime on your computer before running the tool. This should come pre-installed on Windows 7, 8 and 10, but XP and Vista may require you to manually install it. I've included the installation file with this tool (dotNetFx35setup.exe). Just run that to install it, and you should be good to go (you will need an Internet connection for this though). If you don't install .NET 3.5, it will come up with an error message saying that the application "**failed to initialise properly**".
 
-You will need to make sure you have the Microsoft .NET 3.5 runtime on your computer before running the tool. This should come pre-installed on Windows 7, 8 and 10, but XP and Vista may require you to manually install it. I've included the installation file with this tool (dotNetFx35setup.exe). Just run that to install it, and you should be good to go (you will need an Internet connection for this though). If you don't install .NET 3.5, it will come up with an error message saying that the application "failed to initialise properly".
+To get started, all you have to do is extract the zip file anywhere you like. Click in to the folder that just got created and then double click on **CM0102StarterKit.exe** to start the tool up. Give it anywhere up to 30 seconds the first time you run it, as it needs to unpack the **Game** folder which contains everything needed for the tool to work. If you have an existing installation of CM 01/02 installed in the default location (**C:\Program Files (x86)\Championship Manager 01-02**) then it will automatically copy all of your existing save games across for use with the tool. Please be aware that to play them through this tool, your existing installation needs to have been running with the official 3.9.68 patch installed.
+
 
 ## The basics
 
@@ -52,7 +53,6 @@ Big thanks for Nick for his permission to use the Patcher as part of this. It's 
 ## Troubleshooting
 
 The Starter Kit was made to limit the number of issues you get when setting CM 01/02 up. However, different setups and operating systems may result in unforeseen issues. One thing I've come across is occassionally the game might not load as it doesn't like starting up in full screen/windowed mode ("cannot initialise graphics bla bla"). This has been an issue with CM for a long time, so there are numerous fixes on the forums for this, so have a look at those and see if you can solve it.
-If that doesn't work, you may have some DirectX files missing, so try installing them from the following link: https://www.microsoft.com/en-gb/download/details.aspx?id=35
 
 ## Future improvements
 
