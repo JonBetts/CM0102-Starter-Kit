@@ -9,8 +9,8 @@ namespace CM0102_Starter_Kit {
         public static readonly string GameFolder = Path.Combine(Directory.GetCurrentDirectory(), "Game");
         public static readonly string DataFolder = Path.Combine(GameFolder, "Data");
         public static readonly string CmLoader = Path.Combine(GameFolder, "CM0102Loader.exe");
-        public static readonly string CmLoaderConfig = Path.Combine(GameFolder, "CM0102Loader.ini");
-        public static readonly string CmLoaderCustomConfig = Path.Combine(GameFolder, "CM0102LoaderCustom.ini");
+        public static readonly string CmLoaderConfig = "CM0102LoaderDefault.ini";
+        public static readonly string CmLoaderCustomConfig = "CM0102LoaderCustom.ini";
         public static readonly string CmScout = Path.Combine(GameFolder, "cmscout.exe");
         public static readonly string ExistingCommentary = Path.Combine(DataFolder, "events_eng.cfg");
         public static readonly string OfficialEditor = Path.Combine(Path.Combine(GameFolder, "Editor"), "cm0102ed.exe");
