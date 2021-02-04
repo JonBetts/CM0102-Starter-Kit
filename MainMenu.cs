@@ -153,7 +153,7 @@ namespace CM0102_Starter_Kit {
                 File.Move(zipTempFile, zipFile);
                 new FastZip().ExtractZip(zipFile, Helper.GameFolder, null);
 
-                if (Directory.Exists(Helper.DefaultGameFolder)) {
+                if (File.Exists(Helper.DefaultChangesFile)) {
                    FileInfo[] saveGames = new DirectoryInfo(Helper.DefaultGameFolder).GetFiles("*.sav");
                     if (saveGames.Length > 0) {
                         foreach (FileInfo save in saveGames) {

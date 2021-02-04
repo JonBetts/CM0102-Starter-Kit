@@ -5,6 +5,7 @@ namespace CM0102_Starter_Kit {
     public static class Helper {
         public static readonly string ProgramFilesFolder = IsWindowsVistaOrLower() ? @"C:\Program Files" : @"C:\Program Files (x86)";
         public static readonly string DefaultGameFolder = Path.Combine(ProgramFilesFolder, "Championship Manager 01-02");
+        public static readonly string DefaultChangesFile = Path.Combine(DefaultGameFolder, "changes.txt");
         public static readonly string GameFolder = Path.Combine(Directory.GetCurrentDirectory(), "Game");
         public static readonly string DataFolder = Path.Combine(GameFolder, "Data");
         public static readonly string CmLoader = Path.Combine(GameFolder, "CM0102Loader.exe");
