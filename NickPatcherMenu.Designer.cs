@@ -41,8 +41,6 @@ namespace CM0102_Starter_Kit {
             this.apply = new System.Windows.Forms.Button();
             this.transparent_panel = new System.Windows.Forms.PictureBox();
             this.version = new System.Windows.Forms.Button();
-            this.left_arrow = new System.Windows.Forms.Button();
-            this.right_arrow = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.sidenav = new System.Windows.Forms.PictureBox();
             this.title = new System.Windows.Forms.Label();
@@ -317,45 +315,6 @@ namespace CM0102_Starter_Kit {
             this.version.Text = "Version 1.1.0";
             this.version.UseVisualStyleBackColor = false;
             // 
-            // left_arrow
-            // 
-            this.left_arrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.left_arrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.left_arrow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.left_arrow.FlatAppearance.BorderSize = 0;
-            this.left_arrow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.left_arrow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.left_arrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.left_arrow.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.left_arrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(215)))), ((int)(((byte)(16)))));
-            this.left_arrow.Location = new System.Drawing.Point(9, 62);
-            this.left_arrow.Margin = new System.Windows.Forms.Padding(0);
-            this.left_arrow.Name = "left_arrow";
-            this.left_arrow.Size = new System.Drawing.Size(32, 50);
-            this.left_arrow.TabIndex = 17;
-            this.left_arrow.Text = "<";
-            this.left_arrow.UseVisualStyleBackColor = false;
-            this.left_arrow.Click += new System.EventHandler(this.LeftArrow_Click);
-            // 
-            // right_arrow
-            // 
-            this.right_arrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.right_arrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.right_arrow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.right_arrow.FlatAppearance.BorderSize = 0;
-            this.right_arrow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.right_arrow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.right_arrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.right_arrow.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.right_arrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(215)))), ((int)(((byte)(16)))));
-            this.right_arrow.Location = new System.Drawing.Point(56, 62);
-            this.right_arrow.Margin = new System.Windows.Forms.Padding(0);
-            this.right_arrow.Name = "right_arrow";
-            this.right_arrow.Size = new System.Drawing.Size(32, 50);
-            this.right_arrow.TabIndex = 18;
-            this.right_arrow.Text = ">";
-            this.right_arrow.UseVisualStyleBackColor = false;
-            // 
             // exit
             // 
             this.exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
@@ -486,8 +445,6 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.transparent_panel);
             this.Controls.Add(this.apply);
             this.Controls.Add(this.version);
-            this.Controls.Add(this.left_arrow);
-            this.Controls.Add(this.right_arrow);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.sidenav);
             this.Controls.Add(this.title);
@@ -502,7 +459,6 @@ namespace CM0102_Starter_Kit {
             this.Name = "NickPatcherMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CM 01/02 Starter Kit - Nick\'s Patcher Menu";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NickPatcherMenu_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.loader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.starting_year)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currency_inflation)).EndInit();
@@ -533,8 +489,6 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.Button apply;
         private System.Windows.Forms.PictureBox transparent_panel;
         private System.Windows.Forms.Button version;
-        private System.Windows.Forms.Button left_arrow;
-        private System.Windows.Forms.Button right_arrow;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.PictureBox sidenav;
         private System.Windows.Forms.Label title;

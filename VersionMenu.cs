@@ -52,22 +52,18 @@ namespace CM0102_Starter_Kit {
                     deleteDataFolder = true;
                     break;
             }
-            if (deleteDataFolder && Helper.DataFolderExists()) {
-                Directory.Delete(Helper.DataFolder, true);
+            if (deleteDataFolder && DataFolderExists()) {
+                Directory.Delete(DataFolder, true);
             }
-            if (!Helper.DataFolderExists()) {
-                Directory.CreateDirectory(Helper.DataFolder);
-            }
-            string zipTempFile = Path.GetTempFileName();
-            File.WriteAllBytes(zipTempFile, resourceFile);
-            string zipFile = Path.ChangeExtension(zipTempFile, ".zip");
-            File.Move(zipTempFile, zipFile);
-            new FastZip().ExtractZip(zipFile, Helper.DataFolder, null);
-            File.Delete(zipFile);
+            Directory.CreateDirectory(DataFolder);
+
+            string dataZipFile = DataFolder + ".zip";
+            File.WriteAllBytes(dataZipFile, resourceFile);
+            new FastZip().ExtractZip(dataZipFile, DataFolder, null);
+            File.Delete(dataZipFile);
         }
 
         private void SwitchVersion(VersionName versionName) {
-            ShowLoader(this.loader);
             string label;
 
             switch (versionName) {
@@ -102,7 +98,6 @@ namespace CM0102_Starter_Kit {
                     break;
             }
             DisplayMessage(label + " database successfully loaded!");
-            HideLoader(this.loader);
         }
 
         private void OriginalDatabase_Click(object sender, EventArgs e) {
@@ -133,17 +128,8 @@ namespace CM0102_Starter_Kit {
             ShowNewScreen(mainMenu);
         }
 
-        private void LeftArrow_Click(object sender, EventArgs e) {
-            ShowNewScreen(mainMenu);
-        }
-
         private void Exit_Click(object sender, EventArgs e) {
             mainMenu.Close();
-        }
-
-        private void VersionMenu_FormClosing(object sender, FormClosingEventArgs e) {
-            e.Cancel = true;
-            Exit_Click(sender, e);
         }
     }
 }

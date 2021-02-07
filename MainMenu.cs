@@ -10,7 +10,6 @@ namespace CM0102_Starter_Kit {
         private readonly NickPatcherMenu nickPatcherMenu;
         private readonly VersionMenu versionMenu;
         private readonly PlayMenu playMenu;
-        private enum MethodName { InstallVar, RunEditor, BackupSaves }
 
         public MainMenu() {
             this.nickPatcherMenu = new NickPatcherMenu(this);
@@ -21,86 +20,32 @@ namespace CM0102_Starter_Kit {
  
         protected override List<Control> GetButtonsToToggle() {
             return new List<Control> {
+                this.switch_update,
                 this.install_var,
                 this.nick_patcher,
                 this.editor,
-                this.switch_update,
                 this.play_game,
-                this.visit_website,
                 this.backup_saves,
+                this.visit_website,
                 this.cm_scout,
                 this.exit
             };
         }
 
-        private string InstallVar() {
-            string result = "Please use the Switch Data Update menu to load up a database first!";
-            if (Helper.DataFolderExists()) {
-                ShowLoader(this.loader);
-                string varFile = Path.GetTempFileName();
-                File.WriteAllBytes(varFile, Properties.Resources.events_eng);
-                File.Copy(Helper.ExistingCommentary, Helper.ExistingCommentary + ".bk", true);
-                File.Copy(varFile, Helper.ExistingCommentary, true);
-                File.Delete(varFile);
-                result = "VAR Commentary File successfully installed! Please note this only applies when playing the game in English!";
-                HideLoader(this.loader);
-            }
-            return result;
-        }
-
-        private string RunEditor() {
-            string result = "Please use the Switch Data Update menu to load up a database first!";
-            if (Helper.DataFolderExists()) {
-                RunExternalProcess(Helper.OfficialEditor);
-                result = "";
-            }
-            return result;
-        }
- 
-        private string BackupSaves() {
-            string result = "No save games found!";
-            FileInfo[] saveGames = new DirectoryInfo(Helper.GameFolder).GetFiles("*.sav");
-            if (saveGames.Length > 0) {
-                ShowLoader(this.loader);
-                if (!Directory.Exists(Helper.BackupSavesFolder)) {
-                    Directory.CreateDirectory(Helper.BackupSavesFolder);
-                }
-                foreach (FileInfo save in saveGames) {
-                    File.Copy(save.FullName, Path.Combine(Helper.BackupSavesFolder, save.Name), true);
-                }
-                result = saveGames.Length + @" save game(s) successfully backed up (to C:\CM0102 Backups)!";
-                HideLoader(this.loader);
-            }
-            return result;
-        }
-
-        private void RunProcess(MethodName methodName) {
-            string result;
-
-            switch (methodName) {
-                case MethodName.InstallVar:
-                    result = InstallVar();
-                    break;
-                case MethodName.RunEditor:
-                    result = RunEditor();
-                    break;
-                case MethodName.BackupSaves:
-                    result = BackupSaves();
-                    break;
-                default:
-                    throw new NotImplementedException("Method not implemented correctly");
-            }
-            if (!String.IsNullOrEmpty(result)) {
-                DisplayMessage(result);
-            }
-        }
-
         private void InstallVar_Click(object sender, EventArgs e) {
-            RunProcess(MethodName.InstallVar);
+            string result = "Please use the Switch Data Update menu to load up a database first!";
+            if (DataFolderExists()) {
+                string backupFile = ExistingCommentary + ".bk";
+                File.Delete(backupFile);
+                File.Move(ExistingCommentary, backupFile);
+                File.WriteAllBytes(ExistingCommentary, Properties.Resources.events_eng);
+                result = "VAR Commentary File successfully installed! Please note this only applies when playing the game in English!";
+            }
+            DisplayMessage(result);
         }
 
         private void NickPatcher_Click(object sender, EventArgs e) {
-            if (Helper.DataFolderExists()) {
+            if (DataFolderExists()) {
                 ShowNewScreen(nickPatcherMenu);
             } else {
                 DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
@@ -108,7 +53,11 @@ namespace CM0102_Starter_Kit {
         }
 
         private void Editor_Click(object sender, EventArgs e) {
-            RunProcess(MethodName.RunEditor);
+            if (DataFolderExists()) {
+                Process.Start(OfficialEditor);
+            } else {
+                DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
+            }
         }
 
         private void SwitchUpdate_Click(object sender, EventArgs e) {
@@ -116,7 +65,7 @@ namespace CM0102_Starter_Kit {
         }
 
         private void PlayGame_Click(object sender, EventArgs e) {
-            if (Helper.DataFolderExists()) {
+            if (DataFolderExists()) {
                 ShowNewScreen(playMenu);
             } else {
                 DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
@@ -124,19 +73,26 @@ namespace CM0102_Starter_Kit {
         }
 
         private void VisitWebsite_Click(object sender, EventArgs e) {
-            var websitePsi = new ProcessStartInfo {
-                FileName = "https://www.champman0102.net",
-                UseShellExecute = true
-            };
-            Process.Start(websitePsi);
+            Process.Start("https://www.champman0102.net");
         }
 
         private void BackupSaves_Click(object sender, EventArgs e) {
-            RunProcess(MethodName.BackupSaves);
+            string result = "No save games found!";
+            FileInfo[] saveGames = new DirectoryInfo(GameFolder).GetFiles("*.sav");
+            if (saveGames.Length > 0) {
+                if (!Directory.Exists(BackupSavesFolder)) {
+                    Directory.CreateDirectory(BackupSavesFolder);
+                }
+                foreach (FileInfo save in saveGames) {
+                    File.Copy(save.FullName, Path.Combine(BackupSavesFolder, save.Name), true);
+                }
+                result = saveGames.Length + @" save game(s) successfully backed up (to C:\CM0102 Backups)!";
+            }
+            DisplayMessage(result);
         }
 
         private void CmScout_Click(object sender, EventArgs e) {
-            RunExternalProcess(Helper.CmScout);
+            Process.Start(CmScout);
         }
 
         private void Exit_Click(object sender, EventArgs e) {
@@ -144,23 +100,27 @@ namespace CM0102_Starter_Kit {
         }
 
         private void MainMenu_Load(object sender, EventArgs e) {
-            if (!Helper.GameFolderExists()) {
-                Directory.CreateDirectory(Helper.GameFolder);
-                string zipTempFile = Path.GetTempFileName();
-                File.WriteAllBytes(zipTempFile, Properties.Resources.Game);
-                string zipFile = Path.ChangeExtension(zipTempFile, ".zip");
-                File.Move(zipTempFile, zipFile);
-                new FastZip().ExtractZip(zipFile, Helper.GameFolder, null);
+            if (!GameFolderExists()) {
+                string gameZipFile = GameFolder + ".zip";
+                File.WriteAllBytes(gameZipFile, Properties.Resources.Game);
+                new FastZip().ExtractZip(gameZipFile, GameFolder, null);
+                File.Delete(gameZipFile);
 
-                if (File.Exists(Helper.DefaultChangesFile)) {
-                   FileInfo[] saveGames = new DirectoryInfo(Helper.DefaultGameFolder).GetFiles("*.sav");
+                if (File.Exists(DefaultChangesFile)) {
+                   FileInfo[] saveGames = new DirectoryInfo(DefaultGameFolder).GetFiles("*.sav");
                     if (saveGames.Length > 0) {
                         foreach (FileInfo save in saveGames) {
-                            File.Copy(save.FullName, Path.Combine(Helper.GameFolder, save.Name), true);
+                            File.Copy(save.FullName, Path.Combine(GameFolder, save.Name), true);
                         }
                     }
                 }
             }
+        }
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e) {
+            nickPatcherMenu.Close();
+            playMenu.Close();
+            versionMenu.Close();
         }
     }
 }

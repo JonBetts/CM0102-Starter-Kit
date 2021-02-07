@@ -26,12 +26,12 @@ namespace CM0102_Starter_Kit {
             ProcessStartInfo playPsi = new ProcessStartInfo {
                 FileName = playGameExe,
                 UseShellExecute = false,
-                Arguments = usesCustomLoader ? Helper.CmLoaderCustomConfig : Helper.CmLoaderConfig
+                Arguments = usesCustomLoader ? CmLoaderCustomConfig : CmLoaderConfig
             };
             Process playProcess = Process.Start(playPsi);
             playProcess.WaitForExit();
             playProcess.Close();
-            
+
             if (usesStubProcess) {
                 Process[] mainPlayProcesses = Process.GetProcessesByName("cm0102");
                 foreach (Process process in mainPlayProcesses) {
@@ -43,32 +43,23 @@ namespace CM0102_Starter_Kit {
         }
 
         private void StandardCm_Click(object sender, EventArgs e) {
-            LaunchGame(Helper.CmLoader, true, false);
+            LaunchGame(CmLoader, true, false);
         }
 
         private void NickPatcherCm_Click(object sender, EventArgs e) {
-            LaunchGame(Helper.CmLoader, true, true);
+            LaunchGame(CmLoader, true, true);
         }
 
         private void Cm93_Click(object sender, EventArgs e) {
-            LaunchGame(Path.Combine(Helper.GameFolder, "cm93.exe"), false, false);
+            LaunchGame(Path.Combine(GameFolder, "cm93.exe"), false, false);
         }
 
         private void BackButton_Click(object sender, EventArgs e) {
             ShowNewScreen(mainMenu);
         }
 
-        private void LeftArrow_Click(object sender, EventArgs e) {
-            ShowNewScreen(mainMenu);
-        }
-
         private void Exit_Click(object sender, EventArgs e) {
             mainMenu.Close();
-        }
-
-        private void PlayMenu_FormClosing(object sender, FormClosingEventArgs e) {
-            e.Cancel = true;
-            Exit_Click(sender, e);
         }
     }
 }

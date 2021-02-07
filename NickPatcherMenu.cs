@@ -20,8 +20,7 @@ namespace CM0102_Starter_Kit {
         }
 
         private void Apply_Click(object sender, EventArgs e) {
-            ShowLoader(this.loader);
-            using (StreamWriter writer = new StreamWriter(Path.Combine(Helper.GameFolder, Helper.CmLoaderCustomConfig))) {
+            using (StreamWriter writer = new StreamWriter(Path.Combine(GameFolder, CmLoaderCustomConfig))) {
                 writer.Write("Year = " + this.starting_year.Value + Environment.NewLine);
                 writer.Write("SpeedMultiplier = " + this.game_speed.SelectedItem.ToString().Replace("x", "") + Environment.NewLine);
                 writer.Write("CurrencyMultiplier = " + this.currency_inflation.Value + Environment.NewLine);
@@ -39,7 +38,6 @@ namespace CM0102_Starter_Kit {
                 writer.Write("NoCD = true" + Environment.NewLine);
             }
             DisplayMessage("Settings successfully changed!");
-            HideLoader(this.loader);
         }
 
         private void BackButton_Click(object sender, EventArgs e) {
@@ -52,11 +50,6 @@ namespace CM0102_Starter_Kit {
 
         private void Exit_Click(object sender, EventArgs e) {
             mainMenu.Close();
-        }
-
-        private void NickPatcherMenu_FormClosing(object sender, FormClosingEventArgs e) {
-            e.Cancel = true;
-            Exit_Click(sender, e);
         }
     }
 }
