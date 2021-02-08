@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace CM0102_Starter_Kit {
 
     [TypeDescriptionProvider(typeof(AbstractControlDescriptionProvider<HidableForm, Form>))]
-    public abstract class HidableForm : Form {
+    public abstract partial class HidableForm : Form {
         protected static readonly string ProgramFilesFolder = IsWindowsVistaOrLower() ? @"C:\Program Files" : @"C:\Program Files (x86)";
         protected static readonly string DefaultGameFolder = Path.Combine(ProgramFilesFolder, "Championship Manager 01-02");
         protected static readonly string DefaultChangesFile = Path.Combine(DefaultGameFolder, "changes.txt");
@@ -43,21 +43,25 @@ namespace CM0102_Starter_Kit {
         protected abstract List<Control> GetButtonsToToggle();
 
         private void ToggleButtons(bool toggle) {
+            exit.Enabled = toggle;
+            back_button.Enabled = toggle;
+            next_button.Enabled = toggle;
+
             foreach (Control control in GetButtonsToToggle()) {
                 control.Enabled = toggle;
             }
         }
 
-        protected void ShowLoader(PictureBox loader) {
+        protected void ShowLoader() {
             this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            loader.Visible = true;
+            this.loader.Visible = true;
             ToggleButtons(false);
         }
 
-        protected void HideLoader(PictureBox loader) {
+        protected void HideLoader() {
             this.Cursor = System.Windows.Forms.Cursors.Default;
             ToggleButtons(true);
-            loader.Visible = false;
+            this.loader.Visible = false;
         }
 
         protected void RenderLoader(PaintEventArgs e) {
@@ -78,11 +82,21 @@ namespace CM0102_Starter_Kit {
             }
         }
 
-        protected void ShowNewScreen(Form child) {
-            child.Left = this.Left;
-            child.Top = this.Top;
-            child.Show();
+        protected void ShowNewScreen(Form newForm) {
+            newForm.Left = this.Left;
+            newForm.Top = this.Top;
+            newForm.Show();
             this.Hide();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e) {
+            if (!this.Equals(Program.mainMenu)) {
+                ShowNewScreen(Program.mainMenu);
+            }
+        }
+
+        private void Exit_Click(object sender, EventArgs e) {
+            this.Close();
         }
     }
 

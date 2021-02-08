@@ -6,23 +6,23 @@ using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
     public partial class PlayMenu : HidableForm {
-        private readonly MainMenu mainMenu;
-
-        public PlayMenu(MainMenu mainMenu) {
-            this.mainMenu = mainMenu;
+        public PlayMenu() {
+            this.SuspendLayout();
+            InitialiseSharedControls("Choose Which Update To Play", 255, true);
             InitializeComponent();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         protected override List<Control> GetButtonsToToggle() {
             return new List<Control> {
                 this.standard_cm,
-                this.nick_patcher_cm,
-                this.exit
+                this.nick_patcher_cm
             };
         }
 
         private void LaunchGame(string playGameExe, Boolean usesStubProcess, Boolean usesCustomLoader) {
-            ShowLoader(this.loader);
+            ShowLoader();
             ProcessStartInfo playPsi = new ProcessStartInfo {
                 FileName = playGameExe,
                 UseShellExecute = false,
@@ -39,7 +39,7 @@ namespace CM0102_Starter_Kit {
                     process.Close();
                 }
             }
-            HideLoader(this.loader);
+            HideLoader();
         }
 
         private void StandardCm_Click(object sender, EventArgs e) {
@@ -54,12 +54,8 @@ namespace CM0102_Starter_Kit {
             LaunchGame(Path.Combine(GameFolder, "cm93.exe"), false, false);
         }
 
-        private void BackButton_Click(object sender, EventArgs e) {
-            ShowNewScreen(mainMenu);
-        }
-
-        private void Exit_Click(object sender, EventArgs e) {
-            mainMenu.Close();
+        private void PlayMenu_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
         }
     }
 }

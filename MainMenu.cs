@@ -7,15 +7,12 @@ using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
     public partial class MainMenu : HidableForm {
-        private readonly NickPatcherMenu nickPatcherMenu;
-        private readonly VersionMenu versionMenu;
-        private readonly PlayMenu playMenu;
-
         public MainMenu() {
-            this.nickPatcherMenu = new NickPatcherMenu(this);
-            this.versionMenu = new VersionMenu(this);
-            this.playMenu = new PlayMenu(this);
+            this.SuspendLayout();
+            InitialiseSharedControls("Setup Game", 369, false);
             InitializeComponent();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
  
         protected override List<Control> GetButtonsToToggle() {
@@ -27,8 +24,7 @@ namespace CM0102_Starter_Kit {
                 this.play_game,
                 this.backup_saves,
                 this.visit_website,
-                this.cm_scout,
-                this.exit
+                this.cm_scout
             };
         }
 
@@ -46,7 +42,7 @@ namespace CM0102_Starter_Kit {
 
         private void NickPatcher_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
-                ShowNewScreen(nickPatcherMenu);
+                ShowNewScreen(Program.nickPatcherMenu);
             } else {
                 DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
             }
@@ -61,12 +57,12 @@ namespace CM0102_Starter_Kit {
         }
 
         private void SwitchUpdate_Click(object sender, EventArgs e) {
-            ShowNewScreen(versionMenu);
+            ShowNewScreen(Program.versionMenu);
         }
 
         private void PlayGame_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
-                ShowNewScreen(playMenu);
+                ShowNewScreen(Program.playMenu);
             } else {
                 DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
             }
@@ -95,10 +91,6 @@ namespace CM0102_Starter_Kit {
             Process.Start(CmScout);
         }
 
-        private void Exit_Click(object sender, EventArgs e) {
-            this.Close();
-        }
-
         private void MainMenu_Load(object sender, EventArgs e) {
             if (!GameFolderExists()) {
                 string gameZipFile = GameFolder + ".zip";
@@ -117,10 +109,8 @@ namespace CM0102_Starter_Kit {
             }
         }
 
-        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e) {
-            nickPatcherMenu.Close();
-            playMenu.Close();
-            versionMenu.Close();
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
         }
     }
 }

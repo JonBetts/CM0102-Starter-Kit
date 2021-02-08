@@ -6,12 +6,14 @@ using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
     public partial class VersionMenu : HidableForm {
-        private readonly MainMenu mainMenu;
         private enum VersionName { Original, Patched, March, November, Luessenhoff, NinetyThree }
 
-        public VersionMenu(MainMenu mainMenu) {
-            this.mainMenu = mainMenu;
+        public VersionMenu() {
+            this.SuspendLayout();
+            InitialiseSharedControls("Switch Data Update", 321, true);
             InitializeComponent();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         protected override List<Control> GetButtonsToToggle() {
@@ -20,8 +22,7 @@ namespace CM0102_Starter_Kit {
                 this.patched_database,
                 this.march_database,
                 this.november_database,
-                this.luessenhoff_database,
-                this.exit
+                this.luessenhoff_database
             };
         }
 
@@ -56,7 +57,6 @@ namespace CM0102_Starter_Kit {
                 Directory.Delete(DataFolder, true);
             }
             Directory.CreateDirectory(DataFolder);
-
             string dataZipFile = DataFolder + ".zip";
             File.WriteAllBytes(dataZipFile, resourceFile);
             new FastZip().ExtractZip(dataZipFile, DataFolder, null);
@@ -124,12 +124,8 @@ namespace CM0102_Starter_Kit {
             SwitchVersion(VersionName.NinetyThree);
         }
 
-        private void BackButton_Click(object sender, EventArgs e) {
-            ShowNewScreen(mainMenu);
-        }
-
-        private void Exit_Click(object sender, EventArgs e) {
-            mainMenu.Close();
+        private void VersionMenu_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
         }
     }
 }

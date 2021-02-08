@@ -5,17 +5,16 @@ using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
     public partial class NickPatcherMenu : HidableForm {
-        private readonly MainMenu mainMenu;
-
-        public NickPatcherMenu(MainMenu mainMenu) {
-            this.mainMenu = mainMenu;
+        public NickPatcherMenu() {
+            InitialiseSharedControls("Change Nick's Patcher Settings", 255, true);
             InitializeComponent();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         protected override List<Control> GetButtonsToToggle() {
             return new List<Control> {
-                this.apply,
-                this.exit
+                this.apply
             };
         }
 
@@ -40,16 +39,8 @@ namespace CM0102_Starter_Kit {
             DisplayMessage("Settings successfully changed!");
         }
 
-        private void BackButton_Click(object sender, EventArgs e) {
-            ShowNewScreen(mainMenu);
-        }
-
-        private void LeftArrow_Click(object sender, EventArgs e) {
-            ShowNewScreen(mainMenu);
-        }
-
-        private void Exit_Click(object sender, EventArgs e) {
-            mainMenu.Close();
+        private void NickPatcherMenu_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
         }
     }
 }
