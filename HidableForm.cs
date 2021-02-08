@@ -6,9 +6,8 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
-
     [TypeDescriptionProvider(typeof(AbstractControlDescriptionProvider<HidableForm, Form>))]
-    public abstract partial class HidableForm : Form {
+    abstract partial class HidableForm : Form {
         protected static readonly string ProgramFilesFolder = IsWindowsVistaOrLower() ? @"C:\Program Files" : @"C:\Program Files (x86)";
         protected static readonly string DefaultGameFolder = Path.Combine(ProgramFilesFolder, "Championship Manager 01-02");
         protected static readonly string DefaultChangesFile = Path.Combine(DefaultGameFolder, "changes.txt");
@@ -21,6 +20,7 @@ namespace CM0102_Starter_Kit {
         protected static readonly string ExistingCommentary = Path.Combine(DataFolder, "events_eng.cfg");
         protected static readonly string OfficialEditor = Path.Combine(Path.Combine(GameFolder, "Editor"), "cm0102ed.exe");
         protected static readonly string BackupSavesFolder = @"C:\CM0102 Backups";
+        protected MainMenu mainMenu;
 
         protected static bool IsWindowsVistaOrLower() {
             OperatingSystem operatingSystem = Environment.OSVersion;
@@ -90,9 +90,7 @@ namespace CM0102_Starter_Kit {
         }
 
         private void BackButton_Click(object sender, EventArgs e) {
-            if (!this.Equals(Program.mainMenu)) {
-                ShowNewScreen(Program.mainMenu);
-            }
+            ShowNewScreen(mainMenu);
         }
 
         private void Exit_Click(object sender, EventArgs e) {

@@ -5,8 +5,9 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
-    public partial class PlayMenu : HidableForm {
-        public PlayMenu() {
+    partial class PlayMenu : HidableForm {
+        public PlayMenu(MainMenu mainMenu) {
+            this.mainMenu = mainMenu;
             this.SuspendLayout();
             InitialiseSharedControls("Choose Which Update To Play", 255, true);
             InitializeComponent();

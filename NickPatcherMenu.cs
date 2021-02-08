@@ -4,8 +4,10 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
-    public partial class NickPatcherMenu : HidableForm {
-        public NickPatcherMenu() {
+    partial class NickPatcherMenu : HidableForm {
+        public NickPatcherMenu(MainMenu mainMenu) {
+            this.mainMenu = mainMenu;
+            this.SuspendLayout();
             InitialiseSharedControls("Change Nick's Patcher Settings", 255, true);
             InitializeComponent();
             this.ResumeLayout(false);

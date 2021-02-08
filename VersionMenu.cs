@@ -5,10 +5,11 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
-    public partial class VersionMenu : HidableForm {
+    partial class VersionMenu : HidableForm {
         private enum VersionName { Original, Patched, March, November, Luessenhoff, NinetyThree }
 
-        public VersionMenu() {
+        public VersionMenu(MainMenu mainMenu) {
+            this.mainMenu = mainMenu;
             this.SuspendLayout();
             InitialiseSharedControls("Switch Data Update", 321, true);
             InitializeComponent();

@@ -6,13 +6,20 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
-    public partial class MainMenu : HidableForm {
+    partial class MainMenu : HidableForm {
+        private readonly NickPatcherMenu nickPatcherMenu;
+        private readonly VersionMenu versionMenu;
+        private readonly PlayMenu playMenu;
+
         public MainMenu() {
             this.SuspendLayout();
             InitialiseSharedControls("Setup Game", 369, false);
             InitializeComponent();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.nickPatcherMenu = new NickPatcherMenu(this);
+            this.versionMenu = new VersionMenu(this);
+            this.playMenu = new PlayMenu(this);
         }
  
         protected override List<Control> GetButtonsToToggle() {
@@ -42,7 +49,7 @@ namespace CM0102_Starter_Kit {
 
         private void NickPatcher_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
-                ShowNewScreen(Program.nickPatcherMenu);
+                ShowNewScreen(nickPatcherMenu);
             } else {
                 DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
             }
@@ -57,12 +64,12 @@ namespace CM0102_Starter_Kit {
         }
 
         private void SwitchUpdate_Click(object sender, EventArgs e) {
-            ShowNewScreen(Program.versionMenu);
+            ShowNewScreen(versionMenu);
         }
 
         private void PlayGame_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
-                ShowNewScreen(Program.playMenu);
+                ShowNewScreen(playMenu);
             } else {
                 DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
             }
