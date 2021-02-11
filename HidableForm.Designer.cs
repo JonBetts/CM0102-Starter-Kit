@@ -47,7 +47,7 @@
             this.version.Margin = new System.Windows.Forms.Padding(0);
             this.version.Name = "version";
             this.version.Size = new System.Drawing.Size(79, 50);
-            this.version.Text = "Version 1.1.0";
+            this.version.Text = "Version\r\n1.1.0";
             this.version.UseVisualStyleBackColor = false;
             // 
             // exit
