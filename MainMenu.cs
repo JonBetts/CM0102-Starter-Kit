@@ -31,7 +31,8 @@ namespace CM0102_Starter_Kit {
                 this.play_game,
                 this.backup_saves,
                 this.visit_website,
-                this.cm_scout
+                this.cm_scout,
+                this.player_finder
             };
         }
 
@@ -96,6 +97,10 @@ namespace CM0102_Starter_Kit {
 
         private void CmScout_Click(object sender, EventArgs e) {
             Process.Start(CmScout);
+        }
+
+        private void  PlayerFinder_Click(object sender, EventArgs e) {
+            Process.Start(PlayerFinder);
         }
 
         private void MainMenu_Load(object sender, EventArgs e) {

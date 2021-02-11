@@ -17,6 +17,7 @@ namespace CM0102_Starter_Kit {
         protected static readonly string CmLoaderConfig = "CM0102LoaderDefault.ini";
         protected static readonly string CmLoaderCustomConfig = "CM0102LoaderCustom.ini";
         protected static readonly string CmScout = Path.Combine(GameFolder, "cmscout.exe");
+        protected static readonly string PlayerFinder = Path.Combine(GameFolder, "gpf2.exe");
         protected static readonly string ExistingCommentary = Path.Combine(DataFolder, "events_eng.cfg");
         protected static readonly string OfficialEditor = Path.Combine(Path.Combine(GameFolder, "Editor"), "cm0102ed.exe");
         protected static readonly string BackupSavesFolder = @"C:\CM0102 Backups";
