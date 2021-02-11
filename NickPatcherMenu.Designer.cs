@@ -242,6 +242,7 @@ namespace CM0102_Starter_Kit {
             // NickPatcherMenu
             // 
             this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.ruud;
+            this.ClientSize = new System.Drawing.Size(794, 575);
             this.Controls.Add(this.work_permits);
             this.Controls.Add(this.non_public_bids);
             this.Controls.Add(this.seven_substitutes);

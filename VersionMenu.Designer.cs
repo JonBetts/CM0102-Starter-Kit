@@ -112,6 +112,7 @@ namespace CM0102_Starter_Kit {
             // VersionMenu
             // 
             this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.owen;
+            this.ClientSize = new System.Drawing.Size(794, 575);
             this.Controls.Add(this.original_database);
             this.Controls.Add(this.patched_database);
             this.Controls.Add(this.march_database);

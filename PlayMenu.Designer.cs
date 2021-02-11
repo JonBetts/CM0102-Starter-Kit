@@ -73,6 +73,7 @@ namespace CM0102_Starter_Kit {
             // PlayMenu
             // 
             this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.boca;
+            this.ClientSize = new System.Drawing.Size(794, 575);
             this.Controls.Add(this.standard_cm);
             this.Controls.Add(this.nick_patcher_cm);
             this.Controls.Add(this.cm_93);
