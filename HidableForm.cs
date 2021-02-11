@@ -83,10 +83,11 @@ namespace CM0102_Starter_Kit {
         }
 
         protected void ShowNewScreen(Form newForm) {
-            newForm.Left = this.Left;
-            newForm.Top = this.Top;
-            newForm.Show();
             this.Hide();
+            newForm.StartPosition = FormStartPosition.Manual;
+            newForm.Location = this.Location;
+            newForm.Size = this.Size;
+            newForm.Show();
         }
 
         private void BackButton_Click(object sender, EventArgs e) {
