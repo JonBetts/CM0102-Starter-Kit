@@ -45,7 +45,6 @@ namespace CM0102_Starter_Kit {
         private void ToggleButtons(bool toggle) {
             exit.Enabled = toggle;
             back_button.Enabled = toggle;
-            next_button.Enabled = toggle;
 
             foreach (Control control in GetButtonsToToggle()) {
                 control.Enabled = toggle;
