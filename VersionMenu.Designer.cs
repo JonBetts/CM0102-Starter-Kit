@@ -28,7 +28,7 @@ namespace CM0102_Starter_Kit {
             this.original_database.Location = new System.Drawing.Point(120, 144);
             this.original_database.Margin = new System.Windows.Forms.Padding(0);
             this.original_database.Name = "original_database";
-            this.original_database.Size = new System.Drawing.Size(325, 65);
+            this.original_database.Size = new System.Drawing.Size(327, 65);
             this.original_database.Text = "Original (3.9.60)";
             this.original_database.UseVisualStyleBackColor = false;
             this.original_database.Click += new System.EventHandler(this.OriginalDatabase_Click);
@@ -44,10 +44,10 @@ namespace CM0102_Starter_Kit {
             this.patched_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.patched_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.patched_database.ForeColor = System.Drawing.Color.White;
-            this.patched_database.Location = new System.Drawing.Point(447, 144);
+            this.patched_database.Location = new System.Drawing.Point(449, 144);
             this.patched_database.Margin = new System.Windows.Forms.Padding(0);
             this.patched_database.Name = "patched_database";
-            this.patched_database.Size = new System.Drawing.Size(325, 65);
+            this.patched_database.Size = new System.Drawing.Size(327, 65);
             this.patched_database.Text = "Patched (3.9.68)";
             this.patched_database.UseVisualStyleBackColor = false;
             this.patched_database.Click += new System.EventHandler(this.PatchedDatabase_Click);
@@ -66,7 +66,7 @@ namespace CM0102_Starter_Kit {
             this.march_database.Location = new System.Drawing.Point(120, 211);
             this.march_database.Margin = new System.Windows.Forms.Padding(0);
             this.march_database.Name = "march_database";
-            this.march_database.Size = new System.Drawing.Size(325, 65);
+            this.march_database.Size = new System.Drawing.Size(327, 65);
             this.march_database.Text = "March 2020";
             this.march_database.UseVisualStyleBackColor = false;
             this.march_database.Click += new System.EventHandler(this.MarchDatabase_Click);
@@ -82,10 +82,10 @@ namespace CM0102_Starter_Kit {
             this.november_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.november_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.november_database.ForeColor = System.Drawing.Color.White;
-            this.november_database.Location = new System.Drawing.Point(447, 211);
+            this.november_database.Location = new System.Drawing.Point(449, 211);
             this.november_database.Margin = new System.Windows.Forms.Padding(0);
             this.november_database.Name = "november_database";
-            this.november_database.Size = new System.Drawing.Size(325, 65);
+            this.november_database.Size = new System.Drawing.Size(327, 65);
             this.november_database.Text = "November 2020";
             this.november_database.UseVisualStyleBackColor = false;
             this.november_database.Click += new System.EventHandler(this.NovemberDatabase_Click);
@@ -104,7 +104,7 @@ namespace CM0102_Starter_Kit {
             this.luessenhoff_database.Location = new System.Drawing.Point(284, 278);
             this.luessenhoff_database.Margin = new System.Windows.Forms.Padding(0);
             this.luessenhoff_database.Name = "luessenhoff_database";
-            this.luessenhoff_database.Size = new System.Drawing.Size(325, 65);
+            this.luessenhoff_database.Size = new System.Drawing.Size(327, 65);
             this.luessenhoff_database.Text = "Luessenhoff";
             this.luessenhoff_database.UseVisualStyleBackColor = false;
             this.luessenhoff_database.Click += new System.EventHandler(this.LuessenhoffDatabase_Click);
@@ -112,7 +112,7 @@ namespace CM0102_Starter_Kit {
             // VersionMenu
             // 
             this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.owen;
-            this.ClientSize = new System.Drawing.Size(794, 575);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.original_database);
             this.Controls.Add(this.patched_database);
             this.Controls.Add(this.march_database);

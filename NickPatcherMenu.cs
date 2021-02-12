@@ -8,7 +8,7 @@ namespace CM0102_Starter_Kit {
         public NickPatcherMenu(MainMenu mainMenu) {
             this.mainMenu = mainMenu;
             this.SuspendLayout();
-            InitialiseSharedControls("Change Nick's Patcher Settings", 255, true);
+            InitialiseSharedControls("Change Nick's Patcher Settings", 259, true);
             InitializeComponent();
             this.ResumeLayout(false);
             this.PerformLayout();

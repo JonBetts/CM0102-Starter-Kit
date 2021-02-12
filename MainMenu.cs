@@ -13,7 +13,7 @@ namespace CM0102_Starter_Kit {
 
         public MainMenu() {
             this.SuspendLayout();
-            InitialiseSharedControls("Setup Game", 369, false);
+            InitialiseSharedControls("Setup Game", 373, false);
             InitializeComponent();
             this.ResumeLayout(false);
             this.PerformLayout();

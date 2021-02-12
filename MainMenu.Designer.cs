@@ -14,9 +14,9 @@ namespace CM0102_Starter_Kit {
             this.editor = new System.Windows.Forms.Button();
             this.play_game = new System.Windows.Forms.Button();
             this.backup_saves = new System.Windows.Forms.Button();
-            this.visit_website = new System.Windows.Forms.Button();
             this.cm_scout = new System.Windows.Forms.Button();
             this.player_finder = new System.Windows.Forms.Button();
+            this.visit_website = new System.Windows.Forms.Button();
             // 
             // switch_update
             // 
@@ -32,7 +32,7 @@ namespace CM0102_Starter_Kit {
             this.switch_update.Location = new System.Drawing.Point(120, 144);
             this.switch_update.Margin = new System.Windows.Forms.Padding(0);
             this.switch_update.Name = "switch_update";
-            this.switch_update.Size = new System.Drawing.Size(325, 65);
+            this.switch_update.Size = new System.Drawing.Size(327, 65);
             this.switch_update.Text = "Switch Data Update";
             this.switch_update.UseVisualStyleBackColor = false;
             this.switch_update.Click += new System.EventHandler(this.SwitchUpdate_Click);
@@ -48,10 +48,10 @@ namespace CM0102_Starter_Kit {
             this.install_var.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.install_var.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.install_var.ForeColor = System.Drawing.Color.White;
-            this.install_var.Location = new System.Drawing.Point(447, 144);
+            this.install_var.Location = new System.Drawing.Point(449, 144);
             this.install_var.Margin = new System.Windows.Forms.Padding(0);
             this.install_var.Name = "install_var";
-            this.install_var.Size = new System.Drawing.Size(325, 65);
+            this.install_var.Size = new System.Drawing.Size(327, 65);
             this.install_var.Text = "Install VAR Commentary File";
             this.install_var.UseVisualStyleBackColor = false;
             this.install_var.Click += new System.EventHandler(this.InstallVar_Click);
@@ -70,7 +70,7 @@ namespace CM0102_Starter_Kit {
             this.nick_patcher.Location = new System.Drawing.Point(120, 211);
             this.nick_patcher.Margin = new System.Windows.Forms.Padding(0);
             this.nick_patcher.Name = "nick_patcher";
-            this.nick_patcher.Size = new System.Drawing.Size(325, 65);
+            this.nick_patcher.Size = new System.Drawing.Size(327, 65);
             this.nick_patcher.Text = "Nick\'s Patcher";
             this.nick_patcher.UseVisualStyleBackColor = false;
             this.nick_patcher.Click += new System.EventHandler(this.NickPatcher_Click);
@@ -86,10 +86,10 @@ namespace CM0102_Starter_Kit {
             this.editor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editor.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.editor.ForeColor = System.Drawing.Color.White;
-            this.editor.Location = new System.Drawing.Point(447, 211);
+            this.editor.Location = new System.Drawing.Point(449, 211);
             this.editor.Margin = new System.Windows.Forms.Padding(0);
             this.editor.Name = "editor";
-            this.editor.Size = new System.Drawing.Size(325, 65);
+            this.editor.Size = new System.Drawing.Size(327, 65);
             this.editor.Text = "Official Editor";
             this.editor.UseVisualStyleBackColor = false;
             this.editor.Click += new System.EventHandler(this.Editor_Click);
@@ -108,7 +108,7 @@ namespace CM0102_Starter_Kit {
             this.play_game.Location = new System.Drawing.Point(120, 278);
             this.play_game.Margin = new System.Windows.Forms.Padding(0);
             this.play_game.Name = "play_game";
-            this.play_game.Size = new System.Drawing.Size(325, 65);
+            this.play_game.Size = new System.Drawing.Size(327, 65);
             this.play_game.Text = "Play Game";
             this.play_game.UseVisualStyleBackColor = false;
             this.play_game.Click += new System.EventHandler(this.PlayGame_Click);
@@ -124,32 +124,13 @@ namespace CM0102_Starter_Kit {
             this.backup_saves.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backup_saves.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.backup_saves.ForeColor = System.Drawing.Color.White;
-            this.backup_saves.Location = new System.Drawing.Point(447, 278);
+            this.backup_saves.Location = new System.Drawing.Point(449, 278);
             this.backup_saves.Margin = new System.Windows.Forms.Padding(0);
             this.backup_saves.Name = "backup_saves";
-            this.backup_saves.Size = new System.Drawing.Size(325, 65);
+            this.backup_saves.Size = new System.Drawing.Size(327, 65);
             this.backup_saves.Text = "Backup Save Games";
             this.backup_saves.UseVisualStyleBackColor = false;
             this.backup_saves.Click += new System.EventHandler(this.BackupSaves_Click);
-            // 
-            // visit_website
-            // 
-            this.visit_website.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visit_website.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.visit_website.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.visit_website.FlatAppearance.BorderSize = 2;
-            this.visit_website.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visit_website.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.visit_website.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.visit_website.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
-            this.visit_website.ForeColor = System.Drawing.Color.White;
-            this.visit_website.Location = new System.Drawing.Point(284, 412);
-            this.visit_website.Margin = new System.Windows.Forms.Padding(0);
-            this.visit_website.Name = "visit_website";
-            this.visit_website.Size = new System.Drawing.Size(325, 65);
-            this.visit_website.Text = "Website";
-            this.visit_website.UseVisualStyleBackColor = false;
-            this.visit_website.Click += new System.EventHandler(this.VisitWebsite_Click);
             // 
             // cm_scout
             // 
@@ -165,7 +146,7 @@ namespace CM0102_Starter_Kit {
             this.cm_scout.Location = new System.Drawing.Point(120, 345);
             this.cm_scout.Margin = new System.Windows.Forms.Padding(0);
             this.cm_scout.Name = "cm_scout";
-            this.cm_scout.Size = new System.Drawing.Size(325, 65);
+            this.cm_scout.Size = new System.Drawing.Size(327, 65);
             this.cm_scout.Text = "CM Scout";
             this.cm_scout.UseVisualStyleBackColor = false;
             this.cm_scout.Click += new System.EventHandler(this.CmScout_Click);
@@ -181,27 +162,46 @@ namespace CM0102_Starter_Kit {
             this.player_finder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.player_finder.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.player_finder.ForeColor = System.Drawing.Color.White;
-            this.player_finder.Location = new System.Drawing.Point(447, 345);
+            this.player_finder.Location = new System.Drawing.Point(449, 345);
             this.player_finder.Margin = new System.Windows.Forms.Padding(0);
             this.player_finder.Name = "player_finder";
-            this.player_finder.Size = new System.Drawing.Size(325, 65);
+            this.player_finder.Size = new System.Drawing.Size(327, 65);
             this.player_finder.Text = "Generated Player Finder";
             this.player_finder.UseVisualStyleBackColor = false;
             this.player_finder.Click += new System.EventHandler(this.PlayerFinder_Click);
             // 
+            // visit_website
+            // 
+            this.visit_website.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.visit_website.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.visit_website.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.visit_website.FlatAppearance.BorderSize = 2;
+            this.visit_website.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.visit_website.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.visit_website.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.visit_website.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.visit_website.ForeColor = System.Drawing.Color.White;
+            this.visit_website.Location = new System.Drawing.Point(284, 412);
+            this.visit_website.Margin = new System.Windows.Forms.Padding(0);
+            this.visit_website.Name = "visit_website";
+            this.visit_website.Size = new System.Drawing.Size(327, 65);
+            this.visit_website.Text = "Website";
+            this.visit_website.UseVisualStyleBackColor = false;
+            this.visit_website.Click += new System.EventHandler(this.VisitWebsite_Click);
+            // 
             // MainMenu
             // 
             this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.batigol;
-            this.ClientSize = new System.Drawing.Size(794, 575);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.switch_update);
             this.Controls.Add(this.install_var);
             this.Controls.Add(this.nick_patcher);
             this.Controls.Add(this.editor);
             this.Controls.Add(this.play_game);
             this.Controls.Add(this.backup_saves);
-            this.Controls.Add(this.visit_website);
             this.Controls.Add(this.cm_scout);
             this.Controls.Add(this.player_finder);
+            this.Controls.Add(this.visit_website);
             this.Name = "MainMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
             this.Load += new System.EventHandler(this.MainMenu_Load);
@@ -214,9 +214,9 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.Button editor;
         private System.Windows.Forms.Button play_game;
         private System.Windows.Forms.Button backup_saves;
-        private System.Windows.Forms.Button visit_website;
         private System.Windows.Forms.Button cm_scout;
         private System.Windows.Forms.Button player_finder;
+        private System.Windows.Forms.Button visit_website;
     }
 }
 

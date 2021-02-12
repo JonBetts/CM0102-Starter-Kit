@@ -26,7 +26,7 @@ namespace CM0102_Starter_Kit {
             this.standard_cm.Location = new System.Drawing.Point(120, 144);
             this.standard_cm.Margin = new System.Windows.Forms.Padding(0);
             this.standard_cm.Name = "standard_cm";
-            this.standard_cm.Size = new System.Drawing.Size(325, 65);
+            this.standard_cm.Size = new System.Drawing.Size(327, 65);
             this.standard_cm.Text = "CM 01/02 (Standard)";
             this.standard_cm.UseVisualStyleBackColor = false;
             this.standard_cm.Click += new System.EventHandler(this.StandardCm_Click);
@@ -42,10 +42,10 @@ namespace CM0102_Starter_Kit {
             this.nick_patcher_cm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nick_patcher_cm.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.nick_patcher_cm.ForeColor = System.Drawing.Color.White;
-            this.nick_patcher_cm.Location = new System.Drawing.Point(447, 144);
+            this.nick_patcher_cm.Location = new System.Drawing.Point(449, 144);
             this.nick_patcher_cm.Margin = new System.Windows.Forms.Padding(0);
             this.nick_patcher_cm.Name = "nick_patcher_cm";
-            this.nick_patcher_cm.Size = new System.Drawing.Size(325, 65);
+            this.nick_patcher_cm.Size = new System.Drawing.Size(327, 65);
             this.nick_patcher_cm.Text = "CM 01/02 (With Nick\'s Patcher)";
             this.nick_patcher_cm.UseVisualStyleBackColor = false;
             this.nick_patcher_cm.Click += new System.EventHandler(this.NickPatcherCm_Click);
@@ -61,7 +61,7 @@ namespace CM0102_Starter_Kit {
             this.cm_93.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cm_93.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.cm_93.ForeColor = System.Drawing.Color.White;
-            this.cm_93.Location = new System.Drawing.Point(282, 211);
+            this.cm_93.Location = new System.Drawing.Point(284, 211);
             this.cm_93.Margin = new System.Windows.Forms.Padding(0);
             this.cm_93.Name = "cm_93";
             this.cm_93.Size = new System.Drawing.Size(325, 65);
@@ -73,7 +73,7 @@ namespace CM0102_Starter_Kit {
             // PlayMenu
             // 
             this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.boca;
-            this.ClientSize = new System.Drawing.Size(794, 575);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.standard_cm);
             this.Controls.Add(this.nick_patcher_cm);
             this.Controls.Add(this.cm_93);

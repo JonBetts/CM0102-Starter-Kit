@@ -9,7 +9,7 @@ namespace CM0102_Starter_Kit {
         public PlayMenu(MainMenu mainMenu) {
             this.mainMenu = mainMenu;
             this.SuspendLayout();
-            InitialiseSharedControls("Choose Which Update To Play", 255, true);
+            InitialiseSharedControls("Choose Which Update To Play", 259, true);
             InitializeComponent();
             this.ResumeLayout(false);
             this.PerformLayout();
