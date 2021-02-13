@@ -33,6 +33,10 @@
     <OutputType>WinExe</OutputType>
     <StartupObject />
     <BootstrapperEnabled>false</BootstrapperEnabled>
+    <RootNamespace>CM0102_Starter_Kit</RootNamespace>
+    <AssemblyName>CM0102StarterKit</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
