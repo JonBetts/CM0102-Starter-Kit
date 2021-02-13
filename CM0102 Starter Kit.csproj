@@ -38,6 +38,22 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -156,5 +172,7 @@
   </Target>
   <Target Name="ILMerge">
     <Exec Command="$(ILMergeConsolePath) bin\Release\CM0102StarterKit.exe /targetplatform:v4 /ndebug /out:CM0102StarterKit.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
+    <Exec Command="$(ILMergeConsolePath) bin\x86\Release\CM0102StarterKit.exe /targetplatform:v4 /ndebug /out:CM0102StarterKitx86.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
+    <Exec Command="$(ILMergeConsolePath) bin\x64\Release\CM0102StarterKit.exe /targetplatform:v4 /ndebug /out:CM0102StarterKitx64.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
   </Target>
 </Project>
