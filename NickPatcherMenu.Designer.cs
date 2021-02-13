@@ -241,7 +241,7 @@ namespace CM0102_Starter_Kit {
             // 
             // NickPatcherMenu
             // 
-            this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.ruud;
+            this.BackgroundImage = global::Properties.Resources.ruud;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.starting_year_label);
             this.Controls.Add(this.starting_year);

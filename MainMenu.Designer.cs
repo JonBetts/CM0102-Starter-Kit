@@ -191,7 +191,7 @@ namespace CM0102_Starter_Kit {
             // 
             // MainMenu
             // 
-            this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.batigol;
+            this.BackgroundImage = global::Properties.Resources.batigol;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.switch_update);
             this.Controls.Add(this.install_var);

@@ -33,24 +33,24 @@ namespace CM0102_Starter_Kit {
 
             switch (version) {
                 case VersionName.Patched:
-                    resourceFile = Properties.Resources.patched_data;
+                    resourceFile = global::Properties.Resources.patched_data;
                     deleteDataFolder = true;
                     break;
                 case VersionName.March:
-                    resourceFile = Properties.Resources.march_data;
+                    resourceFile = global::Properties.Resources.march_data;
                     break;
                 case VersionName.November:
-                    resourceFile = Properties.Resources.november_data;
+                    resourceFile = global::Properties.Resources.november_data;
                     break;
                 case VersionName.Luessenhoff:
-                    resourceFile = Properties.Resources.luessenhoff_data;
+                    resourceFile = global::Properties.Resources.luessenhoff_data;
                     break;
                 case VersionName.NinetyThree:
-                    resourceFile = Properties.Resources.luessenhoff_data; // will be ninety_three_data
+                    resourceFile = global::Properties.Resources.luessenhoff_data; // will be ninety_three_data
                     break;
                 default:
                 case VersionName.Original:
-                    resourceFile = Properties.Resources.original_data;
+                    resourceFile = global::Properties.Resources.original_data;
                     deleteDataFolder = true;
                     break;
             }
