@@ -2,15 +2,15 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/02ba97d5f1664fe4af4accab27cd770f)](https://www.codacy.com/gh/JonBetts/CM0102-Starter-Kit/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JonBetts/CM0102-Starter-Kit&amp;utm_campaign=Badge_Grade)
 
-Welcome to the **CM 01/02 Starter Kit**!
+Welcome to the CM 01/02 Starter Kit!
 
 The purpose of this little tool is to get you up and running as quickly as possible with CM 01/02. No need for worrying about downloading files, installing anything, applying patches or changing compatibility settings - this tool does everything required to get you setup on an original or updated version of CM!
-Please note that this tool works with **Windows XP, Vista, 7, 8 and 10**, and now on all **Mac OSX** versions prior to Catalina (please check the separate download link for the Mac version!). This is because Catalina introduced restrictions regarding running **32 bit** applications. I will be attempting to release a version that runs on Mac Catalina and Big Sur in the near future. Whilst I have done my best to test on each operating system, there will undoubtedly be scenarios and configurations I haven't managed to cater for. Also if you do use an older operating system
+Please note that this tool only works with **Windows XP, Vista, 7, 8 and 10**. Whilst I have done my best to test on each operating system, there will undoubtedly be scenarios and configurations I haven't managed to cater for. Also if you do use an older operating system
 (i.e. XP or Vista) performance may be choppy as it's hard to cater for a 20 year old operating system! I've attempted to make the tool look and feel like the game interface so it's a bit more familiar.
 
-The Mac version should run without the need to install anything, but on Windows you will need to make sure you have the **Microsoft .NET 3.5** runtime on your computer before running the tool. This should come pre-installed on Windows 7, 8 and 10, but XP and Vista may require you to manually install it. I've included the installation file with this tool (dotNetFx35setup.exe). Just run that to install it, and you should be good to go (you will need an Internet connection for this though). If you don't install .NET 3.5, it will come up with an error message saying that the application "**failed to initialise properly**".
+You will need to make sure you have the **Microsoft .NET 3.5** runtime on your computer before running the tool. This should come pre-installed on Windows 7, 8 and 10, but XP and Vista may require you to manually install it. I've included the installation file with this tool (dotNetFx35setup.exe). Just run that to install it, and you should be good to go (you will need an Internet connection for this though). If you don't install .NET 3.5, it will come up with an error message saying that the application "**failed to initialise properly**".
 
-To get started, all you have to do is extract the zip file anywhere you like. Click in to the folder that just got created and then double click on **CM0102StarterKit.exe** to start the tool up (or simply **CM0102StarterKit** on the Mac version). Give it anywhere up to 30 seconds the first time you run it, as it needs to unpack the **Game** folder which contains everything needed for the tool to work. If you have an existing installation of CM 01/02 installed in the default location (**C:\Program Files (x86)\Championship Manager 01-02**) then it will automatically copy all of your existing save games across for use with the tool. Please be aware that to play them through this tool, your existing installation needs to have been running with the official 3.9.68 patch installed.
+To get started, all you have to do is extract the zip file anywhere you like. Click in to the folder that just got created and then double click on **CM0102StarterKit.exe** to start the tool up. Give it anywhere up to 30 seconds the first time you run it, as it needs to unpack the **Game** folder which contains everything needed for the tool to work. If you have an existing installation of CM 01/02 installed in the default location (**C:\Program Files (x86)\Championship Manager 01-02**) then it will automatically copy all of your existing save games across for use with the tool. Please be aware that to play them through this tool, your existing installation needs to have been running with the official 3.9.68 patch installed.
 
 ## The basics
 
@@ -18,7 +18,7 @@ It's all very straightforward, but I will give a quick explanation about everyth
 
 Here's a few screenshots and then an explanation of everything the tool does:
 
-<p align="left"><img src="https://i.ibb.co/DGMVgMX/MainMenu.png"/></p>
+<p align="left"><img src="https://i.ibb.co/BwSr9nV/Main-Menu.png"/></p>
 
 <p align="left"><img src="https://i.ibb.co/28Zw20G/Nick-Patcher-Menu.png"/></p>
 
@@ -41,20 +41,9 @@ Big thanks for Nick for his permission to use the Patcher as part of this. It's 
 
 -   **Back Up Save Games** - This backs up all your save games to the following folder: 'C:\CM0102'.
 
--   **CM Scout** - Launches CM Scout. It's a nice little tool that means you don't have to rely on your rubbish in-game scouts to find players. Most people think it ruins the game a bit though, so use with caution!
-
--   **Generated Player Finder** - Launches Generated Player Finder 2. It's a tool that allows you to find the regens of specific players, as long as you run it against your save from the beginning. Check the forum for more info on this nice bit of kit.
-
 -   **Website** - Launches the website in your default browser in case you need to go there for advice, downloads or some CM-related banter.
 
-## Mac specific notes
-
-If you need to do anything in the CM folder like grabbing your save games or installing tactics or background pictures, etc, then you need to do the following:
--   Right click on the **CM0102StarterKit** file
--   Click on **Show Package Contents**
--   Navigate to **Contents** -> **Resources** -> **wineprefix** -> **drive_c** -> **winebottler** -> **Game**
--   In this folder you will find all your standard files and folders relating to CM0102
-
+-   **CM Scout** - Launches CM Scout. It's a nice little tool that means you don't have to rely on your rubbish in-game scouts to find players. Most people think it ruins the game a bit though, so use with caution!
 
 ## Important note
 
@@ -71,7 +60,7 @@ As this is only the second iteration of the Starter Kit, there are definitely wa
 -   Ensure the last saved settings for Nick's Patcher are persisted when you next access the page/tool.
 -   Allow modified databases to be kept and named, for switching back to at a later date.
 -   Change the popup boxes and loader image to fit with the rest of the tool and the game.
--   Somehow get it working on Mac OSX **Big Sur** and **Catalina**.
+-   Somehow get it working on Mac OSX.
 -   ... and many more...
 
 ## Credit
