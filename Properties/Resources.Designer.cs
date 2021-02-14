@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Properties {
+namespace CM0102_Starter_Kit.Properties {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CM0102_Starter_Kit.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap batigol {
+        public static System.Drawing.Bitmap batigol {
             get {
                 object obj = ResourceManager.GetObject("batigol", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap boca {
+        public static System.Drawing.Bitmap boca {
             get {
                 object obj = ResourceManager.GetObject("boca", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] events_eng {
+        public static byte[] events_eng {
             get {
                 object obj = ResourceManager.GetObject("events_eng", resourceCulture);
                 return ((byte[])(obj));
@@ -93,7 +93,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Game {
+        public static byte[] Game {
             get {
                 object obj = ResourceManager.GetObject("Game", resourceCulture);
                 return ((byte[])(obj));
@@ -103,7 +103,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon logo {
+        public static System.Drawing.Icon logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -113,7 +113,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] luessenhoff_data {
+        public static byte[] luessenhoff_data {
             get {
                 object obj = ResourceManager.GetObject("luessenhoff_data", resourceCulture);
                 return ((byte[])(obj));
@@ -123,7 +123,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] march_data {
+        public static byte[] march_data {
             get {
                 object obj = ResourceManager.GetObject("march_data", resourceCulture);
                 return ((byte[])(obj));
@@ -133,7 +133,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] november_data {
+        public static byte[] november_data {
             get {
                 object obj = ResourceManager.GetObject("november_data", resourceCulture);
                 return ((byte[])(obj));
@@ -143,7 +143,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] original_data {
+        public static byte[] original_data {
             get {
                 object obj = ResourceManager.GetObject("original_data", resourceCulture);
                 return ((byte[])(obj));
@@ -153,7 +153,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap owen {
+        public static System.Drawing.Bitmap owen {
             get {
                 object obj = ResourceManager.GetObject("owen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +163,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] patched_data {
+        public static byte[] patched_data {
             get {
                 object obj = ResourceManager.GetObject("patched_data", resourceCulture);
                 return ((byte[])(obj));
@@ -173,7 +173,7 @@ namespace Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ruud {
+        public static System.Drawing.Bitmap ruud {
             get {
                 object obj = ResourceManager.GetObject("ruud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

@@ -42,7 +42,7 @@ namespace CM0102_Starter_Kit {
                 string backupFile = ExistingCommentary + ".bk";
                 File.Delete(backupFile);
                 File.Move(ExistingCommentary, backupFile);
-                File.WriteAllBytes(ExistingCommentary, global::Properties.Resources.events_eng);
+                File.WriteAllBytes(ExistingCommentary, Properties.Resources.events_eng);
                 result = "VAR Commentary File successfully installed! Please note this only applies when playing the game in English!";
             }
             DisplayMessage(result);
@@ -106,7 +106,7 @@ namespace CM0102_Starter_Kit {
         private void MainMenu_Load(object sender, EventArgs e) {
             if (!GameFolderExists()) {
                 string gameZipFile = GameFolder + ".zip";
-                File.WriteAllBytes(gameZipFile, global::Properties.Resources.Game);
+                File.WriteAllBytes(gameZipFile, Properties.Resources.Game);
                 new FastZip().ExtractZip(gameZipFile, GameFolder, null);
                 File.Delete(gameZipFile);
 

@@ -191,7 +191,7 @@
             this.Controls.Add(this.next_button);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = global::Properties.Resources.logo;
+            this.Icon = Properties.Resources.logo;
             this.MaximizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CM 01/02 Starter Kit";
