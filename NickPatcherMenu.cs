@@ -29,9 +29,13 @@ namespace CM0102_Starter_Kit {
                 writer.Write("DisableUnprotectedContracts = " + this.unprotected_contracts.Checked.ToString().ToLower() + Environment.NewLine);
                 writer.Write("HideNonPublicBids = " + this.non_public_bids.Checked.ToString().ToLower() + Environment.NewLine);
                 writer.Write("IncreaseToSevenSubs = " + this.seven_substitutes.Checked.ToString().ToLower() + Environment.NewLine);
+                writer.Write("RegenFixes = " + this.regen_fixes.Checked.ToString().ToLower() + Environment.NewLine);
+                writer.Write("ForceLoadAllPlayers = " + this.force_all_players.Checked.ToString().ToLower() + Environment.NewLine);
+                writer.Write("AddTapaniRegenCode = " + this.tapani_regen.Checked.ToString().ToLower() + Environment.NewLine);
+                writer.Write("UnCap20s = " + this.uncap.Checked.ToString().ToLower() + Environment.NewLine);
                 writer.Write("RemoveForeignPlayerLimit = " + this.foreign_player_limit.Checked.ToString().ToLower() + Environment.NewLine);
                 writer.Write("NoWorkPermits = " + this.work_permits.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("ChangeTo1280x800 = false" + Environment.NewLine);
+                writer.Write("ChangeTo1280x800 = " + this.resolution.Checked.ToString().ToLower() + Environment.NewLine);
                 writer.Write("AutoLoadPatchFiles = false" + Environment.NewLine);
                 writer.Write("PatchFileDirectory = ." + Environment.NewLine);
                 writer.Write("DataDirectory = data" + Environment.NewLine);
