@@ -56,9 +56,19 @@ namespace CM0102_Starter_Kit {
             }
         }
 
+        private void RunExternalProcess(string workingDirectory, string executableFile) {
+            ProcessStartInfo playPsi = new ProcessStartInfo {
+                WorkingDirectory = workingDirectory,
+                FileName = executableFile,
+                UseShellExecute = false
+            };
+            Process playProcess = Process.Start(playPsi);
+            playProcess.Close();
+        }
+
         private void Editor_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
-                Process.Start(OfficialEditor);
+                RunExternalProcess(DataFolder, OfficialEditor);
             } else {
                 DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
             }
@@ -96,11 +106,11 @@ namespace CM0102_Starter_Kit {
         }
 
         private void CmScout_Click(object sender, EventArgs e) {
-            Process.Start(CmScout);
+            RunExternalProcess(GameFolder, CmScout);
         }
 
-        private void  PlayerFinder_Click(object sender, EventArgs e) {
-            Process.Start(PlayerFinder);
+        private void PlayerFinder_Click(object sender, EventArgs e) {
+            RunExternalProcess(GameFolder, PlayerFinder);
         }
 
         private void MainMenu_Load(object sender, EventArgs e) {
