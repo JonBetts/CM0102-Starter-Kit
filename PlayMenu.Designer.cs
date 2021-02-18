@@ -27,6 +27,7 @@ namespace CM0102_Starter_Kit {
             this.standard_cm.Margin = new System.Windows.Forms.Padding(0);
             this.standard_cm.Name = "standard_cm";
             this.standard_cm.Size = new System.Drawing.Size(327, 65);
+            this.standard_cm.TabStop = false;
             this.standard_cm.Text = "CM 01/02 (Standard)";
             this.standard_cm.UseVisualStyleBackColor = false;
             this.standard_cm.Click += new System.EventHandler(this.StandardCm_Click);
@@ -46,6 +47,7 @@ namespace CM0102_Starter_Kit {
             this.nick_patcher_cm.Margin = new System.Windows.Forms.Padding(0);
             this.nick_patcher_cm.Name = "nick_patcher_cm";
             this.nick_patcher_cm.Size = new System.Drawing.Size(327, 65);
+            this.nick_patcher_cm.TabStop = false;
             this.nick_patcher_cm.Text = "CM 01/02 (With Nick\'s Patcher)";
             this.nick_patcher_cm.UseVisualStyleBackColor = false;
             this.nick_patcher_cm.Click += new System.EventHandler(this.NickPatcherCm_Click);
@@ -65,9 +67,9 @@ namespace CM0102_Starter_Kit {
             this.cm_93.Margin = new System.Windows.Forms.Padding(0);
             this.cm_93.Name = "cm_93";
             this.cm_93.Size = new System.Drawing.Size(325, 65);
+            this.cm_93.TabStop = false;
             this.cm_93.Text = "CM 93/94";
             this.cm_93.UseVisualStyleBackColor = false;
-            this.cm_93.Visible = false;
             this.cm_93.Click += new System.EventHandler(this.Cm93_Click);
             // 
             // PlayMenu

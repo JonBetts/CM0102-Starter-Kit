@@ -13,6 +13,7 @@ namespace CM0102_Starter_Kit {
             this.march_database = new System.Windows.Forms.Button();
             this.november_database = new System.Windows.Forms.Button();
             this.luessenhoff_database = new System.Windows.Forms.Button();
+            this.ninety_three_database = new System.Windows.Forms.Button();
             // 
             // original_database
             // 
@@ -29,6 +30,7 @@ namespace CM0102_Starter_Kit {
             this.original_database.Margin = new System.Windows.Forms.Padding(0);
             this.original_database.Name = "original_database";
             this.original_database.Size = new System.Drawing.Size(327, 65);
+            this.original_database.TabStop = false;
             this.original_database.Text = "Original (3.9.60)";
             this.original_database.UseVisualStyleBackColor = false;
             this.original_database.Click += new System.EventHandler(this.OriginalDatabase_Click);
@@ -48,6 +50,7 @@ namespace CM0102_Starter_Kit {
             this.patched_database.Margin = new System.Windows.Forms.Padding(0);
             this.patched_database.Name = "patched_database";
             this.patched_database.Size = new System.Drawing.Size(327, 65);
+            this.patched_database.TabStop = false;
             this.patched_database.Text = "Patched (3.9.68)";
             this.patched_database.UseVisualStyleBackColor = false;
             this.patched_database.Click += new System.EventHandler(this.PatchedDatabase_Click);
@@ -67,6 +70,7 @@ namespace CM0102_Starter_Kit {
             this.march_database.Margin = new System.Windows.Forms.Padding(0);
             this.march_database.Name = "march_database";
             this.march_database.Size = new System.Drawing.Size(327, 65);
+            this.march_database.TabStop = false;
             this.march_database.Text = "March 2020";
             this.march_database.UseVisualStyleBackColor = false;
             this.march_database.Click += new System.EventHandler(this.MarchDatabase_Click);
@@ -86,6 +90,7 @@ namespace CM0102_Starter_Kit {
             this.november_database.Margin = new System.Windows.Forms.Padding(0);
             this.november_database.Name = "november_database";
             this.november_database.Size = new System.Drawing.Size(327, 65);
+            this.november_database.TabStop = false;
             this.november_database.Text = "November 2020";
             this.november_database.UseVisualStyleBackColor = false;
             this.november_database.Click += new System.EventHandler(this.NovemberDatabase_Click);
@@ -101,13 +106,34 @@ namespace CM0102_Starter_Kit {
             this.luessenhoff_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.luessenhoff_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.luessenhoff_database.ForeColor = System.Drawing.Color.White;
-            this.luessenhoff_database.Location = new System.Drawing.Point(284, 278);
+            this.luessenhoff_database.Location = new System.Drawing.Point(120, 278);
             this.luessenhoff_database.Margin = new System.Windows.Forms.Padding(0);
             this.luessenhoff_database.Name = "luessenhoff_database";
             this.luessenhoff_database.Size = new System.Drawing.Size(327, 65);
+            this.luessenhoff_database.TabStop = false;
             this.luessenhoff_database.Text = "Luessenhoff";
             this.luessenhoff_database.UseVisualStyleBackColor = false;
             this.luessenhoff_database.Click += new System.EventHandler(this.LuessenhoffDatabase_Click);
+            // 
+            // ninety_three_database
+            // 
+            this.ninety_three_database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ninety_three_database.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ninety_three_database.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.ninety_three_database.FlatAppearance.BorderSize = 2;
+            this.ninety_three_database.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ninety_three_database.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.ninety_three_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ninety_three_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.ninety_three_database.ForeColor = System.Drawing.Color.White;
+            this.ninety_three_database.Location = new System.Drawing.Point(449, 278);
+            this.ninety_three_database.Margin = new System.Windows.Forms.Padding(0);
+            this.ninety_three_database.Name = "ninety_three_database";
+            this.ninety_three_database.Size = new System.Drawing.Size(327, 65);
+            this.ninety_three_database.TabStop = false;
+            this.ninety_three_database.Text = "1993/94";
+            this.ninety_three_database.UseVisualStyleBackColor = false;
+            this.ninety_three_database.Click += new System.EventHandler(this.NinetyThreeDatabase_Click);
             // 
             // VersionMenu
             // 
@@ -118,6 +144,7 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.march_database);
             this.Controls.Add(this.november_database);
             this.Controls.Add(this.luessenhoff_database);
+            this.Controls.Add(this.ninety_three_database);
             this.Name = "VersionMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VersionMenu_FormClosed);
         }
@@ -127,8 +154,8 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.Button patched_database;
         private System.Windows.Forms.Button march_database;
         private System.Windows.Forms.Button november_database;
-        //private System.Windows.Forms.Button ninety_three_database;
         private System.Windows.Forms.Button luessenhoff_database;
+        private System.Windows.Forms.Button ninety_three_database;
     }
 }
 

@@ -16,6 +16,7 @@ namespace CM0102_Starter_Kit {
         protected static readonly string CmLoader = Path.Combine(GameFolder, "CM0102Loader.exe");
         protected static readonly string CmLoaderConfig = "CM0102LoaderDefault.ini";
         protected static readonly string CmLoaderCustomConfig = "CM0102LoaderCustom.ini";
+        protected static readonly string Cm93 = Path.Combine(GameFolder, "cm93.exe");
         protected static readonly string CmScout = Path.Combine(GameFolder, "cmscout.exe");
         protected static readonly string PlayerFinder = Path.Combine(GameFolder, "gpf2.exe");
         protected static readonly string ExistingCommentary = Path.Combine(DataFolder, "events_eng.cfg");
@@ -39,6 +40,10 @@ namespace CM0102_Starter_Kit {
 
         protected static bool DataFolderExists() {
             return Directory.Exists(DataFolder);
+        }
+
+        protected static bool NinetyThreeDataLoaded() {
+            return File.Exists(Path.Combine(DataFolder, "ninety_three.txt"));
         }
 
         protected abstract List<Control> GetButtonsToToggle();

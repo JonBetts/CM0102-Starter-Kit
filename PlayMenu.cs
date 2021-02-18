@@ -25,6 +25,7 @@ namespace CM0102_Starter_Kit {
         private void LaunchGame(string playGameExe, Boolean usesStubProcess, Boolean usesCustomLoader) {
             ShowLoader();
             ProcessStartInfo playPsi = new ProcessStartInfo {
+                WorkingDirectory = GameFolder,
                 FileName = playGameExe,
                 UseShellExecute = false,
                 Arguments = usesCustomLoader ? CmLoaderCustomConfig : CmLoaderConfig
@@ -44,15 +45,27 @@ namespace CM0102_Starter_Kit {
         }
 
         private void StandardCm_Click(object sender, EventArgs e) {
-            LaunchGame(CmLoader, true, false);
+            if (!NinetyThreeDataLoaded()) {
+                LaunchGame(CmLoader, true, false);
+            } else {
+                DisplayMessage("Please load a compatible database first!");
+            }
         }
 
         private void NickPatcherCm_Click(object sender, EventArgs e) {
-            LaunchGame(CmLoader, true, true);
+            if (!NinetyThreeDataLoaded()) {
+                LaunchGame(CmLoader, true, true);
+            } else {
+                DisplayMessage("Please load a compatible database first!");
+            }
         }
 
         private void Cm93_Click(object sender, EventArgs e) {
-            LaunchGame(Path.Combine(GameFolder, "cm93.exe"), false, false);
+            if (NinetyThreeDataLoaded()) {
+                LaunchGame(Cm93, false, false);
+            } else {
+                DisplayMessage("Please load the 1993/94 database first!");
+            }
         }
 
         private void PlayMenu_FormClosed(object sender, FormClosedEventArgs e) {

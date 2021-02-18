@@ -139,6 +139,9 @@
   <data name="march_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\march_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ninety_three_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\ninety_three_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="november_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\november_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

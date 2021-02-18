@@ -46,7 +46,8 @@ namespace CM0102_Starter_Kit {
                     resourceFile = Properties.Resources.luessenhoff_data;
                     break;
                 case VersionName.NinetyThree:
-                    resourceFile = Properties.Resources.luessenhoff_data; // will be ninety_three_data
+                    resourceFile = Properties.Resources.ninety_three_data;
+                    deleteDataFolder = true;
                     break;
                 default:
                 case VersionName.Original:
@@ -88,7 +89,6 @@ namespace CM0102_Starter_Kit {
                     label = "Luessenhoff";
                     break;
                 case VersionName.NinetyThree:
-                    CopyDataToGame(VersionName.Patched);
                     CopyDataToGame(VersionName.NinetyThree);
                     label = "1993/94";
                     break;
