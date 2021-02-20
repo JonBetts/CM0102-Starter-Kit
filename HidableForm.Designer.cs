@@ -168,7 +168,7 @@
             this.loader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.loader.Location = new System.Drawing.Point(0, 0);
             this.loader.Name = "loader";
-            this.loader.Size = new System.Drawing.Size(793, 578);
+            this.loader.Size = new System.Drawing.Size(800, 600);
             this.loader.Visible = false;
             this.loader.Paint += new System.Windows.Forms.PaintEventHandler(this.Loader_Paint);
             // 
