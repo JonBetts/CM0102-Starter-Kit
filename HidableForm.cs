@@ -16,6 +16,8 @@ namespace CM0102_Starter_Kit {
         protected static readonly string CmLoader = Path.Combine(GameFolder, "CM0102Loader.exe");
         protected static readonly string CmLoaderConfig = "CM0102LoaderDefault.ini";
         protected static readonly string CmLoaderCustomConfig = "CM0102LoaderCustom.ini";
+        protected static readonly string Cm0102 = Path.Combine(GameFolder, "cm0102.exe");
+        protected static readonly string Cm0102Backup = Path.Combine(GameFolder, "cm0102_bk.exe");
         protected static readonly string Cm93 = Path.Combine(GameFolder, "cm93.exe");
         protected static readonly string CmScout = Path.Combine(GameFolder, "cmscout.exe");
         protected static readonly string PlayerFinder = Path.Combine(GameFolder, "gpf2.exe");
@@ -54,6 +56,16 @@ namespace CM0102_Starter_Kit {
 
             foreach (Control control in GetButtonsToToggle()) {
                 control.Enabled = toggle;
+            }
+        }
+
+        protected void RenameExes() {
+            if (File.Exists(Cm0102Backup)) {
+                File.Move(Cm0102, Cm93);
+                File.Move(Cm0102Backup, Cm0102);
+            } else {
+                File.Move(Cm0102, Cm0102Backup);
+                File.Move(Cm93, Cm0102);
             }
         }
 

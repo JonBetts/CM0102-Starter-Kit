@@ -22,8 +22,11 @@ namespace CM0102_Starter_Kit {
             };
         }
 
-        private void LaunchGame(string playGameExe, Boolean usesStubProcess, Boolean usesCustomLoader) {
+        private void LaunchGame(string playGameExe, bool usesStubProcess, bool usesCustomLoader, bool renameExes) {
             ShowLoader();
+            if (renameExes) {
+                RenameExes();
+            }
             ProcessStartInfo playPsi = new ProcessStartInfo {
                 WorkingDirectory = GameFolder,
                 FileName = playGameExe,
@@ -41,12 +44,15 @@ namespace CM0102_Starter_Kit {
                     process.Close();
                 }
             }
+            if (renameExes) {
+                RenameExes();
+            }
             HideLoader();
         }
 
         private void StandardCm_Click(object sender, EventArgs e) {
             if (!NinetyThreeDataLoaded()) {
-                LaunchGame(CmLoader, true, false);
+                LaunchGame(CmLoader, true, false, false);
             } else {
                 DisplayMessage("Please load a compatible database first!");
             }
@@ -54,7 +60,7 @@ namespace CM0102_Starter_Kit {
 
         private void NickPatcherCm_Click(object sender, EventArgs e) {
             if (!NinetyThreeDataLoaded()) {
-                LaunchGame(CmLoader, true, true);
+                LaunchGame(CmLoader, true, true, false);
             } else {
                 DisplayMessage("Please load a compatible database first!");
             }
@@ -62,7 +68,7 @@ namespace CM0102_Starter_Kit {
 
         private void Cm93_Click(object sender, EventArgs e) {
             if (NinetyThreeDataLoaded()) {
-                LaunchGame(Cm93, false, false);
+                LaunchGame(CmLoader, true, false, true);
             } else {
                 DisplayMessage("Please load the 1993/94 database first!");
             }
