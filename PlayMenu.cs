@@ -18,18 +18,19 @@ namespace CM0102_Starter_Kit {
         protected override List<Control> GetButtonsToToggle() {
             return new List<Control> {
                 this.standard_cm,
-                this.nick_patcher_cm
+                this.nick_patcher_cm,
+                this.cm_93
             };
         }
 
-        private void LaunchGame(string playGameExe, bool usesStubProcess, bool usesCustomLoader, bool renameExes) {
+        private void LaunchGame(bool usesCustomLoader, bool renameExes) {
             ShowLoader();
             if (renameExes) {
                 RenameExes();
             }
             ProcessStartInfo playPsi = new ProcessStartInfo {
                 WorkingDirectory = GameFolder,
-                FileName = playGameExe,
+                FileName = CmLoader,
                 UseShellExecute = false,
                 Arguments = usesCustomLoader ? CmLoaderCustomConfig : CmLoaderConfig
             };
@@ -37,12 +38,11 @@ namespace CM0102_Starter_Kit {
             playProcess.WaitForExit();
             playProcess.Close();
 
-            if (usesStubProcess) {
-                Process[] mainPlayProcesses = Process.GetProcessesByName("cm0102");
-                foreach (Process process in mainPlayProcesses) {
-                    process.WaitForExit();
-                    process.Close();
-                }
+            // The loader is a stub process for the game, so let's wait for the game to be closed
+            Process[] mainPlayProcesses = Process.GetProcessesByName("cm0102");
+            foreach (Process process in mainPlayProcesses) {
+                process.WaitForExit();
+                process.Close();
             }
             if (renameExes) {
                 RenameExes();
@@ -50,17 +50,32 @@ namespace CM0102_Starter_Kit {
             HideLoader();
         }
 
-        private void StandardCm_Click(object sender, EventArgs e) {
+        private void OverridePatcherSettings() {
+            string destinationFile = Path.Combine(GameFolder, CmLoaderCustomConfig);
+            string[] lines = File.ReadAllLines(destinationFile);
+
+            using (StreamWriter writer = new StreamWriter(destinationFile)) {
+                for (int currentLine = 1; currentLine <= lines.Length; ++currentLine) {
+                    if (currentLine == 1) {
+                        writer.WriteLine("Year = 2001");
+                    } else {
+                        writer.WriteLine(lines[currentLine - 1]);
+                    }
+                }
+            }
+        }
+
+        private void Cm0102_Click(object sender, EventArgs e) {
             if (!NinetyThreeDataLoaded()) {
-                LaunchGame(CmLoader, true, false, false);
+                LaunchGame(false, false);
             } else {
                 DisplayMessage("Please load a compatible database first!");
             }
         }
 
-        private void NickPatcherCm_Click(object sender, EventArgs e) {
+        private void Cm0102Patched_Click(object sender, EventArgs e) {
             if (!NinetyThreeDataLoaded()) {
-                LaunchGame(CmLoader, true, true, false);
+                LaunchGame(true, false);
             } else {
                 DisplayMessage("Please load a compatible database first!");
             }
@@ -68,7 +83,16 @@ namespace CM0102_Starter_Kit {
 
         private void Cm93_Click(object sender, EventArgs e) {
             if (NinetyThreeDataLoaded()) {
-                LaunchGame(CmLoader, true, false, true);
+                LaunchGame(false, true);
+            } else {
+                DisplayMessage("Please load the 1993/94 database first!");
+            }
+        }
+
+        private void Cm93Patched_Click(object sender, EventArgs e) {
+            if (NinetyThreeDataLoaded()) {
+                OverridePatcherSettings();
+                LaunchGame(true, true);
             } else {
                 DisplayMessage("Please load the 1993/94 database first!");
             }

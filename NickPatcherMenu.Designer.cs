@@ -264,7 +264,7 @@ namespace CM0102_Starter_Kit {
             this.tapani_regen.Name = "tapani_regen";
             this.tapani_regen.Size = new System.Drawing.Size(224, 25);
             this.tapani_regen.TabStop = false;
-            this.tapani_regen.Text = "Add Tapani Regen Code";
+            this.tapani_regen.Text = "Tapani Regen Code";
             this.tapani_regen.UseVisualStyleBackColor = false;
             // 
             // uncap

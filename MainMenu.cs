@@ -39,11 +39,15 @@ namespace CM0102_Starter_Kit {
         private void InstallVar_Click(object sender, EventArgs e) {
             string result = "Please use the Switch Data Update menu to load up a database first!";
             if (DataFolderExists()) {
-                string backupFile = ExistingCommentary + ".bk";
-                File.Delete(backupFile);
-                File.Move(ExistingCommentary, backupFile);
-                File.WriteAllBytes(ExistingCommentary, Properties.Resources.events_eng);
-                result = "VAR Commentary File successfully installed! Please note this only applies when playing the game in English!";
+                if (NinetyThreeDataLoaded()) {
+                    result = "Please load a compatible database first!";
+                } else {
+                    string backupFile = ExistingCommentary + ".bk";
+                    File.Delete(backupFile);
+                    File.Move(ExistingCommentary, backupFile);
+                    File.WriteAllBytes(ExistingCommentary, Properties.Resources.events_eng);
+                    result = "VAR Commentary File successfully installed! Please note this only applies when playing the game in English!";
+                }
             }
             DisplayMessage(result);
         }

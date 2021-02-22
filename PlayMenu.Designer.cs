@@ -30,7 +30,7 @@ namespace CM0102_Starter_Kit {
             this.standard_cm.TabStop = false;
             this.standard_cm.Text = "CM 01/02 (Standard)";
             this.standard_cm.UseVisualStyleBackColor = false;
-            this.standard_cm.Click += new System.EventHandler(this.StandardCm_Click);
+            this.standard_cm.Click += new System.EventHandler(this.Cm0102_Click);
             // 
             // nick_patcher_cm
             // 
@@ -50,7 +50,7 @@ namespace CM0102_Starter_Kit {
             this.nick_patcher_cm.TabStop = false;
             this.nick_patcher_cm.Text = "CM 01/02 (With Nick\'s Patcher)";
             this.nick_patcher_cm.UseVisualStyleBackColor = false;
-            this.nick_patcher_cm.Click += new System.EventHandler(this.NickPatcherCm_Click);
+            this.nick_patcher_cm.Click += new System.EventHandler(this.Cm0102Patched_Click);
             // 
             // cm_93
             // 
