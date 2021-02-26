@@ -20,7 +20,7 @@ Please be aware that the Mac version is a port of the original Windows applicati
 
 -   Switching from full screen to windowed mode in-game causes the game to minimise, and then when you click on it, it is now displayed strangely. All you have to do then is exit the game, and then re-open it via the Starter Kit and it should be fine.
 
--   Please **DO NOT** use the option in Nick's Patcher to change the resolution to 1280x800 - the game will not display properly!
+-   Please **DO NOT** use the option in Nick's Patcher to change the resolution to 1280x800 if you are using windowed mode - the game will not display properly! It is fine to use in full screen though.
 
 ## The basics
 
@@ -51,9 +51,9 @@ Big thanks for Nick for his permission to use the Patcher as part of this. It's 
 
 -   **Back Up Save Games** - This backs up all your save games to the following folder: 'C:\CM0102'.
 
--   **Website** - Launches the website in your default browser in case you need to go there for advice, downloads or some CM-related banter.
-
 -   **CM Scout** - Launches CM Scout. It's a nice little tool that means you don't have to rely on your rubbish in-game scouts to find players. Most people think it ruins the game a bit though, so use with caution!
+
+-   **Generated Player Finder** - Launches GPF2. If you run this tool against your save game as early as possible, it will keep a track on which players certain regens were in their previous life! That's pretty much all it does...
 
 ## Important note
 
@@ -61,16 +61,15 @@ Big thanks for Nick for his permission to use the Patcher as part of this. It's 
 
 ## Troubleshooting
 
-The Starter Kit was made to limit the number of issues you get when setting CM 01/02 up. However, different setups and operating systems may result in unforeseen issues. One thing I've come across is occassionally the game might not load as it doesn't like starting up in full screen/windowed mode ("cannot initialise graphics bla bla"). This has been an issue with CM for a long time, so there are numerous fixes on the forums for this, so have a look at those and see if you can solve it.
+The Starter Kit was made to limit the number of issues you get when setting CM 01/02 up. However, different setups and operating systems may result in unforeseen issues. Please have a look at the support thread for the tool if you need help: https://champman0102.net/viewtopic.php?f=43&t=2449
 
 ## Future improvements
 
-As this is only the second iteration of the Starter Kit, there are definitely ways in which it can be improved:
+As we are only in the early stages of the Starter Kit's life, there are definitely ways in which it can be improved:
 
 -   Ensure the last saved settings for Nick's Patcher are persisted when you next access the page/tool.
 -   Allow modified databases to be kept and named, for switching back to at a later date.
 -   Change the popup boxes and loader image to fit with the rest of the tool and the game.
--   Somehow get it working on Mac OSX (including Catalina).
 -   ... and many more...
 
 ## Credit
