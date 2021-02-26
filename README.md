@@ -17,7 +17,7 @@ To get started, all you have to do is extract the zip file anywhere you like. Cl
 Please be aware that the Mac version is a port of the original Windows application. Because of that, certain things won't work in exactly the same way as the Windows version. Here are the important things you need to know:
 
 -   If the app doesn't open for you after you've unzipped it and clicked on it, and it says "CM0102StarterKit is damaged and can't be opened", it's because Apple requires all apps to be "code signed" for authenticity. To get around this, you need to open up Terminal and run the following:
-`cd ~/Downloads` (or wherever you downloaded the app to) followed by `sudo xattr -cr CM0102StarterKit.app` (this requires your login password). This may reset the logo on the Starter Kit, but it should fix it so you can run it.
+`cd ~/Downloads` (or wherever you downloaded the app to) followed by `sudo xattr -cr CM0102StarterKit.app` (this requires your login password). This may reset the logo on the Starter Kit, but it should fix it so you can run it. If this doesn't work for whatever reason (you don't have a password or it doesn't accept your password), try running the command without the "sudo" bit at the front, i.e. `xattr -cr CM0102StarterKit.app`.
 
 -   In High Sierra (and potentially other versions), when you play the game in windowed mode, there is a black border around the game, and you cannot see the rest of your windows and applications. Unfortunately there isn't a way around this, unless you upgrade to Big Sur as the behaviour isn't present on there.
 
