@@ -25,6 +25,8 @@ Please be aware that the Mac version is a port of the original Windows applicati
 
 -   Please **DO NOT** use the option in Nick's Patcher to change the resolution to 1280x800 if you are using windowed mode - the game will not display properly! It is fine to use in full screen though.
 
+-   There is a very minor bug when using the trackpad in Mac - if you're scrolling with it, it scrolls all the way to the bottom of the page, and won't stop until you click somewhere. In short, if you are going to use your trackpad, you'll be better off clicking and dragging the scrollbars as you would on Windows. Even better, use an external mouse, and you won't get this issue.
+
 ## The basics
 
 It's all very straightforward, but I will give a quick explanation about everything just in case. The main thing you might notice if you've seen the tool before is that it no longer requires any installation at all! Everything is contained within the folder that you create when you unzip the tool after downloading it. So you can easily play CM between different computers without having to install it!
