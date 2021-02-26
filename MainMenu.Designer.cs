@@ -16,7 +16,6 @@ namespace CM0102_Starter_Kit {
             this.backup_saves = new System.Windows.Forms.Button();
             this.cm_scout = new System.Windows.Forms.Button();
             this.player_finder = new System.Windows.Forms.Button();
-            this.visit_website = new System.Windows.Forms.Button();
             // 
             // switch_update
             // 
@@ -170,25 +169,6 @@ namespace CM0102_Starter_Kit {
             this.player_finder.UseVisualStyleBackColor = false;
             this.player_finder.Click += new System.EventHandler(this.PlayerFinder_Click);
             // 
-            // visit_website
-            // 
-            this.visit_website.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visit_website.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.visit_website.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.visit_website.FlatAppearance.BorderSize = 2;
-            this.visit_website.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visit_website.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.visit_website.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.visit_website.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
-            this.visit_website.ForeColor = System.Drawing.Color.White;
-            this.visit_website.Location = new System.Drawing.Point(284, 412);
-            this.visit_website.Margin = new System.Windows.Forms.Padding(0);
-            this.visit_website.Name = "visit_website";
-            this.visit_website.Size = new System.Drawing.Size(327, 65);
-            this.visit_website.Text = "Website";
-            this.visit_website.UseVisualStyleBackColor = false;
-            this.visit_website.Click += new System.EventHandler(this.VisitWebsite_Click);
-            // 
             // MainMenu
             // 
             this.BackgroundImage = Properties.Resources.batigol;
@@ -201,7 +181,6 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.backup_saves);
             this.Controls.Add(this.cm_scout);
             this.Controls.Add(this.player_finder);
-            this.Controls.Add(this.visit_website);
             this.Name = "MainMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
             this.Load += new System.EventHandler(this.MainMenu_Load);
@@ -216,7 +195,6 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.Button backup_saves;
         private System.Windows.Forms.Button cm_scout;
         private System.Windows.Forms.Button player_finder;
-        private System.Windows.Forms.Button visit_website;
     }
 }
 

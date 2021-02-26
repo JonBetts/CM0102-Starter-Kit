@@ -30,7 +30,6 @@ namespace CM0102_Starter_Kit {
                 this.editor,
                 this.play_game,
                 this.backup_saves,
-                this.visit_website,
                 this.cm_scout,
                 this.player_finder
             };
@@ -88,10 +87,6 @@ namespace CM0102_Starter_Kit {
             } else {
                 DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
             }
-        }
-
-        private void VisitWebsite_Click(object sender, EventArgs e) {
-            Process.Start("https://www.champman0102.net");
         }
 
         private void BackupSaves_Click(object sender, EventArgs e) {
