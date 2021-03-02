@@ -172,8 +172,8 @@
     <Error Condition="!Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILMerge.3.0.41\build\ILMerge.props'))" />
   </Target>
   <Target Name="ILMerge">
-    <Exec Command="$(ILMergeConsolePath) bin\Release\CM0102StarterKit.exe /targetplatform:v4 /ndebug /out:CM0102StarterKit.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
-    <Exec Command="$(ILMergeConsolePath) bin\x86\Release\CM0102StarterKit.exe /targetplatform:v4 /ndebug /out:CM0102StarterKitx86.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
-    <Exec Command="$(ILMergeConsolePath) bin\x64\Release\CM0102StarterKit.exe /targetplatform:v4 /ndebug /out:CM0102StarterKitx64.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
+    <Exec Command="$(ILMergeConsolePath) bin\Release\CM0102StarterKit.exe /targetplatform:v4 /out:CM0102StarterKit.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
+    <Exec Command="$(ILMergeConsolePath) bin\x86\Release\CM0102StarterKit.exe /targetplatform:v4 /out:CM0102StarterKitx86.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
+    <Exec Command="$(ILMergeConsolePath) bin\x64\Release\CM0102StarterKit.exe /targetplatform:v4 /out:CM0102StarterKitx64.exe bin\Release\ICSharpCode.SharpZipLib.dll " />
   </Target>
 </Project>
