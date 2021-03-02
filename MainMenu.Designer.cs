@@ -188,7 +188,7 @@ namespace CM0102_Starter_Kit {
 
         #endregion
         private System.Windows.Forms.Button switch_update;
-        private System.Windows.Forms.Button install_var;
+        internal System.Windows.Forms.Button install_var;
         private System.Windows.Forms.Button nick_patcher;
         private System.Windows.Forms.Button editor;
         private System.Windows.Forms.Button play_game;
