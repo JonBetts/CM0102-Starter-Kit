@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ICSharpCode.SharpZipLib.Zip;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -17,11 +18,13 @@ namespace CM0102_Starter_Kit {
         protected static readonly string CmLoaderConfig = "CM0102LoaderDefault.ini";
         protected static readonly string CmLoaderCustomConfig = "CM0102LoaderCustom.ini";
         protected static readonly string Cm0102 = Path.Combine(GameFolder, "cm0102.exe");
-        protected static readonly string Cm0102Backup = Path.Combine(GameFolder, "cm0102_bk.exe");
+        protected static readonly string Cm0102Gdi = Path.Combine(GameFolder, "cm0102_GDI.exe");
+        protected static readonly string Cm0102Backup = Path.Combine(GameFolder, "cm0102.exe.bk");
         protected static readonly string Cm93 = Path.Combine(GameFolder, "cm93.exe");
         protected static readonly string CmScout = Path.Combine(GameFolder, "cmscout.exe");
         protected static readonly string PlayerFinder = Path.Combine(GameFolder, "gpf2.exe");
         protected static readonly string ExistingCommentary = Path.Combine(DataFolder, "events_eng.cfg");
+        protected static readonly string ExistingCommentaryBackup = Path.Combine(DataFolder, "events_eng.cfg.bk");
         protected static readonly string OfficialEditor = Path.Combine(Path.Combine(GameFolder, "Editor"), "cm0102ed.exe");
         protected static readonly string BackupSavesFolder = @"C:\CM0102 Backups";
         protected MainMenu mainMenu;
@@ -67,6 +70,40 @@ namespace CM0102_Starter_Kit {
                 File.Move(Cm0102, Cm0102Backup);
                 File.Move(Cm93, Cm0102);
             }
+        }
+
+        protected void RefreshExeFiles() {
+            string tempZipFolder = Path.Combine(Directory.GetCurrentDirectory(), "Temp");
+            string tempZipFile = tempZipFolder + ".zip";
+            File.WriteAllBytes(tempZipFile, Properties.Resources.Game);
+            new FastZip().ExtractZip(tempZipFile, tempZipFolder, null);
+
+            if (File.Exists(Cm0102)) {
+                File.Delete(Cm0102);
+            }
+            File.Move(Path.Combine(tempZipFolder, "cm0102.exe"), Cm0102);
+
+            if (File.Exists(Cm0102Gdi)) {
+                File.Delete(Cm0102Gdi);
+            }
+            File.Move(Path.Combine(tempZipFolder, "cm0102_GDI.exe"), Cm0102Gdi);
+
+            if (File.Exists(Cm93)) {
+                File.Delete(Cm93);
+            }
+            File.Move(Path.Combine(tempZipFolder, "cm93.exe"), Cm93);
+
+            if (File.Exists(CmLoader)) {
+                File.Delete(CmLoader);
+            }
+            File.Move(Path.Combine(tempZipFolder, "CM0102Loader.exe"), CmLoader);
+
+            if (File.Exists(Cm0102Backup)) {
+                File.Delete(Cm0102Backup);
+            }
+
+            File.Delete(tempZipFile);
+            Directory.Delete(tempZipFolder, true);
         }
 
         protected void ShowLoader() {

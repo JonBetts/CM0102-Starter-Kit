@@ -41,11 +41,17 @@ namespace CM0102_Starter_Kit {
                 if (NinetyThreeDataLoaded()) {
                     result = "Please load a compatible database first!";
                 } else {
-                    string backupFile = ExistingCommentary + ".bk";
-                    File.Delete(backupFile);
-                    File.Move(ExistingCommentary, backupFile);
-                    File.WriteAllBytes(ExistingCommentary, Properties.Resources.events_eng);
-                    result = "VAR Commentary File successfully installed! Please note this only applies when playing the game in English!";
+                    if (File.Exists(ExistingCommentaryBackup)) {
+                        File.Delete(ExistingCommentary);
+                        File.Move(ExistingCommentaryBackup, ExistingCommentary);
+                        result = "VAR Commentary successfully uninstalled!";
+                        this.install_var.Text = "Install VAR Commentary";
+                    } else {
+                        File.Move(ExistingCommentary, ExistingCommentaryBackup);
+                        File.WriteAllBytes(ExistingCommentary, Properties.Resources.events_eng);
+                        result = "VAR Commentary successfully installed! Please note this only applies when playing the game in English!";
+                        this.install_var.Text = "Uninstall VAR Commentary";
+                    }
                 }
             }
             DisplayMessage(result);
@@ -127,6 +133,11 @@ namespace CM0102_Starter_Kit {
                         }
                     }
                 }
+            } else {
+                RefreshExeFiles();
+            }
+            if (File.Exists(ExistingCommentaryBackup)) {
+                this.install_var.Text = "Uninstall VAR Commentary";
             }
         }
 

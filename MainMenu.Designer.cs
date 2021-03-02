@@ -51,7 +51,7 @@ namespace CM0102_Starter_Kit {
             this.install_var.Margin = new System.Windows.Forms.Padding(0);
             this.install_var.Name = "install_var";
             this.install_var.Size = new System.Drawing.Size(327, 65);
-            this.install_var.Text = "Install VAR Commentary File";
+            this.install_var.Text = "Install VAR Commentary";
             this.install_var.UseVisualStyleBackColor = false;
             this.install_var.Click += new System.EventHandler(this.InstallVar_Click);
             // 
