@@ -35,6 +35,14 @@ namespace CM0102_Starter_Kit {
             };
         }
 
+        protected override void RefreshForm() {
+            if (File.Exists(ExistingCommentaryBackup)) {
+                this.install_var.Text = "Uninstall VAR Commentary";
+            } else {
+                this.install_var.Text = "Install VAR Commentary";
+            }
+        }
+
         private void InstallVar_Click(object sender, EventArgs e) {
             string result = "Please use the Switch Data Update menu to load up a database first!";
             if (DataFolderExists()) {
@@ -45,13 +53,12 @@ namespace CM0102_Starter_Kit {
                         File.Delete(ExistingCommentary);
                         File.Move(ExistingCommentaryBackup, ExistingCommentary);
                         result = "VAR Commentary successfully uninstalled!";
-                        this.install_var.Text = "Install VAR Commentary";
                     } else {
                         File.Move(ExistingCommentary, ExistingCommentaryBackup);
                         File.WriteAllBytes(ExistingCommentary, Properties.Resources.events_eng);
                         result = "VAR Commentary successfully installed! Please note this only applies when playing the game in English!";
-                        this.install_var.Text = "Uninstall VAR Commentary";
                     }
+                    RefreshForm();
                 }
             }
             DisplayMessage(result);
@@ -136,9 +143,7 @@ namespace CM0102_Starter_Kit {
             } else {
                 RefreshExeFiles();
             }
-            if (File.Exists(ExistingCommentaryBackup)) {
-                this.install_var.Text = "Uninstall VAR Commentary";
-            }
+            RefreshForm();
         }
 
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e) {

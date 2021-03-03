@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
@@ -18,6 +19,54 @@ namespace CM0102_Starter_Kit {
             return new List<Control> {
                 this.apply
             };
+        }
+
+        private Dictionary<ComboBox, int> GetComboBoxes() {
+            return new Dictionary<ComboBox, int> {
+                { this.game_speed, 1 }
+            };
+        }
+
+        private Dictionary<NumericUpDown, int> GetNumericUpDowns() {
+            return new Dictionary<NumericUpDown, int> {
+                { this.starting_year, 0 },
+                { this.currency_inflation, 2 }
+            };
+        }
+
+        private Dictionary<CheckBox, int> GetCheckBoxes() {
+            return new Dictionary<CheckBox, int> {
+                { this.coloured_attributes, 3 },
+                { this.unprotected_contracts, 4 },
+                { this.non_public_bids, 5 },
+                { this.seven_substitutes, 6 },
+                { this.regen_fixes, 7 },
+                { this.force_all_players, 8 },
+                { this.tapani_regen, 9 },
+                { this.uncap, 10 },
+                { this.foreign_player_limit, 11 },
+                { this.work_permits, 12 },
+                { this.resolution, 13 }
+            };
+        }
+
+        protected override void RefreshForm() {
+            string[] lines = File.ReadAllLines(Path.Combine(GameFolder, CmLoaderCustomConfig));
+            foreach (KeyValuePair<ComboBox, int> comboBox in GetComboBoxes()) {
+                string line = lines[comboBox.Value];
+                Match match = Regex.Match(line, @"\d+");
+                comboBox.Key.SelectedIndex = comboBox.Key.FindStringExact("x" + match.Captures[0].Value);
+            }
+            foreach (KeyValuePair<NumericUpDown, int> numericUpDown in GetNumericUpDowns()) {
+                string line = lines[numericUpDown.Value];
+                Match match = Regex.Match(line, @"\d+.*\d*");
+                numericUpDown.Key.Value = Convert.ToDecimal(match.Captures[0].Value);
+            }
+            foreach (KeyValuePair<CheckBox, int> checkBox in GetCheckBoxes()) {
+                string line = lines[checkBox.Value];
+                Match match = Regex.Match(line, "true|false");
+                checkBox.Key.Checked = Convert.ToBoolean(match.Captures[0].Value);
+            }
         }
 
         private void Apply_Click(object sender, EventArgs e) {

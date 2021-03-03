@@ -53,6 +53,8 @@ namespace CM0102_Starter_Kit {
 
         protected abstract List<Control> GetButtonsToToggle();
 
+        protected virtual void RefreshForm() { }
+
         private void ToggleButtons(bool toggle) {
             exit.Enabled = toggle;
             back_button.Enabled = toggle;
@@ -136,11 +138,12 @@ namespace CM0102_Starter_Kit {
             }
         }
 
-        protected void ShowNewScreen(Form newForm) {
+        protected void ShowNewScreen(HidableForm newForm) {
             this.Hide();
             newForm.StartPosition = FormStartPosition.Manual;
             newForm.Location = this.Location;
             newForm.Size = this.Size;
+            newForm.RefreshForm();
             newForm.Show();
         }
 

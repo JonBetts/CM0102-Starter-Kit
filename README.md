@@ -72,7 +72,6 @@ The Starter Kit was made to limit the number of issues you get when setting CM 0
 
 As we are only in the early stages of the Starter Kit's life, there are definitely ways in which it can be improved:
 
--   Ensure the last saved settings for Nick's Patcher are persisted when you next access the page/tool.
 -   Allow modified databases to be kept and named, for switching back to at a later date.
 -   Change the popup boxes and loader image to fit with the rest of the tool and the game.
 -   ... and many more...

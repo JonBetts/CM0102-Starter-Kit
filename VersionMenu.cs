@@ -99,7 +99,6 @@ namespace CM0102_Starter_Kit {
                     break;
             }
             DisplayMessage(label + " database successfully loaded!");
-            mainMenu.install_var.Text = "Install VAR Commentary";
         }
 
         private void OriginalDatabase_Click(object sender, EventArgs e) {
