@@ -44,6 +44,7 @@ namespace CM0102_Starter_Kit {
             // 
             // starting_year
             // 
+            this.starting_year.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.starting_year.Font = new System.Drawing.Font("Savile ExtraBold", 9F, System.Drawing.FontStyle.Bold);
             this.starting_year.Location = new System.Drawing.Point(323, 144);
             this.starting_year.Maximum = new decimal(new int[] {
@@ -57,6 +58,7 @@ namespace CM0102_Starter_Kit {
             0,
             0});
             this.starting_year.Name = "starting_year";
+            this.starting_year.ReadOnly = true;
             this.starting_year.Size = new System.Drawing.Size(100, 22);
             this.starting_year.TabStop = false;
             this.starting_year.Value = new decimal(new int[] {
@@ -105,6 +107,7 @@ namespace CM0102_Starter_Kit {
             // 
             // currency_inflation
             // 
+            this.currency_inflation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.currency_inflation.DecimalPlaces = 2;
             this.currency_inflation.Font = new System.Drawing.Font("Savile ExtraBold", 9F, System.Drawing.FontStyle.Bold);
             this.currency_inflation.Increment = new decimal(new int[] {
@@ -119,6 +122,7 @@ namespace CM0102_Starter_Kit {
             0,
             0});
             this.currency_inflation.Name = "currency_inflation";
+            this.currency_inflation.ReadOnly = true;
             this.currency_inflation.Size = new System.Drawing.Size(101, 22);
             this.currency_inflation.TabStop = false;
             this.currency_inflation.Value = new decimal(new int[] {
@@ -262,7 +266,7 @@ namespace CM0102_Starter_Kit {
             this.tapani_regen.ForeColor = System.Drawing.Color.White;
             this.tapani_regen.Location = new System.Drawing.Point(122, 433);
             this.tapani_regen.Name = "tapani_regen";
-            this.tapani_regen.Size = new System.Drawing.Size(224, 25);
+            this.tapani_regen.Size = new System.Drawing.Size(187, 25);
             this.tapani_regen.TabStop = false;
             this.tapani_regen.Text = "Tapani Regen Code";
             this.tapani_regen.UseVisualStyleBackColor = false;
