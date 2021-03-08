@@ -15,87 +15,53 @@ namespace CM0102_Starter_Kit {
             this.PerformLayout();
         }
 
-        protected override List<Control> GetButtonsToToggle() {
-            return new List<Control> {
-                this.standard_cm,
-                this.nick_patcher_cm,
-                this.cm_93
+        protected override List<Button> GetButtonsToToggle() {
+            return new List<Button> {
+                this.cm0102_standard,
+                this.cm0102_nick_patcher,
+                this.cm93_standard,
+                this.cm93_nick_patcher
             };
         }
 
-        private void LaunchGame(bool usesCustomLoader, bool renameExes) {
-            ShowLoader();
-            if (renameExes) {
-                RenameExes();
-            }
-            ProcessStartInfo playPsi = new ProcessStartInfo {
-                WorkingDirectory = GameFolder,
-                FileName = CmLoader,
-                UseShellExecute = false,
-                Arguments = usesCustomLoader ? CmLoaderCustomConfig : CmLoaderConfig
-            };
-            Process playProcess = Process.Start(playPsi);
-            playProcess.WaitForExit();
-            playProcess.Close();
+        private void LaunchGame(Button button) {
+            bool ninetyThreeClicked = button.Equals(this.cm93_standard) || button.Equals(this.cm93_nick_patcher);
+            bool canProceed = (ninetyThreeClicked && NinetyThreeDataLoaded()) || (!ninetyThreeClicked && !NinetyThreeDataLoaded());
 
-            // The loader is a stub process for the game, so let's wait for the game to be closed
-            Process[] mainPlayProcesses = Process.GetProcessesByName("cm0102");
-            foreach (Process process in mainPlayProcesses) {
-                process.WaitForExit();
-                process.Close();
-            }
-            if (renameExes) {
-                RenameExes();
-            }
-            HideLoader();
-        }
+            if (canProceed) {
+                ShowLoader();
+                bool useDefaultConfig = button.Equals(this.cm93_standard) || button.Equals(this.cm0102_standard);
 
-        private void OverridePatcherSettings() {
-            string destinationFile = Path.Combine(GameFolder, CmLoaderCustomConfig);
-            string[] lines = File.ReadAllLines(destinationFile);
-
-            using (StreamWriter writer = new StreamWriter(destinationFile)) {
-                for (int currentLine = 1; currentLine <= lines.Length; ++currentLine) {
-                    if (currentLine == 1) {
-                        writer.WriteLine("Year = 2001");
-                    } else {
-                        writer.WriteLine(lines[currentLine - 1]);
-                    }
+                if (ninetyThreeClicked) {
+                    RenameExes();
                 }
-            }
-        }
+                ProcessStartInfo playPsi = new ProcessStartInfo {
+                    WorkingDirectory = GameFolder,
+                    FileName = CmLoader,
+                    UseShellExecute = false,
+                    Arguments = useDefaultConfig ? CmLoaderConfig : CmLoaderCustomConfig
+                };
+                Process playProcess = Process.Start(playPsi);
+                playProcess.WaitForExit();
+                playProcess.Close();
 
-        private void Cm0102_Click(object sender, EventArgs e) {
-            if (!NinetyThreeDataLoaded()) {
-                LaunchGame(false, false);
+                // The loader is a stub process for the game, so let's wait for the game to be closed
+                Process[] mainPlayProcesses = Process.GetProcessesByName("cm0102");
+                foreach (Process process in mainPlayProcesses) {
+                    process.WaitForExit();
+                    process.Close();
+                }
+                if (ninetyThreeClicked) {
+                    RenameExes();
+                }
+                HideLoader();
             } else {
                 DisplayMessage("Please load a compatible database first!");
             }
         }
 
-        private void Cm0102Patched_Click(object sender, EventArgs e) {
-            if (!NinetyThreeDataLoaded()) {
-                LaunchGame(true, false);
-            } else {
-                DisplayMessage("Please load a compatible database first!");
-            }
-        }
-
-        private void Cm93_Click(object sender, EventArgs e) {
-            if (NinetyThreeDataLoaded()) {
-                LaunchGame(false, true);
-            } else {
-                DisplayMessage("Please load the 1993/94 database first!");
-            }
-        }
-
-        private void Cm93Patched_Click(object sender, EventArgs e) {
-            if (NinetyThreeDataLoaded()) {
-                OverridePatcherSettings();
-                LaunchGame(true, true);
-            } else {
-                DisplayMessage("Please load the 1993/94 database first!");
-            }
+        private void PlayButton_Click(object sender, EventArgs e) {
+            LaunchGame((Button) sender);
         }
 
         private void PlayMenu_FormClosed(object sender, FormClosedEventArgs e) {

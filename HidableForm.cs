@@ -51,7 +51,7 @@ namespace CM0102_Starter_Kit {
             return File.Exists(Path.Combine(DataFolder, "ninety_three.txt"));
         }
 
-        protected abstract List<Control> GetButtonsToToggle();
+        protected abstract List<Button> GetButtonsToToggle();
 
         protected virtual void RefreshForm() { }
 
@@ -59,8 +59,8 @@ namespace CM0102_Starter_Kit {
             exit.Enabled = toggle;
             back_button.Enabled = toggle;
 
-            foreach (Control control in GetButtonsToToggle()) {
-                control.Enabled = toggle;
+            foreach (Button button in GetButtonsToToggle()) {
+                button.Enabled = toggle;
             }
         }
 
@@ -106,6 +106,19 @@ namespace CM0102_Starter_Kit {
 
             File.Delete(tempZipFile);
             Directory.Delete(tempZipFolder, true);
+        }
+
+        protected void WriteConfigFile(List<string> lines, string configFile) {
+            using (StreamWriter writer = new StreamWriter(Path.Combine(GameFolder, configFile))) {
+                for (int currentLine = 1; currentLine <= lines.Count; ++currentLine) {
+                    writer.WriteLine(lines[currentLine - 1]);
+                }
+                writer.WriteLine("AutoLoadPatchFiles = false");
+                writer.WriteLine("PatchFileDirectory = .");
+                writer.WriteLine("DataDirectory = data");
+                writer.WriteLine("Debug = false");
+                writer.WriteLine("NoCD = true");
+            }
         }
 
         protected void ShowLoader() {

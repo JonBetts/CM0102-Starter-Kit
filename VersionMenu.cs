@@ -17,14 +17,42 @@ namespace CM0102_Starter_Kit {
             this.PerformLayout();
         }
 
-        protected override List<Control> GetButtonsToToggle() {
-            return new List<Control> {
+        protected override List<Button> GetButtonsToToggle() {
+            return new List<Button> {
                 this.original_database,
                 this.patched_database,
                 this.march_database,
                 this.november_database,
                 this.luessenhoff_database
             };
+        }
+
+        private List<string> GetConfigFileLines(string configFile) {
+            string[] lines = File.ReadAllLines(Path.Combine(GameFolder, configFile));
+
+            return new List<string> {
+                "Year = " + (NinetyThreeDataLoaded() ? "0" : "2001"),
+                lines[1],
+                lines[2],
+                NinetyThreeDataLoaded() ? "ColouredAttributes = false" : lines[3],
+                NinetyThreeDataLoaded() ? "DisableUnprotectedContracts = false" : lines[4],
+                lines[5],
+                lines[6],
+                NinetyThreeDataLoaded() ? "RegenFixes = false" : lines[7],
+                lines[8],
+                lines[9],
+                lines[10],
+                lines[11],
+                lines[12],
+                lines[13]
+            };
+        }
+
+        private void UpdateConfigFiles() {
+            List<string> defaultLines = GetConfigFileLines(CmLoaderConfig);
+            WriteConfigFile(defaultLines, CmLoaderConfig);
+            List<string> customLines = GetConfigFileLines(CmLoaderCustomConfig);
+            WriteConfigFile(customLines, CmLoaderCustomConfig);
         }
 
         private void CopyDataToGame(VersionName version) {
@@ -63,6 +91,9 @@ namespace CM0102_Starter_Kit {
             File.WriteAllBytes(dataZipFile, resourceFile);
             new FastZip().ExtractZip(dataZipFile, DataFolder, null);
             File.Delete(dataZipFile);
+
+            // Update the loader config files as switching betwen CM93/94 and anything else requires some changes
+            UpdateConfigFiles();
         }
 
         private void SwitchVersion(VersionName versionName) {

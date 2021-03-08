@@ -15,8 +15,8 @@ namespace CM0102_Starter_Kit {
             this.PerformLayout();
         }
 
-        protected override List<Control> GetButtonsToToggle() {
-            return new List<Control> {
+        protected override List<Button> GetButtonsToToggle() {
+            return new List<Button> {
                 this.apply
             };
         }
@@ -50,47 +50,76 @@ namespace CM0102_Starter_Kit {
             };
         }
 
+        private Dictionary<Control, object> GetRestrictedControls() {
+            return new Dictionary<Control, object> {
+                { this.starting_year, 1993 },
+                { this.coloured_attributes, true },
+                { this.unprotected_contracts, true },
+                { this.regen_fixes, true },
+            };
+        }
+
         protected override void RefreshForm() {
+            bool usingNinetyThree = NinetyThreeDataLoaded();
             string[] lines = File.ReadAllLines(Path.Combine(GameFolder, CmLoaderCustomConfig));
-            foreach (KeyValuePair<ComboBox, int> comboBox in GetComboBoxes()) {
-                string line = lines[comboBox.Value];
+            Dictionary<Control, object> restrictedControls = GetRestrictedControls();
+
+            foreach (KeyValuePair<ComboBox, int> keyValuePair in GetComboBoxes()) {
+                ComboBox comboBox = keyValuePair.Key;
+                string line = lines[keyValuePair.Value];
                 Match match = Regex.Match(line, @"\d+");
-                comboBox.Key.SelectedIndex = comboBox.Key.FindStringExact("x" + match.Captures[0].Value);
+                comboBox.SelectedIndex = comboBox.FindStringExact("x" + match.Captures[0].Value);
             }
-            foreach (KeyValuePair<NumericUpDown, int> numericUpDown in GetNumericUpDowns()) {
-                string line = lines[numericUpDown.Value];
-                Match match = Regex.Match(line, @"\d+.*\d*");
-                numericUpDown.Key.Value = Convert.ToDecimal(match.Captures[0].Value);
+            foreach (KeyValuePair<NumericUpDown, int> keyValuePair in GetNumericUpDowns()) {
+                NumericUpDown numericUpDown = keyValuePair.Key;
+
+                if (usingNinetyThree && restrictedControls.TryGetValue(numericUpDown, out object defaultValue)) {
+                    numericUpDown.Value = Convert.ToDecimal(defaultValue);
+                    numericUpDown.Enabled = false;
+                // Special case
+                } else if (numericUpDown.Equals(this.starting_year) && numericUpDown.Value == 0) {
+                    numericUpDown.Value = 2001;
+                    numericUpDown.Enabled = true;
+                } else {
+                    string line = lines[keyValuePair.Value];
+                    Match match = Regex.Match(line, @"\d+.*\d*");
+                    numericUpDown.Value = Convert.ToDecimal(match.Captures[0].Value);
+                    numericUpDown.Enabled = true;
+                }
             }
-            foreach (KeyValuePair<CheckBox, int> checkBox in GetCheckBoxes()) {
-                string line = lines[checkBox.Value];
-                Match match = Regex.Match(line, "true|false");
-                checkBox.Key.Checked = Convert.ToBoolean(match.Captures[0].Value);
+            foreach (KeyValuePair<CheckBox, int> keyValuePair in GetCheckBoxes()) {
+                CheckBox checkBox = keyValuePair.Key;
+
+                if (usingNinetyThree && restrictedControls.TryGetValue(checkBox, out object defaultValue)) {
+                    checkBox.Checked = Convert.ToBoolean(defaultValue);
+                    checkBox.Enabled = false;
+                } else {
+                    string line = lines[keyValuePair.Value];
+                    Match match = Regex.Match(line, "true|false");
+                    checkBox.Checked = Convert.ToBoolean(match.Captures[0].Value);
+                    checkBox.Enabled = true;
+                }
             }
         }
 
         private void Apply_Click(object sender, EventArgs e) {
-            using (StreamWriter writer = new StreamWriter(Path.Combine(GameFolder, CmLoaderCustomConfig))) {
-                writer.Write("Year = " + this.starting_year.Value + Environment.NewLine);
-                writer.Write("SpeedMultiplier = " + this.game_speed.SelectedItem.ToString().Replace("x", "") + Environment.NewLine);
-                writer.Write("CurrencyMultiplier = " + this.currency_inflation.Value + Environment.NewLine);
-                writer.Write("ColouredAttributes = " + this.coloured_attributes.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("DisableUnprotectedContracts = " + this.unprotected_contracts.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("HideNonPublicBids = " + this.non_public_bids.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("IncreaseToSevenSubs = " + this.seven_substitutes.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("RegenFixes = " + this.regen_fixes.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("ForceLoadAllPlayers = " + this.force_all_players.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("AddTapaniRegenCode = " + this.tapani_regen.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("UnCap20s = " + this.uncap.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("RemoveForeignPlayerLimit = " + this.foreign_player_limit.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("NoWorkPermits = " + this.work_permits.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("ChangeTo1280x800 = " + this.resolution.Checked.ToString().ToLower() + Environment.NewLine);
-                writer.Write("AutoLoadPatchFiles = false" + Environment.NewLine);
-                writer.Write("PatchFileDirectory = ." + Environment.NewLine);
-                writer.Write("DataDirectory = data" + Environment.NewLine);
-                writer.Write("Debug = false" + Environment.NewLine);
-                writer.Write("NoCD = true" + Environment.NewLine);
-            }
+            List<string> values = new List<string> {
+                "Year = " + (NinetyThreeDataLoaded() ? "0" : this.starting_year.Value.ToString()),
+                "SpeedMultiplier = " + this.game_speed.SelectedItem.ToString().Replace("x", ""),
+                "CurrencyMultiplier = " + this.currency_inflation.Value.ToString(),
+                "ColouredAttributes = " + (NinetyThreeDataLoaded() ? "false" : this.coloured_attributes.Checked.ToString().ToLower()),
+                "DisableUnprotectedContracts = " + (NinetyThreeDataLoaded() ? "false" : this.unprotected_contracts.Checked.ToString().ToLower()),
+                "HideNonPublicBids = " + this.non_public_bids.Checked.ToString().ToLower(),
+                "IncreaseToSevenSubs = " + this.seven_substitutes.Checked.ToString().ToLower(),
+                "RegenFixes = " + (NinetyThreeDataLoaded() ? "false" : this.regen_fixes.Checked.ToString().ToLower()),
+                "ForceLoadAllPlayers = " + this.force_all_players.Checked.ToString().ToLower(),
+                "AddTapaniRegenCode = " + this.tapani_regen.Checked.ToString().ToLower(),
+                "UnCap20s = " + this.uncap.Checked.ToString().ToLower(),
+                "RemoveForeignPlayerLimit = " + this.foreign_player_limit.Checked.ToString().ToLower(),
+                "NoWorkPermits = " + this.work_permits.Checked.ToString().ToLower(),
+                "ChangeTo1280x800 = " + this.resolution.Checked.ToString().ToLower()
+            };
+            WriteConfigFile(values, CmLoaderCustomConfig);
             DisplayMessage("Settings successfully changed!");
         }
 

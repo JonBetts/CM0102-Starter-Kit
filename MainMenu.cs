@@ -22,8 +22,8 @@ namespace CM0102_Starter_Kit {
             this.playMenu = new PlayMenu(this);
         }
  
-        protected override List<Control> GetButtonsToToggle() {
-            return new List<Control> {
+        protected override List<Button> GetButtonsToToggle() {
+            return new List<Button> {
                 this.switch_update,
                 this.install_var,
                 this.nick_patcher,
