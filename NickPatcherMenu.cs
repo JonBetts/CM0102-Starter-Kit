@@ -53,7 +53,7 @@ namespace CM0102_Starter_Kit {
 
         protected override void RefreshForm() {
             // This will need changing as soon as we add any other databases
-            Database database = NinetyThreeDataLoaded() ? NinetyThreeDatabase : (EightyNineDataLoaded() ? EightyNineDatabase : OriginalDatabase);
+            Database database = Cm93DataLoaded() ? Cm93Database : (Cm89DataLoaded() ? Cm89Database : OriginalDatabase);
             string[] lines = File.ReadAllLines(Path.Combine(GameFolder, CmLoaderCustomConfig));
 
             // No ComboBoxes have restricted values, so haven't implemented that here

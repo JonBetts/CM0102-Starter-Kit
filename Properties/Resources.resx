@@ -124,8 +124,11 @@
   <data name="boca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\boca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eighty_nine_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\eighty_nine_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cm89_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\cm89_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cm93_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\cm93_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="events_eng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\external\events_eng.cfg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -141,9 +144,6 @@
   </data>
   <data name="march_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\march_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ninety_three_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\ninety_three_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="november_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\november_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

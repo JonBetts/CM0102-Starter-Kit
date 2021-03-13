@@ -13,8 +13,8 @@ namespace CM0102_Starter_Kit {
             this.march_database = new System.Windows.Forms.Button();
             this.november_database = new System.Windows.Forms.Button();
             this.luessenhoff_database = new System.Windows.Forms.Button();
-            this.eighty_nine_database = new System.Windows.Forms.Button();
-            this.ninety_three_database = new System.Windows.Forms.Button();
+            this.cm89_database = new System.Windows.Forms.Button();
+            this.cm93_database = new System.Windows.Forms.Button();
             // 
             // original_database
             // 
@@ -116,45 +116,45 @@ namespace CM0102_Starter_Kit {
             this.luessenhoff_database.UseVisualStyleBackColor = false;
             this.luessenhoff_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
             // 
-            // eighty_nine_database
+            // cm89_database
             // 
-            this.eighty_nine_database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.eighty_nine_database.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eighty_nine_database.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.eighty_nine_database.FlatAppearance.BorderSize = 2;
-            this.eighty_nine_database.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.eighty_nine_database.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.eighty_nine_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eighty_nine_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
-            this.eighty_nine_database.ForeColor = System.Drawing.Color.White;
-            this.eighty_nine_database.Location = new System.Drawing.Point(120, 278);
-            this.eighty_nine_database.Margin = new System.Windows.Forms.Padding(0);
-            this.eighty_nine_database.Name = "eighty_nine_database";
-            this.eighty_nine_database.Size = new System.Drawing.Size(327, 65);
-            this.eighty_nine_database.TabStop = false;
-            this.eighty_nine_database.Text = "1989/90";
-            this.eighty_nine_database.UseVisualStyleBackColor = false;
-            this.eighty_nine_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
+            this.cm89_database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cm89_database.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cm89_database.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.cm89_database.FlatAppearance.BorderSize = 2;
+            this.cm89_database.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cm89_database.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.cm89_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cm89_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.cm89_database.ForeColor = System.Drawing.Color.White;
+            this.cm89_database.Location = new System.Drawing.Point(120, 278);
+            this.cm89_database.Margin = new System.Windows.Forms.Padding(0);
+            this.cm89_database.Name = "cm89_database";
+            this.cm89_database.Size = new System.Drawing.Size(327, 65);
+            this.cm89_database.TabStop = false;
+            this.cm89_database.Text = "1989/90";
+            this.cm89_database.UseVisualStyleBackColor = false;
+            this.cm89_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
             // 
-            // ninety_three_database
+            // cm93_database
             // 
-            this.ninety_three_database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ninety_three_database.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ninety_three_database.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.ninety_three_database.FlatAppearance.BorderSize = 2;
-            this.ninety_three_database.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ninety_three_database.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.ninety_three_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ninety_three_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
-            this.ninety_three_database.ForeColor = System.Drawing.Color.White;
-            this.ninety_three_database.Location = new System.Drawing.Point(449, 278);
-            this.ninety_three_database.Margin = new System.Windows.Forms.Padding(0);
-            this.ninety_three_database.Name = "ninety_three_database";
-            this.ninety_three_database.Size = new System.Drawing.Size(327, 65);
-            this.ninety_three_database.TabStop = false;
-            this.ninety_three_database.Text = "1993/94";
-            this.ninety_three_database.UseVisualStyleBackColor = false;
-            this.ninety_three_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
+            this.cm93_database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cm93_database.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cm93_database.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.cm93_database.FlatAppearance.BorderSize = 2;
+            this.cm93_database.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cm93_database.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.cm93_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cm93_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.cm93_database.ForeColor = System.Drawing.Color.White;
+            this.cm93_database.Location = new System.Drawing.Point(449, 278);
+            this.cm93_database.Margin = new System.Windows.Forms.Padding(0);
+            this.cm93_database.Name = "cm93_database";
+            this.cm93_database.Size = new System.Drawing.Size(327, 65);
+            this.cm93_database.TabStop = false;
+            this.cm93_database.Text = "1993/94";
+            this.cm93_database.UseVisualStyleBackColor = false;
+            this.cm93_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
             // 
             // VersionMenu
             // 
@@ -165,8 +165,8 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.march_database);
             this.Controls.Add(this.november_database);
             this.Controls.Add(this.luessenhoff_database);
-            this.Controls.Add(this.eighty_nine_database);
-            this.Controls.Add(this.ninety_three_database);
+            this.Controls.Add(this.cm89_database);
+            this.Controls.Add(this.cm93_database);
             this.Name = "VersionMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VersionMenu_FormClosed);
         }
@@ -177,8 +177,8 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.Button march_database;
         private System.Windows.Forms.Button november_database;
         private System.Windows.Forms.Button luessenhoff_database;
-        private System.Windows.Forms.Button eighty_nine_database;
-        private System.Windows.Forms.Button ninety_three_database;
+        private System.Windows.Forms.Button cm89_database;
+        private System.Windows.Forms.Button cm93_database;
     }
 }
 

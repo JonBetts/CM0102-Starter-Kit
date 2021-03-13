@@ -20,10 +20,10 @@ namespace CM0102_Starter_Kit {
             return new List<Button> {
                 this.cm0102_standard,
                 this.cm0102_nick_patcher,
+                this.cm89_standard,
+                this.cm89_nick_patcher,
                 this.cm93_standard,
                 this.cm93_nick_patcher,
-                this.cm89_standard,
-                this.cm89_nick_patcher
             };
         }
 
@@ -35,16 +35,16 @@ namespace CM0102_Starter_Kit {
 
         protected override void RefreshForm() {
             // This will need changing as soon as we add any other databases
-            Database database = NinetyThreeDataLoaded() ? NinetyThreeDatabase : (EightyNineDataLoaded() ? EightyNineDatabase : OriginalDatabase);
+            Database database = Cm93DataLoaded() ? Cm93Database : (Cm89DataLoaded() ? Cm89Database : OriginalDatabase);
             DisableButtons(database);
         }
 
         private void RenameExes(Button button) {
-            bool ninetyThreeClicked = button.Equals(this.cm93_standard) || button.Equals(this.cm93_nick_patcher);
-            bool eightyNineClicked = button.Equals(this.cm89_standard) || button.Equals(this.cm89_nick_patcher);
+            bool Cm93Clicked = button.Equals(this.cm93_standard) || button.Equals(this.cm93_nick_patcher);
+            bool Cm89Clicked = button.Equals(this.cm89_standard) || button.Equals(this.cm89_nick_patcher);
 
-            if (ninetyThreeClicked || eightyNineClicked) {
-                string exeToUse = ninetyThreeClicked ? Cm93 : Cm89;
+            if (Cm93Clicked || Cm89Clicked) {
+                string exeToUse = Cm93Clicked ? Cm93 : Cm89;
                 if (File.Exists(Cm0102Backup)) {
                     File.Move(Cm0102, exeToUse);
                     File.Move(Cm0102Backup, Cm0102);

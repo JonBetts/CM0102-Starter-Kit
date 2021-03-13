@@ -24,8 +24,8 @@ namespace CM0102_Starter_Kit {
                 this.march_database,
                 this.november_database,
                 this.luessenhoff_database,
-                this.ninety_three_database,
-                this.eighty_nine_database
+                this.cm93_database,
+                this.cm89_database
             };
         }
 

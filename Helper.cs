@@ -47,12 +47,13 @@ namespace CM0102_Starter_Kit {
             return Directory.Exists(DataFolder);
         }
 
-        internal static bool NinetyThreeDataLoaded() {
-            return File.Exists(Path.Combine(DataFolder, "ninety_three.txt"));
+        internal static bool Cm89DataLoaded() {
+            return File.Exists(Path.Combine(DataFolder, "cm89.txt"));
         }
 
-        internal static bool EightyNineDataLoaded() {
-            return File.Exists(Path.Combine(DataFolder, "eighty_nine.txt"));
+        internal static bool Cm93DataLoaded() {
+            return File.Exists(Path.Combine(DataFolder, "cm93.txt"));
+        }
         }
 
         internal class ConfigLine {
@@ -67,14 +68,7 @@ namespace CM0102_Starter_Kit {
             internal string Value { get; }
         }
 
-        internal static readonly Dictionary<int, ConfigLine> NinetyThreeConfigLines = new Dictionary<int, ConfigLine> {
-            { 1, new ConfigLine(1, "Year", "1993") },
-            { 4, new ConfigLine(4, "ColouredAttributes", "false") },
-            { 5, new ConfigLine(5, "DisableUnprotectedContracts", "false") },
-            { 8, new ConfigLine(8, "RegenFixes", "false") }
-        };
-
-        internal static readonly Dictionary<int, ConfigLine> EightyNineConfigLines = new Dictionary<int, ConfigLine> {
+        internal static readonly Dictionary<int, ConfigLine> Cm89ConfigLines = new Dictionary<int, ConfigLine> {
             { 1, new ConfigLine(1, "Year", "1989") },
             { 4, new ConfigLine(4, "ColouredAttributes", "false") },
             { 5, new ConfigLine(5, "DisableUnprotectedContracts", "false") },
@@ -82,9 +76,16 @@ namespace CM0102_Starter_Kit {
             { 12, new ConfigLine(12, "RemoveForeignPlayerLimit", "false") }
         };
 
+        internal static readonly Dictionary<int, ConfigLine> Cm93ConfigLines = new Dictionary<int, ConfigLine> {
+            { 1, new ConfigLine(1, "Year", "1993") },
+            { 4, new ConfigLine(4, "ColouredAttributes", "false") },
+            { 5, new ConfigLine(5, "DisableUnprotectedContracts", "false") },
+            { 8, new ConfigLine(8, "RegenFixes", "false") }
+        };
+
         internal static readonly List<string> DefaultButtonNames = new List<string> { "cm0102_standard", "cm0102_nick_patcher" };
-        internal static readonly List<string> NinetyThreeButtonNames = new List<string> { "cm93_standard", "cm93_nick_patcher" };
-        internal static readonly List<string> EightyNineButtonNames = new List<string> { "cm89_standard", "cm89_nick_patcher" };
+        internal static readonly List<string> Cm89ButtonNames = new List<string> { "cm89_standard", "cm89_nick_patcher" };
+        internal static readonly List<string> Cm93ButtonNames = new List<string> { "cm93_standard", "cm93_nick_patcher" };
 
         internal class Database {
             internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, List<string> buttonNames) {
@@ -118,11 +119,11 @@ namespace CM0102_Starter_Kit {
         internal static readonly Database MarchDatabase = new Database("march_database", "March 2020", Properties.Resources.march_data, false, DefaultButtonNames, PatchedDatabase);
         internal static readonly Database NovemberDatabase = new Database("november_database", "November 2020", Properties.Resources.november_data, false, DefaultButtonNames, PatchedDatabase);
         internal static readonly Database LuessenhoffDatabase = new Database("luessenhoff_database", "Luessenhoff", Properties.Resources.luessenhoff_data, false, DefaultButtonNames, OriginalDatabase);
-        internal static readonly Database NinetyThreeDatabase = new Database("ninety_three_database", "1993/94", Properties.Resources.ninety_three_data, true, NinetyThreeButtonNames, NinetyThreeConfigLines);
-        internal static readonly Database EightyNineDatabase = new Database("eighty_nine_database", "1989/90", Properties.Resources.eighty_nine_data, true, EightyNineButtonNames, EightyNineConfigLines);
+        internal static readonly Database Cm89Database = new Database("cm89_database", "1989/90", Properties.Resources.cm89_data, true, Cm89ButtonNames, Cm89ConfigLines);
+        internal static readonly Database Cm93Database = new Database("cm93_database", "1993/94", Properties.Resources.cm93_data, true, Cm93ButtonNames, Cm93ConfigLines);
 
         internal static readonly List<Database> Databases = new List<Database> {
-            OriginalDatabase, PatchedDatabase, MarchDatabase, NovemberDatabase, LuessenhoffDatabase, NinetyThreeDatabase, EightyNineDatabase
+            OriginalDatabase, PatchedDatabase, MarchDatabase, NovemberDatabase, LuessenhoffDatabase, Cm93Database, Cm89Database
         };
 
         internal static void WriteConfigFile(List<string> lines, string configFile) {

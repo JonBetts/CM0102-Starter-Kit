@@ -83,9 +83,19 @@ namespace CM0102_Starter_Kit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] eighty_nine_data {
+        public static byte[] cm89_data {
             get {
-                object obj = ResourceManager.GetObject("eighty_nine_data", resourceCulture);
+                object obj = ResourceManager.GetObject("cm89_data", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] cm93_data {
+            get {
+                object obj = ResourceManager.GetObject("cm93_data", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -136,16 +146,6 @@ namespace CM0102_Starter_Kit.Properties {
         public static byte[] march_data {
             get {
                 object obj = ResourceManager.GetObject("march_data", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] ninety_three_data {
-            get {
-                object obj = ResourceManager.GetObject("ninety_three_data", resourceCulture);
                 return ((byte[])(obj));
             }
         }
