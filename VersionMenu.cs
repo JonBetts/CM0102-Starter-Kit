@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using static CM0102_Starter_Kit.Helper;
 
 namespace CM0102_Starter_Kit {
     partial class VersionMenu : HidableForm {
-        private enum VersionName { Original, Patched, March, November, Luessenhoff, NinetyThree }
-
         public VersionMenu(MainMenu mainMenu) {
             this.mainMenu = mainMenu;
             this.SuspendLayout();
@@ -17,143 +17,65 @@ namespace CM0102_Starter_Kit {
             this.PerformLayout();
         }
 
-        protected override List<Button> GetButtonsToToggle() {
+        protected override List<Button> GetButtons() {
             return new List<Button> {
                 this.original_database,
                 this.patched_database,
                 this.march_database,
                 this.november_database,
-                this.luessenhoff_database
+                this.luessenhoff_database,
+                this.ninety_three_database,
+                this.eighty_nine_database
             };
         }
 
-        private List<string> GetConfigFileLines(string configFile) {
-            string[] lines = File.ReadAllLines(Path.Combine(GameFolder, configFile));
+        private List<string> GetDefaultConfigFileLines(string configFile, Database database) {
+            string[] existingLines = File.ReadAllLines(Path.Combine(GameFolder, configFile));
+            List<string> newLines = new List<string>();
 
-            return new List<string> {
-                "Year = " + (NinetyThreeDataLoaded() ? "0" : "2001"),
-                lines[1],
-                lines[2],
-                NinetyThreeDataLoaded() ? "ColouredAttributes = false" : lines[3],
-                NinetyThreeDataLoaded() ? "DisableUnprotectedContracts = false" : lines[4],
-                lines[5],
-                lines[6],
-                NinetyThreeDataLoaded() ? "RegenFixes = false" : lines[7],
-                lines[8],
-                lines[9],
-                lines[10],
-                lines[11],
-                lines[12],
-                lines[13]
-            };
+            for (int currentLine = 1; currentLine <= existingLines.Length; ++currentLine) {
+                if (database.ConfigLines.TryGetValue(currentLine, out ConfigLine configLine)) {
+                    // Year is a special case - set it to 0 in the file if there is a custom value set for it
+                    if (currentLine == 1) {
+                        newLines.Add("Year = 0");
+                    } else {
+                        newLines.Add(configLine.Name + " = " + configLine.Value);
+                    }
+                } else {
+                    newLines.Add(existingLines[currentLine - 1]);
+                }
+            }
+            return newLines;
         }
 
-        private void UpdateConfigFiles() {
-            List<string> defaultLines = GetConfigFileLines(CmLoaderConfig);
+        private void UpdateConfigFiles(Database database) {
+            List<string> defaultLines = GetDefaultConfigFileLines(CmLoaderConfig, database);
             WriteConfigFile(defaultLines, CmLoaderConfig);
-            List<string> customLines = GetConfigFileLines(CmLoaderCustomConfig);
+            List<string> customLines = GetDefaultConfigFileLines(CmLoaderCustomConfig, database);
             WriteConfigFile(customLines, CmLoaderCustomConfig);
         }
 
-        private void CopyDataToGame(VersionName version) {
-            byte[] resourceFile;
-            bool deleteDataFolder = false;
-
-            switch (version) {
-                case VersionName.Patched:
-                    resourceFile = Properties.Resources.patched_data;
-                    deleteDataFolder = true;
-                    break;
-                case VersionName.March:
-                    resourceFile = Properties.Resources.march_data;
-                    break;
-                case VersionName.November:
-                    resourceFile = Properties.Resources.november_data;
-                    break;
-                case VersionName.Luessenhoff:
-                    resourceFile = Properties.Resources.luessenhoff_data;
-                    break;
-                case VersionName.NinetyThree:
-                    resourceFile = Properties.Resources.ninety_three_data;
-                    deleteDataFolder = true;
-                    break;
-                default:
-                case VersionName.Original:
-                    resourceFile = Properties.Resources.original_data;
-                    deleteDataFolder = true;
-                    break;
-            }
-            if (deleteDataFolder && DataFolderExists()) {
+        private void CopyDataToGame(Database database) {
+            if (database.DeleteDataFolder && DataFolderExists()) {
                 Directory.Delete(DataFolder, true);
             }
             Directory.CreateDirectory(DataFolder);
             string dataZipFile = DataFolder + ".zip";
-            File.WriteAllBytes(dataZipFile, resourceFile);
+            File.WriteAllBytes(dataZipFile, database.ResourceFile);
             new FastZip().ExtractZip(dataZipFile, DataFolder, null);
             File.Delete(dataZipFile);
-
-            // Update the loader config files as switching betwen CM93/94 and anything else requires some changes
-            UpdateConfigFiles();
         }
 
-        private void SwitchVersion(VersionName versionName) {
-            string label;
-
-            switch (versionName) {
-                case VersionName.Patched:
-                    CopyDataToGame(VersionName.Patched);
-                    label = "Patched (3.9.68)";
-                    break;
-                case VersionName.March:
-                    CopyDataToGame(VersionName.Patched);
-                    CopyDataToGame(VersionName.March);
-                    label = "March 2020";
-                    break;
-                case VersionName.November:
-                    CopyDataToGame(VersionName.Patched);
-                    CopyDataToGame(VersionName.November);
-                    label = "November 2020";
-                    break;
-                case VersionName.Luessenhoff:
-                    CopyDataToGame(VersionName.Original);
-                    CopyDataToGame(VersionName.Luessenhoff);
-                    label = "Luessenhoff";
-                    break;
-                case VersionName.NinetyThree:
-                    CopyDataToGame(VersionName.NinetyThree);
-                    label = "1993/94";
-                    break;
-                default:
-                case VersionName.Original:
-                    CopyDataToGame(VersionName.Original);
-                    label = "Original (3.9.60)";
-                    break;
+        private void SwitchDatabase_Click(object sender, EventArgs e) {
+            Button button = (Button) sender;
+            Database database = Databases.Where(v => string.Equals(v.Name, button.Name)).FirstOrDefault();
+            if (database.PrerequisiteDatabase != null) {
+                CopyDataToGame(database.PrerequisiteDatabase);
             }
-            DisplayMessage(label + " database successfully loaded!");
-        }
-
-        private void OriginalDatabase_Click(object sender, EventArgs e) {
-            SwitchVersion(VersionName.Original);
-        }
-
-        private void PatchedDatabase_Click(object sender, EventArgs e) {
-            SwitchVersion(VersionName.Patched);
-        }
-
-        private void MarchDatabase_Click(object sender, EventArgs e) {
-            SwitchVersion(VersionName.March);
-        }
-
-        private void NovemberDatabase_Click(object sender, EventArgs e) {
-            SwitchVersion(VersionName.November);
-        }
-
-        private void LuessenhoffDatabase_Click(object sender, EventArgs e) {
-            SwitchVersion(VersionName.Luessenhoff);
-        }
-
-        private void NinetyThreeDatabase_Click(object sender, EventArgs e) {
-            SwitchVersion(VersionName.NinetyThree);
+            CopyDataToGame(database);
+            // Update the loader config files as switching between CM89, CM93 and anything else requires some changes
+            UpdateConfigFiles(database);
+            DisplayMessage(database.Label + " database successfully loaded!");
         }
 
         private void VersionMenu_FormClosed(object sender, FormClosedEventArgs e) {

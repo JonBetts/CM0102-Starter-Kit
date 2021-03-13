@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using static CM0102_Starter_Kit.Helper;
 
 namespace CM0102_Starter_Kit {
     partial class NickPatcherMenu : HidableForm {
@@ -15,7 +16,7 @@ namespace CM0102_Starter_Kit {
             this.PerformLayout();
         }
 
-        protected override List<Button> GetButtonsToToggle() {
+        protected override List<Button> GetButtons() {
             return new List<Button> {
                 this.apply
             };
@@ -23,78 +24,75 @@ namespace CM0102_Starter_Kit {
 
         private Dictionary<ComboBox, int> GetComboBoxes() {
             return new Dictionary<ComboBox, int> {
-                { this.game_speed, 1 }
+                { this.game_speed, 2 }
             };
         }
 
         private Dictionary<NumericUpDown, int> GetNumericUpDowns() {
             return new Dictionary<NumericUpDown, int> {
-                { this.starting_year, 0 },
-                { this.currency_inflation, 2 }
+                { this.starting_year, 1 },
+                { this.currency_inflation, 3 }
             };
         }
 
         private Dictionary<CheckBox, int> GetCheckBoxes() {
             return new Dictionary<CheckBox, int> {
-                { this.coloured_attributes, 3 },
-                { this.unprotected_contracts, 4 },
-                { this.non_public_bids, 5 },
-                { this.seven_substitutes, 6 },
-                { this.regen_fixes, 7 },
-                { this.force_all_players, 8 },
-                { this.tapani_regen, 9 },
-                { this.uncap, 10 },
-                { this.foreign_player_limit, 11 },
-                { this.work_permits, 12 },
-                { this.resolution, 13 }
-            };
-        }
-
-        private Dictionary<Control, object> GetRestrictedControls() {
-            return new Dictionary<Control, object> {
-                { this.starting_year, 1993 },
-                { this.coloured_attributes, true },
-                { this.unprotected_contracts, true },
-                { this.regen_fixes, true },
+                { this.coloured_attributes, 4 },
+                { this.unprotected_contracts, 5 },
+                { this.non_public_bids, 6 },
+                { this.seven_substitutes, 7 },
+                { this.regen_fixes, 8 },
+                { this.force_all_players, 9 },
+                { this.tapani_regen, 10 },
+                { this.uncap, 11 },
+                { this.foreign_player_limit, 12 },
+                { this.work_permits, 13 },
+                { this.resolution, 14 }
             };
         }
 
         protected override void RefreshForm() {
-            bool usingNinetyThree = NinetyThreeDataLoaded();
+            // This will need changing as soon as we add any other databases
+            Database database = NinetyThreeDataLoaded() ? NinetyThreeDatabase : (EightyNineDataLoaded() ? EightyNineDatabase : OriginalDatabase);
             string[] lines = File.ReadAllLines(Path.Combine(GameFolder, CmLoaderCustomConfig));
-            Dictionary<Control, object> restrictedControls = GetRestrictedControls();
 
+            // No ComboBoxes have restricted values, so haven't implemented that here
             foreach (KeyValuePair<ComboBox, int> keyValuePair in GetComboBoxes()) {
                 ComboBox comboBox = keyValuePair.Key;
-                string line = lines[keyValuePair.Value];
+                string line = lines[keyValuePair.Value - 1];
                 Match match = Regex.Match(line, @"\d+");
                 comboBox.SelectedIndex = comboBox.FindStringExact("x" + match.Captures[0].Value);
             }
             foreach (KeyValuePair<NumericUpDown, int> keyValuePair in GetNumericUpDowns()) {
                 NumericUpDown numericUpDown = keyValuePair.Key;
+                int lineNumber = keyValuePair.Value;
+                string line = lines[lineNumber - 1];
+                Match match = Regex.Match(line, @"\d+.*\d*");
+                decimal lineValue = Convert.ToDecimal(match.Captures[0].Value);
 
-                if (usingNinetyThree && restrictedControls.TryGetValue(numericUpDown, out object defaultValue)) {
-                    numericUpDown.Value = Convert.ToDecimal(defaultValue);
+                if (database.ConfigLines.ContainsKey(lineNumber)) {
+                    database.ConfigLines.TryGetValue(lineNumber, out ConfigLine configLine);
+                    numericUpDown.Value = Convert.ToDecimal(configLine.Value);
                     numericUpDown.Enabled = false;
-                // Special case
-                } else if (numericUpDown.Equals(this.starting_year) && numericUpDown.Value == 0) {
+                // Special case - we have gone from a restricted exe back to the default, so reset the starting year
+                } else if (numericUpDown.Equals(this.starting_year) && lineValue == 0) {
                     numericUpDown.Value = 2001;
                     numericUpDown.Enabled = true;
                 } else {
-                    string line = lines[keyValuePair.Value];
-                    Match match = Regex.Match(line, @"\d+.*\d*");
-                    numericUpDown.Value = Convert.ToDecimal(match.Captures[0].Value);
+                    numericUpDown.Value = lineValue;
                     numericUpDown.Enabled = true;
                 }
             }
             foreach (KeyValuePair<CheckBox, int> keyValuePair in GetCheckBoxes()) {
                 CheckBox checkBox = keyValuePair.Key;
-
-                if (usingNinetyThree && restrictedControls.TryGetValue(checkBox, out object defaultValue)) {
-                    checkBox.Checked = Convert.ToBoolean(defaultValue);
+                int lineNumber = keyValuePair.Value;
+                // If a check box is restricted, it's restricted to true on the page
+                // (but in reality the value is false in the config file as we don't want to apply it on top of the exe)
+                if (database.ConfigLines.ContainsKey(lineNumber)) {
+                    checkBox.Checked = true;
                     checkBox.Enabled = false;
                 } else {
-                    string line = lines[keyValuePair.Value];
+                    string line = lines[lineNumber - 1];
                     Match match = Regex.Match(line, "true|false");
                     checkBox.Checked = Convert.ToBoolean(match.Captures[0].Value);
                     checkBox.Enabled = true;
@@ -104,20 +102,25 @@ namespace CM0102_Starter_Kit {
 
         private void Apply_Click(object sender, EventArgs e) {
             List<string> values = new List<string> {
-                "Year = " + (NinetyThreeDataLoaded() ? "0" : this.starting_year.Value.ToString()),
+                "Year = " + (this.starting_year.Enabled ? this.starting_year.Value.ToString() : "0"),
                 "SpeedMultiplier = " + this.game_speed.SelectedItem.ToString().Replace("x", ""),
                 "CurrencyMultiplier = " + this.currency_inflation.Value.ToString(),
-                "ColouredAttributes = " + (NinetyThreeDataLoaded() ? "false" : this.coloured_attributes.Checked.ToString().ToLower()),
-                "DisableUnprotectedContracts = " + (NinetyThreeDataLoaded() ? "false" : this.unprotected_contracts.Checked.ToString().ToLower()),
-                "HideNonPublicBids = " + this.non_public_bids.Checked.ToString().ToLower(),
-                "IncreaseToSevenSubs = " + this.seven_substitutes.Checked.ToString().ToLower(),
-                "RegenFixes = " + (NinetyThreeDataLoaded() ? "false" : this.regen_fixes.Checked.ToString().ToLower()),
+                "ColouredAttributes = " + (this.coloured_attributes.Enabled ? this.coloured_attributes.Checked.ToString().ToLower() : "false"),
+                "DisableUnprotectedContracts = " + (this.unprotected_contracts.Enabled ? this.unprotected_contracts.Checked.ToString().ToLower() : "false"),
+                "HideNonPublicBids = " + (this.non_public_bids.Enabled ? this.non_public_bids.Checked.ToString().ToLower() : "false"),
+                "IncreaseToSevenSubs = " + (this.seven_substitutes.Enabled ? this.seven_substitutes.Checked.ToString().ToLower() : "false"),
+                "RegenFixes = " + (this.regen_fixes.Enabled ? this.regen_fixes.Checked.ToString().ToLower() : "false"),
                 "ForceLoadAllPlayers = " + this.force_all_players.Checked.ToString().ToLower(),
                 "AddTapaniRegenCode = " + this.tapani_regen.Checked.ToString().ToLower(),
                 "UnCap20s = " + this.uncap.Checked.ToString().ToLower(),
-                "RemoveForeignPlayerLimit = " + this.foreign_player_limit.Checked.ToString().ToLower(),
-                "NoWorkPermits = " + this.work_permits.Checked.ToString().ToLower(),
-                "ChangeTo1280x800 = " + this.resolution.Checked.ToString().ToLower()
+                "RemoveForeignPlayerLimit = " + (this.foreign_player_limit.Enabled ? this.foreign_player_limit.Checked.ToString().ToLower() : "false"),
+                "NoWorkPermits = " + (this.work_permits.Enabled ? this.work_permits.Checked.ToString().ToLower() : "false"),
+                "ChangeTo1280x800 = " + this.resolution.Checked.ToString().ToLower(),
+                "AutoLoadPatchFiles = false",
+                "PatchFileDirectory = .",
+                "DataDirectory = data",
+                "Debug = false",
+                "NoCD = true"
             };
             WriteConfigFile(values, CmLoaderCustomConfig);
             DisplayMessage("Settings successfully changed!");

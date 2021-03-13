@@ -83,6 +83,16 @@ namespace CM0102_Starter_Kit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] eighty_nine_data {
+            get {
+                object obj = ResourceManager.GetObject("eighty_nine_data", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] events_eng {
             get {
                 object obj = ResourceManager.GetObject("events_eng", resourceCulture);

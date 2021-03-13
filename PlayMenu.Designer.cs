@@ -10,6 +10,8 @@ namespace CM0102_Starter_Kit {
         private void InitializeComponent() {
             this.cm0102_standard = new System.Windows.Forms.Button();
             this.cm0102_nick_patcher = new System.Windows.Forms.Button();
+            this.cm89_standard = new System.Windows.Forms.Button();
+            this.cm89_nick_patcher = new System.Windows.Forms.Button();
             this.cm93_standard = new System.Windows.Forms.Button();
             this.cm93_nick_patcher = new System.Windows.Forms.Button();
             // 
@@ -53,6 +55,46 @@ namespace CM0102_Starter_Kit {
             this.cm0102_nick_patcher.UseVisualStyleBackColor = false;
             this.cm0102_nick_patcher.Click += new System.EventHandler(this.PlayButton_Click);
             // 
+            // cm89_standard
+            // 
+            this.cm89_standard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cm89_standard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cm89_standard.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.cm89_standard.FlatAppearance.BorderSize = 2;
+            this.cm89_standard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cm89_standard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.cm89_standard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cm89_standard.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.cm89_standard.ForeColor = System.Drawing.Color.White;
+            this.cm89_standard.Location = new System.Drawing.Point(120, 211);
+            this.cm89_standard.Margin = new System.Windows.Forms.Padding(0);
+            this.cm89_standard.Name = "cm89_standard";
+            this.cm89_standard.Size = new System.Drawing.Size(327, 65);
+            this.cm89_standard.TabStop = false;
+            this.cm89_standard.Text = "CM 89/90 (Standard)";
+            this.cm89_standard.UseVisualStyleBackColor = false;
+            this.cm89_standard.Click += new System.EventHandler(this.PlayButton_Click);
+            // 
+            // cm89_nick_patcher
+            // 
+            this.cm89_nick_patcher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cm89_nick_patcher.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cm89_nick_patcher.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.cm89_nick_patcher.FlatAppearance.BorderSize = 2;
+            this.cm89_nick_patcher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cm89_nick_patcher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.cm89_nick_patcher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cm89_nick_patcher.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.cm89_nick_patcher.ForeColor = System.Drawing.Color.White;
+            this.cm89_nick_patcher.Location = new System.Drawing.Point(449, 211);
+            this.cm89_nick_patcher.Margin = new System.Windows.Forms.Padding(0);
+            this.cm89_nick_patcher.Name = "cm89_nick_patcher";
+            this.cm89_nick_patcher.Size = new System.Drawing.Size(327, 65);
+            this.cm89_nick_patcher.TabStop = false;
+            this.cm89_nick_patcher.Text = "CM 89/90 (Nick\'s Patcher)";
+            this.cm89_nick_patcher.UseVisualStyleBackColor = false;
+            this.cm89_nick_patcher.Click += new System.EventHandler(this.PlayButton_Click);
+            // 
             // cm93_standard
             // 
             this.cm93_standard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -64,7 +106,7 @@ namespace CM0102_Starter_Kit {
             this.cm93_standard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cm93_standard.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.cm93_standard.ForeColor = System.Drawing.Color.White;
-            this.cm93_standard.Location = new System.Drawing.Point(120, 211);
+            this.cm93_standard.Location = new System.Drawing.Point(120, 278);
             this.cm93_standard.Margin = new System.Windows.Forms.Padding(0);
             this.cm93_standard.Name = "cm93_standard";
             this.cm93_standard.Size = new System.Drawing.Size(327, 65);
@@ -84,7 +126,7 @@ namespace CM0102_Starter_Kit {
             this.cm93_nick_patcher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cm93_nick_patcher.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.cm93_nick_patcher.ForeColor = System.Drawing.Color.White;
-            this.cm93_nick_patcher.Location = new System.Drawing.Point(449, 211);
+            this.cm93_nick_patcher.Location = new System.Drawing.Point(449, 278);
             this.cm93_nick_patcher.Margin = new System.Windows.Forms.Padding(0);
             this.cm93_nick_patcher.Name = "cm93_nick_patcher";
             this.cm93_nick_patcher.Size = new System.Drawing.Size(327, 65);
@@ -99,6 +141,8 @@ namespace CM0102_Starter_Kit {
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.cm0102_standard);
             this.Controls.Add(this.cm0102_nick_patcher);
+            this.Controls.Add(this.cm89_nick_patcher);
+            this.Controls.Add(this.cm89_standard);
             this.Controls.Add(this.cm93_standard);
             this.Controls.Add(this.cm93_nick_patcher);
             this.Name = "PlayMenu";
@@ -108,6 +152,8 @@ namespace CM0102_Starter_Kit {
         #endregion
         private System.Windows.Forms.Button cm0102_standard;
         private System.Windows.Forms.Button cm0102_nick_patcher;
+        private System.Windows.Forms.Button cm89_standard;
+        private System.Windows.Forms.Button cm89_nick_patcher;
         private System.Windows.Forms.Button cm93_standard;
         private System.Windows.Forms.Button cm93_nick_patcher;
     }

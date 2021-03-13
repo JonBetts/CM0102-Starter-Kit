@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using static CM0102_Starter_Kit.Helper;
 
 namespace CM0102_Starter_Kit {
     partial class MainMenu : HidableForm {
         private readonly NickPatcherMenu nickPatcherMenu;
         private readonly VersionMenu versionMenu;
         private readonly PlayMenu playMenu;
+        private static readonly string SwitchUpdateMessage = "Please use the Switch Data Update menu to load up a database first!";
 
         public MainMenu() {
             this.SuspendLayout();
@@ -22,7 +24,7 @@ namespace CM0102_Starter_Kit {
             this.playMenu = new PlayMenu(this);
         }
  
-        protected override List<Button> GetButtonsToToggle() {
+        protected override List<Button> GetButtons() {
             return new List<Button> {
                 this.switch_update,
                 this.install_var,
@@ -43,33 +45,43 @@ namespace CM0102_Starter_Kit {
             }
         }
 
-        private void InstallVar_Click(object sender, EventArgs e) {
-            string result = "Please use the Switch Data Update menu to load up a database first!";
-            if (DataFolderExists()) {
-                if (NinetyThreeDataLoaded()) {
-                    result = "Please load a compatible database first!";
-                } else {
-                    if (File.Exists(ExistingCommentaryBackup)) {
-                        File.Delete(ExistingCommentary);
-                        File.Move(ExistingCommentaryBackup, ExistingCommentary);
-                        result = "VAR Commentary successfully uninstalled!";
-                    } else {
-                        File.Move(ExistingCommentary, ExistingCommentaryBackup);
-                        File.WriteAllBytes(ExistingCommentary, Properties.Resources.events_eng);
-                        result = "VAR Commentary successfully installed! Please note this only applies when playing the game in English!";
-                    }
-                    RefreshForm();
-                }
-            }
-            DisplayMessage(result);
-        }
+        private void RefreshExeFiles() {
+            string tempZipFolder = Path.Combine(Directory.GetCurrentDirectory(), "Temp");
+            string tempZipFile = tempZipFolder + ".zip";
+            File.WriteAllBytes(tempZipFile, Properties.Resources.Game);
+            new FastZip().ExtractZip(tempZipFile, tempZipFolder, null);
 
-        private void NickPatcher_Click(object sender, EventArgs e) {
-            if (DataFolderExists()) {
-                ShowNewScreen(nickPatcherMenu);
-            } else {
-                DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
+            if (File.Exists(Cm0102)) {
+                File.Delete(Cm0102);
             }
+            File.Move(Path.Combine(tempZipFolder, Cm0102Exe), Cm0102);
+
+            if (File.Exists(Cm0102Gdi)) {
+                File.Delete(Cm0102Gdi);
+            }
+            File.Move(Path.Combine(tempZipFolder, Cm0102GdiExe), Cm0102Gdi);
+
+            if (File.Exists(Cm93)) {
+                File.Delete(Cm93);
+            }
+            File.Move(Path.Combine(tempZipFolder, Cm93Exe), Cm93);
+
+            if (File.Exists(Cm89)) {
+                File.Delete(Cm89);
+            }
+            File.Move(Path.Combine(tempZipFolder, Cm89Exe), Cm89);
+
+            if (File.Exists(CmLoader)) {
+                File.Delete(CmLoader);
+            }
+            File.Move(Path.Combine(tempZipFolder, CmLoaderExe), CmLoader);
+
+            // Cleanup
+            if (File.Exists(Cm0102Backup)) {
+                File.Delete(Cm0102Backup);
+            }
+            File.Delete(tempZipFile);
+            Directory.Delete(tempZipFolder, true);
         }
 
         private void RunExternalProcess(string workingDirectory, string executableFile) {
@@ -82,23 +94,48 @@ namespace CM0102_Starter_Kit {
             playProcess.Close();
         }
 
+        private void SwitchUpdate_Click(object sender, EventArgs e) {
+            ShowNewScreen(versionMenu);
+        }
+
+        private void InstallVar_Click(object sender, EventArgs e) {
+            string result = SwitchUpdateMessage;
+            if (DataFolderExists()) {
+                if (File.Exists(ExistingCommentaryBackup)) {
+                    File.Delete(ExistingCommentary);
+                    File.Move(ExistingCommentaryBackup, ExistingCommentary);
+                    result = "VAR Commentary successfully uninstalled!";
+                } else {
+                    File.Move(ExistingCommentary, ExistingCommentaryBackup);
+                    File.WriteAllBytes(ExistingCommentary, Properties.Resources.events_eng);
+                    result = "VAR Commentary successfully installed! Please note this only applies when playing the game in English!";
+                }
+                RefreshForm();
+            }
+            DisplayMessage(result);
+        }
+
+        private void NickPatcher_Click(object sender, EventArgs e) {
+            if (DataFolderExists()) {
+                ShowNewScreen(nickPatcherMenu);
+            } else {
+                DisplayMessage(SwitchUpdateMessage);
+            }
+        }
+
         private void Editor_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
                 RunExternalProcess(DataFolder, OfficialEditor);
             } else {
-                DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
+                DisplayMessage(SwitchUpdateMessage);
             }
-        }
-
-        private void SwitchUpdate_Click(object sender, EventArgs e) {
-            ShowNewScreen(versionMenu);
         }
 
         private void PlayGame_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
                 ShowNewScreen(playMenu);
             } else {
-                DisplayMessage("Please use the Switch Data Update menu to load up a database first!");
+                DisplayMessage(SwitchUpdateMessage);
             }
         }
 
