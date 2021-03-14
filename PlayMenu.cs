@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static CM0102_Starter_Kit.Helper;
 
@@ -24,33 +25,39 @@ namespace CM0102_Starter_Kit {
                 this.cm89_nick_patcher,
                 this.cm93_standard,
                 this.cm93_nick_patcher,
+                this.cm3_standard,
+                this.cm3_nick_patcher
             };
         }
 
-        private void DisableButtons(Database database) {
+        private void DisableButtons() {
+            Database database = GetCurrentDatabase();
             foreach (Button button in GetButtons()) {
                 button.Enabled = database.ButtonNames.Contains(button.Name);
             }
         }
 
         protected override void RefreshForm() {
-            // This will need changing as soon as we add any other databases
-            Database database = Cm93DataLoaded() ? Cm93Database : (Cm89DataLoaded() ? Cm89Database : OriginalDatabase);
-            DisableButtons(database);
+            DisableButtons();
         }
 
-        private void RenameExes(Button button) {
-            bool Cm93Clicked = button.Equals(this.cm93_standard) || button.Equals(this.cm93_nick_patcher);
-            bool Cm89Clicked = button.Equals(this.cm89_standard) || button.Equals(this.cm89_nick_patcher);
+        private static readonly Dictionary<string, string> ButtonExes = new Dictionary<string, string> {
+            { "cm89_standard", Cm89 },
+            { "cm89_nick_patcher", Cm89 },
+            { "cm93_standard", Cm93 },
+            { "cm93_nick_patcher", Cm93 },
+            { "cm3_standard", Cm3 },
+            { "cm3_nick_patcher", Cm3 },
+        };
 
-            if (Cm93Clicked || Cm89Clicked) {
-                string exeToUse = Cm93Clicked ? Cm93 : Cm89;
+        private void RenameExes(Button button) {
+            if (ButtonExes.TryGetValue(button.Name, out string exeFile)) {
                 if (File.Exists(Cm0102Backup)) {
-                    File.Move(Cm0102, exeToUse);
+                    File.Move(Cm0102, exeFile);
                     File.Move(Cm0102Backup, Cm0102);
                 } else {
                     File.Move(Cm0102, Cm0102Backup);
-                    File.Move(exeToUse, Cm0102);
+                    File.Move(exeFile, Cm0102);
                 }
             }
         }
@@ -58,8 +65,8 @@ namespace CM0102_Starter_Kit {
         private void PlayButton_Click(object sender, EventArgs e) {
             Button button = (Button) sender;
             ShowLoader();
-            bool useDefaultConfig = button.Equals(this.cm0102_standard) || button.Equals(this.cm93_standard) || button.Equals(this.cm89_standard);
             RenameExes(button);
+            bool useDefaultConfig = Regex.Match(button.Name, @"\w+_standard").Success;
 
             ProcessStartInfo playPsi = new ProcessStartInfo {
                 WorkingDirectory = GameFolder,

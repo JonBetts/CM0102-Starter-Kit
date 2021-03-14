@@ -52,8 +52,7 @@ namespace CM0102_Starter_Kit {
         }
 
         protected override void RefreshForm() {
-            // This will need changing as soon as we add any other databases
-            Database database = Cm93DataLoaded() ? Cm93Database : (Cm89DataLoaded() ? Cm89Database : OriginalDatabase);
+            Database database = GetCurrentDatabase();
             string[] lines = File.ReadAllLines(Path.Combine(GameFolder, CmLoaderCustomConfig));
 
             // No ComboBoxes have restricted values, so haven't implemented that here
@@ -111,7 +110,7 @@ namespace CM0102_Starter_Kit {
                 "IncreaseToSevenSubs = " + (this.seven_substitutes.Enabled ? this.seven_substitutes.Checked.ToString().ToLower() : "false"),
                 "RegenFixes = " + (this.regen_fixes.Enabled ? this.regen_fixes.Checked.ToString().ToLower() : "false"),
                 "ForceLoadAllPlayers = " + this.force_all_players.Checked.ToString().ToLower(),
-                "AddTapaniRegenCode = " + this.tapani_regen.Checked.ToString().ToLower(),
+                "AddTapaniRegenCode = " + (this.regen_fixes.Enabled ? this.tapani_regen.Checked.ToString().ToLower() : "false"),
                 "UnCap20s = " + this.uncap.Checked.ToString().ToLower(),
                 "RemoveForeignPlayerLimit = " + (this.foreign_player_limit.Enabled ? this.foreign_player_limit.Checked.ToString().ToLower() : "false"),
                 "NoWorkPermits = " + (this.work_permits.Enabled ? this.work_permits.Checked.ToString().ToLower() : "false"),

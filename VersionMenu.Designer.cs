@@ -15,6 +15,7 @@ namespace CM0102_Starter_Kit {
             this.luessenhoff_database = new System.Windows.Forms.Button();
             this.cm89_database = new System.Windows.Forms.Button();
             this.cm93_database = new System.Windows.Forms.Button();
+            this.cm3_database = new System.Windows.Forms.Button();
             // 
             // original_database
             // 
@@ -156,6 +157,26 @@ namespace CM0102_Starter_Kit {
             this.cm93_database.UseVisualStyleBackColor = false;
             this.cm93_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
             // 
+            // cm3_database
+            // 
+            this.cm3_database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cm3_database.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cm3_database.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.cm3_database.FlatAppearance.BorderSize = 2;
+            this.cm3_database.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cm3_database.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.cm3_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cm3_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.cm3_database.ForeColor = System.Drawing.Color.White;
+            this.cm3_database.Location = new System.Drawing.Point(449, 345);
+            this.cm3_database.Margin = new System.Windows.Forms.Padding(0);
+            this.cm3_database.Name = "cm3_database";
+            this.cm3_database.Size = new System.Drawing.Size(327, 65);
+            this.cm3_database.TabStop = false;
+            this.cm3_database.Text = "CM3";
+            this.cm3_database.UseVisualStyleBackColor = false;
+            this.cm3_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
+            // 
             // VersionMenu
             // 
             this.BackgroundImage = Properties.Resources.owen;
@@ -167,6 +188,7 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.luessenhoff_database);
             this.Controls.Add(this.cm89_database);
             this.Controls.Add(this.cm93_database);
+            this.Controls.Add(this.cm3_database);
             this.Name = "VersionMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VersionMenu_FormClosed);
         }
@@ -179,6 +201,7 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.Button luessenhoff_database;
         private System.Windows.Forms.Button cm89_database;
         private System.Windows.Forms.Button cm93_database;
+        private System.Windows.Forms.Button cm3_database;
     }
 }
 

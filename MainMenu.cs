@@ -60,16 +60,21 @@ namespace CM0102_Starter_Kit {
                 File.Delete(Cm0102Gdi);
             }
             File.Move(Path.Combine(tempZipFolder, Cm0102GdiExe), Cm0102Gdi);
+            
+            if (File.Exists(Cm89)) {
+                File.Delete(Cm89);
+            }
+            File.Move(Path.Combine(tempZipFolder, Cm89Exe), Cm89);
 
             if (File.Exists(Cm93)) {
                 File.Delete(Cm93);
             }
             File.Move(Path.Combine(tempZipFolder, Cm93Exe), Cm93);
 
-            if (File.Exists(Cm89)) {
-                File.Delete(Cm89);
+            if (File.Exists(Cm3)) {
+                File.Delete(Cm3);
             }
-            File.Move(Path.Combine(tempZipFolder, Cm89Exe), Cm89);
+            File.Move(Path.Combine(tempZipFolder, Cm3Exe), Cm3);
 
             if (File.Exists(CmLoader)) {
                 File.Delete(CmLoader);
