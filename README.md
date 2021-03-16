@@ -1,7 +1,5 @@
 # CM 01/02 Starter Kit
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/02ba97d5f1664fe4af4accab27cd770f)](https://www.codacy.com/gh/JonBetts/CM0102-Starter-Kit/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JonBetts/CM0102-Starter-Kit&amp;utm_campaign=Badge_Grade)
-
 Welcome to the CM 01/02 Starter Kit!
 
 The purpose of this little tool is to get you up and running as quickly as possible with CM 01/02. No need for worrying about downloading files, installing anything, applying patches or changing compatibility settings - this tool does everything required to get you setup on an original or updated version of CM!
