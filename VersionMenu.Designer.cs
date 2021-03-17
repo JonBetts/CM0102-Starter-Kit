@@ -1,6 +1,8 @@
-﻿
+﻿using static CM0102_Starter_Kit.Helper;
+
 namespace CM0102_Starter_Kit {
     partial class VersionMenu {
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -16,6 +18,10 @@ namespace CM0102_Starter_Kit {
             this.cm89_database = new System.Windows.Forms.Button();
             this.cm93_database = new System.Windows.Forms.Button();
             this.cm3_database = new System.Windows.Forms.Button();
+            this.save_database = new System.Windows.Forms.Button();
+            this.load_database = new System.Windows.Forms.Button();
+            this.saveDatabaseDialog = new System.Windows.Forms.SaveFileDialog();
+            this.loadDatabaseDialog = new System.Windows.Forms.OpenFileDialog();
             // 
             // original_database
             // 
@@ -177,6 +183,60 @@ namespace CM0102_Starter_Kit {
             this.cm3_database.UseVisualStyleBackColor = false;
             this.cm3_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
             // 
+            // save_database
+            // 
+            this.save_database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.save_database.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.save_database.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.save_database.FlatAppearance.BorderSize = 2;
+            this.save_database.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.save_database.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.save_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.save_database.ForeColor = System.Drawing.Color.White;
+            this.save_database.Location = new System.Drawing.Point(120, 412);
+            this.save_database.Margin = new System.Windows.Forms.Padding(0);
+            this.save_database.Name = "save_database";
+            this.save_database.Size = new System.Drawing.Size(327, 65);
+            this.save_database.TabStop = false;
+            this.save_database.Text = "Save Custom Database";
+            this.save_database.UseVisualStyleBackColor = false;
+            this.save_database.Click += new System.EventHandler(this.SaveDatabase_Click);
+            // 
+            // load_database
+            // 
+            this.load_database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.load_database.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.load_database.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.load_database.FlatAppearance.BorderSize = 2;
+            this.load_database.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.load_database.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.load_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.load_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.load_database.ForeColor = System.Drawing.Color.White;
+            this.load_database.Location = new System.Drawing.Point(449, 412);
+            this.load_database.Margin = new System.Windows.Forms.Padding(0);
+            this.load_database.Name = "load_database";
+            this.load_database.Size = new System.Drawing.Size(327, 65);
+            this.load_database.TabStop = false;
+            this.load_database.Text = "Load Custom Database";
+            this.load_database.UseVisualStyleBackColor = false;
+            this.load_database.Click += new System.EventHandler(this.LoadDatabase_Click);
+            // 
+            // saveDatabaseDialog
+            // 
+            this.saveDatabaseDialog.Filter = "Zip file (*.zip)|*.zip";
+            this.saveDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveDatabaseDialog_FileOk);
+            this.saveDatabaseDialog.InitialDirectory = CustomDatabasesFolder;
+            this.saveDatabaseDialog.Title = "Save Custom Database";
+            // 
+            // loadDatabaseDialog
+            // 
+            this.loadDatabaseDialog.Filter = "Zip file (*.zip)|*.zip";
+            this.loadDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.LoadDatabaseDialog_FileOk);
+            this.loadDatabaseDialog.InitialDirectory = CustomDatabasesFolder;
+            this.loadDatabaseDialog.Title = "Load Custom Database";
+            // 
             // VersionMenu
             // 
             this.BackgroundImage = Properties.Resources.owen;
@@ -189,6 +249,8 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.cm89_database);
             this.Controls.Add(this.cm93_database);
             this.Controls.Add(this.cm3_database);
+            this.Controls.Add(this.save_database);
+            this.Controls.Add(this.load_database);
             this.Name = "VersionMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VersionMenu_FormClosed);
         }
@@ -202,6 +264,10 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.Button cm89_database;
         private System.Windows.Forms.Button cm93_database;
         private System.Windows.Forms.Button cm3_database;
+        private System.Windows.Forms.Button save_database;
+        private System.Windows.Forms.Button load_database;
+        private System.Windows.Forms.SaveFileDialog saveDatabaseDialog;
+        private System.Windows.Forms.OpenFileDialog loadDatabaseDialog;
     }
 }
 

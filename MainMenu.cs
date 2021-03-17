@@ -11,7 +11,6 @@ namespace CM0102_Starter_Kit {
         private readonly NickPatcherMenu nickPatcherMenu;
         private readonly VersionMenu versionMenu;
         private readonly PlayMenu playMenu;
-        private static readonly string SwitchUpdateMessage = "Please use the Switch Data Update menu to load up a database first!";
 
         public MainMenu() {
             this.SuspendLayout();

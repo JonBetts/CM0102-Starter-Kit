@@ -30,6 +30,8 @@ namespace CM0102_Starter_Kit {
         internal static readonly string ExistingCommentaryBackup = Path.Combine(DataFolder, "events_eng.cfg.bk");
         internal static readonly string OfficialEditor = Path.Combine(Path.Combine(GameFolder, "Editor"), "cm0102ed.exe");
         internal static readonly string BackupSavesFolder = @"C:\CM0102 Backups";
+        internal static readonly string CustomDatabasesFolder = Path.Combine(GameFolder, "Custom Databases");
+        internal static readonly string SwitchUpdateMessage = "Please use the Data Updates menu to load up a database first!";
 
         private static bool IsWindowsVistaOrLower() {
             OperatingSystem operatingSystem = Environment.OSVersion;

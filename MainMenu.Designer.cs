@@ -32,7 +32,7 @@ namespace CM0102_Starter_Kit {
             this.switch_update.Margin = new System.Windows.Forms.Padding(0);
             this.switch_update.Name = "switch_update";
             this.switch_update.Size = new System.Drawing.Size(327, 65);
-            this.switch_update.Text = "Switch Data Update";
+            this.switch_update.Text = "Data Updates";
             this.switch_update.UseVisualStyleBackColor = false;
             this.switch_update.Click += new System.EventHandler(this.SwitchUpdate_Click);
             // 

@@ -11,7 +11,7 @@ namespace CM0102_Starter_Kit {
         public VersionMenu(MainMenu mainMenu) {
             this.mainMenu = mainMenu;
             this.SuspendLayout();
-            InitialiseSharedControls("Switch Data Update", 325, true);
+            InitialiseSharedControls("Data Updates", 325, true);
             InitializeComponent();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -26,7 +26,9 @@ namespace CM0102_Starter_Kit {
                 this.luessenhoff_database,
                 this.cm89_database,
                 this.cm93_database,
-                this.cm3_database
+                this.cm3_database,
+                this.save_database,
+                this.load_database
             };
         }
 
@@ -60,7 +62,6 @@ namespace CM0102_Starter_Kit {
             if (database.DeleteDataFolder && DataFolderExists()) {
                 Directory.Delete(DataFolder, true);
             }
-            Directory.CreateDirectory(DataFolder);
             string dataZipFile = DataFolder + ".zip";
             File.WriteAllBytes(dataZipFile, database.ResourceFile);
             new FastZip().ExtractZip(dataZipFile, DataFolder, null);
@@ -77,6 +78,31 @@ namespace CM0102_Starter_Kit {
             // Update the loader config files as switching between CM89, CM93 and anything else requires some changes
             UpdateConfigFiles(database);
             DisplayMessage(database.Label + " database successfully loaded!");
+        }
+
+        private void SaveDatabase_Click(object sender, EventArgs e) {
+            if (DataFolderExists()) {
+                this.saveDatabaseDialog.ShowDialog();
+            } else {
+                DisplayMessage(SwitchUpdateMessage);
+            }
+        }
+
+        private void SaveDatabaseDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e) {
+            new FastZip().CreateZip(this.saveDatabaseDialog.FileName, DataFolder, true, null);
+            DisplayMessage("Custom database successfully saved!");
+        }
+
+        private void LoadDatabase_Click(object sender, EventArgs e) {
+            this.loadDatabaseDialog.ShowDialog();
+        }
+
+        private void LoadDatabaseDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e) {
+            if (DataFolderExists()) {
+                Directory.Delete(DataFolder, true);
+            }
+            new FastZip().ExtractZip(this.loadDatabaseDialog.FileName, DataFolder, null);
+            DisplayMessage("Custom database successfully loaded!");
         }
 
         private void VersionMenu_FormClosed(object sender, FormClosedEventArgs e) {
