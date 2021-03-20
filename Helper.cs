@@ -31,6 +31,9 @@ namespace CM0102_Starter_Kit {
         internal static readonly string OfficialEditor = Path.Combine(Path.Combine(GameFolder, "Editor"), "cm0102ed.exe");
         internal static readonly string BackupSavesFolder = @"C:\CM0102 Backups";
         internal static readonly string CustomDatabasesFolder = Path.Combine(GameFolder, "Custom Databases");
+        internal static readonly string PatchesFolderName = "Patches";
+        internal static readonly string PatchesFolder = Path.Combine(GameFolder, PatchesFolderName);
+        internal static readonly string OptionalPatchesFolder = Path.Combine(PatchesFolder, "Optional");
         internal static readonly string SwitchUpdateMessage = "Please use the Data Updates menu to load up a database first!";
 
         private static bool IsWindowsVistaOrLower() {

@@ -45,9 +45,14 @@ namespace CM0102_Starter_Kit {
                 { this.force_all_players, 9 },
                 { this.tapani_regen, 10 },
                 { this.uncap, 11 },
-                { this.foreign_player_limit, 12 },
                 { this.work_permits, 13 },
                 { this.resolution, 14 }
+            };
+        }
+
+        private Dictionary<CheckBox, string> GetCheckboxPatches() {
+            return new Dictionary<CheckBox, string> {
+                { this.foreign_player_limit, "NoForeignRestrictionsForAll.patch" }
             };
         }
 
@@ -97,6 +102,12 @@ namespace CM0102_Starter_Kit {
                     checkBox.Enabled = true;
                 }
             }
+            // Special cases for checkboxes mapped to non-default patches
+            foreach (KeyValuePair<CheckBox, string> keyValuePair in GetCheckboxPatches()) {
+                if (File.Exists(Path.Combine(PatchesFolder, keyValuePair.Value))) {
+                    keyValuePair.Key.Checked = true;
+                }
+            }
         }
 
         private void Apply_Click(object sender, EventArgs e) {
@@ -112,17 +123,25 @@ namespace CM0102_Starter_Kit {
                 "ForceLoadAllPlayers = " + this.force_all_players.Checked.ToString().ToLower(),
                 "AddTapaniRegenCode = " + (this.regen_fixes.Enabled ? this.tapani_regen.Checked.ToString().ToLower() : "false"),
                 "UnCap20s = " + this.uncap.Checked.ToString().ToLower(),
-                "RemoveForeignPlayerLimit = " + (this.foreign_player_limit.Enabled ? this.foreign_player_limit.Checked.ToString().ToLower() : "false"),
+                "RemoveForeignPlayerLimit = false",
                 "NoWorkPermits = " + (this.work_permits.Enabled ? this.work_permits.Checked.ToString().ToLower() : "false"),
                 "ChangeTo1280x800 = " + this.resolution.Checked.ToString().ToLower(),
-                "AutoLoadPatchFiles = false",
-                "PatchFileDirectory = .",
+                "AutoLoadPatchFiles = true",
+                "PatchFileDirectory = " + PatchesFolderName,
                 "DataDirectory = data",
                 "Debug = false",
                 "NoCD = true"
             };
             WriteConfigFile(values, CmLoaderCustomConfig);
             DisplayMessage("Settings successfully changed!");
+
+            // Copy other patches not provided by default in the CM0102 Loader
+            string foreignLimitPatch = "NoForeignRestrictionsForAll.patch";
+            if (this.foreign_player_limit.Enabled && Convert.ToBoolean(this.foreign_player_limit.Checked.ToString())) {
+                File.Copy(Path.Combine(OptionalPatchesFolder, foreignLimitPatch), Path.Combine(PatchesFolder, foreignLimitPatch), true);
+            } else {
+                File.Delete(Path.Combine(PatchesFolder, foreignLimitPatch));
+            }
         }
 
         private void NickPatcherMenu_FormClosed(object sender, FormClosedEventArgs e) {

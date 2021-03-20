@@ -225,9 +225,9 @@ namespace CM0102_Starter_Kit {
             this.foreign_player_limit.ForeColor = System.Drawing.Color.White;
             this.foreign_player_limit.Location = new System.Drawing.Point(472, 342);
             this.foreign_player_limit.Name = "foreign_player_limit";
-            this.foreign_player_limit.Size = new System.Drawing.Size(293, 25);
+            this.foreign_player_limit.Size = new System.Drawing.Size(301, 25);
             this.foreign_player_limit.TabStop = false;
-            this.foreign_player_limit.Text = "Remove UK Foreign Player Limit";
+            this.foreign_player_limit.Text = "Remove All Foreign Player Limits";
             this.foreign_player_limit.UseVisualStyleBackColor = false;
             // 
             // regen_fixes
