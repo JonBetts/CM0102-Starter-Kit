@@ -179,7 +179,7 @@ namespace CM0102_Starter_Kit {
             this.cm3_database.Name = "cm3_database";
             this.cm3_database.Size = new System.Drawing.Size(327, 65);
             this.cm3_database.TabStop = false;
-            this.cm3_database.Text = "CM3";
+            this.cm3_database.Text = "1998/99 (CM3)";
             this.cm3_database.UseVisualStyleBackColor = false;
             this.cm3_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
             // 
