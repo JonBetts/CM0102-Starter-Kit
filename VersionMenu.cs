@@ -11,7 +11,7 @@ namespace CM0102_Starter_Kit {
         public VersionMenu(MainMenu mainMenu) {
             this.mainMenu = mainMenu;
             this.SuspendLayout();
-            InitialiseSharedControls("Data Updates", 325, true);
+            InitialiseSharedControls("Data Updates", 355, true);
             InitializeComponent();
             this.ResumeLayout(false);
             this.PerformLayout();
