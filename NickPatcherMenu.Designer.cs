@@ -307,7 +307,7 @@ namespace CM0102_Starter_Kit {
             // transparent_panel
             // 
             this.transparent_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.transparent_panel.Location = new System.Drawing.Point(105, 120);
+            this.transparent_panel.Location = new System.Drawing.Point(107, 120);
             this.transparent_panel.Name = "transparent_panel";
             this.transparent_panel.Size = new System.Drawing.Size(683, 364);
             this.transparent_panel.TabStop = false;
