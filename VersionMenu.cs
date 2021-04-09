@@ -35,11 +35,11 @@ namespace CM0102_Starter_Kit {
         private void UpdateConfigFiles(Database database) {
             string defaultConfig = Path.Combine(GameFolder, CmLoaderConfig);
             List<string> defaultLines = GetDefaultConfigFileLines(defaultConfig, database, false);
-            WriteConfigFile(defaultLines, CmLoaderConfig);
+            WriteConfigFile(defaultLines, defaultConfig);
 
             string customConfig = Path.Combine(GameFolder, CmLoaderCustomConfig);
             List<string> customLines = GetDefaultConfigFileLines(customConfig, database, false);
-            WriteConfigFile(customLines, CmLoaderCustomConfig);
+            WriteConfigFile(customLines, customConfig);
         }
 
         private void CopyDataToGame(Database database) {
