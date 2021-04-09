@@ -32,29 +32,13 @@ namespace CM0102_Starter_Kit {
             };
         }
 
-        private List<string> GetDefaultConfigFileLines(string configFile, Database database) {
-            string[] existingLines = File.ReadAllLines(Path.Combine(GameFolder, configFile));
-            List<string> newLines = new List<string>();
-
-            for (int currentLine = 1; currentLine <= existingLines.Length; ++currentLine) {
-                if (database.ConfigLines.TryGetValue(currentLine, out ConfigLine configLine)) {
-                    // Year is a special case - set it to 0 in the file if there is a custom value set for it
-                    if (currentLine == 1) {
-                        newLines.Add("Year = 0");
-                    } else {
-                        newLines.Add(configLine.Name + " = " + configLine.Value);
-                    }
-                } else {
-                    newLines.Add(existingLines[currentLine - 1]);
-                }
-            }
-            return newLines;
-        }
-
         private void UpdateConfigFiles(Database database) {
-            List<string> defaultLines = GetDefaultConfigFileLines(CmLoaderConfig, database);
+            string defaultConfig = Path.Combine(GameFolder, CmLoaderConfig);
+            List<string> defaultLines = GetDefaultConfigFileLines(defaultConfig, database, false);
             WriteConfigFile(defaultLines, CmLoaderConfig);
-            List<string> customLines = GetDefaultConfigFileLines(CmLoaderCustomConfig, database);
+
+            string customConfig = Path.Combine(GameFolder, CmLoaderCustomConfig);
+            List<string> customLines = GetDefaultConfigFileLines(customConfig, database, false);
             WriteConfigFile(customLines, CmLoaderCustomConfig);
         }
 

@@ -8,9 +8,13 @@ namespace CM0102_Starter_Kit {
         internal static readonly string DefaultGameFolder = Path.Combine(ProgramFilesFolder, "Championship Manager 01-02");
         internal static readonly string DefaultChangesFile = Path.Combine(DefaultGameFolder, "changes.txt");
         internal static readonly string GameFolder = Path.Combine(Directory.GetCurrentDirectory(), "Game");
-        internal static readonly string DataFolder = Path.Combine(GameFolder, "Data");
+        internal static readonly string DataFolderName = "Data";
+        internal static readonly string DataFolder = Path.Combine(GameFolder, DataFolderName);
+        internal static readonly string PicturesFolderName = "Pictures";
+        internal static readonly string SoundsFolderName = "Sounds";
         internal static readonly string CmLoaderConfig = "CM0102LoaderDefault.ini";
         internal static readonly string CmLoaderCustomConfig = "CM0102LoaderCustom.ini";
+        internal static readonly string CmLoaderAndroidConfig = "CM0102Loader.ini";
         internal static readonly string CmLoaderExe = "CM0102Loader.exe";
         internal static readonly string CmLoader = Path.Combine(GameFolder, CmLoaderExe);
         internal static readonly string Cm0102Exe = "cm0102.exe";
@@ -34,6 +38,8 @@ namespace CM0102_Starter_Kit {
         internal static readonly string PatchesFolderName = "Patches";
         internal static readonly string PatchesFolder = Path.Combine(GameFolder, PatchesFolderName);
         internal static readonly string OptionalPatchesFolder = Path.Combine(PatchesFolder, "Optional");
+        internal static readonly string ExagearFolder = Path.Combine(Path.Combine(GameFolder, "Android"), "Exagear");
+        internal static readonly string Android11Patch = "Android11Patch.patch";
         internal static readonly string SwitchUpdateMessage = "Please use the Data Updates menu to load up a database first!";
 
         private static bool IsWindowsVistaOrLower() {
@@ -102,26 +108,32 @@ namespace CM0102_Starter_Kit {
             { 10, new ConfigLine(10, "AddTapaniRegenCode", "false") }
         };
 
+        private static readonly Dictionary<int, ConfigLine> AndroidConfigLines = new Dictionary<int, ConfigLine> {
+            { 9, new ConfigLine(9, "ForceLoadAllPlayers", "false") },
+            { 14, new ConfigLine(14, "ChangeTo1280x800", "false") }
+        };
+
         private static readonly List<string> DefaultButtonNames = new List<string> { "cm0102_standard", "cm0102_nick_patcher" };
         private static readonly List<string> Cm89ButtonNames = new List<string> { "cm89_standard", "cm89_nick_patcher" };
         private static readonly List<string> Cm93ButtonNames = new List<string> { "cm93_standard", "cm93_nick_patcher" };
         private static readonly List<string> Cm3ButtonNames = new List<string> { "cm3_standard", "cm3_nick_patcher" };
 
         internal class Database {
-            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, List<string> buttonNames) {
+            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, List<string> buttonNames, string exeFile) {
                 this.Name = name;
                 this.Label = label;
                 this.ResourceFile = resourceFile;
                 this.DeleteDataFolder = deleteDataFolder;
                 this.ButtonNames = buttonNames;
                 this.ConfigLines = new Dictionary<int, ConfigLine>();
+                this.ExeFile = exeFile;
             }
 
-            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, List<string> buttonNames, Database prerequisiteDatabase) : this(name, label, resourceFile, deleteDataFolder, buttonNames) {
+            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, List<string> buttonNames, string exeFile, Database prerequisiteDatabase) : this(name, label, resourceFile, deleteDataFolder, buttonNames, exeFile) {
                 this.PrerequisiteDatabase = prerequisiteDatabase;
             }
 
-            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, List<string> buttonNames, Dictionary<int, ConfigLine> configLines) : this(name, label, resourceFile, deleteDataFolder, buttonNames) {
+            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, List<string> buttonNames, string exeFile, Dictionary<int, ConfigLine> configLines) : this(name, label, resourceFile, deleteDataFolder, buttonNames, exeFile) {
                 this.ConfigLines = configLines;
             }
 
@@ -132,16 +144,17 @@ namespace CM0102_Starter_Kit {
             internal List<string> ButtonNames { get; }
             internal Database PrerequisiteDatabase { get; }
             internal Dictionary<int, ConfigLine> ConfigLines { get; }
+            internal string ExeFile { get; }
         }
 
-        private static readonly Database OriginalDatabase = new Database("original_database", "Original (3.9.60)", Properties.Resources.original_data, true, DefaultButtonNames);
-        private static readonly Database PatchedDatabase = new Database("patched_database", "Patched (3.9.68)", Properties.Resources.patched_data, true, DefaultButtonNames);
-        private static readonly Database MarchDatabase = new Database("march_database", "March 2020", Properties.Resources.march_data, false, DefaultButtonNames, PatchedDatabase);
-        private static readonly Database NovemberDatabase = new Database("november_database", "November 2020", Properties.Resources.november_data, false, DefaultButtonNames, PatchedDatabase);
-        private static readonly Database LuessenhoffDatabase = new Database("luessenhoff_database", "Luessenhoff", Properties.Resources.luessenhoff_data, false, DefaultButtonNames, OriginalDatabase);
-        private static readonly Database Cm89Database = new Database("cm89_database", "1989/90", Properties.Resources.cm89_data, true, Cm89ButtonNames, Cm89ConfigLines);
-        private static readonly Database Cm93Database = new Database("cm93_database", "1993/94", Properties.Resources.cm93_data, true, Cm93ButtonNames, Cm93ConfigLines);
-        private static readonly Database Cm3Database = new Database("cm3_database", "CM3", Properties.Resources.cm3_data, true, Cm3ButtonNames, Cm3ConfigLines);
+        private static readonly Database OriginalDatabase = new Database("original_database", "Original (3.9.60)", Properties.Resources.original_data, true, DefaultButtonNames, Cm0102);
+        private static readonly Database PatchedDatabase = new Database("patched_database", "Patched (3.9.68)", Properties.Resources.patched_data, true, DefaultButtonNames, Cm0102);
+        private static readonly Database MarchDatabase = new Database("march_database", "March 2020", Properties.Resources.march_data, false, DefaultButtonNames, Cm0102, PatchedDatabase);
+        private static readonly Database NovemberDatabase = new Database("november_database", "November 2020", Properties.Resources.november_data, false, DefaultButtonNames, Cm0102, PatchedDatabase);
+        private static readonly Database LuessenhoffDatabase = new Database("luessenhoff_database", "Luessenhoff", Properties.Resources.luessenhoff_data, false, DefaultButtonNames, Cm0102, OriginalDatabase);
+        private static readonly Database Cm89Database = new Database("cm89_database", "1989/90", Properties.Resources.cm89_data, true, Cm89ButtonNames, Cm89, Cm89ConfigLines);
+        private static readonly Database Cm93Database = new Database("cm93_database", "1993/94", Properties.Resources.cm93_data, true, Cm93ButtonNames, Cm93, Cm93ConfigLines);
+        private static readonly Database Cm3Database = new Database("cm3_database", "CM3", Properties.Resources.cm3_data, true, Cm3ButtonNames, Cm3, Cm3ConfigLines);
 
         internal static readonly List<Database> Databases = new List<Database> {
             OriginalDatabase, PatchedDatabase, MarchDatabase, NovemberDatabase, LuessenhoffDatabase, Cm89Database, Cm93Database, Cm3Database
@@ -162,11 +175,32 @@ namespace CM0102_Starter_Kit {
         }
 
         internal static void WriteConfigFile(List<string> lines, string configFile) {
-            using (StreamWriter writer = new StreamWriter(Path.Combine(GameFolder, configFile))) {
+            using (StreamWriter writer = new StreamWriter(configFile)) {
                 for (int currentLine = 1; currentLine <= lines.Count; ++currentLine) {
                     writer.WriteLine(lines[currentLine - 1]);
                 }
             }
+        }
+
+        internal static List<string> GetDefaultConfigFileLines(string configFile, Database database, bool copyForAndroid) {
+            string[] existingLines = File.ReadAllLines(configFile);
+            List<string> newLines = new List<string>();
+
+            for (int currentLine = 1; currentLine <= existingLines.Length; ++currentLine) {
+                if (database.ConfigLines.TryGetValue(currentLine, out ConfigLine configLine)) {
+                    // Year is a special case - set it to 0 in the file if there is a custom value set for it
+                    if (currentLine == 1) {
+                        newLines.Add("Year = 0");
+                    } else {
+                        newLines.Add(configLine.Name + " = " + configLine.Value);
+                    }
+                } else if (copyForAndroid && AndroidConfigLines.TryGetValue(currentLine, out ConfigLine androidConfigLine)) {
+                    newLines.Add(androidConfigLine.Name + " = " + androidConfigLine.Value);
+                } else {
+                    newLines.Add(existingLines[currentLine - 1]);
+                }
+            }
+            return newLines;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace CM0102_Starter_Kit {
         private readonly NickPatcherMenu nickPatcherMenu;
         private readonly VersionMenu versionMenu;
         private readonly PlayMenu playMenu;
+        private readonly AndroidMenu androidMenu;
 
         public MainMenu() {
             this.SuspendLayout();
@@ -21,6 +22,7 @@ namespace CM0102_Starter_Kit {
             this.nickPatcherMenu = new NickPatcherMenu(this);
             this.versionMenu = new VersionMenu(this);
             this.playMenu = new PlayMenu(this);
+            this.androidMenu = new AndroidMenu(this);
         }
  
         protected override List<Button> GetButtons() {
@@ -32,7 +34,8 @@ namespace CM0102_Starter_Kit {
                 this.play_game,
                 this.backup_saves,
                 this.cm_scout,
-                this.player_finder
+                this.player_finder,
+                this.android_menu
             };
         }
 
@@ -164,6 +167,14 @@ namespace CM0102_Starter_Kit {
 
         private void PlayerFinder_Click(object sender, EventArgs e) {
             RunExternalProcess(GameFolder, PlayerFinder);
+        }
+
+        private void AndroidMenu_Click(object sender, EventArgs e) {
+            if (DataFolderExists()) {
+                ShowNewScreen(androidMenu);
+            } else {
+                DisplayMessage(SwitchUpdateMessage);
+            }
         }
 
         private void MainMenu_Load(object sender, EventArgs e) {

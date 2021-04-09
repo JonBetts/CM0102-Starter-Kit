@@ -117,53 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="batigol" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\batigol.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="step_1.Text" xml:space="preserve">
+    <value>1. Use the Starter Kit to ensure you have the game set up to your tastes (the database and any patcher options). Tick the checkboxes below if you want to use Nick's Patcher on your Android device and/or if you are using a device on Android 11.</value>
   </data>
-  <data name="boca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\boca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="step_4.Text" xml:space="preserve">
+    <value>4. Go to the Starter Kit '/Game/Android' folder and copy the 'Exagear' folder to the root folder of your phone. Then copy the 'main.40.com.eltechs.es.obb' file to '/Android/obb' on your phone as well. </value>
   </data>
-  <data name="cm3_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\cm3_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cm89_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\cm89_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cm93_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\cm93_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="events_eng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\external\events_eng.cfg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Game" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\external\Game.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\logo.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="luessenhoff_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\luessenhoff_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="march_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\march_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="maxim" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\maxim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="november_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\november_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="original_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\original_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="owen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\owen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="patched_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\patched_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ruud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ruud.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="step_6.Text" xml:space="preserve">
+    <value>6. Find the Exagear icon and click on it to start it up. Then click on the play button next to 'CM0102Loader.exe'. On the next page, click on 'CUPRUM'. You should now have CM 01/02 running on your phone!</value>
   </data>
 </root>

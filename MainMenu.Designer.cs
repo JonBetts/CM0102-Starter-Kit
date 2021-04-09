@@ -16,6 +16,7 @@ namespace CM0102_Starter_Kit {
             this.backup_saves = new System.Windows.Forms.Button();
             this.cm_scout = new System.Windows.Forms.Button();
             this.player_finder = new System.Windows.Forms.Button();
+            this.android_menu = new System.Windows.Forms.Button();
             // 
             // switch_update
             // 
@@ -169,6 +170,25 @@ namespace CM0102_Starter_Kit {
             this.player_finder.UseVisualStyleBackColor = false;
             this.player_finder.Click += new System.EventHandler(this.PlayerFinder_Click);
             // 
+            // android_menu
+            // 
+            this.android_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.android_menu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.android_menu.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.android_menu.FlatAppearance.BorderSize = 2;
+            this.android_menu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.android_menu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.android_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.android_menu.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.android_menu.ForeColor = System.Drawing.Color.White;
+            this.android_menu.Location = new System.Drawing.Point(284, 412);
+            this.android_menu.Margin = new System.Windows.Forms.Padding(0);
+            this.android_menu.Name = "android_menu";
+            this.android_menu.Size = new System.Drawing.Size(327, 65);
+            this.android_menu.Text = "Android";
+            this.android_menu.UseVisualStyleBackColor = false;
+            this.android_menu.Click += new System.EventHandler(this.AndroidMenu_Click);
+            // 
             // MainMenu
             // 
             this.BackgroundImage = Properties.Resources.batigol;
@@ -181,6 +201,7 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.backup_saves);
             this.Controls.Add(this.cm_scout);
             this.Controls.Add(this.player_finder);
+            this.Controls.Add(this.android_menu);
             this.Name = "MainMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
             this.Load += new System.EventHandler(this.MainMenu_Load);
@@ -195,6 +216,7 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.Button backup_saves;
         private System.Windows.Forms.Button cm_scout;
         private System.Windows.Forms.Button player_finder;
+        private System.Windows.Forms.Button android_menu;
     }
 }
 

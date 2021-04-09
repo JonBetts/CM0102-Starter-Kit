@@ -132,7 +132,7 @@ namespace CM0102_Starter_Kit {
                 "Debug = false",
                 "NoCD = true"
             };
-            WriteConfigFile(values, CmLoaderCustomConfig);
+            WriteConfigFile(values, Path.Combine(GameFolder, CmLoaderCustomConfig));
             DisplayMessage("Settings successfully changed!");
 
             // Copy other patches not provided by default in the CM0102 Loader
