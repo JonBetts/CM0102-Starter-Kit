@@ -156,6 +156,7 @@
     <None Include="data\original_data.zip" />
     <None Include="data\patched_data.zip" />
     <None Include="external\events_eng.cfg" />
+    <None Include="external\Exes.zip" />
     <None Include="external\Game.zip" />
     <None Include="images\batigol.jpg" />
     <None Include="images\boca.jpg" />

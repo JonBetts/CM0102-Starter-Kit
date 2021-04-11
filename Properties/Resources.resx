@@ -136,6 +136,9 @@
   <data name="events_eng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\external\events_eng.cfg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Exes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\external\exes.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Game" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\external\Game.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

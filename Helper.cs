@@ -60,6 +60,13 @@ namespace CM0102_Starter_Kit {
             return Directory.Exists(DataFolder);
         }
 
+        internal static bool ExesNeedRefreshing() {
+            if (File.Exists(Cm0102Backup) || !File.Exists(Cm0102) || !File.Exists(Cm0102Gdi) || !File.Exists(Cm89) || !File.Exists(Cm93) || !File.Exists(Cm3) || !File.Exists(CmLoader)) {
+                return true;
+            }
+            return false;
+        }
+
         private static bool Cm89DataLoaded() {
             return File.Exists(Path.Combine(DataFolder, "cm89.txt"));
         }
