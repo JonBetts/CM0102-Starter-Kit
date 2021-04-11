@@ -44,7 +44,7 @@ namespace CM0102_Starter_Kit {
             // 
             // starting_year
             // 
-            this.starting_year.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.starting_year.BackColor = System.Drawing.SystemColors.Window;
             this.starting_year.Font = new System.Drawing.Font("Savile ExtraBold", 9F, System.Drawing.FontStyle.Bold);
             this.starting_year.Location = new System.Drawing.Point(323, 144);
             this.starting_year.Maximum = new decimal(new int[] {
@@ -107,7 +107,7 @@ namespace CM0102_Starter_Kit {
             // 
             // currency_inflation
             // 
-            this.currency_inflation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.currency_inflation.BackColor = System.Drawing.SystemColors.Window;
             this.currency_inflation.DecimalPlaces = 2;
             this.currency_inflation.Font = new System.Drawing.Font("Savile ExtraBold", 9F, System.Drawing.FontStyle.Bold);
             this.currency_inflation.Increment = new decimal(new int[] {
