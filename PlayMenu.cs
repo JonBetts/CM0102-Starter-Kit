@@ -65,6 +65,21 @@ namespace CM0102_Starter_Kit {
         private void PlayButton_Click(object sender, EventArgs e) {
             Button button = (Button) sender;
             ShowLoader();
+
+            // Remove any temporary files that weren't removed since the last session
+            FileInfo[] tmpFiles = new DirectoryInfo(GameFolder).GetFiles("*.tmp");
+            if (tmpFiles.Length > 0) {
+                foreach (FileInfo tmpFile in tmpFiles) {
+                    File.Delete(tmpFile.FullName);
+                }
+            }
+            FileInfo[] lngFiles = new DirectoryInfo(GameFolder).GetFiles("*.lng");
+            if (lngFiles.Length > 0) {
+                foreach (FileInfo lngFile in lngFiles) {
+                    File.Delete(lngFile.FullName);
+                }
+            }
+
             RenameExes(button);
             bool useDefaultConfig = Regex.Match(button.Name, @"\w+_standard").Success;
 
