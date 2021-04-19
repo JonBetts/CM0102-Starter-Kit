@@ -38,6 +38,7 @@ namespace CM0102_Starter_Kit {
         internal static readonly string PatchesFolderName = "Patches";
         internal static readonly string PatchesFolder = Path.Combine(GameFolder, PatchesFolderName);
         internal static readonly string OptionalPatchesFolder = Path.Combine(PatchesFolder, "Optional");
+        internal static readonly string MiscPatchesFolder = Path.Combine(OptionalPatchesFolder, "Misc");
         internal static readonly string ExagearFolder = Path.Combine(Path.Combine(GameFolder, "Android"), "Exagear");
         internal static readonly string Android11Patch = "Android11Patch.patch";
         internal static readonly string SwitchUpdateMessage = "Please use the Data Updates menu to load up a database first!";

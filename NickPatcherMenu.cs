@@ -108,6 +108,11 @@ namespace CM0102_Starter_Kit {
                     keyValuePair.Key.Checked = true;
                 }
             }
+            // If multiple patch files exist in the main Patches folder, tick the "Miscellaneous Patches" checkbox
+            FileInfo[] patchFiles = new DirectoryInfo(PatchesFolder).GetFiles("*.patch");
+            if (patchFiles.Length > 1) {
+                this.misc_patches.Checked = true;
+            }
         }
 
         private void Apply_Click(object sender, EventArgs e) {
@@ -135,9 +140,26 @@ namespace CM0102_Starter_Kit {
             WriteConfigFile(values, Path.Combine(GameFolder, CmLoaderCustomConfig));
             DisplayMessage("Settings successfully changed!");
 
+            // Copy miscellaneous patches to main Patches folder
+            if (this.misc_patches.Enabled && this.misc_patches.Checked) {
+            FileInfo[] patchFiles = new DirectoryInfo(MiscPatchesFolder).GetFiles("*.patch");
+                if (patchFiles.Length > 0) {
+                    foreach (FileInfo patchFile in patchFiles) {
+                        File.Copy(patchFile.FullName, Path.Combine(PatchesFolder, patchFile.Name), true);
+                    }
+                }
+            } else {
+                FileInfo[] existingPatchFiles = new DirectoryInfo(PatchesFolder).GetFiles("*.patch");
+                if (existingPatchFiles.Length > 0) {
+                    foreach (FileInfo patchFile in existingPatchFiles) {
+                        File.Delete(patchFile.FullName);
+                    }
+                }
+            }
+
             // Copy other patches not provided by default in the CM0102 Loader
             string foreignLimitPatch = "NoForeignRestrictionsForAll.patch";
-            if (this.foreign_player_limit.Enabled && Convert.ToBoolean(this.foreign_player_limit.Checked.ToString())) {
+            if (this.foreign_player_limit.Enabled && this.foreign_player_limit.Checked) {
                 File.Copy(Path.Combine(OptionalPatchesFolder, foreignLimitPatch), Path.Combine(PatchesFolder, foreignLimitPatch), true);
             } else {
                 File.Delete(Path.Combine(PatchesFolder, foreignLimitPatch));

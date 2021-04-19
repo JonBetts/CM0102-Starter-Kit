@@ -25,6 +25,7 @@ namespace CM0102_Starter_Kit {
             this.force_all_players = new System.Windows.Forms.CheckBox();
             this.tapani_regen = new System.Windows.Forms.CheckBox();
             this.uncap = new System.Windows.Forms.CheckBox();
+            this.misc_patches = new System.Windows.Forms.CheckBox();
             this.apply = new System.Windows.Forms.Button();
             this.transparent_panel = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.starting_year)).BeginInit();
@@ -37,7 +38,7 @@ namespace CM0102_Starter_Kit {
             this.starting_year_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.starting_year_label.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.starting_year_label.ForeColor = System.Drawing.Color.White;
-            this.starting_year_label.Location = new System.Drawing.Point(122, 144);
+            this.starting_year_label.Location = new System.Drawing.Point(122, 125);
             this.starting_year_label.Name = "starting_year_label";
             this.starting_year_label.Size = new System.Drawing.Size(122, 21);
             this.starting_year_label.Text = "Starting Year";
@@ -46,7 +47,7 @@ namespace CM0102_Starter_Kit {
             // 
             this.starting_year.BackColor = System.Drawing.SystemColors.Window;
             this.starting_year.Font = new System.Drawing.Font("Savile ExtraBold", 9F, System.Drawing.FontStyle.Bold);
-            this.starting_year.Location = new System.Drawing.Point(323, 144);
+            this.starting_year.Location = new System.Drawing.Point(323, 125);
             this.starting_year.Maximum = new decimal(new int[] {
             2100,
             0,
@@ -73,7 +74,7 @@ namespace CM0102_Starter_Kit {
             this.game_speed_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.game_speed_label.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.game_speed_label.ForeColor = System.Drawing.Color.White;
-            this.game_speed_label.Location = new System.Drawing.Point(122, 192);
+            this.game_speed_label.Location = new System.Drawing.Point(122, 173);
             this.game_speed_label.Name = "game_speed_label";
             this.game_speed_label.Size = new System.Drawing.Size(116, 21);
             this.game_speed_label.Text = "Game Speed";
@@ -88,7 +89,7 @@ namespace CM0102_Starter_Kit {
             "x4",
             "x8",
             "x20"});
-            this.game_speed.Location = new System.Drawing.Point(323, 192);
+            this.game_speed.Location = new System.Drawing.Point(323, 173);
             this.game_speed.Name = "game_speed";
             this.game_speed.Size = new System.Drawing.Size(101, 23);
             this.game_speed.TabStop = false;
@@ -100,7 +101,7 @@ namespace CM0102_Starter_Kit {
             this.currency_inflation_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.currency_inflation_label.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.currency_inflation_label.ForeColor = System.Drawing.Color.White;
-            this.currency_inflation_label.Location = new System.Drawing.Point(122, 243);
+            this.currency_inflation_label.Location = new System.Drawing.Point(122, 224);
             this.currency_inflation_label.Name = "currency_inflation_label";
             this.currency_inflation_label.Size = new System.Drawing.Size(158, 21);
             this.currency_inflation_label.Text = "Currency Inflation";
@@ -115,7 +116,7 @@ namespace CM0102_Starter_Kit {
             0,
             0,
             131072});
-            this.currency_inflation.Location = new System.Drawing.Point(323, 243);
+            this.currency_inflation.Location = new System.Drawing.Point(323, 224);
             this.currency_inflation.Maximum = new decimal(new int[] {
             25,
             0,
@@ -139,7 +140,7 @@ namespace CM0102_Starter_Kit {
             this.coloured_attributes.CheckState = System.Windows.Forms.CheckState.Checked;
             this.coloured_attributes.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.coloured_attributes.ForeColor = System.Drawing.Color.White;
-            this.coloured_attributes.Location = new System.Drawing.Point(122, 293);
+            this.coloured_attributes.Location = new System.Drawing.Point(122, 274);
             this.coloured_attributes.Name = "coloured_attributes";
             this.coloured_attributes.Size = new System.Drawing.Size(194, 25);
             this.coloured_attributes.TabStop = false;
@@ -152,7 +153,7 @@ namespace CM0102_Starter_Kit {
             this.resolution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.resolution.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.resolution.ForeColor = System.Drawing.Color.White;
-            this.resolution.Location = new System.Drawing.Point(122, 342);
+            this.resolution.Location = new System.Drawing.Point(122, 323);
             this.resolution.Name = "resolution";
             this.resolution.Size = new System.Drawing.Size(301, 25);
             this.resolution.TabStop = false;
@@ -165,7 +166,7 @@ namespace CM0102_Starter_Kit {
             this.work_permits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.work_permits.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.work_permits.ForeColor = System.Drawing.Color.White;
-            this.work_permits.Location = new System.Drawing.Point(472, 144);
+            this.work_permits.Location = new System.Drawing.Point(472, 125);
             this.work_permits.Name = "work_permits";
             this.work_permits.Size = new System.Drawing.Size(170, 25);
             this.work_permits.TabStop = false;
@@ -180,7 +181,7 @@ namespace CM0102_Starter_Kit {
             this.non_public_bids.CheckState = System.Windows.Forms.CheckState.Checked;
             this.non_public_bids.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.non_public_bids.ForeColor = System.Drawing.Color.White;
-            this.non_public_bids.Location = new System.Drawing.Point(472, 191);
+            this.non_public_bids.Location = new System.Drawing.Point(472, 172);
             this.non_public_bids.Name = "non_public_bids";
             this.non_public_bids.Size = new System.Drawing.Size(208, 25);
             this.non_public_bids.TabStop = false;
@@ -195,7 +196,7 @@ namespace CM0102_Starter_Kit {
             this.seven_substitutes.CheckState = System.Windows.Forms.CheckState.Checked;
             this.seven_substitutes.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.seven_substitutes.ForeColor = System.Drawing.Color.White;
-            this.seven_substitutes.Location = new System.Drawing.Point(472, 239);
+            this.seven_substitutes.Location = new System.Drawing.Point(472, 220);
             this.seven_substitutes.Name = "seven_substitutes";
             this.seven_substitutes.Size = new System.Drawing.Size(242, 25);
             this.seven_substitutes.TabStop = false;
@@ -210,7 +211,7 @@ namespace CM0102_Starter_Kit {
             this.unprotected_contracts.CheckState = System.Windows.Forms.CheckState.Checked;
             this.unprotected_contracts.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.unprotected_contracts.ForeColor = System.Drawing.Color.White;
-            this.unprotected_contracts.Location = new System.Drawing.Point(472, 293);
+            this.unprotected_contracts.Location = new System.Drawing.Point(472, 274);
             this.unprotected_contracts.Name = "unprotected_contracts";
             this.unprotected_contracts.Size = new System.Drawing.Size(288, 25);
             this.unprotected_contracts.TabStop = false;
@@ -223,7 +224,7 @@ namespace CM0102_Starter_Kit {
             this.foreign_player_limit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.foreign_player_limit.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.foreign_player_limit.ForeColor = System.Drawing.Color.White;
-            this.foreign_player_limit.Location = new System.Drawing.Point(472, 342);
+            this.foreign_player_limit.Location = new System.Drawing.Point(472, 323);
             this.foreign_player_limit.Name = "foreign_player_limit";
             this.foreign_player_limit.Size = new System.Drawing.Size(301, 25);
             this.foreign_player_limit.TabStop = false;
@@ -238,7 +239,7 @@ namespace CM0102_Starter_Kit {
             this.regen_fixes.CheckState = System.Windows.Forms.CheckState.Checked;
             this.regen_fixes.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.regen_fixes.ForeColor = System.Drawing.Color.White;
-            this.regen_fixes.Location = new System.Drawing.Point(122, 387);
+            this.regen_fixes.Location = new System.Drawing.Point(122, 368);
             this.regen_fixes.Name = "regen_fixes";
             this.regen_fixes.Size = new System.Drawing.Size(130, 25);
             this.regen_fixes.TabStop = false;
@@ -251,7 +252,7 @@ namespace CM0102_Starter_Kit {
             this.force_all_players.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.force_all_players.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.force_all_players.ForeColor = System.Drawing.Color.White;
-            this.force_all_players.Location = new System.Drawing.Point(472, 387);
+            this.force_all_players.Location = new System.Drawing.Point(472, 368);
             this.force_all_players.Name = "force_all_players";
             this.force_all_players.Size = new System.Drawing.Size(163, 25);
             this.force_all_players.TabStop = false;
@@ -264,7 +265,7 @@ namespace CM0102_Starter_Kit {
             this.tapani_regen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tapani_regen.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.tapani_regen.ForeColor = System.Drawing.Color.White;
-            this.tapani_regen.Location = new System.Drawing.Point(122, 433);
+            this.tapani_regen.Location = new System.Drawing.Point(122, 414);
             this.tapani_regen.Name = "tapani_regen";
             this.tapani_regen.Size = new System.Drawing.Size(187, 25);
             this.tapani_regen.TabStop = false;
@@ -277,12 +278,25 @@ namespace CM0102_Starter_Kit {
             this.uncap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.uncap.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.uncap.ForeColor = System.Drawing.Color.White;
-            this.uncap.Location = new System.Drawing.Point(472, 433);
+            this.uncap.Location = new System.Drawing.Point(472, 414);
             this.uncap.Name = "uncap";
             this.uncap.Size = new System.Drawing.Size(125, 25);
             this.uncap.TabStop = false;
             this.uncap.Text = "Uncap 20\'s";
             this.uncap.UseVisualStyleBackColor = false;
+            // 
+            // misc_patches
+            // 
+            this.misc_patches.AutoSize = true;
+            this.misc_patches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.misc_patches.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.misc_patches.ForeColor = System.Drawing.Color.White;
+            this.misc_patches.Location = new System.Drawing.Point(122, 460);
+            this.misc_patches.Name = "misc_patches";
+            this.misc_patches.Size = new System.Drawing.Size(259, 25);
+            this.misc_patches.TabStop = false;
+            this.misc_patches.Text = "Use Miscellaneous Patches";
+            this.misc_patches.UseVisualStyleBackColor = false;
             // 
             // apply
             // 
@@ -295,7 +309,7 @@ namespace CM0102_Starter_Kit {
             this.apply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.apply.Font = new System.Drawing.Font("Savile ExtraBold", 9F, System.Drawing.FontStyle.Bold);
             this.apply.ForeColor = System.Drawing.Color.White;
-            this.apply.Location = new System.Drawing.Point(409, 508);
+            this.apply.Location = new System.Drawing.Point(409, 507);
             this.apply.Margin = new System.Windows.Forms.Padding(0);
             this.apply.Name = "apply";
             this.apply.Size = new System.Drawing.Size(93, 30);
@@ -309,7 +323,7 @@ namespace CM0102_Starter_Kit {
             this.transparent_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.transparent_panel.Location = new System.Drawing.Point(107, 120);
             this.transparent_panel.Name = "transparent_panel";
-            this.transparent_panel.Size = new System.Drawing.Size(683, 364);
+            this.transparent_panel.Size = new System.Drawing.Size(683, 372);
             this.transparent_panel.TabStop = false;
             // 
             // NickPatcherMenu
@@ -333,6 +347,7 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.tapani_regen);
             this.Controls.Add(this.force_all_players);
             this.Controls.Add(this.regen_fixes);
+            this.Controls.Add(this.misc_patches);
             this.Controls.Add(this.apply);
             this.Controls.Add(this.transparent_panel);
             this.Name = "NickPatcherMenu";
@@ -360,6 +375,7 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.CheckBox force_all_players;
         private System.Windows.Forms.CheckBox tapani_regen;
         private System.Windows.Forms.CheckBox uncap;
+        private System.Windows.Forms.CheckBox misc_patches;
         private System.Windows.Forms.Button apply;
         private System.Windows.Forms.PictureBox transparent_panel;
     }
