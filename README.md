@@ -65,21 +65,3 @@ Big thanks for Nick for his permission to use the Patcher as part of this. It's 
 ## Troubleshooting
 
 The Starter Kit was made to limit the number of issues you get when setting CM 01/02 up. However, different setups and operating systems may result in unforeseen issues. Please have a look at the support thread for the tool if you need help: https://champman0102.net/viewtopic.php?f=43&t=2449
-
-## Future improvements
-
-As we are only in the early stages of the Starter Kit's life, there are definitely ways in which it can be improved:
-
--   Allow modified databases to be kept and named, for switching back to at a later date.
--   Change the popup boxes and loader image to fit with the rest of the tool and the game.
--   ... and many more...
-
-## Credit
-
-Let us take a second to remember that we wouldn't all be sitting here today still playing the game if it wasn't for a select group of people.
-The infamous Nick for providing us with a user friendly tool that enhances and fixes a lot of things that make the game so much better and give it so much replayability! Also to those that came before him: Saturn and Tapani - the original modders. These guys have provided patches for the game year upon year, and it wouldn't be in it's current state without them.
-All the other talented techies that have done their fair share too - John Locke, Tri Wasano, Graeme Kelly, Michael Nygreen (author of the infamous CM Scout), Luessenhoff and Cam for providing us with their fantastic databases that took years of dedication, and anyone else I have forgotten that have helped in any way whatsoever.
-We must also not forget Dermot and the update team, who work tirelessly to get every data update delivered as quickly as possible after every transfer window.
-Those guys put their hearts and souls into these changes (and hundreds of hours of their own time), and without them, the game wouldn't have half the user base that it still has today. I don't really know any of them by name except Steve Harle (but he's a Spurs fan), but they should know that we are hugely grateful for their efforts!
-Special thanks to Ebun Faturoti and Steve Harle for being my beta testers - without you guys, there'd likely still be some bugs lurking in the app!
-Quick shoutouts to Mark who keeps the CM01/02 website running smoothly and as a valuable resource to all of us. To my fellow admins of the Facebook group for doing their best to keep the game alive and help others to enjoy it as much as we all do!
