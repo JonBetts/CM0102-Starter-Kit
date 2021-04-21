@@ -118,7 +118,8 @@ namespace CM0102_Starter_Kit {
 
         private static readonly Dictionary<int, ConfigLine> AndroidConfigLines = new Dictionary<int, ConfigLine> {
             { 9, new ConfigLine(9, "ForceLoadAllPlayers", "false") },
-            { 14, new ConfigLine(14, "ChangeTo1280x800", "false") }
+            { 14, new ConfigLine(14, "ChangeTo1280x800", "false") },
+            { 16, new ConfigLine(16, "PatchFileDirectory", "Patches") }
         };
 
         private static readonly List<string> DefaultButtonNames = new List<string> { "cm0102_standard", "cm0102_nick_patcher" };
