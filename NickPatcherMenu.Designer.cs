@@ -88,7 +88,10 @@ namespace CM0102_Starter_Kit {
             "x2",
             "x4",
             "x8",
-            "x20"});
+            "x20",
+            "x50",
+            "x100",
+            "x200"});
             this.game_speed.Location = new System.Drawing.Point(323, 173);
             this.game_speed.Name = "game_speed";
             this.game_speed.Size = new System.Drawing.Size(101, 23);
