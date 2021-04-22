@@ -53,14 +53,24 @@ namespace CM0102_Starter_Kit {
         }
 
         private void SwitchDatabase_Click(object sender, EventArgs e) {
+            ProgressWindow progressWindow = new ProgressWindow("Loading selected database", 75);
+            progressWindow.Show();
+            progressWindow.Refresh();
+            progressWindow.SetProgressPercentage(0);
+
             Button button = (Button) sender;
             Database database = Databases.Where(v => string.Equals(v.Name, button.Name)).FirstOrDefault();
             if (database.PrerequisiteDatabase != null) {
                 CopyDataToGame(database.PrerequisiteDatabase);
+                progressWindow.SetProgressPercentage(40);
             }
             CopyDataToGame(database);
+            progressWindow.SetProgressPercentage(80);
             // Update the loader config files as switching between CM89, CM93 and anything else requires some changes
             UpdateConfigFiles(database);
+
+            progressWindow.SetProgressPercentage(100);
+            progressWindow.Close();
             DisplayMessage(database.Label + " database successfully loaded!");
         }
 

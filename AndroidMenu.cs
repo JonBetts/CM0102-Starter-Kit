@@ -43,11 +43,17 @@ namespace CM0102_Starter_Kit {
         }
 
         private void GenerateFiles_Click(object sender, EventArgs e) {
+            ProgressWindow progressWindow = new ProgressWindow("Generating files for Android", 75);
+            progressWindow.Show();
+            progressWindow.Refresh();
+            progressWindow.SetProgressPercentage(0);
+
             Database database = GetCurrentDatabase(); 
             // Copy correct CM exe file across
             File.Copy(database.ExeFile, Path.Combine(ExagearFolder, Cm0102Exe), true);
             // Copy CM loader exe file across
             File.Copy(CmLoader, Path.Combine(ExagearFolder, CmLoaderExe), true);
+            progressWindow.SetProgressPercentage(5);
 
             // Copy correct CM loader config file across
             string androidConfigFile = Path.Combine(ExagearFolder, CmLoaderAndroidConfig);
@@ -59,10 +65,12 @@ namespace CM0102_Starter_Kit {
                 copyPatchesFolder = true;
             }
             File.Copy(Path.Combine(GameFolder, configFile), androidConfigFile, true);
+            progressWindow.SetProgressPercentage(10);
 
             // We need to ensure certain patches are not applied to the Android version, even if they were selected
             List<string> defaultLines = GetDefaultConfigFileLines(androidConfigFile, database, true);
             WriteConfigFile(defaultLines, androidConfigFile);
+            progressWindow.SetProgressPercentage(15);
 
             // Only copy Patches folder across if the user wants to use Nick's Patcher - otherwise just create an empty folder
             if (copyPatchesFolder) {
@@ -74,15 +82,21 @@ namespace CM0102_Starter_Kit {
                 }
                 Directory.CreateDirectory(newPatchesFolder);
             }
+            progressWindow.SetProgressPercentage(25);
             // Copy generic folders across
             CopyFolder(DataFolderName);
+            progressWindow.SetProgressPercentage(45);
             CopyFolder(PicturesFolderName);
+            progressWindow.SetProgressPercentage(65);
             CopyFolder(SoundsFolderName);
+            progressWindow.SetProgressPercentage(85);
             Thread.Sleep(2000);
 
             if (this.android_11.Checked) {
                 File.Copy(Path.Combine(OptionalPatchesFolder, Android11Patch), Path.Combine(Path.Combine(ExagearFolder, PatchesFolderName), Android11Patch));
             }
+            progressWindow.SetProgressPercentage(100);
+            progressWindow.Close();
             DisplayMessage("Files successfully generated!");
         }
 

@@ -48,42 +48,50 @@ namespace CM0102_Starter_Kit {
             }
         }
 
-        private void RefreshExeFiles() {
+        private void RefreshExeFiles(ProgressWindow progressWindow) {
             if (ExesNeedRefreshing()) {
                 string tempZipFolder = Path.Combine(Directory.GetCurrentDirectory(), "Temp");
                 string tempZipFile = tempZipFolder + ".zip";
                 File.WriteAllBytes(tempZipFile, Properties.Resources.Exes);
+                progressWindow.SetProgressPercentage(10);
                 new FastZip().ExtractZip(tempZipFile, tempZipFolder, null);
+                progressWindow.SetProgressPercentage(20);
 
                 if (File.Exists(Cm0102)) {
                     File.Delete(Cm0102);
                 }
                 File.Move(Path.Combine(tempZipFolder, Cm0102Exe), Cm0102);
+                progressWindow.SetProgressPercentage(30);
 
                 if (File.Exists(Cm0102Gdi)) {
                     File.Delete(Cm0102Gdi);
                 }
                 File.Move(Path.Combine(tempZipFolder, Cm0102GdiExe), Cm0102Gdi);
+                progressWindow.SetProgressPercentage(40);
             
                 if (File.Exists(Cm89)) {
                     File.Delete(Cm89);
                 }
                 File.Move(Path.Combine(tempZipFolder, Cm89Exe), Cm89);
+                progressWindow.SetProgressPercentage(50);
 
                 if (File.Exists(Cm93)) {
                     File.Delete(Cm93);
                 }
                 File.Move(Path.Combine(tempZipFolder, Cm93Exe), Cm93);
+                progressWindow.SetProgressPercentage(60);
 
                 if (File.Exists(Cm3)) {
                     File.Delete(Cm3);
                 }
                 File.Move(Path.Combine(tempZipFolder, Cm3Exe), Cm3);
+                progressWindow.SetProgressPercentage(70);
 
                 if (File.Exists(CmLoader)) {
                     File.Delete(CmLoader);
                 }
                 File.Move(Path.Combine(tempZipFolder, CmLoaderExe), CmLoader);
+                progressWindow.SetProgressPercentage(80);
 
                 // Cleanup
                 if (File.Exists(Cm0102Backup)) {
@@ -91,6 +99,7 @@ namespace CM0102_Starter_Kit {
                 }
                 File.Delete(tempZipFile);
                 Directory.Delete(tempZipFolder, true);
+                progressWindow.SetProgressPercentage(90);
             }
         }
 
@@ -150,17 +159,27 @@ namespace CM0102_Starter_Kit {
         }
 
         private void BackupSaves_Click(object sender, EventArgs e) {
+            ProgressWindow progressWindow = new ProgressWindow("Backing up save games", 85);
+            progressWindow.Show();
+            progressWindow.Refresh();
+            int progressPerc = 0;
+            progressWindow.SetProgressPercentage(progressPerc);
             string result = "No save games found!";
             FileInfo[] saveGames = new DirectoryInfo(GameFolder).GetFiles("*.sav");
+
             if (saveGames.Length > 0) {
                 if (!Directory.Exists(BackupSavesFolder)) {
                     Directory.CreateDirectory(BackupSavesFolder);
                 }
                 foreach (FileInfo save in saveGames) {
                     File.Copy(save.FullName, Path.Combine(BackupSavesFolder, save.Name), true);
+                    progressPerc = progressPerc + 5;
+                    progressWindow.SetProgressPercentage(Math.Min(progressPerc, 100));
                 }
                 result = saveGames.Length + @" save game(s) successfully backed up (to C:\CM0102 Backups)!";
             }
+            progressWindow.SetProgressPercentage(100);
+            progressWindow.Close();
             DisplayMessage(result);
         }
 
@@ -181,31 +200,43 @@ namespace CM0102_Starter_Kit {
         }
 
         private void MainMenu_Load(object sender, EventArgs e) {
+            ProgressWindow progressWindow = new ProgressWindow("Loading Starter Kit", 100);
+            progressWindow.Show();
+            progressWindow.Refresh();
+
             if (!GameFolderExists()) {
                 Directory.CreateDirectory(GameFolder);
                 string gameZipFile = GameFolder + ".zip";
                 File.WriteAllBytes(gameZipFile, Properties.Resources.Game);
+                progressWindow.SetProgressPercentage(20);
                 new FastZip().ExtractZip(gameZipFile, GameFolder, null);
                 File.Delete(gameZipFile);
+                progressWindow.SetProgressPercentage(40);
 
                 Thread.Sleep(2000);
                 string exesZipFile = Path.Combine(GameFolder, "Exes.zip");
                 File.WriteAllBytes(exesZipFile, Properties.Resources.Exes);
+                progressWindow.SetProgressPercentage(60);
                 new FastZip().ExtractZip(exesZipFile, GameFolder, null);
                 File.Delete(exesZipFile);
+                int nextProgressPerc = 80;
+                progressWindow.SetProgressPercentage(nextProgressPerc);
 
                 if (File.Exists(DefaultChangesFile)) {
                    FileInfo[] saveGames = new DirectoryInfo(DefaultGameFolder).GetFiles("*.sav");
                     if (saveGames.Length > 0) {
                         foreach (FileInfo save in saveGames) {
                             File.Copy(save.FullName, Path.Combine(GameFolder, save.Name), true);
+                            progressWindow.SetProgressPercentage(Math.Min(++nextProgressPerc, 100));
                         }
                     }
                 }
             } else {
-                RefreshExeFiles();
+                RefreshExeFiles(progressWindow);
             }
+            progressWindow.SetProgressPercentage(100);
             RefreshForm();
+            progressWindow.Close();
         }
 
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e) {
