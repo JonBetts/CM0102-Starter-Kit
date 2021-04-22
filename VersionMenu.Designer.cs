@@ -10,6 +10,7 @@ namespace CM0102_Starter_Kit {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.april_database = new System.Windows.Forms.Button();
             this.original_database = new System.Windows.Forms.Button();
             this.patched_database = new System.Windows.Forms.Button();
             this.march_database = new System.Windows.Forms.Button();
@@ -23,6 +24,26 @@ namespace CM0102_Starter_Kit {
             this.saveDatabaseDialog = new System.Windows.Forms.SaveFileDialog();
             this.loadDatabaseDialog = new System.Windows.Forms.OpenFileDialog();
             // 
+            // april_database
+            // 
+            this.april_database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.april_database.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.april_database.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.april_database.FlatAppearance.BorderSize = 2;
+            this.april_database.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.april_database.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.april_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.april_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.april_database.ForeColor = System.Drawing.Color.White;
+            this.april_database.Location = new System.Drawing.Point(283, 144);
+            this.april_database.Margin = new System.Windows.Forms.Padding(0);
+            this.april_database.Name = "april_database";
+            this.april_database.Size = new System.Drawing.Size(327, 65);
+            this.april_database.TabStop = false;
+            this.april_database.Text = "April 2021";
+            this.april_database.UseVisualStyleBackColor = false;
+            this.april_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
+            // 
             // original_database
             // 
             this.original_database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -34,7 +55,7 @@ namespace CM0102_Starter_Kit {
             this.original_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.original_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.original_database.ForeColor = System.Drawing.Color.White;
-            this.original_database.Location = new System.Drawing.Point(120, 144);
+            this.original_database.Location = new System.Drawing.Point(120, 211);
             this.original_database.Margin = new System.Windows.Forms.Padding(0);
             this.original_database.Name = "original_database";
             this.original_database.Size = new System.Drawing.Size(327, 65);
@@ -54,7 +75,7 @@ namespace CM0102_Starter_Kit {
             this.patched_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.patched_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.patched_database.ForeColor = System.Drawing.Color.White;
-            this.patched_database.Location = new System.Drawing.Point(449, 144);
+            this.patched_database.Location = new System.Drawing.Point(449, 211);
             this.patched_database.Margin = new System.Windows.Forms.Padding(0);
             this.patched_database.Name = "patched_database";
             this.patched_database.Size = new System.Drawing.Size(327, 65);
@@ -74,7 +95,7 @@ namespace CM0102_Starter_Kit {
             this.march_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.march_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.march_database.ForeColor = System.Drawing.Color.White;
-            this.march_database.Location = new System.Drawing.Point(120, 211);
+            this.march_database.Location = new System.Drawing.Point(120, 278);
             this.march_database.Margin = new System.Windows.Forms.Padding(0);
             this.march_database.Name = "march_database";
             this.march_database.Size = new System.Drawing.Size(327, 65);
@@ -94,7 +115,7 @@ namespace CM0102_Starter_Kit {
             this.november_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.november_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.november_database.ForeColor = System.Drawing.Color.White;
-            this.november_database.Location = new System.Drawing.Point(449, 211);
+            this.november_database.Location = new System.Drawing.Point(449, 278);
             this.november_database.Margin = new System.Windows.Forms.Padding(0);
             this.november_database.Name = "november_database";
             this.november_database.Size = new System.Drawing.Size(327, 65);
@@ -114,7 +135,7 @@ namespace CM0102_Starter_Kit {
             this.luessenhoff_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.luessenhoff_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.luessenhoff_database.ForeColor = System.Drawing.Color.White;
-            this.luessenhoff_database.Location = new System.Drawing.Point(120, 345);
+            this.luessenhoff_database.Location = new System.Drawing.Point(120, 412);
             this.luessenhoff_database.Margin = new System.Windows.Forms.Padding(0);
             this.luessenhoff_database.Name = "luessenhoff_database";
             this.luessenhoff_database.Size = new System.Drawing.Size(327, 65);
@@ -134,7 +155,7 @@ namespace CM0102_Starter_Kit {
             this.cm89_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cm89_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.cm89_database.ForeColor = System.Drawing.Color.White;
-            this.cm89_database.Location = new System.Drawing.Point(120, 278);
+            this.cm89_database.Location = new System.Drawing.Point(120, 345);
             this.cm89_database.Margin = new System.Windows.Forms.Padding(0);
             this.cm89_database.Name = "cm89_database";
             this.cm89_database.Size = new System.Drawing.Size(327, 65);
@@ -154,7 +175,7 @@ namespace CM0102_Starter_Kit {
             this.cm93_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cm93_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.cm93_database.ForeColor = System.Drawing.Color.White;
-            this.cm93_database.Location = new System.Drawing.Point(449, 278);
+            this.cm93_database.Location = new System.Drawing.Point(449, 345);
             this.cm93_database.Margin = new System.Windows.Forms.Padding(0);
             this.cm93_database.Name = "cm93_database";
             this.cm93_database.Size = new System.Drawing.Size(327, 65);
@@ -174,7 +195,7 @@ namespace CM0102_Starter_Kit {
             this.cm3_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cm3_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.cm3_database.ForeColor = System.Drawing.Color.White;
-            this.cm3_database.Location = new System.Drawing.Point(449, 345);
+            this.cm3_database.Location = new System.Drawing.Point(449, 412);
             this.cm3_database.Margin = new System.Windows.Forms.Padding(0);
             this.cm3_database.Name = "cm3_database";
             this.cm3_database.Size = new System.Drawing.Size(327, 65);
@@ -194,7 +215,7 @@ namespace CM0102_Starter_Kit {
             this.save_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.save_database.ForeColor = System.Drawing.Color.White;
-            this.save_database.Location = new System.Drawing.Point(120, 412);
+            this.save_database.Location = new System.Drawing.Point(120, 479);
             this.save_database.Margin = new System.Windows.Forms.Padding(0);
             this.save_database.Name = "save_database";
             this.save_database.Size = new System.Drawing.Size(327, 65);
@@ -214,7 +235,7 @@ namespace CM0102_Starter_Kit {
             this.load_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.load_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.load_database.ForeColor = System.Drawing.Color.White;
-            this.load_database.Location = new System.Drawing.Point(449, 412);
+            this.load_database.Location = new System.Drawing.Point(449, 479);
             this.load_database.Margin = new System.Windows.Forms.Padding(0);
             this.load_database.Name = "load_database";
             this.load_database.Size = new System.Drawing.Size(327, 65);
@@ -241,6 +262,7 @@ namespace CM0102_Starter_Kit {
             // 
             this.BackgroundImage = Properties.Resources.owen;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.april_database);
             this.Controls.Add(this.original_database);
             this.Controls.Add(this.patched_database);
             this.Controls.Add(this.march_database);
@@ -256,6 +278,7 @@ namespace CM0102_Starter_Kit {
         }
 
         #endregion
+        private System.Windows.Forms.Button april_database;
         private System.Windows.Forms.Button original_database;
         private System.Windows.Forms.Button patched_database;
         private System.Windows.Forms.Button march_database;

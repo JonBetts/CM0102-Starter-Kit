@@ -157,6 +157,7 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="app.manifest" />
+    <None Include="data\april_data.zip" />
     <None Include="data\cm3_data.zip" />
     <None Include="data\cm89_data.zip" />
     <None Include="data\cm93_data.zip" />

@@ -160,13 +160,14 @@ namespace CM0102_Starter_Kit {
         private static readonly Database PatchedDatabase = new Database("patched_database", "Patched (3.9.68)", Properties.Resources.patched_data, true, DefaultButtonNames, Cm0102);
         private static readonly Database MarchDatabase = new Database("march_database", "March 2020", Properties.Resources.march_data, false, DefaultButtonNames, Cm0102, PatchedDatabase);
         private static readonly Database NovemberDatabase = new Database("november_database", "November 2020", Properties.Resources.november_data, false, DefaultButtonNames, Cm0102, PatchedDatabase);
+        private static readonly Database AprilDatabase = new Database("april_database", "April 2021", Properties.Resources.april_data, false, DefaultButtonNames, Cm0102, PatchedDatabase);
         private static readonly Database LuessenhoffDatabase = new Database("luessenhoff_database", "Luessenhoff", Properties.Resources.luessenhoff_data, false, DefaultButtonNames, Cm0102, OriginalDatabase);
         private static readonly Database Cm89Database = new Database("cm89_database", "1989/90", Properties.Resources.cm89_data, true, Cm89ButtonNames, Cm89, Cm89ConfigLines);
         private static readonly Database Cm93Database = new Database("cm93_database", "1993/94", Properties.Resources.cm93_data, true, Cm93ButtonNames, Cm93, Cm93ConfigLines);
         private static readonly Database Cm3Database = new Database("cm3_database", "CM3", Properties.Resources.cm3_data, true, Cm3ButtonNames, Cm3, Cm3ConfigLines);
 
         internal static readonly List<Database> Databases = new List<Database> {
-            OriginalDatabase, PatchedDatabase, MarchDatabase, NovemberDatabase, LuessenhoffDatabase, Cm89Database, Cm93Database, Cm3Database
+            OriginalDatabase, PatchedDatabase, MarchDatabase, NovemberDatabase, AprilDatabase, LuessenhoffDatabase, Cm89Database, Cm93Database, Cm3Database
         };
 
         internal static Database GetCurrentDatabase() {
