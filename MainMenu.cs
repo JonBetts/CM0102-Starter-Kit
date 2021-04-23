@@ -200,6 +200,12 @@ namespace CM0102_Starter_Kit {
         }
 
         private void MainMenu_Load(object sender, EventArgs e) {
+            Process[] mainProcesses = Process.GetProcessesByName("CM0102StarterKit");
+            if (mainProcesses.Length > 1) { 
+                DisplayMessage("The Starter Kit is already running! Exiting...");
+                Application.Exit();
+            }
+
             ProgressWindow progressWindow = new ProgressWindow("Loading Starter Kit", 100);
             progressWindow.Show();
             progressWindow.Refresh();
