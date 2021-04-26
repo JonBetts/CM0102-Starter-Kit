@@ -135,7 +135,7 @@ namespace CM0102_Starter_Kit {
             this.luessenhoff_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.luessenhoff_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.luessenhoff_database.ForeColor = System.Drawing.Color.White;
-            this.luessenhoff_database.Location = new System.Drawing.Point(120, 412);
+            this.luessenhoff_database.Location = new System.Drawing.Point(449, 412);
             this.luessenhoff_database.Margin = new System.Windows.Forms.Padding(0);
             this.luessenhoff_database.Name = "luessenhoff_database";
             this.luessenhoff_database.Size = new System.Drawing.Size(327, 65);
@@ -195,7 +195,7 @@ namespace CM0102_Starter_Kit {
             this.cm3_database.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cm3_database.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.cm3_database.ForeColor = System.Drawing.Color.White;
-            this.cm3_database.Location = new System.Drawing.Point(449, 412);
+            this.cm3_database.Location = new System.Drawing.Point(120, 412);
             this.cm3_database.Margin = new System.Windows.Forms.Padding(0);
             this.cm3_database.Name = "cm3_database";
             this.cm3_database.Size = new System.Drawing.Size(327, 65);
