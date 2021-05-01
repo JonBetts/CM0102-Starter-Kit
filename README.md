@@ -78,68 +78,67 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
 -   **Use Miscellaneous Patches** - I have put together a collection of patches provided by Nick (including contributions from Saturn, Tapani, John Locke, xeno, et al) that I feel enhance the game quite a bit. You can either have all of them or have none of them - there's no room to list them all individually on the Starter Kit interface! I'll try to briefly describe each of them here:
 
-  * **AllowInstantSquadStatusBiddingReset** - This allows you to instantly change the squad status offered to a player you are trying to sign.
+    * **AllowInstantSquadStatusBiddingReset** - This allows you to instantly change the squad status offered to a player you are trying to sign.
 
-  * **AllowJanuaryTransfersInChampionsLeague** - This allows players you sign in January to be included in your Champions League squad.
+    * **AllowJanuaryTransfersInChampionsLeague** - This allows players you sign in January to be included in your Champions League squad.
 
-  * **AllowLoansToPlayInEurope**** - This allows players on loan to be able to play in European games.
+    * **AllowLoansToPlayInEurope**** - This allows players on loan to be able to play in European games.
 
-  * **AllowNonEULoans**** - This allows you to loan players from any country. Please note, this doesn't make much difference if you have already selected the "No Work Permits" option on the main patcher menu!
+    * **AllowNonEULoans**** - This allows you to loan players from any country. Please note, this doesn't make much difference if you have already selected the "No Work Permits" option on the main patcher menu!
 
-  * **AllowYoungAndOld** - The original game had lower and higher limits on manager/non-player ages. These days managers start younger and finish later, so this patch removes that limit.
+    * **AllowYoungAndOld** - The original game had lower and higher limits on manager/non-player ages. These days managers start younger and finish later, so this patch removes that limit.
 
-  * **BackgroundHires** - Teams in leagues loaded in the background will hire managers where they previously didn't.
+    * **BackgroundHires** - Teams in leagues loaded in the background will hire managers where they previously didn't.
 
-  * **BosmanCountries** - Bosman signings are now allowed in Croatia and Poland, and have been removed from Israel and Ukraine.
+    * **BosmanCountries** - Bosman signings are now allowed in Croatia and Poland, and have been removed from Israel and Ukraine.
 
-  * **BTeamsIncreaseTo50Players** - Teams that have B teams only have 48 players taken from the database by default. This fixes that to the normal 50 players you would get with a reserve team.
+    * **BTeamsIncreaseTo50Players** - Teams that have B teams only have 48 players taken from the database by default. This fixes that to the normal 50 players you would get with a reserve team.
 
-  * **DontRejectOffers** - The board/chairman will no longer interfere in your transfers.
+    * **DontRejectOffers** - The board/chairman will no longer interfere in your transfers.
 
-  * **EnableSeasonTicketMoneyOnFirstYear** - The original game didn't give you season ticket money in the first season. This patch ensures you get season ticket revenue every year, including the first.
+    * **EnableSeasonTicketMoneyOnFirstYear** - The original game didn't give you season ticket money in the first season. This patch ensures you get season ticket revenue every year, including the first.
 
-  * **GiveMoreOptionsInOfferDropDown** - When offering to buy players this gives more options in the dropdown so you can quickly get to the value you want to offer. It now includes:
-0, 100k, 250k, 500k, 1m, 2.5m, 5m, 10m, 15m, 20m, 30m, 50m and 75m.
+    * **GiveMoreOptionsInOfferDropDown** - When offering to buy players this gives more options in the dropdown so you can quickly get to the value you want to offer. It now includes: 0, 100k, 250k, 500k, 1m, 2.5m, 5m, 10m, 15m, 20m, 30m, 50m and 75m.
 
-  * **HalveSigningOnFees** - On the original game, AI clubs were spending a significant amount of revenue just on signing-on fees, especially for contract renewals. This halves the amount players ask for in signing-on fees, putting less of a burden on the AI clubs (and your own).
+    * **HalveSigningOnFees** - On the original game, AI clubs were spending a significant amount of revenue just on signing-on fees, especially for contract renewals. This halves the amount players ask for in signing-on fees, putting less of a burden on the AI clubs (and your own).
 
-  * **HumanManagerAttributes** - You can now see your own attributes on your Manager Profile page. These were always there in the background, but now you can see how they develop.
+    * **HumanManagerAttributes** - You can now see your own attributes on your Manager Profile page. These were always there in the background, but now you can see how they develop.
 
-  * **JobsAbroadBoost** - This makes some minor changes so that you should now find it easier to get a job in a different country to the one you started in.
+    * **JobsAbroadBoost** - This makes some minor changes so that you should now find it easier to get a job in a different country to the one you started in.
 
-  * **LoadContinentalComps** - This loads all continental club competitions regardless as to what leagues you have selected.
+    * **LoadContinentalComps** - This loads all continental club competitions regardless as to what leagues you have selected.
 
-  * **LoansBoost** - This increases the likelihood of more loan deals being made in the game.
+    * **LoansBoost** - This increases the likelihood of more loan deals being made in the game.
 
-  * **LoansUpdateIncreaseLoans** - This increases the number of loans that teams in England, Scotland, Ireland and France can make at any one time from 2 to 9.
+    * **LoansUpdateIncreaseLoans** - This increases the number of loans that teams in England, Scotland, Ireland and France can make at any one time from 2 to 9.
 
-  * **NicksFitnessPatch** - This removes the pre-defined period of the year whereby player fitness is greatly decreased.
+    * **NicksFitnessPatch** - This removes the pre-defined period of the year whereby player fitness is greatly decreased.
 
-  * **NoTransferFundCountryBias** - This ensures the percentage of bank balance available for transfer funds for teams in each nation is equal.
+    * **NoTransferFundCountryBias** - This ensures the percentage of bank balance available for transfer funds for teams in each nation is equal.
 
-  * **ObsceneGestureSuspensions** - Suspensions given for players making obscene gestures will now take effect immediately instead of after 14 days. The description given for the ban now shows 'Misconduct' rather than 'Use of an illegal substance'.
+    * **ObsceneGestureSuspensions** - Suspensions given for players making obscene gestures will now take effect immediately instead of after 14 days. The description given for the ban now shows 'Misconduct' rather than 'Use of an illegal substance'.
 
-  * **PauseOnMinorInjury** - This will always ensure the game pauses during a match for an injury, no matter the severity of an injury, including minor knocks or strains.
+    * **PauseOnMinorInjury** - This will always ensure the game pauses during a match for an injury, no matter the severity of an injury, including minor knocks or strains.
 
-  * **RegensMegaBoost** - Regens with high potential abilities should come back with better attributes than before.
+    * **RegensMegaBoost** - Regens with high potential abilities should come back with better attributes than before.
 
-  * **RegisterForEuropeAgeIncrease** - This raises the age for which players need to be registered for European competitions from 19 to 21.
+    * **RegisterForEuropeAgeIncrease** - This raises the age for which players need to be registered for European competitions from 19 to 21.
 
-  * **ReserveSidesEnabled** - This enables reserve teams for German, Portuguese and Spanish clubs without a B team.
+    * **ReserveSidesEnabled** - This enables reserve teams for German, Portuguese and Spanish clubs without a B team.
 
-  * **RetirePatch** - This ensures that players will not retire until they are at least 34.
+    * **RetirePatch** - This ensures that players will not retire until they are at least 34.
 
-  * **ScoutRoleOffer** - Assistant Managers and Coaches can now be offered roles as Scouts.
+    * **ScoutRoleOffer** - Assistant Managers and Coaches can now be offered roles as Scouts.
 
-  * **StopYoungstersRejectingOffers** - Players younger than 18 will sometimes reject all offers no matter how famous your club is. This will disable that.
+    * **StopYoungstersRejectingOffers** - Players younger than 18 will sometimes reject all offers no matter how famous your club is. This will disable that.
 
-  * **TransferButtonSensitivity** - This _should_ fix the contract and transfer buttons being too sensitive and not allowing you to select the values you want to.
+    * **TransferButtonSensitivity** - This _should_ fix the contract and transfer buttons being too sensitive and not allowing you to select the values you want to.
 
-  * **Under21CapsNonBinding** - Players can be called up by a national team even if they have under-21 caps for another nation.
+    * **Under21CapsNonBinding** - Players can be called up by a national team even if they have under-21 caps for another nation.
 
-  * **UnlockYourCreativity** - This fixes a major bug in the game, where the Reflexes attribute is used for the Creativity of players with a Current Ability above 124 and intrinsic Creativity above 10.
+    * **UnlockYourCreativity** - This fixes a major bug in the game, where the Reflexes attribute is used for the Creativity of players with a Current Ability above 124 and intrinsic Creativity above 10.
 
-  * **UnlockYourPotential** - This sets your own Potential Ability to 200, which I believe means you are more likely to get better job offers, the higher this attribute increases. Still haven't confirmed this myself.
+    * **UnlockYourPotential** - This sets your own Potential Ability to 200, which I believe means you are more likely to get better job offers, the higher this attribute increases. Still haven't confirmed this myself.
 
 If you really do want to pick and choose which of these you use, after applying the Misc Patches, you can go into the **Patches** folder and remove some of the files there, and they then won't be loaded by the game.
 
