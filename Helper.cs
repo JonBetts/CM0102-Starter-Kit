@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 
 namespace CM0102_Starter_Kit {
@@ -42,6 +43,7 @@ namespace CM0102_Starter_Kit {
         internal static readonly string ExagearFolder = Path.Combine(Path.Combine(GameFolder, "Android"), "Exagear");
         internal static readonly string Android11Patch = "Android11Patch.patch";
         internal static readonly string SwitchUpdateMessage = "Please use the Data Updates menu to load up a database first!";
+        internal static readonly CultureInfo cultureInfo = new CultureInfo("en-GB");
 
         private static bool IsWindowsVistaOrLower() {
             OperatingSystem operatingSystem = Environment.OSVersion;
