@@ -60,7 +60,7 @@
             this.version_number.Margin = new System.Windows.Forms.Padding(0);
             this.version_number.Name = "version_number";
             this.version_number.Size = new System.Drawing.Size(79, 23);
-            this.version_number.Text = "1.2.0";
+            this.version_number.Text = "1.2.1";
             this.version_number.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // exit
