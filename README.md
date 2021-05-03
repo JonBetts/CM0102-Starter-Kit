@@ -33,6 +33,8 @@ This deletes those files, which is fine as they are just aliases (shortcuts) to 
 
 -   There is a very minor bug when using the trackpad in Mac - if you're scrolling with it, it scrolls all the way to the bottom of the page, and won't stop until you click somewhere. In short, if you are going to use your trackpad, you'll be better off clicking and dragging the scrollbars as you would on Windows. Even better, use an external mouse, and you won't get this issue.
 
+-   If you want to browse the game folder, you will need to right click on the app, then click "Show Package Contents". Then you need to navigate to `drive_c -> Program Files -> Starter Kit v*.*.* -> Game`. This is where you can find your saved games, or copy content across like tactic folders, menu bars, etc.
+
 ## The basics
 
 It's all very straightforward, but I will give a quick explanation about everything just in case. The main thing you might notice if you've seen the tool before is that it no longer requires any installation at all! Everything is contained within the folder that you create when you unzip the tool after downloading it. So you can easily play CM between different computers without having to install it! Here's a few screenshots and then an explanation of everything the tool does.
