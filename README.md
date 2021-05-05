@@ -88,9 +88,9 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
     * **AllowJanuaryTransfersInChampionsLeague** - This allows players you sign in January to be included in your Champions League squad.
 
-    * **AllowLoansToPlayInEurope**** - This allows players on loan to be able to play in European games.
+    * **AllowLoansToPlayInEurope** - This allows players on loan to be able to play in European games.
 
-    * **AllowNonEULoans**** - This allows you to loan players from any country. Please note, this doesn't make much difference if you have already selected the "No Work Permits" option on the main patcher menu!
+    * **AllowNonEULoans** - This allows you to loan players from any country. Please note, this doesn't make much difference if you have already selected the "No Work Permits" option on the main patcher menu!
 
     * **AllowYoungAndOld** - The original game had lower and higher limits on manager/non-player ages. These days managers start younger and finish later, so this patch removes that limit.
 
