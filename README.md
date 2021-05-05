@@ -31,6 +31,8 @@ Please be aware that the Mac version is a port of the original Windows applicati
 
 -   If you want to browse the game folder, you will need to right click on the app, then click "Show Package Contents". Then you need to navigate to `drive_c -> Program Files -> Starter Kit v*.*.* -> Game`. This is where you can find your saved games, or copy content across like tactic folders, menu bars, etc.
 
+-   If, after reading all of the above, you cannot get the tool running on your Mac, then the last resort would be to upgrade to the latest version of OSX (which at the time of writing is BigSur 11.3.1). It's always better to stay up-to-date with these things, and may alleviate certain issues. 
+
 ## The basics
 
 It's all very straightforward, but I will give a quick explanation about everything just in case. The main thing you might notice if you've seen the tool before is that it no longer requires any installation at all! Everything is contained within the folder that you create when you unzip the tool after downloading it. So you can easily play CM between different computers without having to install it! Here's a few screenshots and then an explanation of everything the tool does.
