@@ -16,7 +16,7 @@ If you have any issues upon first usage of the tool, please head to the support 
 
 Please be aware that the Mac version is a port of the original Windows application. Because of that, certain things won't work in exactly the same way as the Windows version. Here are the important things you need to know:
 
-- I'm pretty sure the tool won't run on the new M1 Macbooks, as it uses Wineskin under the bonnet, and I don't believe a version of Wineskin has yet been released that is fully compatibe with that new CPU. An alternative if you have one of the M1s is to download Crossover, and run the Windows version through that. You will have to pay for Crossover after a couple of weeks, or you might be able to keep re-downloading the trial version.
+- I'm pretty sure the tool won't run on the new M1 Macbooks, as it uses Wineskin under the bonnet, and I don't believe a version of Wineskin has yet been released that is fully compatible with that new CPU. An alternative if you have one of the M1s is to download Crossover, and run the Windows version through that. You will have to pay for Crossover after a couple of weeks, or you might be able to keep re-downloading the trial version.
 
 -   If the app doesn't open for you after you've unzipped it and clicked on it, and it says "CM0102StarterKit is damaged and can't be opened", it's because Apple requires all apps to be "code signed" for authenticity, and you have to pay an annual fee to be a part of their programme that allows that. To get around this, you need to open up Terminal and run the following:
 `cd ~/Downloads/CM0102\ Starter\ Kit\ Mac\ Version/` (or wherever you downloaded the app to) followed by `xattr -drs com.apple.quarantine CM0102StarterKit.app`. This should now make the app usable!
