@@ -52,7 +52,7 @@ All you have to do is click on whichever one you want to use, and wait for a con
 
 -   **Play Game** - Allows you to play the game without faffing around with compatibility settings and admin options, and pick between just using standard CM or applying Nick's Patcher to it and running that. Do whatever makes you happy!
 
--   **Back Up Save Games** - Backs up all your save games to the following folder: 'C:\CM0102'.
+-   **Back Up Save Games** - Backs up all your save games to the following folder: 'C:\CM0102 Backups'.
 
 -   **CM Scout** - Launches CM Scout. It's a nice little tool that means you don't have to rely on your rubbish in-game scouts to find players. Most people think it ruins the game a bit though, so use with caution!
 
