@@ -158,7 +158,7 @@ More details about Nick's Patcher, including what each of the standard options d
 
 <p align="left"><img src="https://i.ibb.co/sJ7WV8w/PlayMenu.png"/></p>
 
-This is simply where you decide whether you want to play standard CM, or you want to apply the options selected on Nick's Patcher. Please note, that the Starter Kit now detects what database you have loaded, and only allows you to select the correct options for playing, to save on any confusion.
+This is simply where you decide whether you want to play standard CM, or you want to apply the options selected on Nick's Patcher. Please note, that the Starter Kit now detects what database you have loaded, and only allows you to select the correct options for playing, to save on any confusion. The 89/90, 93/94 and 98/99 databases all use different executable files that have been pre-patched to set the correct year and add a few other things, hence why they have their own separate play buttons on this menu. All other databases can be started using the default CM01/02 play button on this menu (provided you have already switched to them on the Data Updates menu!).
 
 #### Android Menu
 
