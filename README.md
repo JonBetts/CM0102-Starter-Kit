@@ -18,8 +18,9 @@ Please be aware that the Mac version is a port of the original Windows applicati
 
 - I'm pretty sure the tool won't run on the new M1 Macbooks, as it uses Wineskin under the bonnet, and I don't believe a version of Wineskin has yet been released that is fully compatible with that new CPU. An alternative if you have one of the M1s is to download Crossover, and run the Windows version through that. You will have to pay for Crossover after a couple of weeks, or you might be able to keep re-downloading the trial version.
 
--   If the app doesn't open for you after you've unzipped it and clicked on it, and it says "CM0102StarterKit is damaged and can't be opened", it's because Apple requires all apps to be "code signed" for authenticity, and you have to pay an annual fee to be a part of their programme that allows that. To get around this, you need to open up Terminal and run the following:
-`cd ~/Downloads/CM0102\ Starter\ Kit\ Mac\ Version/` (or wherever you downloaded the app to) followed by `xattr -drs com.apple.quarantine CM0102StarterKit.app`. This should now make the app usable!
+-   Previously, I gave advice about removing the quarantine flag from the Starter Kit application after unzipping the file, etc. Well it's actually easier to do this before doing anything else. So as soon as the Starter Kit zip file has been downloaded, open up Terminal, and run the following command:
+`xattr -drs com.apple.quarantine ~/Desktop/Downloads/CM0102.Starter.Kit.Mac.Version.zip`.
+This should now allow you to run the application properly. If you have changed where you download folder is located, then adjust the command accordingly.
 
 -   In High Sierra (and potentially other versions), when you play the game in windowed mode, there is a black border around the game, and you cannot see the rest of your windows and applications. Unfortunately there isn't a way around this, unless you upgrade to Big Sur as the behaviour isn't present on there.
 
