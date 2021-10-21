@@ -26,6 +26,8 @@ namespace CM0102_Starter_Kit {
         internal static readonly string Cm89 = Path.Combine(GameFolder, Cm89Exe);
         internal static readonly string Cm93Exe = "cm93.exe";
         internal static readonly string Cm93 = Path.Combine(GameFolder, Cm93Exe);
+        internal static readonly string Cm95Exe = "cm95.exe";
+        internal static readonly string Cm95 = Path.Combine(GameFolder, Cm95Exe);
         internal static readonly string Cm3Exe = "cm3.exe";
         internal static readonly string Cm3 = Path.Combine(GameFolder, Cm3Exe);
         internal static readonly string Cm0102Backup = Path.Combine(GameFolder, "cm0102.exe.bk");
@@ -64,7 +66,7 @@ namespace CM0102_Starter_Kit {
         }
 
         internal static bool ExesNeedRefreshing() {
-            if (File.Exists(Cm0102Backup) || !File.Exists(Cm0102) || !File.Exists(Cm0102Gdi) || !File.Exists(Cm89) || !File.Exists(Cm93) || !File.Exists(Cm3) || !File.Exists(CmLoader)) {
+            if (File.Exists(Cm0102Backup) || !File.Exists(Cm0102) || !File.Exists(Cm0102Gdi) || !File.Exists(Cm89) || !File.Exists(Cm93) || !File.Exists(Cm95) || !File.Exists(Cm3) || !File.Exists(CmLoader)) {
                 return true;
             }
             return false;
@@ -76,6 +78,10 @@ namespace CM0102_Starter_Kit {
 
         private static bool Cm93DataLoaded() {
             return File.Exists(Path.Combine(DataFolder, "cm93.txt"));
+        }
+
+        private static bool Cm95DataLoaded() {
+            return File.Exists(Path.Combine(DataFolder, "cm95.txt"));
         }
 
         private static bool Cm3DataLoaded() {
@@ -109,6 +115,13 @@ namespace CM0102_Starter_Kit {
             { 8, new ConfigLine(8, "RegenFixes", "false") }
         };
 
+        private static readonly Dictionary<int, ConfigLine> Cm95ConfigLines = new Dictionary<int, ConfigLine> {
+            { 1, new ConfigLine(1, "Year", "1995") },
+            { 4, new ConfigLine(4, "ColouredAttributes", "false") },
+            { 5, new ConfigLine(5, "DisableUnprotectedContracts", "false") },
+            { 8, new ConfigLine(8, "RegenFixes", "false") }
+        };
+
         private static readonly Dictionary<int, ConfigLine> Cm3ConfigLines = new Dictionary<int, ConfigLine> {
             { 1, new ConfigLine(1, "Year", "1998") },
             { 4, new ConfigLine(4, "ColouredAttributes", "false") },
@@ -127,6 +140,7 @@ namespace CM0102_Starter_Kit {
         private static readonly List<string> DefaultButtonNames = new List<string> { "cm0102_standard", "cm0102_nick_patcher" };
         private static readonly List<string> Cm89ButtonNames = new List<string> { "cm89_standard", "cm89_nick_patcher" };
         private static readonly List<string> Cm93ButtonNames = new List<string> { "cm93_standard", "cm93_nick_patcher" };
+        private static readonly List<string> Cm95ButtonNames = new List<string> { "cm95_standard", "cm95_nick_patcher" };
         private static readonly List<string> Cm3ButtonNames = new List<string> { "cm3_standard", "cm3_nick_patcher" };
 
         internal class Database {
@@ -166,10 +180,11 @@ namespace CM0102_Starter_Kit {
         private static readonly Database LuessenhoffDatabase = new Database("luessenhoff_database", "Luessenhoff", Properties.Resources.luessenhoff_data, false, DefaultButtonNames, Cm0102, OriginalDatabase);
         private static readonly Database Cm89Database = new Database("cm89_database", "1989/90", Properties.Resources.cm89_data, true, Cm89ButtonNames, Cm89, Cm89ConfigLines);
         private static readonly Database Cm93Database = new Database("cm93_database", "1993/94", Properties.Resources.cm93_data, true, Cm93ButtonNames, Cm93, Cm93ConfigLines);
+        private static readonly Database Cm95Database = new Database("cm95_database", "1995/96", Properties.Resources.cm95_data, true, Cm95ButtonNames, Cm95, Cm95ConfigLines);
         private static readonly Database Cm3Database = new Database("cm3_database", "CM3", Properties.Resources.cm3_data, true, Cm3ButtonNames, Cm3, Cm3ConfigLines);
 
         internal static readonly List<Database> Databases = new List<Database> {
-            OriginalDatabase, PatchedDatabase, MarchDatabase, NovemberDatabase, AprilDatabase, LuessenhoffDatabase, Cm89Database, Cm93Database, Cm3Database
+            OriginalDatabase, PatchedDatabase, MarchDatabase, NovemberDatabase, AprilDatabase, LuessenhoffDatabase, Cm89Database, Cm93Database, Cm95Database, Cm3Database
         };
 
         internal static Database GetCurrentDatabase() {
@@ -177,6 +192,8 @@ namespace CM0102_Starter_Kit {
                 return Cm89Database;
             } else if (Cm93DataLoaded()) {
                 return Cm93Database;
+            } else if (Cm95DataLoaded()) {
+                return Cm95Database;
             } else if (Cm3DataLoaded()) {
                 return Cm3Database;
             } else {

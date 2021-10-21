@@ -136,6 +136,9 @@
   <data name="cm93_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\cm93_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="cm95_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\cm95_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="events_eng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\external\events_eng.cfg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

@@ -31,6 +31,7 @@ namespace CM0102_Starter_Kit {
                 this.luessenhoff_database,
                 this.cm89_database,
                 this.cm93_database,
+                this.cm95_database,
                 this.cm3_database,
                 this.save_database,
                 this.load_database

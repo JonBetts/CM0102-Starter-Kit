@@ -28,6 +28,8 @@ namespace CM0102_Starter_Kit {
                 this.cm89_nick_patcher,
                 this.cm93_standard,
                 this.cm93_nick_patcher,
+                this.cm95_standard,
+                this.cm95_nick_patcher,
                 this.cm3_standard,
                 this.cm3_nick_patcher
             };
@@ -49,6 +51,8 @@ namespace CM0102_Starter_Kit {
             { "cm89_nick_patcher", Cm89 },
             { "cm93_standard", Cm93 },
             { "cm93_nick_patcher", Cm93 },
+            { "cm95_standard", Cm95 },
+            { "cm95_nick_patcher", Cm95 },
             { "cm3_standard", Cm3 },
             { "cm3_nick_patcher", Cm3 },
         };

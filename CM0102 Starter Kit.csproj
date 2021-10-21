@@ -164,6 +164,7 @@
     <None Include="data\cm3_data.zip" />
     <None Include="data\cm89_data.zip" />
     <None Include="data\cm93_data.zip" />
+    <None Include="data\cm95_data.zip" />
     <None Include="data\luessenhoff_data.zip" />
     <None Include="data\march_data.zip" />
     <None Include="data\november_data.zip" />
