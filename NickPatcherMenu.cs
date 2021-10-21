@@ -75,11 +75,11 @@ namespace CM0102_Starter_Kit {
                 int lineNumber = keyValuePair.Value;
                 string line = lines[lineNumber - 1];
                 Match match = Regex.Match(line, @"\d+\.*\d*");
-                decimal lineValue = Convert.ToDecimal(match.Captures[0].Value, cultureInfo);
+                decimal lineValue = Convert.ToDecimal(match.Captures[0].Value, CultureInfo);
 
                 if (database.ConfigLines.ContainsKey(lineNumber)) {
                     database.ConfigLines.TryGetValue(lineNumber, out ConfigLine configLine);
-                    numericUpDown.Value = Convert.ToDecimal(configLine.Value, cultureInfo);
+                    numericUpDown.Value = Convert.ToDecimal(configLine.Value, CultureInfo);
                     numericUpDown.Enabled = false;
                 // Special case - we have gone from a restricted exe back to the default, so reset the starting year
                 } else if (numericUpDown.Equals(this.starting_year) && lineValue == 0) {
@@ -101,7 +101,7 @@ namespace CM0102_Starter_Kit {
                 } else {
                     string line = lines[lineNumber - 1];
                     Match match = Regex.Match(line, "true|false");
-                    checkBox.Checked = Convert.ToBoolean(match.Captures[0].Value, cultureInfo);
+                    checkBox.Checked = Convert.ToBoolean(match.Captures[0].Value, CultureInfo);
                     checkBox.Enabled = true;
                 }
             }
