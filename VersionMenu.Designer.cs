@@ -23,6 +23,7 @@ namespace CM0102_Starter_Kit {
             this.load_database = new System.Windows.Forms.Button();
             this.saveDatabaseDialog = new System.Windows.Forms.SaveFileDialog();
             this.loadDatabaseDialog = new System.Windows.Forms.OpenFileDialog();
+            this.SuspendLayout();
             // 
             // april_database
             // 
@@ -39,6 +40,7 @@ namespace CM0102_Starter_Kit {
             this.april_database.Margin = new System.Windows.Forms.Padding(0);
             this.april_database.Name = "april_database";
             this.april_database.Size = new System.Drawing.Size(327, 65);
+            this.april_database.TabIndex = 0;
             this.april_database.TabStop = false;
             this.april_database.Text = "April 2021";
             this.april_database.UseVisualStyleBackColor = false;
@@ -59,6 +61,7 @@ namespace CM0102_Starter_Kit {
             this.original_database.Margin = new System.Windows.Forms.Padding(0);
             this.original_database.Name = "original_database";
             this.original_database.Size = new System.Drawing.Size(327, 65);
+            this.original_database.TabIndex = 1;
             this.original_database.TabStop = false;
             this.original_database.Text = "Original (3.9.60)";
             this.original_database.UseVisualStyleBackColor = false;
@@ -79,6 +82,7 @@ namespace CM0102_Starter_Kit {
             this.patched_database.Margin = new System.Windows.Forms.Padding(0);
             this.patched_database.Name = "patched_database";
             this.patched_database.Size = new System.Drawing.Size(327, 65);
+            this.patched_database.TabIndex = 2;
             this.patched_database.TabStop = false;
             this.patched_database.Text = "Patched (3.9.68)";
             this.patched_database.UseVisualStyleBackColor = false;
@@ -99,6 +103,7 @@ namespace CM0102_Starter_Kit {
             this.march_database.Margin = new System.Windows.Forms.Padding(0);
             this.march_database.Name = "march_database";
             this.march_database.Size = new System.Drawing.Size(327, 65);
+            this.march_database.TabIndex = 3;
             this.march_database.TabStop = false;
             this.march_database.Text = "March 2020";
             this.march_database.UseVisualStyleBackColor = false;
@@ -119,6 +124,7 @@ namespace CM0102_Starter_Kit {
             this.november_database.Margin = new System.Windows.Forms.Padding(0);
             this.november_database.Name = "november_database";
             this.november_database.Size = new System.Drawing.Size(327, 65);
+            this.november_database.TabIndex = 4;
             this.november_database.TabStop = false;
             this.november_database.Text = "November 2020";
             this.november_database.UseVisualStyleBackColor = false;
@@ -139,6 +145,7 @@ namespace CM0102_Starter_Kit {
             this.luessenhoff_database.Margin = new System.Windows.Forms.Padding(0);
             this.luessenhoff_database.Name = "luessenhoff_database";
             this.luessenhoff_database.Size = new System.Drawing.Size(327, 65);
+            this.luessenhoff_database.TabIndex = 8;
             this.luessenhoff_database.TabStop = false;
             this.luessenhoff_database.Text = "Luessenhoff";
             this.luessenhoff_database.UseVisualStyleBackColor = false;
@@ -159,6 +166,7 @@ namespace CM0102_Starter_Kit {
             this.cm89_database.Margin = new System.Windows.Forms.Padding(0);
             this.cm89_database.Name = "cm89_database";
             this.cm89_database.Size = new System.Drawing.Size(327, 65);
+            this.cm89_database.TabIndex = 5;
             this.cm89_database.TabStop = false;
             this.cm89_database.Text = "1989/90";
             this.cm89_database.UseVisualStyleBackColor = false;
@@ -179,8 +187,9 @@ namespace CM0102_Starter_Kit {
             this.cm93_database.Margin = new System.Windows.Forms.Padding(0);
             this.cm93_database.Name = "cm93_database";
             this.cm93_database.Size = new System.Drawing.Size(327, 65);
+            this.cm93_database.TabIndex = 6;
             this.cm93_database.TabStop = false;
-            this.cm93_database.Text = "1993/94";
+            this.cm93_database.Text = "1993/9";
             this.cm93_database.UseVisualStyleBackColor = false;
             this.cm93_database.Click += new System.EventHandler(this.SwitchDatabase_Click);
             // 
@@ -199,6 +208,7 @@ namespace CM0102_Starter_Kit {
             this.cm3_database.Margin = new System.Windows.Forms.Padding(0);
             this.cm3_database.Name = "cm3_database";
             this.cm3_database.Size = new System.Drawing.Size(327, 65);
+            this.cm3_database.TabIndex = 7;
             this.cm3_database.TabStop = false;
             this.cm3_database.Text = "1998/99 (CM3)";
             this.cm3_database.UseVisualStyleBackColor = false;
@@ -219,6 +229,7 @@ namespace CM0102_Starter_Kit {
             this.save_database.Margin = new System.Windows.Forms.Padding(0);
             this.save_database.Name = "save_database";
             this.save_database.Size = new System.Drawing.Size(327, 65);
+            this.save_database.TabIndex = 9;
             this.save_database.TabStop = false;
             this.save_database.Text = "Save Custom Database";
             this.save_database.UseVisualStyleBackColor = false;
@@ -239,6 +250,7 @@ namespace CM0102_Starter_Kit {
             this.load_database.Margin = new System.Windows.Forms.Padding(0);
             this.load_database.Name = "load_database";
             this.load_database.Size = new System.Drawing.Size(327, 65);
+            this.load_database.TabIndex = 10;
             this.load_database.TabStop = false;
             this.load_database.Text = "Load Custom Database";
             this.load_database.UseVisualStyleBackColor = false;
@@ -247,20 +259,16 @@ namespace CM0102_Starter_Kit {
             // saveDatabaseDialog
             // 
             this.saveDatabaseDialog.Filter = "Zip file (*.zip)|*.zip";
-            this.saveDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveDatabaseDialog_FileOk);
-            this.saveDatabaseDialog.InitialDirectory = CustomDatabasesFolder;
             this.saveDatabaseDialog.Title = "Save Custom Database";
             // 
             // loadDatabaseDialog
             // 
             this.loadDatabaseDialog.Filter = "Zip file (*.zip)|*.zip";
-            this.loadDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.LoadDatabaseDialog_FileOk);
-            this.loadDatabaseDialog.InitialDirectory = CustomDatabasesFolder;
             this.loadDatabaseDialog.Title = "Load Custom Database";
             // 
             // VersionMenu
             // 
-            this.BackgroundImage = Properties.Resources.owen;
+            this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.owen;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.april_database);
             this.Controls.Add(this.original_database);
@@ -275,6 +283,8 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.load_database);
             this.Name = "VersionMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VersionMenu_FormClosed);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

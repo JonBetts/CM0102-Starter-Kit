@@ -6,14 +6,17 @@ using System.Windows.Forms;
 using static CM0102_Starter_Kit.Helper;
 
 namespace CM0102_Starter_Kit {
-    partial class NickPatcherMenu : HidableForm {
+    partial class NickPatcherMenu
+    #if DEBUG
+        : MiddleForm
+    #else
+        : HidableForm
+    #endif
+    {
         public NickPatcherMenu(MainMenu mainMenu) {
             this.mainMenu = mainMenu;
-            this.SuspendLayout();
             InitialiseSharedControls("Change Nick's Patcher Settings", 259, true);
             InitializeComponent();
-            this.ResumeLayout(false);
-            this.PerformLayout();
         }
 
         protected override List<Button> GetButtons() {

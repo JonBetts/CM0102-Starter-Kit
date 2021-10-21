@@ -120,9 +120,6 @@
   <data name="step_1.Text" xml:space="preserve">
     <value>1. Use the Starter Kit to ensure you have the game set up to your tastes (the database and any patcher options). Tick the checkboxes below if you want to use Nick's Patcher on your Android device and/or if you are using a device on Android 11.</value>
   </data>
-  <data name="step_4.Text" xml:space="preserve">
-    <value>4. Go to the Starter Kit '/Game/Android' folder and copy the 'Exagear' folder to the root folder of your phone. Then copy the 'com.eltechs.es' folder to '/Android/obb' on your phone as well.</value>
-  </data>
   <data name="step_6.Text" xml:space="preserve">
     <value>6. Find the Exagear icon and click on it to start it up. Then click on the play button next to 'CM0102Loader.exe'. On the next page, click on 'CUPRUM'. You should now have CM 01/02 running on your phone!</value>
   </data>

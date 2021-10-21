@@ -16,6 +16,7 @@ namespace CM0102_Starter_Kit {
             this.cm93_nick_patcher = new System.Windows.Forms.Button();
             this.cm3_standard = new System.Windows.Forms.Button();
             this.cm3_nick_patcher = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // cm0102_standard
             // 
@@ -32,6 +33,7 @@ namespace CM0102_Starter_Kit {
             this.cm0102_standard.Margin = new System.Windows.Forms.Padding(0);
             this.cm0102_standard.Name = "cm0102_standard";
             this.cm0102_standard.Size = new System.Drawing.Size(327, 65);
+            this.cm0102_standard.TabIndex = 0;
             this.cm0102_standard.TabStop = false;
             this.cm0102_standard.Text = "CM 01/02 (Standard)";
             this.cm0102_standard.UseVisualStyleBackColor = false;
@@ -52,6 +54,7 @@ namespace CM0102_Starter_Kit {
             this.cm0102_nick_patcher.Margin = new System.Windows.Forms.Padding(0);
             this.cm0102_nick_patcher.Name = "cm0102_nick_patcher";
             this.cm0102_nick_patcher.Size = new System.Drawing.Size(327, 65);
+            this.cm0102_nick_patcher.TabIndex = 1;
             this.cm0102_nick_patcher.TabStop = false;
             this.cm0102_nick_patcher.Text = "CM 01/02 (Nick\'s Patcher)";
             this.cm0102_nick_patcher.UseVisualStyleBackColor = false;
@@ -72,6 +75,7 @@ namespace CM0102_Starter_Kit {
             this.cm89_standard.Margin = new System.Windows.Forms.Padding(0);
             this.cm89_standard.Name = "cm89_standard";
             this.cm89_standard.Size = new System.Drawing.Size(327, 65);
+            this.cm89_standard.TabIndex = 2;
             this.cm89_standard.TabStop = false;
             this.cm89_standard.Text = "CM 89/90 (Standard)";
             this.cm89_standard.UseVisualStyleBackColor = false;
@@ -92,6 +96,7 @@ namespace CM0102_Starter_Kit {
             this.cm89_nick_patcher.Margin = new System.Windows.Forms.Padding(0);
             this.cm89_nick_patcher.Name = "cm89_nick_patcher";
             this.cm89_nick_patcher.Size = new System.Drawing.Size(327, 65);
+            this.cm89_nick_patcher.TabIndex = 3;
             this.cm89_nick_patcher.TabStop = false;
             this.cm89_nick_patcher.Text = "CM 89/90 (Nick\'s Patcher)";
             this.cm89_nick_patcher.UseVisualStyleBackColor = false;
@@ -112,6 +117,7 @@ namespace CM0102_Starter_Kit {
             this.cm93_standard.Margin = new System.Windows.Forms.Padding(0);
             this.cm93_standard.Name = "cm93_standard";
             this.cm93_standard.Size = new System.Drawing.Size(327, 65);
+            this.cm93_standard.TabIndex = 4;
             this.cm93_standard.TabStop = false;
             this.cm93_standard.Text = "CM 93/94 (Standard)";
             this.cm93_standard.UseVisualStyleBackColor = false;
@@ -132,6 +138,7 @@ namespace CM0102_Starter_Kit {
             this.cm93_nick_patcher.Margin = new System.Windows.Forms.Padding(0);
             this.cm93_nick_patcher.Name = "cm93_nick_patcher";
             this.cm93_nick_patcher.Size = new System.Drawing.Size(327, 65);
+            this.cm93_nick_patcher.TabIndex = 5;
             this.cm93_nick_patcher.TabStop = false;
             this.cm93_nick_patcher.Text = "CM 93/94 (Nick\'s Patcher)";
             this.cm93_nick_patcher.UseVisualStyleBackColor = false;
@@ -152,6 +159,7 @@ namespace CM0102_Starter_Kit {
             this.cm3_standard.Margin = new System.Windows.Forms.Padding(0);
             this.cm3_standard.Name = "cm3_standard";
             this.cm3_standard.Size = new System.Drawing.Size(327, 65);
+            this.cm3_standard.TabIndex = 6;
             this.cm3_standard.TabStop = false;
             this.cm3_standard.Text = "CM 3 (Standard)";
             this.cm3_standard.UseVisualStyleBackColor = false;
@@ -171,7 +179,9 @@ namespace CM0102_Starter_Kit {
             this.cm3_nick_patcher.Location = new System.Drawing.Point(449, 345);
             this.cm3_nick_patcher.Margin = new System.Windows.Forms.Padding(0);
             this.cm3_nick_patcher.Name = "cm3_nick_patcher";
+            this.cm3_nick_patcher.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cm3_nick_patcher.Size = new System.Drawing.Size(327, 65);
+            this.cm3_nick_patcher.TabIndex = 7;
             this.cm3_nick_patcher.TabStop = false;
             this.cm3_nick_patcher.Text = "CM 3 (Nick\'s Patcher)";
             this.cm3_nick_patcher.UseVisualStyleBackColor = false;
@@ -179,7 +189,7 @@ namespace CM0102_Starter_Kit {
             // 
             // PlayMenu
             // 
-            this.BackgroundImage = Properties.Resources.boca;
+            this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.boca;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.cm0102_standard);
             this.Controls.Add(this.cm0102_nick_patcher);
@@ -191,6 +201,8 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.cm3_nick_patcher);
             this.Name = "PlayMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PlayMenu_FormClosed);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

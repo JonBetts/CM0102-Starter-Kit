@@ -6,14 +6,17 @@ using System.Windows.Forms;
 using static CM0102_Starter_Kit.Helper;
 
 namespace CM0102_Starter_Kit {
-    partial class AndroidMenu : HidableForm {
+    partial class AndroidMenu
+    #if DEBUG
+        : MiddleForm
+    #else
+        : HidableForm
+    #endif
+    {
         public AndroidMenu(MainMenu mainMenu) {
             this.mainMenu = mainMenu;
-            this.SuspendLayout();
             InitialiseSharedControls("Android Setup Instructions", 270, true);
             InitializeComponent();
-            this.ResumeLayout(false);
-            this.PerformLayout();
         }
  
         protected override List<Button> GetButtons() {

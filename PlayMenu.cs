@@ -7,14 +7,17 @@ using System.Windows.Forms;
 using static CM0102_Starter_Kit.Helper;
 
 namespace CM0102_Starter_Kit {
-    partial class PlayMenu : HidableForm {
+    partial class PlayMenu
+    #if DEBUG
+        : MiddleForm
+    #else
+        : HidableForm
+    #endif
+    {
         public PlayMenu(MainMenu mainMenu) {
             this.mainMenu = mainMenu;
-            this.SuspendLayout();
             InitialiseSharedControls("Choose Which Version To Play", 259, true);
             InitializeComponent();
-            this.ResumeLayout(false);
-            this.PerformLayout();
         }
 
         protected override List<Button> GetButtons() {

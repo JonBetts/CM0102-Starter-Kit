@@ -28,6 +28,7 @@
             this.back_button = new System.Windows.Forms.Button();
             this.next_button = new System.Windows.Forms.Button();
             this.loader = new System.Windows.Forms.PictureBox();
+            this.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sidenav)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.title_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subtitle_bar)).BeginInit();
@@ -199,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.title_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subtitle_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loader)).EndInit();
+            this.ResumeLayout(false);
         }
 
         #region Windows Form Designer generated code

@@ -7,14 +7,18 @@ using System.Windows.Forms;
 using static CM0102_Starter_Kit.Helper;
 
 namespace CM0102_Starter_Kit {
-    partial class VersionMenu : HidableForm {
+    partial class VersionMenu
+    #if DEBUG
+        : MiddleForm
+    #else
+        : HidableForm
+    #endif
+    {
+
         public VersionMenu(MainMenu mainMenu) {
             this.mainMenu = mainMenu;
-            this.SuspendLayout();
             InitialiseSharedControls("Data Updates", 355, true);
             InitializeComponent();
-            this.ResumeLayout(false);
-            this.PerformLayout();
         }
 
         protected override List<Button> GetButtons() {
@@ -77,6 +81,8 @@ namespace CM0102_Starter_Kit {
 
         private void SaveDatabase_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
+                this.saveDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveDatabaseDialog_FileOk);
+                this.saveDatabaseDialog.InitialDirectory = CustomDatabasesFolder;
                 this.saveDatabaseDialog.ShowDialog();
             } else {
                 DisplayMessage(SwitchUpdateMessage);
@@ -89,6 +95,8 @@ namespace CM0102_Starter_Kit {
         }
 
         private void LoadDatabase_Click(object sender, EventArgs e) {
+            this.loadDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.LoadDatabaseDialog_FileOk);
+            this.loadDatabaseDialog.InitialDirectory = CustomDatabasesFolder;
             this.loadDatabaseDialog.ShowDialog();
         }
 

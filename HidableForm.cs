@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace CM0102_Starter_Kit {
-    [TypeDescriptionProvider(typeof(AbstractControlDescriptionProvider<HidableForm, Form>))]
     abstract partial class HidableForm : Form {
         protected MainMenu mainMenu;
         protected abstract List<Button> GetButtons();
@@ -66,24 +64,6 @@ namespace CM0102_Starter_Kit {
 
         private void Exit_Click(object sender, EventArgs e) {
             this.Close();
-        }
-    }
-
-    public class AbstractControlDescriptionProvider<TAbstract, TBase> : TypeDescriptionProvider {
-        public AbstractControlDescriptionProvider() : base(TypeDescriptor.GetProvider(typeof(TAbstract))) { }
-
-        public override Type GetReflectionType(Type objectType, object instance) {
-            if (objectType == typeof(TAbstract)) {
-                return typeof(TBase);
-            }
-            return base.GetReflectionType(objectType, instance);
-        }
-
-        public override object CreateInstance(IServiceProvider provider, Type objectType, Type[] argTypes, object[] args) {
-            if (objectType == typeof(TAbstract)) {
-                objectType = typeof(TBase);
-            }
-            return base.CreateInstance(provider, objectType, argTypes, args);
         }
     }
 }

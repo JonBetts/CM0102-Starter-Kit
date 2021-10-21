@@ -8,18 +8,21 @@ using System.Windows.Forms;
 using static CM0102_Starter_Kit.Helper;
 
 namespace CM0102_Starter_Kit {
-    partial class MainMenu : HidableForm {
+    partial class MainMenu
+    #if DEBUG
+        : MiddleForm
+    #else
+        : HidableForm
+    #endif
+    {
         private readonly NickPatcherMenu nickPatcherMenu;
         private readonly VersionMenu versionMenu;
         private readonly PlayMenu playMenu;
         private readonly AndroidMenu androidMenu;
 
         public MainMenu() {
-            this.SuspendLayout();
             InitialiseSharedControls("Setup Game", 373, false);
             InitializeComponent();
-            this.ResumeLayout(false);
-            this.PerformLayout();
             this.nickPatcherMenu = new NickPatcherMenu(this);
             this.versionMenu = new VersionMenu(this);
             this.playMenu = new PlayMenu(this);
