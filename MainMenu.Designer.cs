@@ -17,6 +17,8 @@ namespace CM0102_Starter_Kit {
             this.cm_scout = new System.Windows.Forms.Button();
             this.player_finder = new System.Windows.Forms.Button();
             this.android_menu = new System.Windows.Forms.Button();
+            this.restore_saves = new System.Windows.Forms.Button();
+            this.restoreSaveDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // switch_update
@@ -130,7 +132,7 @@ namespace CM0102_Starter_Kit {
             this.backup_saves.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backup_saves.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.backup_saves.ForeColor = System.Drawing.Color.White;
-            this.backup_saves.Location = new System.Drawing.Point(449, 278);
+            this.backup_saves.Location = new System.Drawing.Point(120, 412);
             this.backup_saves.Margin = new System.Windows.Forms.Padding(0);
             this.backup_saves.Name = "backup_saves";
             this.backup_saves.Size = new System.Drawing.Size(327, 65);
@@ -190,7 +192,7 @@ namespace CM0102_Starter_Kit {
             this.android_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.android_menu.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.android_menu.ForeColor = System.Drawing.Color.White;
-            this.android_menu.Location = new System.Drawing.Point(284, 412);
+            this.android_menu.Location = new System.Drawing.Point(449, 278);
             this.android_menu.Margin = new System.Windows.Forms.Padding(0);
             this.android_menu.Name = "android_menu";
             this.android_menu.Size = new System.Drawing.Size(327, 65);
@@ -199,10 +201,35 @@ namespace CM0102_Starter_Kit {
             this.android_menu.UseVisualStyleBackColor = false;
             this.android_menu.Click += new System.EventHandler(this.AndroidMenu_Click);
             // 
+            // restore_saves
+            // 
+            this.restore_saves.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.restore_saves.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.restore_saves.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.restore_saves.FlatAppearance.BorderSize = 2;
+            this.restore_saves.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.restore_saves.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.restore_saves.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.restore_saves.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.restore_saves.ForeColor = System.Drawing.Color.White;
+            this.restore_saves.Location = new System.Drawing.Point(449, 412);
+            this.restore_saves.Margin = new System.Windows.Forms.Padding(0);
+            this.restore_saves.Name = "restore_saves";
+            this.restore_saves.Size = new System.Drawing.Size(327, 65);
+            this.restore_saves.TabIndex = 9;
+            this.restore_saves.Text = "Restore Save Games";
+            this.restore_saves.UseVisualStyleBackColor = false;
+            this.restore_saves.Click += new System.EventHandler(this.RestoreSaves_Click);
+            // 
+            // restoreSaveDialog
+            // 
+            this.restoreSaveDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.RestoreSavesDialog_FileOk);
+            // 
             // MainMenu
             // 
             this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.batigol;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.restore_saves);
             this.Controls.Add(this.switch_update);
             this.Controls.Add(this.install_var);
             this.Controls.Add(this.nick_patcher);
@@ -229,6 +256,8 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.Button cm_scout;
         private System.Windows.Forms.Button player_finder;
         private System.Windows.Forms.Button android_menu;
+        private System.Windows.Forms.Button restore_saves;
+        private System.Windows.Forms.OpenFileDialog restoreSaveDialog;
     }
 }
 

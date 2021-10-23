@@ -147,6 +147,21 @@ namespace CM0102_Starter_Kit {
             DisplayMessage(result);
         }
 
+        private void RestoreSaves_Click(object sender, EventArgs e) {
+            if (Directory.Exists(BackupSavesFolder)) {
+                this.restoreSaveDialog.InitialDirectory = BackupSavesFolder;
+                this.restoreSaveDialog.ShowDialog();
+            } else {
+                DisplayMessage("No backed up save games detected!");
+            }
+        }
+
+        private void RestoreSavesDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e) {
+            string destFile = Path.Combine(GameFolder, Path.GetFileName(this.restoreSaveDialog.FileName));
+            File.Copy(this.restoreSaveDialog.FileName, destFile, true);
+            DisplayMessage("Save game successfully restored!");
+        }
+
         private void CmScout_Click(object sender, EventArgs e) {
             RunExternalProcess(GameFolder, CmScout);
         }
