@@ -52,58 +52,18 @@ namespace CM0102_Starter_Kit {
         }
 
         private void RefreshExeFiles(ProgressWindow progressWindow) {
-            if (ExesNeedRefreshing()) {
-                string tempZipFolder = Path.Combine(Directory.GetCurrentDirectory(), "Temp");
-                string tempZipFile = tempZipFolder + ".zip";
-                File.WriteAllBytes(tempZipFile, Properties.Resources.Exes);
-                progressWindow.SetProgressPercentage(10);
-                new FastZip().ExtractZip(tempZipFile, tempZipFolder, null);
-                progressWindow.SetProgressPercentage(20);
+            string tempZipFolder = Path.Combine(Directory.GetCurrentDirectory(), "Temp");
+            string tempZipFile = tempZipFolder + ".zip";
+            File.WriteAllBytes(tempZipFile, Properties.Resources.Exes);
+            progressWindow.SetProgressPercentage(40);
+            new FastZip().ExtractZip(tempZipFile, tempZipFolder, null);
+            progressWindow.SetProgressPercentage(60);
 
-                if (File.Exists(Cm0102)) {
-                    File.Delete(Cm0102);
-                }
-                File.Move(Path.Combine(tempZipFolder, Cm0102Exe), Cm0102);
-                progressWindow.SetProgressPercentage(30);
-
-                if (File.Exists(Cm0102Gdi)) {
-                    File.Delete(Cm0102Gdi);
-                }
-                File.Move(Path.Combine(tempZipFolder, Cm0102GdiExe), Cm0102Gdi);
-                progressWindow.SetProgressPercentage(40);
-            
-                if (File.Exists(Cm89)) {
-                    File.Delete(Cm89);
-                }
-                File.Move(Path.Combine(tempZipFolder, Cm89Exe), Cm89);
-                progressWindow.SetProgressPercentage(50);
-
-                if (File.Exists(Cm93)) {
-                    File.Delete(Cm93);
-                }
-                File.Move(Path.Combine(tempZipFolder, Cm93Exe), Cm93);
-                progressWindow.SetProgressPercentage(60);
-
-                if (File.Exists(Cm3)) {
-                    File.Delete(Cm3);
-                }
-                File.Move(Path.Combine(tempZipFolder, Cm3Exe), Cm3);
-                progressWindow.SetProgressPercentage(70);
-
-                if (File.Exists(CmLoader)) {
-                    File.Delete(CmLoader);
-                }
-                File.Move(Path.Combine(tempZipFolder, CmLoaderExe), CmLoader);
-                progressWindow.SetProgressPercentage(80);
-
-                // Cleanup
-                if (File.Exists(Cm0102Backup)) {
-                    File.Delete(Cm0102Backup);
-                }
-                File.Delete(tempZipFile);
-                Directory.Delete(tempZipFolder, true);
-                progressWindow.SetProgressPercentage(90);
-            }
+            // We now only need to ensure the main exe file is restored here
+            File.Copy(Path.Combine(GameFolder, Cm0102BackupExe), Path.Combine(GameFolder, Cm0102Exe), true);
+            progressWindow.SetProgressPercentage(80);
+            File.Delete(tempZipFile);
+            Directory.Delete(tempZipFolder, true);
         }
 
         private void RunExternalProcess(string workingDirectory, string executableFile) {

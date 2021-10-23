@@ -49,8 +49,15 @@ namespace CM0102_Starter_Kit {
         }
 
         private void CopyDataToGame(Database database) {
-            if (database.DeleteDataFolder && DataFolderExists()) {
-                Directory.Delete(DataFolder, true);
+            if (DataFolderExists()) {
+                if (database.DeleteDataFolder) {
+                    Directory.Delete(DataFolder, true);
+                } else {
+                    // If we're not deleting the Data folder, we still need to ensure the database detector files are removed
+                    foreach (Database existingDatabase in Databases) {
+                        File.Delete(Path.Combine(DataFolder, existingDatabase.Name + ".txt"));
+                    }
+                }
             }
             string dataZipFile = DataFolder + ".zip";
             File.WriteAllBytes(dataZipFile, database.ResourceFile);

@@ -51,9 +51,9 @@ namespace CM0102_Starter_Kit {
             progressWindow.Refresh();
             progressWindow.SetProgressPercentage(0);
 
-            Database database = GetCurrentDatabase(); 
+            Database database = CurrentDatabase(); 
             // Copy correct CM exe file across
-            File.Copy(database.ExeFile, Path.Combine(ExagearFolder, Cm0102Exe), true);
+            File.Copy(Path.Combine(GameFolder, database.ExeFile), Path.Combine(ExagearFolder, Cm0102Exe), true);
             // Copy CM loader exe file across
             File.Copy(CmLoader, Path.Combine(ExagearFolder, CmLoaderExe), true);
             progressWindow.SetProgressPercentage(5);

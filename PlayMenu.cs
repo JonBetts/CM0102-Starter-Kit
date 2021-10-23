@@ -23,48 +23,27 @@ namespace CM0102_Starter_Kit {
         protected override List<Button> GetButtons() {
             return new List<Button> {
                 this.cm0102_standard,
-                this.cm0102_nick_patcher,
-                this.cm89_standard,
-                this.cm89_nick_patcher,
-                this.cm93_standard,
-                this.cm93_nick_patcher,
-                this.cm95_standard,
-                this.cm95_nick_patcher,
-                this.cm3_standard,
-                this.cm3_nick_patcher
+                this.cm0102_nick_patcher
             };
         }
 
-        private void DisableButtons() {
-            Database database = GetCurrentDatabase();
-            foreach (Button button in GetButtons()) {
-                button.Enabled = database.ButtonNames.Contains(button.Name);
-            }
+        private void RenameButtons() {
+            Database database = CurrentDatabase();
+            this.cm0102_standard.Text = database.Label + " (Standard)";
+            this.cm0102_nick_patcher.Text = database.Label + " (Nick's Patcher)";
         }
 
         protected override void RefreshForm() {
-            DisableButtons();
+            RenameButtons();
         }
 
-        private static readonly Dictionary<string, string> ButtonExes = new Dictionary<string, string> {
-            { "cm89_standard", Cm89 },
-            { "cm89_nick_patcher", Cm89 },
-            { "cm93_standard", Cm93 },
-            { "cm93_nick_patcher", Cm93 },
-            { "cm95_standard", Cm95 },
-            { "cm95_nick_patcher", Cm95 },
-            { "cm3_standard", Cm3 },
-            { "cm3_nick_patcher", Cm3 },
-        };
-
-        private void RenameExes(Button button) {
-            if (ButtonExes.TryGetValue(button.Name, out string exeFile)) {
-                if (File.Exists(Cm0102Backup)) {
-                    File.Move(Cm0102, exeFile);
-                    File.Move(Cm0102Backup, Cm0102);
+        private void CopyExe(bool setup) {
+            String exeFile = CurrentDatabase().ExeFile;
+            if (!exeFile.Equals(Cm0102Exe)) {
+                if (setup) {
+                    File.Copy(Path.Combine(GameFolder, exeFile), Path.Combine(GameFolder, Cm0102Exe), true);
                 } else {
-                    File.Move(Cm0102, Cm0102Backup);
-                    File.Move(exeFile, Cm0102);
+                    File.Copy(Path.Combine(GameFolder, Cm0102BackupExe), Path.Combine(GameFolder, Cm0102Exe), true);
                 }
             }
         }
@@ -87,7 +66,7 @@ namespace CM0102_Starter_Kit {
                 }
             }
 
-            RenameExes(button);
+            CopyExe(true);
             bool useDefaultConfig = Regex.Match(button.Name, @"\w+_standard").Success;
 
             ProcessStartInfo playPsi = new ProcessStartInfo {
@@ -106,7 +85,7 @@ namespace CM0102_Starter_Kit {
                 process.WaitForExit();
                 process.Close();
             }
-            RenameExes(button);
+            CopyExe(false);
             HideLoader();
             RefreshForm();
         }

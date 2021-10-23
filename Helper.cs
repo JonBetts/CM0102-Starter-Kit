@@ -19,18 +19,13 @@ namespace CM0102_Starter_Kit {
         internal static readonly string CmLoaderExe = "CM0102Loader.exe";
         internal static readonly string CmLoader = Path.Combine(GameFolder, CmLoaderExe);
         internal static readonly string Cm0102Exe = "cm0102.exe";
-        internal static readonly string Cm0102 = Path.Combine(GameFolder, Cm0102Exe);
         internal static readonly string Cm0102GdiExe = "cm0102_GDI.exe";
-        internal static readonly string Cm0102Gdi = Path.Combine(GameFolder, Cm0102GdiExe);
+        internal static readonly string Cm0102BackupExe = "cm0102.exe.bk";
         internal static readonly string Cm89Exe = "cm89.exe";
-        internal static readonly string Cm89 = Path.Combine(GameFolder, Cm89Exe);
         internal static readonly string Cm93Exe = "cm93.exe";
-        internal static readonly string Cm93 = Path.Combine(GameFolder, Cm93Exe);
         internal static readonly string Cm95Exe = "cm95.exe";
-        internal static readonly string Cm95 = Path.Combine(GameFolder, Cm95Exe);
         internal static readonly string Cm3Exe = "cm3.exe";
-        internal static readonly string Cm3 = Path.Combine(GameFolder, Cm3Exe);
-        internal static readonly string Cm0102Backup = Path.Combine(GameFolder, "cm0102.exe.bk");
+        internal static readonly List<string> ExeFiles = new List<string> { Cm0102Exe, Cm0102GdiExe, Cm0102BackupExe, Cm89Exe, Cm93Exe, Cm95Exe, Cm3Exe };
         internal static readonly string CmScout = Path.Combine(GameFolder, "cmscout.exe");
         internal static readonly string PlayerFinder = Path.Combine(GameFolder, "gpf2.exe");
         internal static readonly string ExistingCommentary = Path.Combine(DataFolder, "events_eng.cfg");
@@ -63,29 +58,6 @@ namespace CM0102_Starter_Kit {
 
         internal static bool DataFolderExists() {
             return Directory.Exists(DataFolder);
-        }
-
-        internal static bool ExesNeedRefreshing() {
-            if (File.Exists(Cm0102Backup) || !File.Exists(Cm0102) || !File.Exists(Cm0102Gdi) || !File.Exists(Cm89) || !File.Exists(Cm93) || !File.Exists(Cm95) || !File.Exists(Cm3) || !File.Exists(CmLoader)) {
-                return true;
-            }
-            return false;
-        }
-
-        private static bool Cm89DataLoaded() {
-            return File.Exists(Path.Combine(DataFolder, "cm89.txt"));
-        }
-
-        private static bool Cm93DataLoaded() {
-            return File.Exists(Path.Combine(DataFolder, "cm93.txt"));
-        }
-
-        private static bool Cm95DataLoaded() {
-            return File.Exists(Path.Combine(DataFolder, "cm95.txt"));
-        }
-
-        private static bool Cm3DataLoaded() {
-            return File.Exists(Path.Combine(DataFolder, "cm3.txt"));
         }
 
         internal class ConfigLine {
@@ -137,28 +109,21 @@ namespace CM0102_Starter_Kit {
             { 16, new ConfigLine(16, "PatchFileDirectory", "Patches") }
         };
 
-        private static readonly List<string> DefaultButtonNames = new List<string> { "cm0102_standard", "cm0102_nick_patcher" };
-        private static readonly List<string> Cm89ButtonNames = new List<string> { "cm89_standard", "cm89_nick_patcher" };
-        private static readonly List<string> Cm93ButtonNames = new List<string> { "cm93_standard", "cm93_nick_patcher" };
-        private static readonly List<string> Cm95ButtonNames = new List<string> { "cm95_standard", "cm95_nick_patcher" };
-        private static readonly List<string> Cm3ButtonNames = new List<string> { "cm3_standard", "cm3_nick_patcher" };
-
         internal class Database {
-            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, List<string> buttonNames, string exeFile) {
+            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, string exeFile) {
                 this.Name = name;
                 this.Label = label;
                 this.ResourceFile = resourceFile;
                 this.DeleteDataFolder = deleteDataFolder;
-                this.ButtonNames = buttonNames;
                 this.ConfigLines = new Dictionary<int, ConfigLine>();
                 this.ExeFile = exeFile;
             }
 
-            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, List<string> buttonNames, string exeFile, Database prerequisiteDatabase) : this(name, label, resourceFile, deleteDataFolder, buttonNames, exeFile) {
+            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, string exeFile, Database prerequisiteDatabase) : this(name, label, resourceFile, deleteDataFolder, exeFile) {
                 this.PrerequisiteDatabase = prerequisiteDatabase;
             }
 
-            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, List<string> buttonNames, string exeFile, Dictionary<int, ConfigLine> configLines) : this(name, label, resourceFile, deleteDataFolder, buttonNames, exeFile) {
+            internal Database(string name, string label, byte[] resourceFile, bool deleteDataFolder, string exeFile, Dictionary<int, ConfigLine> configLines) : this(name, label, resourceFile, deleteDataFolder, exeFile) {
                 this.ConfigLines = configLines;
             }
 
@@ -166,41 +131,34 @@ namespace CM0102_Starter_Kit {
             internal string Label { get; }
             internal byte[] ResourceFile { get; }
             internal bool DeleteDataFolder { get; }
-            internal List<string> ButtonNames { get; }
             internal Database PrerequisiteDatabase { get; }
             internal Dictionary<int, ConfigLine> ConfigLines { get; }
             internal string ExeFile { get; }
         }
 
-        private static readonly Database OriginalDatabase = new Database("original_database", "Original (3.9.60)", Properties.Resources.original_data, true, DefaultButtonNames, Cm0102);
-        private static readonly Database PatchedDatabase = new Database("patched_database", "Patched (3.9.68)", Properties.Resources.patched_data, true, DefaultButtonNames, Cm0102);
-        private static readonly Database MarchDatabase = new Database("march_database", "March 2020", Properties.Resources.march_data, false, DefaultButtonNames, Cm0102, PatchedDatabase);
-        private static readonly Database NovemberDatabase = new Database("november_database", "November 2020", Properties.Resources.november_data, false, DefaultButtonNames, Cm0102, PatchedDatabase);
-        private static readonly Database AprilDatabase = new Database("april_database", "April 2021", Properties.Resources.april_data, false, DefaultButtonNames, Cm0102, PatchedDatabase);
-        private static readonly Database LuessenhoffDatabase = new Database("luessenhoff_database", "Luessenhoff", Properties.Resources.luessenhoff_data, false, DefaultButtonNames, Cm0102, OriginalDatabase);
-        private static readonly Database Cm89Database = new Database("cm89_database", "1989/90", Properties.Resources.cm89_data, true, Cm89ButtonNames, Cm89, Cm89ConfigLines);
-        private static readonly Database Cm93Database = new Database("cm93_database", "1993/94", Properties.Resources.cm93_data, true, Cm93ButtonNames, Cm93, Cm93ConfigLines);
-        private static readonly Database Cm95Database = new Database("cm95_database", "1995/96", Properties.Resources.cm95_data, true, Cm95ButtonNames, Cm95, Cm95ConfigLines);
-        private static readonly Database Cm3Database = new Database("cm3_database", "CM3", Properties.Resources.cm3_data, true, Cm3ButtonNames, Cm3, Cm3ConfigLines);
+        private static readonly Database OriginalDatabase = new Database("original_database", "Original (3.9.60)", Properties.Resources.original_data, true, Cm0102Exe);
+        private static readonly Database PatchedDatabase = new Database("patched_database", "Patched (3.9.68)", Properties.Resources.patched_data, true, Cm0102Exe);
+        private static readonly Database MarchDatabase = new Database("march_database", "March 2020", Properties.Resources.march_data, false, Cm0102Exe, PatchedDatabase);
+        private static readonly Database NovemberDatabase = new Database("november_database", "November 2020", Properties.Resources.november_data, false, Cm0102Exe, PatchedDatabase);
+        private static readonly Database AprilDatabase = new Database("april_database", "April 2021", Properties.Resources.april_data, false, Cm0102Exe, PatchedDatabase);
+        private static readonly Database LuessenhoffDatabase = new Database("luessenhoff_database", "Luessenhoff", Properties.Resources.luessenhoff_data, false, Cm0102Exe, OriginalDatabase);
+        private static readonly Database Cm89Database = new Database("cm89_database", "1989/90", Properties.Resources.cm89_data, true, Cm89Exe, Cm89ConfigLines);
+        private static readonly Database Cm93Database = new Database("cm93_database", "1993/94", Properties.Resources.cm93_data, true, Cm93Exe, Cm93ConfigLines);
+        private static readonly Database Cm95Database = new Database("cm95_database", "1995/96", Properties.Resources.cm95_data, true, Cm95Exe, Cm95ConfigLines);
+        private static readonly Database Cm3Database = new Database("cm3_database", "1998/99", Properties.Resources.cm3_data, true, Cm3Exe, Cm3ConfigLines);
 
         internal static readonly List<Database> Databases = new List<Database> {
             OriginalDatabase, PatchedDatabase, MarchDatabase, NovemberDatabase, AprilDatabase, LuessenhoffDatabase, Cm89Database, Cm93Database, Cm95Database, Cm3Database
         };
 
-        internal static Database GetCurrentDatabase() {
-            if (Cm89DataLoaded()) {
-                return Cm89Database;
-            } else if (Cm93DataLoaded()) {
-                return Cm93Database;
-            } else if (Cm95DataLoaded()) {
-                return Cm95Database;
-            } else if (Cm3DataLoaded()) {
-                return Cm3Database;
-            } else {
-                // If, for whatever reason, we need to make distinctions between other databases,
-                // then we need to add a text file into each data folder in order to distinguish them from one another.
-                return OriginalDatabase;
+        internal static Database CurrentDatabase() {
+            foreach (Database database in Databases) {
+                if (File.Exists(Path.Combine(DataFolder, database.Name + ".txt"))) {
+                    return database;
+                }
             }
+            // Default case if any other database is loaded
+            return OriginalDatabase;
         }
 
         internal static void WriteConfigFile(List<string> lines, string configFile) {

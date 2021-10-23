@@ -60,7 +60,7 @@ namespace CM0102_Starter_Kit {
         }
 
         protected override void RefreshForm() {
-            Database database = GetCurrentDatabase();
+            Database database = CurrentDatabase();
             string[] lines = File.ReadAllLines(Path.Combine(GameFolder, CmLoaderCustomConfig));
 
             // No ComboBoxes have restricted values, so haven't implemented that here
