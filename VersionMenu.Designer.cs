@@ -282,11 +282,13 @@ namespace CM0102_Starter_Kit {
             // 
             this.saveDatabaseDialog.Filter = "Zip file (*.zip)|*.zip";
             this.saveDatabaseDialog.Title = "Save Custom Database";
+            this.saveDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveDatabaseDialog_FileOk);
             // 
             // loadDatabaseDialog
             // 
             this.loadDatabaseDialog.Filter = "Zip file (*.zip)|*.zip";
             this.loadDatabaseDialog.Title = "Load Custom Database";
+            this.loadDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.LoadDatabaseDialog_FileOk);
             // 
             // VersionMenu
             // 

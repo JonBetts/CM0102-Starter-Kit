@@ -17,6 +17,7 @@ namespace CM0102_Starter_Kit {
             this.cm_scout = new System.Windows.Forms.Button();
             this.player_finder = new System.Windows.Forms.Button();
             this.android_menu = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // switch_update
             // 
@@ -33,6 +34,7 @@ namespace CM0102_Starter_Kit {
             this.switch_update.Margin = new System.Windows.Forms.Padding(0);
             this.switch_update.Name = "switch_update";
             this.switch_update.Size = new System.Drawing.Size(327, 65);
+            this.switch_update.TabIndex = 0;
             this.switch_update.Text = "Data Updates";
             this.switch_update.UseVisualStyleBackColor = false;
             this.switch_update.Click += new System.EventHandler(this.SwitchUpdate_Click);
@@ -52,6 +54,7 @@ namespace CM0102_Starter_Kit {
             this.install_var.Margin = new System.Windows.Forms.Padding(0);
             this.install_var.Name = "install_var";
             this.install_var.Size = new System.Drawing.Size(327, 65);
+            this.install_var.TabIndex = 1;
             this.install_var.Text = "Install VAR Commentary";
             this.install_var.UseVisualStyleBackColor = false;
             this.install_var.Click += new System.EventHandler(this.InstallVar_Click);
@@ -71,6 +74,7 @@ namespace CM0102_Starter_Kit {
             this.nick_patcher.Margin = new System.Windows.Forms.Padding(0);
             this.nick_patcher.Name = "nick_patcher";
             this.nick_patcher.Size = new System.Drawing.Size(327, 65);
+            this.nick_patcher.TabIndex = 2;
             this.nick_patcher.Text = "Nick\'s Patcher";
             this.nick_patcher.UseVisualStyleBackColor = false;
             this.nick_patcher.Click += new System.EventHandler(this.NickPatcher_Click);
@@ -90,6 +94,7 @@ namespace CM0102_Starter_Kit {
             this.editor.Margin = new System.Windows.Forms.Padding(0);
             this.editor.Name = "editor";
             this.editor.Size = new System.Drawing.Size(327, 65);
+            this.editor.TabIndex = 3;
             this.editor.Text = "Official Editor";
             this.editor.UseVisualStyleBackColor = false;
             this.editor.Click += new System.EventHandler(this.Editor_Click);
@@ -109,6 +114,7 @@ namespace CM0102_Starter_Kit {
             this.play_game.Margin = new System.Windows.Forms.Padding(0);
             this.play_game.Name = "play_game";
             this.play_game.Size = new System.Drawing.Size(327, 65);
+            this.play_game.TabIndex = 4;
             this.play_game.Text = "Play Game";
             this.play_game.UseVisualStyleBackColor = false;
             this.play_game.Click += new System.EventHandler(this.PlayGame_Click);
@@ -128,6 +134,7 @@ namespace CM0102_Starter_Kit {
             this.backup_saves.Margin = new System.Windows.Forms.Padding(0);
             this.backup_saves.Name = "backup_saves";
             this.backup_saves.Size = new System.Drawing.Size(327, 65);
+            this.backup_saves.TabIndex = 8;
             this.backup_saves.Text = "Backup Save Games";
             this.backup_saves.UseVisualStyleBackColor = false;
             this.backup_saves.Click += new System.EventHandler(this.BackupSaves_Click);
@@ -147,6 +154,7 @@ namespace CM0102_Starter_Kit {
             this.cm_scout.Margin = new System.Windows.Forms.Padding(0);
             this.cm_scout.Name = "cm_scout";
             this.cm_scout.Size = new System.Drawing.Size(327, 65);
+            this.cm_scout.TabIndex = 6;
             this.cm_scout.Text = "CM Scout";
             this.cm_scout.UseVisualStyleBackColor = false;
             this.cm_scout.Click += new System.EventHandler(this.CmScout_Click);
@@ -166,6 +174,7 @@ namespace CM0102_Starter_Kit {
             this.player_finder.Margin = new System.Windows.Forms.Padding(0);
             this.player_finder.Name = "player_finder";
             this.player_finder.Size = new System.Drawing.Size(327, 65);
+            this.player_finder.TabIndex = 7;
             this.player_finder.Text = "Generated Player Finder";
             this.player_finder.UseVisualStyleBackColor = false;
             this.player_finder.Click += new System.EventHandler(this.PlayerFinder_Click);
@@ -185,13 +194,14 @@ namespace CM0102_Starter_Kit {
             this.android_menu.Margin = new System.Windows.Forms.Padding(0);
             this.android_menu.Name = "android_menu";
             this.android_menu.Size = new System.Drawing.Size(327, 65);
+            this.android_menu.TabIndex = 5;
             this.android_menu.Text = "Android";
             this.android_menu.UseVisualStyleBackColor = false;
             this.android_menu.Click += new System.EventHandler(this.AndroidMenu_Click);
             // 
             // MainMenu
             // 
-            this.BackgroundImage = Properties.Resources.batigol;
+            this.BackgroundImage = global::CM0102_Starter_Kit.Properties.Resources.batigol;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.switch_update);
             this.Controls.Add(this.install_var);
@@ -205,6 +215,8 @@ namespace CM0102_Starter_Kit {
             this.Name = "MainMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
             this.Load += new System.EventHandler(this.MainMenu_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

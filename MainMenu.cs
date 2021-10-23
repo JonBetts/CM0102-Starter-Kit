@@ -122,27 +122,28 @@ namespace CM0102_Starter_Kit {
         }
 
         private void BackupSaves_Click(object sender, EventArgs e) {
-            ProgressWindow progressWindow = new ProgressWindow("Backing up save games", 85);
-            progressWindow.Show();
-            progressWindow.Refresh();
-            int progressPerc = 0;
-            progressWindow.SetProgressPercentage(progressPerc);
             string result = "No save games found!";
             FileInfo[] saveGames = new DirectoryInfo(GameFolder).GetFiles("*.sav");
 
             if (saveGames.Length > 0) {
+                ProgressWindow progressWindow = new ProgressWindow("Backing up save games", 85);
+                progressWindow.Show();
+                progressWindow.Refresh();
+                int progressPerc = 0;
+                progressWindow.SetProgressPercentage(progressPerc);
+
                 if (!Directory.Exists(BackupSavesFolder)) {
                     Directory.CreateDirectory(BackupSavesFolder);
                 }
                 foreach (FileInfo save in saveGames) {
                     File.Copy(save.FullName, Path.Combine(BackupSavesFolder, save.Name), true);
-                    progressPerc = progressPerc + 5;
+                    progressPerc += 5;
                     progressWindow.SetProgressPercentage(Math.Min(progressPerc, 100));
                 }
                 result = saveGames.Length + @" save game(s) successfully backed up (to C:\CM0102 Backups)!";
+                progressWindow.SetProgressPercentage(100);
+                progressWindow.Close();
             }
-            progressWindow.SetProgressPercentage(100);
-            progressWindow.Close();
             DisplayMessage(result);
         }
 

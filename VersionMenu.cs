@@ -89,7 +89,6 @@ namespace CM0102_Starter_Kit {
 
         private void SaveDatabase_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
-                this.saveDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveDatabaseDialog_FileOk);
                 this.saveDatabaseDialog.InitialDirectory = CustomDatabasesFolder;
                 this.saveDatabaseDialog.ShowDialog();
             } else {
@@ -103,7 +102,6 @@ namespace CM0102_Starter_Kit {
         }
 
         private void LoadDatabase_Click(object sender, EventArgs e) {
-            this.loadDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.LoadDatabaseDialog_FileOk);
             this.loadDatabaseDialog.InitialDirectory = CustomDatabasesFolder;
             this.loadDatabaseDialog.ShowDialog();
         }
