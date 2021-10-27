@@ -206,16 +206,6 @@ namespace CM0102_Starter_Kit {
                 File.Delete(exesZipFile);
                 int nextProgressPerc = 80;
                 progressWindow.SetProgressPercentage(nextProgressPerc);
-
-                if (File.Exists(DefaultChangesFile)) {
-                   FileInfo[] saveGames = new DirectoryInfo(DefaultGameFolder).GetFiles("*.sav");
-                    if (saveGames.Length > 0) {
-                        foreach (FileInfo save in saveGames) {
-                            File.Copy(save.FullName, Path.Combine(GameFolder, save.Name), true);
-                            progressWindow.SetProgressPercentage(Math.Min(++nextProgressPerc, 100));
-                        }
-                    }
-                }
             } else {
                 RefreshExeFiles(progressWindow);
             }

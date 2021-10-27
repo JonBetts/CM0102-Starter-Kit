@@ -5,9 +5,6 @@ using System.IO;
 
 namespace CM0102_Starter_Kit {
     class Helper {
-        internal static readonly string ProgramFilesFolder = IsWindowsVistaOrLower() ? @"C:\Program Files" : @"C:\Program Files (x86)";
-        internal static readonly string DefaultGameFolder = Path.Combine(ProgramFilesFolder, "Championship Manager 01-02");
-        internal static readonly string DefaultChangesFile = Path.Combine(DefaultGameFolder, "changes.txt");
         internal static readonly string GameFolder = Path.Combine(Directory.GetCurrentDirectory(), "Game");
         internal static readonly string DataFolderName = "Data";
         internal static readonly string DataFolder = Path.Combine(GameFolder, DataFolderName);
