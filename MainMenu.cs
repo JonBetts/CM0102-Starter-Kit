@@ -193,18 +193,18 @@ namespace CM0102_Starter_Kit {
                 Directory.CreateDirectory(GameFolder);
                 string gameZipFile = GameFolder + ".zip";
                 File.WriteAllBytes(gameZipFile, Properties.Resources.Game);
-                progressWindow.SetProgressPercentage(20);
+                progressWindow.SetProgressPercentage(30);
                 new FastZip().ExtractZip(gameZipFile, GameFolder, null);
                 File.Delete(gameZipFile);
-                progressWindow.SetProgressPercentage(40);
+                progressWindow.SetProgressPercentage(60);
 
                 Thread.Sleep(2000);
                 string exesZipFile = Path.Combine(GameFolder, "Exes.zip");
                 File.WriteAllBytes(exesZipFile, Properties.Resources.Exes);
-                progressWindow.SetProgressPercentage(60);
+                progressWindow.SetProgressPercentage(80);
                 new FastZip().ExtractZip(exesZipFile, GameFolder, null);
                 File.Delete(exesZipFile);
-                int nextProgressPerc = 80;
+                int nextProgressPerc = 90;
                 progressWindow.SetProgressPercentage(nextProgressPerc);
             } else {
                 RefreshExeFiles(progressWindow);
