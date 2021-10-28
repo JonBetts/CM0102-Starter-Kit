@@ -18,19 +18,19 @@ If you have any issues upon first usage of the tool, please head to the support 
 
 Please be aware that the Mac version is a port of the original Windows application. Because of that, certain things won't work in exactly the same way as the Windows version. Here are the important things you need to know:
 
-- I'm pretty sure the tool won't run on the new M1 Macbooks, as it uses Wineskin under the bonnet, and I don't believe a version of Wineskin has yet been released that is fully compatible with that new CPU. An alternative if you have one of the M1s is to download Crossover, and run the Windows version through that. You will have to pay for Crossover after a couple of weeks, or you might be able to keep re-downloading the trial version.
+- I'm pretty sure the tool won't run on the new M1 Macbooks, as it uses Wineskin under the bonnet, and I don't believe a version of Wineskin has yet been released that is fully compatible with that new CPU. An alternative if you have one of the M1s is to download Crossover, and run the game directly through that (i.e. don't use the Starter Kit). You will have to pay for Crossover after a couple of weeks, or you might be able to keep re-downloading the trial version.
 
 -   Previously, I gave advice about removing the quarantine flag from the Starter Kit application after unzipping the file, etc. Well it's actually easier to do this before doing anything else. So as soon as the Starter Kit zip file has been downloaded, open up Terminal, and run the following command:
 `xattr -drs com.apple.quarantine ~/Downloads/CM0102.Starter.Kit.Mac.Version.zip`.
-This should now allow you to run the application properly. If you have changed where your download folder is located, then adjust the command accordingly.
+This should now allow you to unzip and run the application properly without any messages about the application being "damaged". If you have changed where your download folder is located, then adjust the command above accordingly.
 
 -   In High Sierra (and potentially other versions), when you play the game in windowed mode, there is a black border around the game, and you cannot see the rest of your windows and applications. Unfortunately there isn't a way around this, unless you upgrade to Big Sur as the behaviour isn't present on there.
 
--   Switching from full screen to windowed mode in-game causes the game to minimise, and then when you click on it, it is now displayed strangely. All you have to do then is exit the game, and then re-open it via the Starter Kit and it should be fine.
+-   Switching from full screen to windowed mode in-game causes the game to minimise, and then when you click on the icon on the taskbar, it is now displayed strangely. All you have to do then is exit the game, and then re-open it via the Starter Kit and it should be fine.
 
--   Please **DO NOT** use the option in Nick's Patcher to change the resolution to 1280x800 if you are using windowed mode - the game will not display properly! It is fine to use in full screen though.
+-   Please **DO NOT** use the option in Nick's Patcher to change the resolution to 1280x800 if you are using windowed mode - the game will not display properly! It is fine to use in full screen mode though, and I would recommend it in that scenario.
 
--   There is a very minor bug when using the trackpad in Mac - if you're scrolling with it, it scrolls all the way to the bottom of the page, and won't stop until you click somewhere. In short, if you are going to use your trackpad, you'll be better off clicking and dragging the scrollbars as you would on Windows. Even better, use an external mouse, and you won't get this issue.
+-   There is a very minor bug when using the trackpad in Mac - if you're scrolling with it, it scrolls all the way to the bottom of the page, and won't stop until you click somewhere. In short, if you are going to use your trackpad, you'll be better off clicking and dragging the scrollbars as you would on Windows. An alternative (and better) solution is to use an external mouse, as you won't have this issue.
 
 -   If you want to browse the game folder, you will need to right click on the app, then click "Show Package Contents". Then you need to navigate to `drive_c -> Program Files -> Starter Kit v*.*.* -> Game`. This is where you can find your saved games, or copy content across like tactic folders, menu bars, etc.
 
