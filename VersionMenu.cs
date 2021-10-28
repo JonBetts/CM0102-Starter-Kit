@@ -97,8 +97,14 @@ namespace CM0102_Starter_Kit {
         }
 
         private void SaveDatabaseDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e) {
+            ProgressWindow progressWindow = new ProgressWindow("Saving custom database", 80);
+            progressWindow.Show();
+            progressWindow.Refresh();
+            progressWindow.SetProgressPercentage(20);
             new FastZip().CreateZip(this.saveDatabaseDialog.FileName, DataFolder, true, null);
+            progressWindow.SetProgressPercentage(100);
             DisplayMessage("Custom database successfully saved!");
+            progressWindow.Close();
         }
 
         private void LoadDatabase_Click(object sender, EventArgs e) {
@@ -107,11 +113,18 @@ namespace CM0102_Starter_Kit {
         }
 
         private void LoadDatabaseDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e) {
+            ProgressWindow progressWindow = new ProgressWindow("Loading custom database", 80);
+            progressWindow.Show();
+            progressWindow.Refresh();
+            progressWindow.SetProgressPercentage(20);
             if (DataFolderExists()) {
                 Directory.Delete(DataFolder, true);
+                progressWindow.SetProgressPercentage(40);
             }
             new FastZip().ExtractZip(this.loadDatabaseDialog.FileName, DataFolder, null);
+            progressWindow.SetProgressPercentage(100);
             DisplayMessage("Custom database successfully loaded!");
+            progressWindow.Close();
         }
 
         private void VersionMenu_FormClosed(object sender, FormClosedEventArgs e) {
