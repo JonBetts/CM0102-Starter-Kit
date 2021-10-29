@@ -140,7 +140,7 @@ namespace CM0102_Starter_Kit {
                     progressPerc += 5;
                     progressWindow.SetProgressPercentage(Math.Min(progressPerc, 100));
                 }
-                result = saveGames.Length + @" save game(s) successfully backed up (to C:\CM0102 Backups)!";
+                result = saveGames.Length + @" save game(s) successfully backed up to your desktop!";
                 progressWindow.SetProgressPercentage(100);
                 progressWindow.Close();
             }
