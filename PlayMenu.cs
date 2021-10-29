@@ -67,7 +67,7 @@ namespace CM0102_Starter_Kit {
             }
 
             CopyExe(true);
-            bool useDefaultConfig = Regex.Match(button.Name, @"\w+_standard").Success;
+            bool useDefaultConfig = button.Equals(this.cm0102_standard);
 
             ProcessStartInfo playPsi = new ProcessStartInfo {
                 WorkingDirectory = GameFolder,
