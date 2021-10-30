@@ -152,7 +152,7 @@ namespace CM0102_Starter_Kit {
                 this.restoreSaveDialog.InitialDirectory = BackupSavesFolder;
                 this.restoreSaveDialog.ShowDialog();
             } else {
-                DisplayMessage("No backed up save games detected!");
+                DisplayMessage("No backed up save games found!");
             }
         }
 
