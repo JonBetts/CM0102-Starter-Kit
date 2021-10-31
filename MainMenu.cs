@@ -126,9 +126,7 @@ namespace CM0102_Starter_Kit {
             FileInfo[] saveGames = new DirectoryInfo(GameFolder).GetFiles("*.sav");
 
             if (saveGames.Length > 0) {
-                ProgressWindow progressWindow = new ProgressWindow("Backing up save games", 85);
-                progressWindow.Show();
-                progressWindow.Refresh();
+                ProgressWindow progressWindow = CreateNewProgressWindow("Backing up save games", 85);
                 int progressPerc = 0;
                 progressWindow.SetProgressPercentage(progressPerc);
 
@@ -185,9 +183,7 @@ namespace CM0102_Starter_Kit {
                 Application.Exit();
             }
 
-            ProgressWindow progressWindow = new ProgressWindow("Loading Starter Kit", 100);
-            progressWindow.Show();
-            progressWindow.Refresh();
+            ProgressWindow progressWindow = CreateNewProgressWindow("Loading Starter Kit", 100);
 
             if (!GameFolderExists()) {
                 Directory.CreateDirectory(GameFolder);

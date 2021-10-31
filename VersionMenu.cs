@@ -105,9 +105,7 @@ namespace CM0102_Starter_Kit {
         }
 
         private void SwitchDatabase_Click(object sender, EventArgs e) {
-            ProgressWindow progressWindow = new ProgressWindow("Loading selected database", 75);
-            progressWindow.Show();
-            progressWindow.Refresh();
+            ProgressWindow progressWindow = CreateNewProgressWindow("Loading selected database", 75);
             progressWindow.SetProgressPercentage(0);
 
             Button button = (Button) sender;
@@ -129,9 +127,7 @@ namespace CM0102_Starter_Kit {
         }
 
         private void SaveDatabaseDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e) {
-            ProgressWindow progressWindow = new ProgressWindow("Saving custom database", 80);
-            progressWindow.Show();
-            progressWindow.Refresh();
+            ProgressWindow progressWindow = CreateNewProgressWindow("Saving custom database", 80);
             progressWindow.SetProgressPercentage(20);
 
             // Ensure any database detector files are removed prior to saving this as a custom database, and also add the custom database detector file.
@@ -156,9 +152,7 @@ namespace CM0102_Starter_Kit {
 
         private void LoadDatabaseDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e) {
             string closingMessage = "Custom database successfully loaded!";
-            ProgressWindow progressWindow = new ProgressWindow("Loading custom database", 80);
-            progressWindow.Show();
-            progressWindow.Refresh();
+            ProgressWindow progressWindow = CreateNewProgressWindow("Loading custom database", 80);
             progressWindow.SetProgressPercentage(0);
 
             Database customDatabase = CustomDatabase;

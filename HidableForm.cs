@@ -58,6 +58,18 @@ namespace CM0102_Starter_Kit {
             newForm.Show();
         }
 
+        protected ProgressWindow CreateNewProgressWindow(string labelText, int labelXLocation) {
+            ProgressWindow progressWindow = new ProgressWindow(labelText, labelXLocation);
+            // Bit of a hack because the forms aren't modal.
+            int x = this.Left + ((this.Width - progressWindow.Width) / 2);
+            int y = this.Top + ((this.Height - progressWindow.Height) / 2);
+            progressWindow.StartPosition = FormStartPosition.Manual;
+            progressWindow.Location = new Point(x, y);
+            progressWindow.Show();
+            progressWindow.Refresh();
+            return progressWindow;
+        }
+
         private void BackButton_Click(object sender, EventArgs e) {
             ShowNewScreen(mainMenu);
         }

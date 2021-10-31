@@ -46,9 +46,7 @@ namespace CM0102_Starter_Kit {
         }
 
         private void GenerateFiles_Click(object sender, EventArgs e) {
-            ProgressWindow progressWindow = new ProgressWindow("Generating files for Android", 75);
-            progressWindow.Show();
-            progressWindow.Refresh();
+            ProgressWindow progressWindow = CreateNewProgressWindow("Generating files for Android", 75);
             progressWindow.SetProgressPercentage(0);
 
             Database database = CurrentDatabase(); 

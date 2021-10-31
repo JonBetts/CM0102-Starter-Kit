@@ -33,6 +33,7 @@ namespace CM0102_Starter_Kit {
             this.progressBar.Location = new System.Drawing.Point(12, 29);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(271, 23);
+            this.progressBar.TabIndex = 0;
             // 
             // label
             // 
@@ -41,6 +42,7 @@ namespace CM0102_Starter_Kit {
             this.label.Location = new System.Drawing.Point(0, 0);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(0, 14);
+            this.label.TabIndex = 1;
             // 
             // ProgressWindow
             // 
@@ -49,7 +51,7 @@ namespace CM0102_Starter_Kit {
             this.ClientSize = new System.Drawing.Size(296, 62);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.label);
-            this.Icon = Properties.Resources.logo;
+            this.Icon = global::CM0102_Starter_Kit.Properties.Resources.logo;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProgressWindow";
@@ -58,6 +60,7 @@ namespace CM0102_Starter_Kit {
             this.Text = "Please Wait...";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
 
