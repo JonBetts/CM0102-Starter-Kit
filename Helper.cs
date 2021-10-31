@@ -28,6 +28,7 @@ namespace CM0102_Starter_Kit {
         internal static readonly string ExistingCommentary = Path.Combine(DataFolder, "events_eng.cfg");
         internal static readonly string ExistingCommentaryBackup = Path.Combine(DataFolder, "events_eng.cfg.bk");
         internal static readonly string OfficialEditor = Path.Combine(Path.Combine(GameFolder, "Editor"), "cm0102ed.exe");
+        internal static readonly string PlayerSetupFile = "player_setup.cfg";
         internal static readonly string BackupSavesFolder = Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory), "CM0102 Backups");
         internal static readonly string CustomDatabasesFolder = Path.Combine(GameFolder, "Custom Databases");
         internal static readonly string PatchesFolderName = "Patches";
@@ -126,7 +127,7 @@ namespace CM0102_Starter_Kit {
 
             internal string Name { get; }
             internal string Label { get; }
-            internal byte[] ResourceFile { get; }
+            internal byte[] ResourceFile { get; set; }
             internal bool DeleteDataFolder { get; }
             internal Database PrerequisiteDatabase { get; }
             internal Dictionary<int, ConfigLine> ConfigLines { get; }
@@ -143,6 +144,7 @@ namespace CM0102_Starter_Kit {
         private static readonly Database Cm93Database = new Database("cm93_database", "1993/94", Properties.Resources.cm93_data, true, Cm93Exe, Cm93ConfigLines);
         private static readonly Database Cm95Database = new Database("cm95_database", "1995/96", Properties.Resources.cm95_data, true, Cm95Exe, Cm95ConfigLines);
         private static readonly Database Cm3Database = new Database("cm3_database", "1998/99", Properties.Resources.cm3_data, true, Cm3Exe, Cm3ConfigLines);
+        public static readonly Database CustomDatabase = new Database("custom_database", "Custom Database", null, false, Cm0102Exe, PatchedDatabase);
 
         internal static readonly List<Database> Databases = new List<Database> {
             OriginalDatabase, PatchedDatabase, MarchDatabase, NovemberDatabase, AprilDatabase, LuessenhoffDatabase, Cm89Database, Cm93Database, Cm95Database, Cm3Database
@@ -155,11 +157,11 @@ namespace CM0102_Starter_Kit {
                 }
             }
             // Default case if any other database is loaded
-            return OriginalDatabase;
+            return CustomDatabase;
         }
 
-        internal static void WriteConfigFile(List<string> lines, string configFile) {
-            using (StreamWriter writer = new StreamWriter(configFile)) {
+        internal static void WriteToFile(List<string> lines, string file) {
+            using (StreamWriter writer = new StreamWriter(file)) {
                 for (int currentLine = 1; currentLine <= lines.Count; ++currentLine) {
                     writer.WriteLine(lines[currentLine - 1]);
                 }

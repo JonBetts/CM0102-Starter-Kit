@@ -29,8 +29,17 @@ namespace CM0102_Starter_Kit {
 
         private void RenameButtons() {
             Database database = CurrentDatabase();
-            this.cm0102_standard.Text = database.Label + " (Standard)";
-            this.cm0102_nick_patcher.Text = database.Label + " (Nick's Patcher)";
+            string databaseLabel = database.Label;
+            // If using custom database, grab the filename that they saved it under
+            if (CustomDatabase.Equals(database)) {
+                string customDatabaseDetectorFile = Path.Combine(DataFolder, CustomDatabase.Name + ".txt");
+                if (File.Exists(customDatabaseDetectorFile)) {
+                    string[] lines = File.ReadAllLines(customDatabaseDetectorFile);
+                    databaseLabel = lines[0];
+                }
+            }
+            this.cm0102_standard.Text = databaseLabel + " (Standard)";
+            this.cm0102_nick_patcher.Text = databaseLabel + " (Nick's Patcher)";
         }
 
         protected override void RefreshForm() {

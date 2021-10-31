@@ -72,7 +72,7 @@ namespace CM0102_Starter_Kit {
 
             // We need to ensure certain patches are not applied to the Android version, even if they were selected
             List<string> defaultLines = GetDefaultConfigFileLines(androidConfigFile, database, true);
-            WriteConfigFile(defaultLines, androidConfigFile);
+            WriteToFile(defaultLines, androidConfigFile);
             progressWindow.SetProgressPercentage(15);
 
             // Only copy Patches folder across if the user wants to use Nick's Patcher - otherwise just create an empty folder
