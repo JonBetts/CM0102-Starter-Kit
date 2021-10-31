@@ -154,14 +154,14 @@
   <data name="luessenhoff_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\luessenhoff_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="march_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\march_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="maxim" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\maxim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="november_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\november_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="october_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\october_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="original_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\original_data.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

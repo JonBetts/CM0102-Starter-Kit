@@ -136,7 +136,7 @@ namespace CM0102_Starter_Kit {
 
         private static readonly Database OriginalDatabase = new Database("original_database", "Original (3.9.60)", Properties.Resources.original_data, true, Cm0102Exe);
         private static readonly Database PatchedDatabase = new Database("patched_database", "Patched (3.9.68)", Properties.Resources.patched_data, true, Cm0102Exe);
-        private static readonly Database MarchDatabase = new Database("march_database", "March 2020", Properties.Resources.march_data, false, Cm0102Exe, PatchedDatabase);
+        private static readonly Database OctoberDatabase = new Database("october_database", "October 2021", Properties.Resources.october_data, false, Cm0102Exe, PatchedDatabase);
         private static readonly Database NovemberDatabase = new Database("november_database", "November 2020", Properties.Resources.november_data, false, Cm0102Exe, PatchedDatabase);
         private static readonly Database AprilDatabase = new Database("april_database", "April 2021", Properties.Resources.april_data, false, Cm0102Exe, PatchedDatabase);
         private static readonly Database LuessenhoffDatabase = new Database("luessenhoff_database", "Luessenhoff", Properties.Resources.luessenhoff_data, false, Cm0102Exe, OriginalDatabase);
@@ -147,7 +147,7 @@ namespace CM0102_Starter_Kit {
         public static readonly Database CustomDatabase = new Database("custom_database", "Custom Database", null, false, Cm0102Exe, PatchedDatabase);
 
         internal static readonly List<Database> Databases = new List<Database> {
-            OriginalDatabase, PatchedDatabase, MarchDatabase, NovemberDatabase, AprilDatabase, LuessenhoffDatabase, Cm89Database, Cm93Database, Cm95Database, Cm3Database
+            OriginalDatabase, PatchedDatabase, OctoberDatabase, NovemberDatabase, AprilDatabase, LuessenhoffDatabase, Cm89Database, Cm93Database, Cm95Database, Cm3Database
         };
 
         internal static Database CurrentDatabase() {
