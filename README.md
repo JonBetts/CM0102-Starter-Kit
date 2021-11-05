@@ -42,7 +42,7 @@ It's all very straightforward, but I will give a quick explanation about everyth
 
 #### Main Menu
 
-<p align="left"><img src="https://i.ibb.co/ZSKc85Y/MainMenu.png"/></p>
+<p align="left"><img src="https://i.ibb.co/fXYCPXg/MainMenu.png" alt="MainMenu" border="0"/></p>
 
 -   **Data Updates** - This is one of the main features of the tool - you can seamlessly switch between different data updates here.
 All you have to do is click on whichever one you want to use, and wait for a confirmation of it successfully loading. Then you can start a new game and hey presto it's using the data update you wanted! Massive thank you to everyone involved in all of the data updates - some of them are years and years of hard work from one person, others are 6 months of hard work from a handful of people. All of them heroes!
@@ -65,7 +65,7 @@ All you have to do is click on whichever one you want to use, and wait for a con
 
 #### Data Updates
 
-<p align="left"><img src="https://i.ibb.co/dP3cHdW/Data-Updates-Menu.png"/></p>
+<p align="left"><img src="https://i.ibb.co/9tLH40P/Data-Updates-Menu.png" alt="Data-Updates-Menu" border="0"/></p>
 
 You have the choice of 9 different databases on the latest version of this tool. These data updates are what keep the game fresh and enjoyable for a lot of people, so I'm chuffed to be able to include them all here. A massive thank you again to everyone who spent so much time putting these databases together for others enjoyment.
 
@@ -73,7 +73,7 @@ I have also added the ability to save and load your own custom databases. Previo
 
 #### Nick's Patcher Menu
 
-<p align="left"><img src="https://i.ibb.co/pdsj7yR/Nick-Patcher-Menu.png"/></p>
+<p align="left"><img src="https://i.ibb.co/n3Gph6n/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"/></p>
 
 Most of the options here are pretty straightforward, but for those that aren't, I'll give a brief explanation.
 
@@ -159,13 +159,13 @@ More details about Nick's Patcher, including what each of the standard options d
 
 #### Play Game Menu
 
-<p align="left"><img src="https://i.ibb.co/sJ7WV8w/PlayMenu.png"/></p>
+<p align="left"><img src="https://i.ibb.co/nCctHty/PlayMenu.png" alt="PlayMenu" border="0"/></p>
 
 This is simply where you decide whether you want to play standard CM, or you want to apply the options selected on Nick's Patcher. Please note, that the Starter Kit now detects what database you have loaded, and only allows you to select the correct options for playing, to save on any confusion. The 89/90, 93/94 and 98/99 databases all use different executable files that have been pre-patched to set the correct year and add a few other things, hence why they have their own separate play buttons on this menu. All other databases can be started using the default CM01/02 play button on this menu (provided you have already switched to them on the Data Updates menu!).
 
 #### Android Menu
 
-<p align="left"><img src="https://i.ibb.co/bdZx09k/Android-Menu.png"/></p>
+<p align="left"><img src="https://i.ibb.co/hfCvhXK/Android-Menu.png" alt="Android-Menu" border="0"/></p>
 
 If you have used the Starter Kit before, you will notice that this page is new. I wrote it in order to try to help people get up and running on their Android phone or tablet. I wanted to automate some of the process but there were a lot of restrictions on what I could do, so I had to resort to mainly just adding a list of instructions. Saying that, the tool will generate the exact files you need to copy across to your device in order to get it working. Just make sure you tick whether you want to add Nick's Patcher settings or not, and whether or not you are using Android 11 (there is a patch it adds if so). Make sure you follow the instructions as carefully as possible, but do bear in mind that Exagear Strategies (the software that gets installed on your Android device) doesn't always work on every phone - I have a Huawei P30 Pro and it doesn't work on there even though I'm on Android 10, because of the custom version of Android that they use. So don't be too disheartened if it turns out you cannot get it running!
 
