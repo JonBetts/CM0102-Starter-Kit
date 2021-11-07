@@ -180,5 +180,21 @@ namespace CM0102_Starter_Kit {
         private void NickPatcherMenu_FormClosed(object sender, FormClosedEventArgs e) {
             Application.Exit();
         }
+
+
+        private void ApplyPatch_Click(object sender, EventArgs e) {
+            if (Directory.Exists(PatchesFolder)) {
+                this.applyPatchDialog.InitialDirectory = GameFolder;
+                this.applyPatchDialog.ShowDialog();
+            } else {
+                DisplayMessage("Patches folder not found!");
+            }
+        }
+
+        private void ApplyPatchDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e) {
+            string destFile = Path.Combine(PatchesFolder, Path.GetFileName(this.applyPatchDialog.FileName));
+            File.Copy(this.applyPatchDialog.FileName, destFile, true);
+            DisplayMessage("Patch file successfully added!");
+        }
     }
 }

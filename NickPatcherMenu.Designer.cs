@@ -28,6 +28,8 @@ namespace CM0102_Starter_Kit {
             this.misc_patches = new System.Windows.Forms.CheckBox();
             this.protection_patches = new System.Windows.Forms.CheckBox();
             this.apply = new System.Windows.Forms.Button();
+            this.apply_patch = new System.Windows.Forms.Button();
+            this.applyPatchDialog = new System.Windows.Forms.OpenFileDialog();
             this.transparent_panel = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.starting_year)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currency_inflation)).BeginInit();
@@ -344,9 +346,9 @@ namespace CM0102_Starter_Kit {
             this.apply.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.apply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
             this.apply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.apply.Font = new System.Drawing.Font("Savile ExtraBold", 9F, System.Drawing.FontStyle.Bold);
+            this.apply.Font = new System.Drawing.Font("Savile ExtraBold", 10F, System.Drawing.FontStyle.Bold);
             this.apply.ForeColor = System.Drawing.Color.White;
-            this.apply.Location = new System.Drawing.Point(409, 507);
+            this.apply.Location = new System.Drawing.Point(252, 515);
             this.apply.Margin = new System.Windows.Forms.Padding(0);
             this.apply.Name = "apply";
             this.apply.Size = new System.Drawing.Size(93, 30);
@@ -355,6 +357,32 @@ namespace CM0102_Starter_Kit {
             this.apply.Text = "Apply";
             this.apply.UseVisualStyleBackColor = false;
             this.apply.Click += new System.EventHandler(this.Apply_Click);
+            // 
+            // apply_patch
+            // 
+            this.apply_patch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.apply_patch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.apply_patch.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.apply_patch.FlatAppearance.BorderSize = 2;
+            this.apply_patch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.apply_patch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
+            this.apply_patch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.apply_patch.Font = new System.Drawing.Font("Savile ExtraBold", 10F, System.Drawing.FontStyle.Bold);
+            this.apply_patch.ForeColor = System.Drawing.Color.White;
+            this.apply_patch.Location = new System.Drawing.Point(472, 515);
+            this.apply_patch.Margin = new System.Windows.Forms.Padding(0);
+            this.apply_patch.Name = "apply_patch";
+            this.apply_patch.Size = new System.Drawing.Size(183, 30);
+            this.apply_patch.TabIndex = 21;
+            this.apply_patch.TabStop = false;
+            this.apply_patch.Text = "Apply Separate Patch";
+            this.apply_patch.UseVisualStyleBackColor = false;
+            this.apply_patch.Click += new System.EventHandler(this.ApplyPatch_Click);
+            // 
+            // applyPatchDialog
+            // 
+            this.applyPatchDialog.Filter = "Patch file|*.patch";
+            this.applyPatchDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.ApplyPatchDialog_FileOk);
             // 
             // transparent_panel
             // 
@@ -389,6 +417,7 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.misc_patches);
             this.Controls.Add(this.protection_patches);
             this.Controls.Add(this.apply);
+            this.Controls.Add(this.apply_patch);
             this.Controls.Add(this.transparent_panel);
             this.Name = "NickPatcherMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NickPatcherMenu_FormClosed);
@@ -421,6 +450,8 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.CheckBox misc_patches;
         private System.Windows.Forms.CheckBox protection_patches;
         private System.Windows.Forms.Button apply;
+        private System.Windows.Forms.Button apply_patch;
+        private System.Windows.Forms.OpenFileDialog applyPatchDialog;
         private System.Windows.Forms.PictureBox transparent_panel;
     }
 }
