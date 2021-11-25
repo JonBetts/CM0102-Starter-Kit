@@ -129,7 +129,7 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
     * **LoansUpdateIncreaseLoans** - Increases the number of loans that teams in England, Scotland, Ireland and France can make at any one time from 2 to 9.
 
-    * **ManageAnyTeam** - You can now apply for any job (club or nation) that currently does not have a manager. This includes clubs in inactive leagues. It also includes u21 teams.
+    * **ManageAnyTeam** - You can now apply for any job (club or nation) that currently does not have a manager. This includes clubs in inactive leagues. It also includes u21 teams. Please note, when applying for jobs at very small clubs or countries without enough players, you'll receive an error message (_manager_manager..cpp 12456_). Managers won't be appointed for those clubs/nations but the error is harmless beyond that.
 
     * **NicksFitnessPatch** - Removes the pre-defined period of the year whereby player fitness is greatly decreased.
 
