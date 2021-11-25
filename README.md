@@ -55,15 +55,15 @@ All you have to do is click on whichever one you want to use, and wait for a con
 
 -   **Play Game** - Allows you to play the game without faffing around with compatibility settings and admin options, and pick between just using standard CM or applying Nick's Patcher to it and running that. Do whatever makes you happy!
 
--   **Back Up Save Games** - Backs up all your save games to the following folder: 'C:\Users\YOUR_USER\Desktop\CM0102 Backups'.
-
--   **Restore Save Games** - Allows you to easily restore any save games that have been backed up to the above location. Please note it will overwrite any existing save games with the same name within the Starter Kit itself so be careful!
+-   **Android** - Gives a list of instructions for getting CM 01/02 running on your Android device. I did try to automate some things but it proved harder than anticipated. However, the Starter Kit generates all the files you need, and you then manually copy them onto your device.
 
 -   **CM Scout** - Launches CM Scout. It's a nice little tool that means you don't have to rely on your rubbish in-game scouts to find players. Most people think it ruins the game a bit though, so use with caution!
 
 -   **Generated Player Finder** - Launches GPF2. If you run this tool against your save game as early as possible, it will keep a track on which players certain regens were in their previous life! That's pretty much all it does...
 
--   **Android** - Gives a list of instructions for getting CM 01/02 running on your Android device. I did try to automate some things but it proved harder than anticipated. However, the Starter Kit generates all the files you need, and you then manually copy them onto your device.
+-   **Back Up Save Games** - Backs up all your save games to the following folder: 'C:\Users\YOUR_USER\Desktop\CM0102 Backups'.
+
+-   **Restore Save Games** - Allows you to easily restore any save games that have been backed up to the above location. Please note it will overwrite any existing save games with the same name within the Starter Kit itself so be careful!
 
 #### Data Updates
 
