@@ -160,6 +160,13 @@ namespace CM0102_Starter_Kit {
                 }
             }
 
+            string leagueCupSubsPatch = "LeagueCupSubs.patch";
+            if (this.seven_substitutes.Enabled && this.seven_substitutes.Checked) {
+                File.Copy(Path.Combine(OptionalPatchesFolder, leagueCupSubsPatch), Path.Combine(PatchesFolder, leagueCupSubsPatch), true);
+            } else {
+                File.Delete(Path.Combine(PatchesFolder, leagueCupSubsPatch));
+            }
+
             // Copy other patches not provided by default in the CM0102 Loader
             string foreignLimitPatch = "NoForeignRestrictionsForAll.patch";
             if (this.foreign_player_limit.Enabled && this.foreign_player_limit.Checked) {
