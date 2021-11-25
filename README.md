@@ -193,9 +193,11 @@ If you already have Exagear running OK on your phone then you can skip the secon
 
 **Please note:** You cannot use the "load all players" and "change resolution to 1280x800" patches on Android as the former makes the game too slow to use, and the latter means that it doesn't display properly. If you have selected these options in Nick's Patcher, it will just ignore them when generating the files for Android.
 
-## Important note
+## Important notes
 
 When you are using the Starter Kit, please do not restart the game from the in-game main menu. The game will restart outside of the Starter Kit, and require you to insert the CD, etc, whereas you don't need to do this when you play the game via this tool. You will need to 'Exit Game' and then launch the game again via the Starter Kit when required.
+
+I have fixed the language issues occurring on 3.9.60 and Luessenhoff so that you can now play these databases in many languages other than English. However, due to some poor coding in the 3.9.68 patch, unfortunately nations and nationality names will always be in English regardless. Any error messages due to language translations not working should now be suppressed so they can't be seen.
 
 ## Troubleshooting
 
