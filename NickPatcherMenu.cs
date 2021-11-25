@@ -160,14 +160,6 @@ namespace CM0102_Starter_Kit {
                 }
             }
 
-            // Copy protection patches to main Patches folder
-            string protectionPatch = "ProtectionPatches.patch";
-            if (this.protection_patches.Enabled && this.protection_patches.Checked) {
-                File.Copy(Path.Combine(OptionalPatchesFolder, protectionPatch), Path.Combine(PatchesFolder, protectionPatch), true);
-            } else {
-                File.Delete(Path.Combine(PatchesFolder, protectionPatch));
-            }
-
             // Copy other patches not provided by default in the CM0102 Loader
             string foreignLimitPatch = "NoForeignRestrictionsForAll.patch";
             if (this.foreign_player_limit.Enabled && this.foreign_player_limit.Checked) {

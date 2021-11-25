@@ -26,7 +26,6 @@ namespace CM0102_Starter_Kit {
             this.tapani_regen = new System.Windows.Forms.CheckBox();
             this.uncap = new System.Windows.Forms.CheckBox();
             this.misc_patches = new System.Windows.Forms.CheckBox();
-            this.protection_patches = new System.Windows.Forms.CheckBox();
             this.apply = new System.Windows.Forms.Button();
             this.apply_patch = new System.Windows.Forms.Button();
             this.applyPatchDialog = new System.Windows.Forms.OpenFileDialog();
@@ -323,20 +322,6 @@ namespace CM0102_Starter_Kit {
             this.misc_patches.Text = "Use Miscellaneous Patches";
             this.misc_patches.UseVisualStyleBackColor = false;
             // 
-            // protection_patches
-            // 
-            this.protection_patches.AutoSize = true;
-            this.protection_patches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.protection_patches.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
-            this.protection_patches.ForeColor = System.Drawing.Color.White;
-            this.protection_patches.Location = new System.Drawing.Point(472, 460);
-            this.protection_patches.Name = "protection_patches";
-            this.protection_patches.Size = new System.Drawing.Size(242, 25);
-            this.protection_patches.TabIndex = 15;
-            this.protection_patches.TabStop = false;
-            this.protection_patches.Text = "Apply Protection Patches";
-            this.protection_patches.UseVisualStyleBackColor = false;
-            // 
             // apply
             // 
             this.apply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -415,7 +400,6 @@ namespace CM0102_Starter_Kit {
             this.Controls.Add(this.force_all_players);
             this.Controls.Add(this.regen_fixes);
             this.Controls.Add(this.misc_patches);
-            this.Controls.Add(this.protection_patches);
             this.Controls.Add(this.apply);
             this.Controls.Add(this.apply_patch);
             this.Controls.Add(this.transparent_panel);
@@ -448,7 +432,6 @@ namespace CM0102_Starter_Kit {
         private System.Windows.Forms.CheckBox tapani_regen;
         private System.Windows.Forms.CheckBox uncap;
         private System.Windows.Forms.CheckBox misc_patches;
-        private System.Windows.Forms.CheckBox protection_patches;
         private System.Windows.Forms.Button apply;
         private System.Windows.Forms.Button apply_patch;
         private System.Windows.Forms.OpenFileDialog applyPatchDialog;
