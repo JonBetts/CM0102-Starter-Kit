@@ -69,9 +69,11 @@ All you have to do is click on whichever one you want to use, and wait for a con
 
 <p align="left"><img src="https://i.ibb.co/9tLH40P/Data-Updates-Menu.png" alt="Data-Updates-Menu" border="0"/></p>
 
-You have the choice of 9 different databases on the latest version of this tool. These data updates are what keep the game fresh and enjoyable for a lot of people, so I'm chuffed to be able to include them all here. A massive thank you again to everyone who spent so much time putting these databases together for others enjoyment.
+You have the choice of 10 different databases on the latest version of this tool. These data updates are what keep the game fresh and enjoyable for a lot of people, so I'm chuffed to be able to include them all here. A massive thank you again to everyone who spent so much time putting these databases together for others enjoyment.
 
 I have also added the ability to save and load your own custom databases. Previously if you made any edits to any of the databases (using the Official Editor), these changes would get overwritten the next time you loaded a different database. You can now save a database with whatever name you like, and then reload it again at any point in the future if you want to use it again. All you need to do is load the desired default database, make some changes via the editor, and then press "Save Custom Database" and give it a name. The tool will then store that database somewhere for you to re-use (and will obviously keep it as the currently loaded database as well).
+
+As of version 1.2.2, the Custom Database functionality will allow you to load up any CM 01/02 database you like, provided it is in a zip file. So if there's a particular database you want to play that isn't on the Starter Kit, just download it from the forum for example, and then find the zip file via the Load Custom Database button. This _should_ work completely fine, provided the database you have downloaded does not have it's own executable file. Having to cater for that would have been far beyond the initial premise of the Starter Kit, and thus is not supported!
 
 #### Nick's Patcher Menu
 
