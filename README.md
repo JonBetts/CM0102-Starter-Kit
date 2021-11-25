@@ -141,6 +141,8 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
     * **PauseOnMinorInjury** - The game now pauses during a match for an injury, no matter the severity of an injury, including minor knocks or strains.
 
+    * **ReduceWorkPermitWait** - Reduces the wait for a work permit application from 18-25 days to 7-14 days.
+
     * **RegensMegaBoost** - Regens with high potential abilities should come back with better attributes than before.
 
     * **RegisterForEuropeAgeIncrease** - This raises the age for which players need to be registered for European competitions from 19 to 21.
