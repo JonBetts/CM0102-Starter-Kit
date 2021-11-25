@@ -79,21 +79,25 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
 -   **Regen Fixes** - Fixes a few minor things related to regens - only clubs with 45 or less players in the squad will now have regens generated (to keep AI squads free for other transfers), and it also fixes the issue of older regens (25+) being generated within smaller nations.
 
--   **Load All Players** - This will ensure all players from your chosen database are loaded into the game regardless as to how many leagues you select. Very useful if you normally select lots of leagues just to increase the number of available players, as having more leagues makes the game much slower. Loading all players doesn't seem to slow down performance, but it does make save game files around 25% larger. Loading all leagues also means a much higher chance of a game-breaking bug occurring at any point, so it's a nice, different option to have. Obviously if you select the "minimum database" in the game options, then all players won't load, but there will be more than there were when you previously selected it!
+-   **Load All Players** - Ensures all players from your chosen database are loaded into the game regardless as to how many leagues you select. Very useful if you normally select lots of leagues just to increase the number of available players, as having more leagues makes the game much slower. Loading all players doesn't seem to slow down performance, but it does make save game files around 25% larger. Loading all leagues also means a much higher chance of a game-breaking bug occurring at any point, so it's a nice, different option to have. Obviously if you select the "minimum database" in the game options, then all players won't load, but there will be more than there were when you previously selected it!
 
 -   **Tapani Regen Code** - Fixes an issue where regens get an ever increasing 'Positioning' attribute, which eventually leads to very low scoring games years down the line (basically every defender becomes Maldini!). I believe it also makes changes so that regens are created to be more balanced (supposedly by default regens can generate with low physical attributes, etc - I think this patch attempts to fix that).
 
--   **Uncap 20's** - This removes the upper attribute limit of 20 set in the game, allowing you to see a much more accurate value when certain players have some extremely good attributes. The values can now range from 1 to 46 (as far as I remember!). A prime example is of course Maxim Tsigalko where his Finishing attribute is actually much higher than 20 under the bonnet,  due to his low current ability and high attributes (but also the fact that he only has high attributes that are important for strikers).
+-   **Uncap 20's** - Removes the upper attribute limit of 20 set in the game, allowing you to see a much more accurate value when certain players have some extremely good attributes. The values can now range from 1 to 46 (as far as I remember!). A prime example is of course Maxim Tsigalko where his Finishing attribute is actually much higher than 20 under the bonnet,  due to his low current ability and high attributes (but also the fact that he only has high attributes that are important for strikers).
 
 -   **Use Miscellaneous Patches** - I have put together a collection of patches provided by Nick (including contributions from Saturn, Tapani, John Locke, xeno, et al) that I feel enhance the game quite a bit. You can either have all of them or have none of them - there's no room to list them all individually on the Starter Kit interface! I'll try to briefly describe each of them here:
 
-    * **AllowInstantSquadStatusBiddingReset** - This allows you to instantly change the squad status offered to a player you are trying to sign.
+    * **AiSquadStatus** - You can now see the squad status of every player from every team on each team's Squad page and from each player's Contract page.
 
-    * **AllowJanuaryTransfersInChampionsLeague** - This allows players you sign in January to be included in your Champions League squad.
+    * **AllJobsTogether** - All available manager jobs are now grouped onto the same page. Please note this means _all_ jobs show against _every_ nation's job page. 
 
-    * **AllowLoansToPlayInEurope** - This allows players on loan to be able to play in European games.
+    * **AllowInstantSquadStatusBiddingReset** - Allows you to instantly change the squad status offered to a player you are trying to sign.
 
-    * **AllowNonEULoans** - This allows you to loan players from any country. Please note, this doesn't make much difference if you have already selected the "No Work Permits" option on the main patcher menu!
+    * **AllowJanuaryTransfersInChampionsLeague** - Allows players you sign in January to be included in your Champions League squad.
+
+    * **AllowLoansToPlayInEurope** - Allows players on loan to be able to play in European games.
+
+    * **AllowNonEULoans** - You can now loan players from any country. Please note, this doesn't make much difference if you have already selected the "No Work Permits" option on the main patcher menu!
 
     * **AllowYoungAndOld** - The original game had lower and higher limits on manager/non-player ages. These days managers start younger and finish later, so this patch removes that limit.
 
@@ -103,6 +107,8 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
     * **BTeamsIncreaseTo50Players** - Teams that have B teams only have 48 players taken from the database by default. This fixes that to the normal 50 players you would get with a reserve team.
 
+    * **ChairmanAttributes** - The ability to see the attributes of every chairman in the game. Please note this doesn't include other non-players like Managing Directors.
+
     * **DontRejectOffers** - The board/chairman will no longer interfere in your transfers.
 
     * **EnableSeasonTicketMoneyOnFirstYear** - The original game didn't give you season ticket money in the first season. This patch ensures you get season ticket revenue every year, including the first.
@@ -111,23 +117,29 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
     * **HalveSigningOnFees** - On the original game, AI clubs were spending a significant amount of revenue just on signing-on fees, especially for contract renewals. This halves the amount players ask for in signing-on fees, putting less of a burden on the AI clubs (and your own).
 
+    * **HideLanguageError** - Hides any error messages arising from playing the game in any non-English language.
+
     * **HumanManagerAttributes** - You can now see your own attributes on your Manager Profile page. These were always there in the background, but now you can see how they develop.
 
-    * **JobsAbroadBoost** - This makes some minor changes so that you should now find it easier to get a job in a different country to the one you started in.
+    * **JobsAbroadBoost** - Makes some minor changes so that you should now find it easier to get a job in a different country to the one you started in.
 
-    * **LoadContinentalComps** - This loads all continental club competitions regardless as to what leagues you have selected.
+    * **LoadContinentalComps** - Loads all continental club competitions regardless as to what leagues you have selected.
 
-    * **LoansBoost** - This increases the likelihood of more loan deals being made in the game.
+    * **LoansBoost** - Increases the likelihood of more loan deals being made in the game.
 
-    * **LoansUpdateIncreaseLoans** - This increases the number of loans that teams in England, Scotland, Ireland and France can make at any one time from 2 to 9.
+    * **LoansUpdateIncreaseLoans** - Increases the number of loans that teams in England, Scotland, Ireland and France can make at any one time from 2 to 9.
 
-    * **NicksFitnessPatch** - This removes the pre-defined period of the year whereby player fitness is greatly decreased.
+    * **ManageAnyTeam** - You can now apply for any job (club or nation) that currently does not have a manager. This includes clubs in inactive leagues. It also includes u21 teams.
 
-    * **NoTransferFundCountryBias** - This ensures the percentage of bank balance available for transfer funds for teams in each nation is equal.
+    * **NicksFitnessPatch** - Removes the pre-defined period of the year whereby player fitness is greatly decreased.
+
+    * **NoTransferFundCountryBias** - The percentage of bank balance available for transfer funds for teams in each nation is equal.
 
     * **ObsceneGestureSuspensions** - Suspensions given for players making obscene gestures will now take effect immediately instead of after 14 days. The description given for the ban now shows 'Misconduct' rather than 'Use of an illegal substance'.
 
-    * **PauseOnMinorInjury** - This will always ensure the game pauses during a match for an injury, no matter the severity of an injury, including minor knocks or strains.
+    * **PageDownPatch** - You can use the Page Down key on your keyboard to go through your newsfeed rather than the mouse (please note it won't work when it comes to an item you need to action).
+
+    * **PauseOnMinorInjury** - The game now pauses during a match for an injury, no matter the severity of an injury, including minor knocks or strains.
 
     * **RegensMegaBoost** - Regens with high potential abilities should come back with better attributes than before.
 
@@ -137,7 +149,13 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
     * **RetirePatch** - This ensures that players will not retire until they are at least 34.
 
+    * **RevealMatchErrors** - If you have any errors due to match engine issues, the game will attempt to tell you what the problem is (e.g. specify the team that cannot field enough players).
+
     * **ScoutRoleOffer** - Assistant Managers and Coaches can now be offered roles as Scouts.
+
+    * **SeeAnyTeamFinances** - You can now see any team's finances.
+
+    * **SeeAnyTeamTrainingFacilities** - You can now see any team's training ground level (out of 20). Please note, in any language other than English, this means that the quality description will display in English.
 
     * **StopYoungstersRejectingOffers** - Players younger than 18 will sometimes reject all offers no matter how famous your club is. This will disable that.
 
@@ -151,7 +169,7 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
 If you really do want to pick and choose which of these you use, after applying the Misc Patches, you can go into the **Patches** folder and remove some of the files there, and they then won't be loaded by the game.
 
--   **Apply Protection Patches** - Only use this if you are coming across error messages in your game that you cannot continue or 'holiday' past. It protects against specific crashes where the Argentinian league being loaded causes a crash, or a null pointer crash that usually occurs when all leagues are selected (which is never recommended!). There is also a fix for a "virtual_staff 195" error - if you get that error message, exit the game, apply these patches, and then when you reload the game, you should be able to continue past the error message. Like I said before, only apply these fixes if you desperately need to and cannot continue with your game otherwise.
+-   **Applying Protection Patches** - This functionality is no longer displayed directly in the Starter Kit, as too many people were just applying it willy nilly! So if you need to use it, manually copy it from the Optional subfolder of the Patches folder to the Patches folder itself. Only use this if you are coming across error messages in your game that you cannot continue or 'holiday' past. It protects against specific crashes where the Argentinian league being loaded causes a crash, or a null pointer crash that usually occurs when all leagues are selected (which is never recommended!). There is also a fix for a "virtual_staff 195" error - if you get that error message, exit the game, apply these patches, and then when you reload the game, you should be able to continue past the error message. Like I said before, only apply these fixes if you desperately need to and cannot continue with your game otherwise.
 
 **Please note:** When certain databases are loaded, some of the options in Nick's Patcher will be disabled ("greyed out"). This is because they have already been pre-applied to that database's executable file. Therefore, they were disabled to avoid 'double patching'.
 
