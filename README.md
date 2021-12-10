@@ -1,16 +1,14 @@
-# CM 01/02 Starter Kit
+# Championship Manager 01/02 Starter Kit
 
-Welcome to the CM 01/02 Starter Kit!
+Welcome to the Championship Manager 01/02 Starter Kit!
 
-The purpose of this little tool is to get you up and running as quickly as possible with CM 01/02. No need for worrying about downloading files, installing anything, applying separate patches or changing compatibility settings - this tool does everything required to get you setup on an original or updated version of CM!
+The purpose of this little tool is to get you up and running as quickly as possible with CM 01/02. No need for worrying about downloading files, installing anything, using external patchers or tools, or changing compatibility settings - this tool does everything required to get you setup on an original or updated version of CM!
 Please note that this tool works with **Windows XP, Vista, 7, 8 and 10** and now (should) work on all **Mac OSX** versions from **High Sierra** all the way up to **Big Sur**. Whilst I have done my best to test on each operating system, there will undoubtedly be scenarios and configurations I haven't managed to cater for. Also if you do use an older operating system
 (i.e. XP or Vista) performance may be choppy as it's hard to cater for a 20 year old operating system! I've attempted to make the tool look and feel like the game interface so it's a bit more familiar.
 
 For the Windows version, you will need to make sure you have the **Microsoft .NET 4.0** runtime or higher on your computer before running the tool. This should come pre-installed on Windows 7, 8 and 10, but XP and Vista may require you to manually install it. I've included the installation file with this tool (dotNetFx40setup.exe). Just run that to install it, and you should be good to go (you will need an Internet connection for this though). If you don't install .NET 4.0 or higher, it will come up with an error message saying that the application "**failed to initialise properly**".
 
-To get started, all you have to do is extract the downloaded zip file anywhere you like. I recommend doing that somewhere you know that your user account has full access to/permission for, like the Desktop or somewhere in your user folder. Click in to the folder that just got created and then double click on **CM0102StarterKit.exe** to start the tool up. Give it anywhere up to 30 seconds the first time you run it, as it needs to unpack the **Game** folder which contains everything needed for the tool to work.
-
-Just a note to please be aware that if you ever apply extra patches against an existing save game, it may result in errors or odd behaviour. The best thing to do is just load save games with the options/patches you had selected when you first created it (i.e. make a note of what you selected!). I've seen far too many people have problems as they have applied patches and expected them to apply to existing save games - obviously some patches are fine to use on save games, but others can kill it off!
+To get started, all you have to do is extract the downloaded zip file anywhere you like. I recommend doing that somewhere you know that your user account has full access to/permission for, like the Desktop or somewhere in your user folder. Click in to the folder that just got created and then double click on **CM0102StarterKit.exe** to start the tool up (if you want to, you can right click and run as an administrator, but it shouldn't be necessary). Give it anywhere up to 30 seconds the first time you run it, as it needs to unpack the **Game** folder which contains everything needed for the tool to work.
 
 If you have any issues upon first usage of the tool, please head to the support thread on the forum to see if the FAQs can help you: https://champman0102.net/viewtopic.php?p=14458#p14458
 
@@ -34,11 +32,11 @@ This should now allow you to unzip and run the application properly without any 
 
 -   If you want to browse the game folder, you will need to right click on the app, then click "Show Package Contents". Then you need to navigate to `drive_c -> Program Files -> Starter Kit v*.*.* -> Game`. This is where you can find your saved games, or copy content across like tactic folders, menu bars, etc.
 
--   If, after reading all of the above, you cannot get the tool running on your Mac, then the last resort would be to upgrade to the latest version of OSX (which at the time of writing is BigSur 11.3.1). It's always better to stay up-to-date with these things, and may alleviate certain issues. 
+-   If, after reading all of the above, you cannot get the tool running on your Mac, then the last resort would be to upgrade to Big Sur as that is the best version to experience the tool on. It's always better to stay up-to-date with these things anyway, and it may alleviate certain issues.
 
 ## The basics
 
-It's all very straightforward, but I will give a quick explanation about everything just in case. The main thing you might notice if you've seen the tool before is that it no longer requires any installation at all! Everything is contained within the folder that you create when you unzip the tool after downloading it. So you can easily play CM between different computers without having to install it! Here's a few screenshots and then an explanation of everything the tool does.
+It's all very straightforward, but I will give a quick explanation about everything just in case. The main thing you might notice if you've seen the tool before is that it no longer requires any installation at all! Everything is contained within the folder that you create when you unzip the tool after downloading it. So you can easily play CM between different computers without having to install it - you can just run it directly via a USB stick! Here's a few screenshots and then an explanation of everything the tool does.
 
 #### Main Menu
 
@@ -73,11 +71,11 @@ You have the choice of 10 different databases on the latest version of this tool
 
 I have also added the ability to save and load your own custom databases. Previously if you made any edits to any of the databases (using the Official Editor), these changes would get overwritten the next time you loaded a different database. You can now save a database with whatever name you like, and then reload it again at any point in the future if you want to use it again. All you need to do is load the desired default database, make some changes via the editor, and then press "Save Custom Database" and give it a name. The tool will then store that database somewhere for you to re-use (and will obviously keep it as the currently loaded database as well).
 
-As of version 1.2.2, the Custom Database functionality will allow you to load up any CM 01/02 database you like, provided it is in a zip file. So if there's a particular database you want to play that isn't on the Starter Kit, just download it from the forum for example, and then find the zip file via the Load Custom Database button. This _should_ work completely fine, provided the database you have downloaded does not have it's own executable file. Having to cater for that would have been far beyond the initial premise of the Starter Kit, and thus is not supported!
+As of version 1.2.2, the Custom Database functionality will allow you to load up any CM 01/02 database you like, provided it is in a zip file. So if there's a particular database you want to play that isn't on the Starter Kit, just download it from the forum for example, and then find the zip file via the Load Custom Database button. This _should_ work completely fine, provided the database you have downloaded does not have it's own executable file. Having to cater for that would have been far beyond the initial purpose of the Starter Kit, and thus is not supported!
 
 #### Nick's Patcher Menu
 
-<p align="left"><img src="https://i.ibb.co/n3Gph6n/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"/></p>
+<p align="left"><img src="https://i.ibb.co/wLZv7v6/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"/></p>
 
 Most of the options here are pretty straightforward, but for those that aren't, I'll give a brief explanation.
 
@@ -87,7 +85,7 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
 -   **Tapani Regen Code** - Fixes an issue where regens get an ever increasing 'Positioning' attribute, which eventually leads to very low scoring games years down the line (basically every defender becomes Maldini!). I believe it also makes changes so that regens are created to be more balanced (supposedly by default regens can generate with low physical attributes, etc - I think this patch attempts to fix that).
 
--   **Uncap 20's** - Removes the upper attribute limit of 20 set in the game, allowing you to see a much more accurate value when certain players have some extremely good attributes. The values can now range from 1 to 46 (as far as I remember!). A prime example is of course Maxim Tsigalko where his Finishing attribute is actually much higher than 20 under the bonnet,  due to his low current ability and high attributes (but also the fact that he only has high attributes that are important for strikers).
+-   **Uncap 20's** - Removes the upper attribute limit of 20 set in the game, allowing you to see a much more accurate value when certain players have some extremely good attributes. The values can now range from 1 to 46 (as far as I remember!). A prime example is of course Maxim Tsigalko where his Finishing attribute is actually much higher than 20 under the bonnet,  due to his low current ability and high attacking attributes.
 
 -   **Use Miscellaneous Patches** - I have put together a collection of patches provided by Nick (including contributions from Saturn, Tapani, John Locke, xeno, et al) that I feel enhance the game quite a bit. You can either have all of them or have none of them - there's no room to list them all individually on the Starter Kit interface! I'll try to briefly describe each of them here:
 
@@ -179,23 +177,29 @@ If you really do want to pick and choose which of these you use, after applying 
 
 **Please note:** When certain databases are loaded, some of the options in Nick's Patcher will be disabled ("greyed out"). This is because they have already been pre-applied to that database's executable file. Therefore, they were disabled to avoid 'double patching'.
 
+The **Apply Separate Patch** button allows you to manually load patches contained in patch files. These are basically text files (with a _.patch_ file extension), that contain the instructions used to apply different changes to the game. This can be useful, for example, if someone on the forum comes up with a patch that is not on the Starter Kit, that you think might be useful to have - you just download the patch file they have (hopefully) created, and apply it to the Starter Kit here. There may also be patch files that fix or workaround certain errors that can be applied this way too.
+
+**PLEASE, PLEASE NOTE!!** You need to remember the exact patches that were applied when you first created a save game, and ensure no other patches are applied on top or those, or any removed, whenever you want to play that same save game. This is because you can corrupt the save quite easily when adding and removing patches, and we all hate the dreaded error messages. If necessary, just screenshot the settings on the patcher menu, and also screenshot the contents of the *Patches* folder if you have been manually removing or adding any. I won't be able to assist with any issues that have arisen due to patching problems. I've seen far too many people have problems as they have applied patches and expected them to work on existing save games - obviously some patches are fine to use on save games, but others (most of them) can kill it off!
+
 More details about Nick's Patcher, including what each of the standard options do, can be found on the website forum here: https://champman0102.net/viewtopic.php?f=35&t=1943 and https://champman0102.net/viewtopic.php?f=72&p=5218.
 
 #### Play Game Menu
 
 <p align="left"><img src="https://i.ibb.co/nCctHty/PlayMenu.png" alt="PlayMenu" border="0"/></p>
 
-This is simply where you decide whether you want to play standard CM, or you want to apply the options selected on Nick's Patcher. Please note, that the Starter Kit now detects what database you have loaded, and only allows you to select the correct options for playing, to save on any confusion. The 89/90, 93/94 and 98/99 databases all use different executable files that have been pre-patched to set the correct year and add a few other things, hence why they have their own separate play buttons on this menu. All other databases can be started using the default CM01/02 play button on this menu (provided you have already switched to them on the Data Updates menu!).
+This is simply where you decide whether you want to play standard CM, or you want to apply the options selected on Nick's Patcher. Please note, that the Starter Kit now detects what database you have loaded, and only allows you to select the correct options for playing, to save on any confusion.
 
 #### Android Menu
 
 <p align="left"><img src="https://i.ibb.co/hfCvhXK/Android-Menu.png" alt="Android-Menu" border="0"/></p>
 
-If you have used the Starter Kit before, you will notice that this page is new. I wrote it in order to try to help people get up and running on their Android phone or tablet. I wanted to automate some of the process but there were a lot of restrictions on what I could do, so I had to resort to mainly just adding a list of instructions. Saying that, the tool will generate the exact files you need to copy across to your device in order to get it working. Just make sure you tick whether you want to add Nick's Patcher settings or not, and whether or not you are using Android 11 (there is a patch it adds if so). Make sure you follow the instructions as carefully as possible, but do bear in mind that Exagear Strategies (the software that gets installed on your Android device) doesn't always work on every phone - I have a Huawei P30 Pro and it doesn't work on there even though I'm on Android 10, because of the custom version of Android that they use. So don't be too disheartened if it turns out you cannot get it running!
+If you have used the Starter Kit before, you will notice that this page is relatively new. I wrote it in order to try to help people get up and running on their Android phone or tablet. I wanted to automate some of the process but there were a lot of restrictions on what I could do, so I had to resort to mainly just adding a list of instructions. Saying that, the tool will generate the exact files you need to copy across to your device in order to get it working. Just make sure you tick whether you want to add Nick's Patcher settings or not, and whether or not you are using Android 11 (there is a patch it adds if so). Make sure you follow the instructions as carefully as possible, but do bear in mind that Exagear Strategies (the software that gets installed on your Android device) doesn't always work on every phone - I have a Huawei P30 Pro and it doesn't work on there even though I'm on Android 10, because of the custom version of Android that they use. So don't be too disheartened if it turns out you cannot get it running!
 
 If you already have Exagear running OK on your phone then you can skip the second part of step 4 (copying the OBB file across), and also step 5. But if anything goes wrong, it might be worth starting from scratch.
 
 **Please note:** You cannot use the "load all players" and "change resolution to 1280x800" patches on Android as the former makes the game too slow to use, and the latter means that it doesn't display properly. If you have selected these options in Nick's Patcher, it will just ignore them when generating the files for Android.
+
+Nick (of Nick's Patcher fame) has written up some notes on how to get Exagear Windows working on Android devices. It is a more complete solution, but as I cannot run Exagear on my phone, I'm not able to test it all out, so haven't included it on the Starter Kit. Maybe I can add a release in the future for an actual Android version! Anyway, Nick's notes can be found here, although bear in mind they are quite technical: https://champman0102.net/viewtopic.php?p=46511#p46511
 
 ## Important notes
 
