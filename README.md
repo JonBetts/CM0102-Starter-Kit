@@ -73,6 +73,8 @@ I have also added the ability to save and load your own custom databases. Previo
 
 As of version 1.2.2, the Custom Database functionality will allow you to load up any CM 01/02 database you like, provided it is in a zip file. So if there's a particular database you want to play that isn't on the Starter Kit, just download it from the forum for example, and then find the zip file via the Load Custom Database button. This _should_ work completely fine, provided the database you have downloaded does not have it's own executable file. Having to cater for that would have been far beyond the initial purpose of the Starter Kit, and thus is not supported!
 
+**Please note:** The April 2021 database should _not_ be started in the year 2021 - although the database has been updated up until the end of the winter transfer windows of early 2021, any fixes the patchers have made (for competitions, etc) were based on a 2020 starting year. Of course, you can start in 2001 as per normal so you won't have to worry about any of this! Equally, the October 2021 database _should_ be either started in 2021 or 2001 for the same reasons.
+
 #### Nick's Patcher Menu
 
 <p align="left"><img src="https://i.ibb.co/wLZv7v6/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"/></p>
