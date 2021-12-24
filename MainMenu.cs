@@ -1,4 +1,5 @@
-﻿using ICSharpCode.SharpZipLib.Zip;
+﻿using CM0102_Starter_Kit.Properties;
+using ICSharpCode.SharpZipLib.Zip;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,12 +22,12 @@ namespace CM0102_Starter_Kit {
         private readonly AndroidMenu androidMenu;
 
         public MainMenu() {
-            InitialiseSharedControls("Setup Game", 373, false);
-            InitializeComponent();
             this.nickPatcherMenu = new NickPatcherMenu(this);
             this.versionMenu = new VersionMenu(this);
             this.playMenu = new PlayMenu(this);
             this.androidMenu = new AndroidMenu(this);
+            InitialiseSharedControls("Setup Game", 373, false);
+            InitializeComponent();
         }
  
         protected override List<Button> GetButtons() {
@@ -36,10 +37,11 @@ namespace CM0102_Starter_Kit {
                 this.nick_patcher,
                 this.editor,
                 this.play_game,
-                this.backup_saves,
+                this.android_menu,
                 this.cm_scout,
                 this.player_finder,
-                this.android_menu
+                this.backup_saves,
+                this.restore_saves
             };
         }
 
@@ -51,19 +53,10 @@ namespace CM0102_Starter_Kit {
             }
         }
 
-        private void RefreshExeFiles(ProgressWindow progressWindow) {
-            string tempZipFolder = Path.Combine(Directory.GetCurrentDirectory(), "Temp");
-            string tempZipFile = tempZipFolder + ".zip";
-            File.WriteAllBytes(tempZipFile, Properties.Resources.Exes);
+        private void RefreshExeFile(ProgressWindow progressWindow) {
             progressWindow.SetProgressPercentage(40);
-            new FastZip().ExtractZip(tempZipFile, tempZipFolder, null);
-            progressWindow.SetProgressPercentage(60);
-
-            // We now only need to ensure the main exe file is restored here
-            File.Copy(Path.Combine(GameFolder, Cm0102BackupExe), Path.Combine(GameFolder, Cm0102Exe), true);
+            File.WriteAllBytes(Path.Combine(GameFolder, Cm0102ExeFilename), Resources.cm0102_exe);
             progressWindow.SetProgressPercentage(80);
-            File.Delete(tempZipFile);
-            Directory.Delete(tempZipFolder, true);
         }
 
         private void RunExternalProcess(string workingDirectory, string executableFile) {
@@ -89,7 +82,7 @@ namespace CM0102_Starter_Kit {
                     result = "VAR Commentary successfully uninstalled!";
                 } else {
                     File.Move(ExistingCommentary, ExistingCommentaryBackup);
-                    File.WriteAllBytes(ExistingCommentary, Properties.Resources.events_eng);
+                    File.WriteAllBytes(ExistingCommentary, Resources.events_eng);
                     result = "VAR Commentary successfully installed! Please note this only applies when playing the game in English!";
                 }
                 RefreshForm();
@@ -107,7 +100,7 @@ namespace CM0102_Starter_Kit {
 
         private void Editor_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
-                RunExternalProcess(DataFolder, OfficialEditor);
+                RunExternalProcess(DataFolder, Path.Combine(GameFolder, "Editor", "cm0102ed.exe"));
             } else {
                 DisplayMessage(SwitchUpdateMessage);
             }
@@ -161,11 +154,11 @@ namespace CM0102_Starter_Kit {
         }
 
         private void CmScout_Click(object sender, EventArgs e) {
-            RunExternalProcess(GameFolder, CmScout);
+            RunExternalProcess(GameFolder, Path.Combine(GameFolder, "cmscout.exe"));
         }
 
         private void PlayerFinder_Click(object sender, EventArgs e) {
-            RunExternalProcess(GameFolder, PlayerFinder);
+            RunExternalProcess(GameFolder, Path.Combine(GameFolder, "gpf2.exe"));
         }
 
         private void AndroidMenu_Click(object sender, EventArgs e) {
@@ -182,29 +175,20 @@ namespace CM0102_Starter_Kit {
                 DisplayMessage("The Starter Kit is already running! Exiting...");
                 Application.Exit();
             }
-
             ProgressWindow progressWindow = CreateNewProgressWindow("Loading Starter Kit", 100);
 
-            if (!GameFolderExists()) {
-                Directory.CreateDirectory(GameFolder);
+            if (!Directory.Exists(GameFolder)) {
                 string gameZipFile = GameFolder + ".zip";
-                File.WriteAllBytes(gameZipFile, Properties.Resources.Game);
+                File.WriteAllBytes(gameZipFile, Resources.Game);
                 progressWindow.SetProgressPercentage(30);
                 new FastZip().ExtractZip(gameZipFile, GameFolder, null);
-                File.Delete(gameZipFile);
                 progressWindow.SetProgressPercentage(60);
+                File.Delete(gameZipFile);
 
                 Thread.Sleep(2000);
-                string exesZipFile = Path.Combine(GameFolder, "Exes.zip");
-                File.WriteAllBytes(exesZipFile, Properties.Resources.Exes);
-                progressWindow.SetProgressPercentage(80);
-                new FastZip().ExtractZip(exesZipFile, GameFolder, null);
-                File.Delete(exesZipFile);
-                int nextProgressPerc = 90;
-                progressWindow.SetProgressPercentage(nextProgressPerc);
-            } else {
-                RefreshExeFiles(progressWindow);
+                progressWindow.SetProgressPercentage(90);
             }
+            RefreshExeFile(progressWindow);
             progressWindow.SetProgressPercentage(100);
             RefreshForm();
             progressWindow.Close();

@@ -61,7 +61,7 @@ namespace CM0102_Starter_Kit {
 
         protected override void RefreshForm() {
             Database database = CurrentDatabase();
-            string[] lines = File.ReadAllLines(Path.Combine(GameFolder, CmLoaderCustomConfig));
+            string[] lines = File.ReadAllLines(Path.Combine(GameFolder, CmLoaderCustomConfigFilename));
 
             // No ComboBoxes have restricted values, so haven't implemented that here
             foreach (KeyValuePair<ComboBox, int> keyValuePair in GetComboBoxes()) {
@@ -140,12 +140,12 @@ namespace CM0102_Starter_Kit {
                 "Debug = false",
                 "NoCD = true"
             };
-            WriteToFile(values, Path.Combine(GameFolder, CmLoaderCustomConfig));
+            WriteToFile(values, Path.Combine(GameFolder, CmLoaderCustomConfigFilename));
             DisplayMessage("Settings successfully changed!");
 
             // Copy miscellaneous patches to main Patches folder
             if (this.misc_patches.Enabled && this.misc_patches.Checked) {
-            FileInfo[] patchFiles = new DirectoryInfo(MiscPatchesFolder).GetFiles("*.patch");
+            FileInfo[] patchFiles = new DirectoryInfo(Path.Combine(OptionalPatchesFolder, "Misc")).GetFiles("*.patch");
                 if (patchFiles.Length > 0) {
                     foreach (FileInfo patchFile in patchFiles) {
                         File.Copy(patchFile.FullName, Path.Combine(PatchesFolder, patchFile.Name), true);

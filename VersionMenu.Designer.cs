@@ -1,6 +1,4 @@
-﻿using static CM0102_Starter_Kit.Helper;
-
-namespace CM0102_Starter_Kit {
+﻿namespace CM0102_Starter_Kit {
     partial class VersionMenu {
 
         #region Windows Form Designer generated code

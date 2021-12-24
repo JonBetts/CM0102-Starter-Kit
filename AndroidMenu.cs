@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CM0102_Starter_Kit.Properties;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
@@ -51,18 +52,18 @@ namespace CM0102_Starter_Kit {
 
             Database database = CurrentDatabase(); 
             // Copy correct CM exe file across
-            File.Copy(Path.Combine(GameFolder, database.ExeFile), Path.Combine(ExagearFolder, Cm0102Exe), true);
+            File.WriteAllBytes(Path.Combine(ExagearFolder, Cm0102ExeFilename), database.ExeFile);
             // Copy CM loader exe file across
-            File.Copy(CmLoader, Path.Combine(ExagearFolder, CmLoaderExe), true);
+            File.Copy(Path.Combine(GameFolder, CmLoaderExeFilename), Path.Combine(ExagearFolder, CmLoaderExeFilename), true);
             progressWindow.SetProgressPercentage(5);
 
             // Copy correct CM loader config file across
-            string androidConfigFile = Path.Combine(ExagearFolder, CmLoaderAndroidConfig);
-            string configFile = CmLoaderConfig;
+            string androidConfigFile = Path.Combine(ExagearFolder, "CM0102Loader.ini");
+            string configFile = CmLoaderConfigFilename;
             bool copyPatchesFolder = false;
 
             if (this.nick_patcher.Checked) {
-                configFile = CmLoaderCustomConfig;
+                configFile = CmLoaderCustomConfigFilename;
                 copyPatchesFolder = true;
             }
             File.Copy(Path.Combine(GameFolder, configFile), androidConfigFile, true);
@@ -87,14 +88,18 @@ namespace CM0102_Starter_Kit {
             // Copy generic folders across
             CopyFolder(DataFolderName);
             progressWindow.SetProgressPercentage(45);
-            CopyFolder(PicturesFolderName);
+            CopyFolder("Pictures");
             progressWindow.SetProgressPercentage(65);
-            CopyFolder(SoundsFolderName);
+            CopyFolder("Sounds");
+            progressWindow.SetProgressPercentage(80);
+            String hallOfFameFilename = "hall_of_fame.bin";
+            File.Copy(Path.Combine(GameFolder, hallOfFameFilename), Path.Combine(ExagearFolder, hallOfFameFilename), true);
             progressWindow.SetProgressPercentage(85);
             Thread.Sleep(2000);
 
             if (this.android_11.Checked) {
-                File.Copy(Path.Combine(OptionalPatchesFolder, Android11Patch), Path.Combine(Path.Combine(ExagearFolder, PatchesFolderName), Android11Patch));
+                string Android11Patch = "Android11Patch.patch";
+                File.Copy(Path.Combine(OptionalPatchesFolder, Android11Patch), Path.Combine(ExagearFolder, PatchesFolderName, Android11Patch));
             }
             progressWindow.SetProgressPercentage(100);
             progressWindow.Close();

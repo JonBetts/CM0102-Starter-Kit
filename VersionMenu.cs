@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 using static CM0102_Starter_Kit.Helper;
 
@@ -25,11 +24,11 @@ namespace CM0102_Starter_Kit {
         protected override List<Button> GetButtons() {
             return new List<Button> {
                 this.april_database,
+                this.october_database,
                 this.original_database,
                 this.patched_database,
-                this.october_database,
-                this.november_database,
                 this.luessenhoff_database,
+                this.november_database,
                 this.cm89_database,
                 this.cm93_database,
                 this.cm95_database,
@@ -40,24 +39,27 @@ namespace CM0102_Starter_Kit {
         }
 
         private void UpdateConfigFiles(Database database) {
-            string defaultConfig = Path.Combine(GameFolder, CmLoaderConfig);
+            string defaultConfig = Path.Combine(GameFolder, CmLoaderConfigFilename);
             List<string> defaultLines = GetDefaultConfigFileLines(defaultConfig, database, false);
             WriteToFile(defaultLines, defaultConfig);
 
-            string customConfig = Path.Combine(GameFolder, CmLoaderCustomConfig);
+            string customConfig = Path.Combine(GameFolder, CmLoaderCustomConfigFilename);
             List<string> customLines = GetDefaultConfigFileLines(customConfig, database, false);
             WriteToFile(customLines, customConfig);
         }
 
+        private void DeleteDatabaseDetectorFiles() {
+            foreach (Database database in Databases) {
+                File.Delete(Path.Combine(DataFolder, database.Name + ".txt"));
+            }
+        }
+
         private void CopyDataToGame(Database database) {
-            string tempFolder = Path.Combine(GameFolder, "Temp");
             string dataZipFile = DataFolder + ".zip";
-            File.WriteAllBytes(dataZipFile, database.ResourceFile);
-            new FastZip().ExtractZip(dataZipFile, tempFolder, null);
+            File.WriteAllBytes(dataZipFile, database.DataFile);
 
             if (DataFolderExists()) {
-                // If this has previously been saved as a 'Custom Database', then remove the need to setup a prerequisite database first (i.e. delete the Data folder)
-                if (database.DeleteDataFolder || File.Exists(Path.Combine(tempFolder, CustomDatabase.Name + ".txt"))) {
+                if (database.DeleteDataFolder) {
                     foreach (string folder in Directory.GetDirectories(DataFolder)) {
                         Directory.Delete(folder, true);
                     }
@@ -66,20 +68,12 @@ namespace CM0102_Starter_Kit {
                     }
                 } else {
                     // If we're not deleting the Data folder, we still need to ensure the database detector files are removed
-                    foreach (Database existingDatabase in Databases) {
-                        File.Delete(Path.Combine(DataFolder, existingDatabase.Name + ".txt"));
-                    }
+                    DeleteDatabaseDetectorFiles();
                 }
             } else {
                 Directory.CreateDirectory(DataFolder);
             }
-            foreach (string folder in Directory.GetDirectories(tempFolder)) {
-                Directory.Move(folder, Path.Combine(DataFolder, new DirectoryInfo(folder).Name));
-            }
-            foreach (string file in Directory.GetFiles(tempFolder)) {
-                File.Copy(file, Path.Combine(DataFolder, Path.GetFileName(file)), true);
-            }
-            Directory.Delete(tempFolder, true);
+            new FastZip().ExtractZip(dataZipFile, DataFolder, null);
             File.Delete(dataZipFile);
         }
 
@@ -95,7 +89,7 @@ namespace CM0102_Starter_Kit {
         }
 
         private string FindFolderContainingData(string folderName) {
-            if (File.Exists(Path.Combine(folderName, PlayerSetupFile)) && !folderName.Equals(DataFolder)) {
+            if (File.Exists(Path.Combine(folderName, PlayerSetupFilename)) && !folderName.Equals(DataFolder)) {
                 return folderName;
             }
             foreach (string subFolder in Directory.GetDirectories(folderName)) {
@@ -131,14 +125,14 @@ namespace CM0102_Starter_Kit {
             progressWindow.SetProgressPercentage(20);
 
             // Ensure any database detector files are removed prior to saving this as a custom database, and also add the custom database detector file.
-            foreach (Database database in Databases) {
-                File.Delete(Path.Combine(DataFolder, database.Name + ".txt"));
-            }
+            DeleteDatabaseDetectorFiles();
             string customDetectorFile = Path.Combine(DataFolder, CustomDatabase.Name + ".txt");
             string databaseName = Path.GetFileNameWithoutExtension(this.saveDatabaseDialog.FileName);
             List<string> lines = new List<string> { databaseName };
             WriteToFile(lines, customDetectorFile);
             progressWindow.SetProgressPercentage(40);
+
+            // Save the Data folder as a zip file with the specified name
             new FastZip().CreateZip(this.saveDatabaseDialog.FileName, DataFolder, true, null);
             progressWindow.SetProgressPercentage(100);
             DisplayMessage("Custom database successfully saved!");
@@ -156,7 +150,7 @@ namespace CM0102_Starter_Kit {
             progressWindow.SetProgressPercentage(0);
 
             Database customDatabase = CustomDatabase;
-            customDatabase.ResourceFile = File.ReadAllBytes(this.loadDatabaseDialog.FileName);
+            customDatabase.DataFile = File.ReadAllBytes(this.loadDatabaseDialog.FileName);
             SetupDatabase(customDatabase, progressWindow);
 
             // Folder structures of data updates aren't always the same.
@@ -178,7 +172,7 @@ namespace CM0102_Starter_Kit {
                 }
             }
             // Add an error message if no valid database files can be found.
-            if (!File.Exists(Path.Combine(DataFolder, PlayerSetupFile))) {
+            if (!File.Exists(Path.Combine(DataFolder, PlayerSetupFilename))) {
                 closingMessage = "No valid database found!";
             }
             progressWindow.SetProgressPercentage(100);

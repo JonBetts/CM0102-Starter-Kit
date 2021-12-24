@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CM0102_Starter_Kit.Properties;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static CM0102_Starter_Kit.Helper;
 
@@ -47,13 +47,10 @@ namespace CM0102_Starter_Kit {
         }
 
         private void CopyExe(bool setup) {
-            String exeFile = CurrentDatabase().ExeFile;
-            if (!exeFile.Equals(Cm0102Exe)) {
-                if (setup) {
-                    File.Copy(Path.Combine(GameFolder, exeFile), Path.Combine(GameFolder, Cm0102Exe), true);
-                } else {
-                    File.Copy(Path.Combine(GameFolder, Cm0102BackupExe), Path.Combine(GameFolder, Cm0102Exe), true);
-                }
+            if (setup) {
+                File.WriteAllBytes(Path.Combine(GameFolder, Cm0102ExeFilename), CurrentDatabase().ExeFile);
+            } else {
+                File.WriteAllBytes(Path.Combine(GameFolder, Cm0102ExeFilename), Resources.cm0102_exe);
             }
         }
 
@@ -80,9 +77,9 @@ namespace CM0102_Starter_Kit {
 
             ProcessStartInfo playPsi = new ProcessStartInfo {
                 WorkingDirectory = GameFolder,
-                FileName = CmLoader,
+                FileName = Path.Combine(GameFolder, CmLoaderExeFilename),
                 UseShellExecute = false,
-                Arguments = useDefaultConfig ? CmLoaderConfig : CmLoaderCustomConfig
+                Arguments = useDefaultConfig ? CmLoaderConfigFilename : CmLoaderCustomConfigFilename
             };
             Process playProcess = Process.Start(playPsi);
             playProcess.WaitForExit();

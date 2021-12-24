@@ -1,5 +1,4 @@
-﻿
-namespace CM0102_Starter_Kit {
+﻿namespace CM0102_Starter_Kit {
     partial class ProgressWindow {
         /// <summary>
         /// Required designer variable.

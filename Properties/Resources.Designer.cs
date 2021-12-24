@@ -93,9 +93,29 @@ namespace CM0102_Starter_Kit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] cm0102_exe {
+            get {
+                object obj = ResourceManager.GetObject("cm0102_exe", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] cm3_data {
             get {
                 object obj = ResourceManager.GetObject("cm3_data", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] cm3_exe {
+            get {
+                object obj = ResourceManager.GetObject("cm3_exe", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -113,9 +133,29 @@ namespace CM0102_Starter_Kit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] cm89_exe {
+            get {
+                object obj = ResourceManager.GetObject("cm89_exe", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] cm93_data {
             get {
                 object obj = ResourceManager.GetObject("cm93_data", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] cm93_exe {
+            get {
+                object obj = ResourceManager.GetObject("cm93_exe", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -133,9 +173,9 @@ namespace CM0102_Starter_Kit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] events_eng {
+        public static byte[] cm95_exe {
             get {
-                object obj = ResourceManager.GetObject("events_eng", resourceCulture);
+                object obj = ResourceManager.GetObject("cm95_exe", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -143,9 +183,9 @@ namespace CM0102_Starter_Kit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] Exes {
+        public static byte[] events_eng {
             get {
-                object obj = ResourceManager.GetObject("Exes", resourceCulture);
+                object obj = ResourceManager.GetObject("events_eng", resourceCulture);
                 return ((byte[])(obj));
             }
         }
