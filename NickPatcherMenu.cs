@@ -115,7 +115,8 @@ namespace CM0102_Starter_Kit {
             }
             // If multiple patch files exist in the main Patches folder, tick the "Miscellaneous Patches" checkbox
             FileInfo[] patchFiles = new DirectoryInfo(PatchesFolder).GetFiles("*.patch");
-            if (patchFiles.Length > 1) {
+            // 6 is the most patches there can be in the Patches folder without having selected the Misc Patches
+            if (patchFiles.Length > 6) {
                 this.misc_patches.Checked = true;
             }
         }
