@@ -77,7 +77,7 @@ As of version 1.2.2, the Custom Database functionality will allow you to load up
 
 #### Nick's Patcher Menu
 
-<p align="left"><img src="https://i.ibb.co/wLZv7v6/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"/></p>
+<p align="left"><img src="https://i.ibb.co/Lt4grDv/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"/></p>
 
 Most of the options here are pretty straightforward, but for those that aren't, I'll give a brief explanation.
 
@@ -88,6 +88,8 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 -   **Tapani Regen Code** - Fixes an issue where regens get an ever increasing 'Positioning' attribute, which eventually leads to very low scoring games years down the line (basically every defender becomes Maldini!). I believe it also makes changes so that regens are created to be more balanced (supposedly by default regens can generate with low physical attributes, etc - I think this patch attempts to fix that).
 
 -   **Uncap 20's** - Removes the upper attribute limit of 20 set in the game, allowing you to see a much more accurate value when certain players have some extremely good attributes. The values can now range from 1 to 46 (as far as I remember!). A prime example is of course Maxim Tsigalko where his Finishing attribute is actually much higher than 20 under the bonnet,  due to his low current ability and high attacking attributes.
+
+-   **Show Hidden Attributes** - This adds a 4th column to the player attributes screen that let's you see attributes that would otherwise remain hidden. Seeing attributes such as Big Matches, Consistency, Injury Proneness and Penalties can really have a bearing on who you buy and sell!
 
 -   **Use Miscellaneous Patches** - I have put together a collection of patches provided by Nick (including contributions from Saturn, Tapani, John Locke, xeno, et al) that I feel enhance the game quite a bit. You can either have all of them or have none of them - there's no room to list them all individually on the Starter Kit interface! I'll try to briefly describe each of them here:
 
