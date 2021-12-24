@@ -55,7 +55,8 @@ namespace CM0102_Starter_Kit {
 
         private Dictionary<CheckBox, string> GetCheckboxPatches() {
             return new Dictionary<CheckBox, string> {
-                { this.foreign_player_limit, "NoForeignRestrictionsForAll.patch" }
+                { this.foreign_player_limit, "NoForeignRestrictionsForAll.patch" },
+                { this.hidden_attributes, "HiddenAttributes.patch" }
             };
         }
 
@@ -173,6 +174,13 @@ namespace CM0102_Starter_Kit {
                 File.Copy(Path.Combine(OptionalPatchesFolder, foreignLimitPatch), Path.Combine(PatchesFolder, foreignLimitPatch), true);
             } else {
                 File.Delete(Path.Combine(PatchesFolder, foreignLimitPatch));
+            }
+
+            string hiddenAttributesPatch = "HiddenAttributes.patch";
+            if (this.hidden_attributes.Enabled && this.hidden_attributes.Checked) {
+                File.Copy(Path.Combine(OptionalPatchesFolder, hiddenAttributesPatch), Path.Combine(PatchesFolder, hiddenAttributesPatch), true);
+            } else {
+                File.Delete(Path.Combine(PatchesFolder, hiddenAttributesPatch));
             }
         }
 

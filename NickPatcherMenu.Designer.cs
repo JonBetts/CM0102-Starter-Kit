@@ -25,6 +25,7 @@
             this.tapani_regen = new System.Windows.Forms.CheckBox();
             this.uncap = new System.Windows.Forms.CheckBox();
             this.misc_patches = new System.Windows.Forms.CheckBox();
+            this.hidden_attributes = new System.Windows.Forms.CheckBox();
             this.apply = new System.Windows.Forms.Button();
             this.apply_patch = new System.Windows.Forms.Button();
             this.applyPatchDialog = new System.Windows.Forms.OpenFileDialog();
@@ -64,7 +65,7 @@
             this.starting_year.Name = "starting_year";
             this.starting_year.ReadOnly = true;
             this.starting_year.Size = new System.Drawing.Size(100, 22);
-            this.starting_year.TabIndex = 0;
+            this.starting_year.TabIndex = 1;
             this.starting_year.TabStop = false;
             this.starting_year.Value = new decimal(new int[] {
             2001,
@@ -81,7 +82,7 @@
             this.game_speed_label.Location = new System.Drawing.Point(122, 173);
             this.game_speed_label.Name = "game_speed_label";
             this.game_speed_label.Size = new System.Drawing.Size(116, 21);
-            this.game_speed_label.TabIndex = 2;
+            this.game_speed_label.TabIndex = 3;
             this.game_speed_label.Text = "Game Speed";
             // 
             // game_speed
@@ -100,7 +101,7 @@
             this.game_speed.Location = new System.Drawing.Point(323, 173);
             this.game_speed.Name = "game_speed";
             this.game_speed.Size = new System.Drawing.Size(101, 23);
-            this.game_speed.TabIndex = 2;
+            this.game_speed.TabIndex = 4;
             this.game_speed.TabStop = false;
             this.game_speed.Text = "x4";
             // 
@@ -113,7 +114,7 @@
             this.currency_inflation_label.Location = new System.Drawing.Point(122, 224);
             this.currency_inflation_label.Name = "currency_inflation_label";
             this.currency_inflation_label.Size = new System.Drawing.Size(158, 21);
-            this.currency_inflation_label.TabIndex = 4;
+            this.currency_inflation_label.TabIndex = 6;
             this.currency_inflation_label.Text = "Currency Inflation";
             // 
             // currency_inflation
@@ -135,7 +136,7 @@
             this.currency_inflation.Name = "currency_inflation";
             this.currency_inflation.ReadOnly = true;
             this.currency_inflation.Size = new System.Drawing.Size(101, 22);
-            this.currency_inflation.TabIndex = 4;
+            this.currency_inflation.TabIndex = 7;
             this.currency_inflation.TabStop = false;
             this.currency_inflation.Value = new decimal(new int[] {
             100,
@@ -154,7 +155,7 @@
             this.coloured_attributes.Location = new System.Drawing.Point(122, 274);
             this.coloured_attributes.Name = "coloured_attributes";
             this.coloured_attributes.Size = new System.Drawing.Size(194, 25);
-            this.coloured_attributes.TabIndex = 6;
+            this.coloured_attributes.TabIndex = 9;
             this.coloured_attributes.TabStop = false;
             this.coloured_attributes.Text = "Coloured Attributes";
             this.coloured_attributes.UseVisualStyleBackColor = false;
@@ -168,7 +169,7 @@
             this.resolution.Location = new System.Drawing.Point(122, 323);
             this.resolution.Name = "resolution";
             this.resolution.Size = new System.Drawing.Size(301, 25);
-            this.resolution.TabIndex = 8;
+            this.resolution.TabIndex = 11;
             this.resolution.TabStop = false;
             this.resolution.Text = "Change Resolution to 1200x800";
             this.resolution.UseVisualStyleBackColor = false;
@@ -182,7 +183,7 @@
             this.work_permits.Location = new System.Drawing.Point(472, 125);
             this.work_permits.Name = "work_permits";
             this.work_permits.Size = new System.Drawing.Size(170, 25);
-            this.work_permits.TabIndex = 1;
+            this.work_permits.TabIndex = 2;
             this.work_permits.TabStop = false;
             this.work_permits.Text = "No Work Permits";
             this.work_permits.UseVisualStyleBackColor = false;
@@ -198,7 +199,7 @@
             this.non_public_bids.Location = new System.Drawing.Point(472, 172);
             this.non_public_bids.Name = "non_public_bids";
             this.non_public_bids.Size = new System.Drawing.Size(208, 25);
-            this.non_public_bids.TabIndex = 3;
+            this.non_public_bids.TabIndex = 5;
             this.non_public_bids.TabStop = false;
             this.non_public_bids.Text = "Hide Non-Public Bids";
             this.non_public_bids.UseVisualStyleBackColor = false;
@@ -214,7 +215,7 @@
             this.seven_substitutes.Location = new System.Drawing.Point(472, 220);
             this.seven_substitutes.Name = "seven_substitutes";
             this.seven_substitutes.Size = new System.Drawing.Size(242, 25);
-            this.seven_substitutes.TabIndex = 5;
+            this.seven_substitutes.TabIndex = 8;
             this.seven_substitutes.TabStop = false;
             this.seven_substitutes.Text = "Increase To 7 Substitutes";
             this.seven_substitutes.UseVisualStyleBackColor = false;
@@ -230,7 +231,7 @@
             this.unprotected_contracts.Location = new System.Drawing.Point(472, 274);
             this.unprotected_contracts.Name = "unprotected_contracts";
             this.unprotected_contracts.Size = new System.Drawing.Size(288, 25);
-            this.unprotected_contracts.TabIndex = 7;
+            this.unprotected_contracts.TabIndex = 10;
             this.unprotected_contracts.TabStop = false;
             this.unprotected_contracts.Text = "Disable Unprotected Contracts";
             this.unprotected_contracts.UseVisualStyleBackColor = false;
@@ -244,7 +245,7 @@
             this.foreign_player_limit.Location = new System.Drawing.Point(472, 323);
             this.foreign_player_limit.Name = "foreign_player_limit";
             this.foreign_player_limit.Size = new System.Drawing.Size(301, 25);
-            this.foreign_player_limit.TabIndex = 9;
+            this.foreign_player_limit.TabIndex = 12;
             this.foreign_player_limit.TabStop = false;
             this.foreign_player_limit.Text = "Remove All Foreign Player Limits";
             this.foreign_player_limit.UseVisualStyleBackColor = false;
@@ -260,7 +261,7 @@
             this.regen_fixes.Location = new System.Drawing.Point(122, 368);
             this.regen_fixes.Name = "regen_fixes";
             this.regen_fixes.Size = new System.Drawing.Size(130, 25);
-            this.regen_fixes.TabIndex = 10;
+            this.regen_fixes.TabIndex = 13;
             this.regen_fixes.TabStop = false;
             this.regen_fixes.Text = "Regen Fixes";
             this.regen_fixes.UseVisualStyleBackColor = false;
@@ -274,7 +275,7 @@
             this.force_all_players.Location = new System.Drawing.Point(472, 368);
             this.force_all_players.Name = "force_all_players";
             this.force_all_players.Size = new System.Drawing.Size(163, 25);
-            this.force_all_players.TabIndex = 11;
+            this.force_all_players.TabIndex = 14;
             this.force_all_players.TabStop = false;
             this.force_all_players.Text = "Load All Players";
             this.force_all_players.UseVisualStyleBackColor = false;
@@ -288,7 +289,7 @@
             this.tapani_regen.Location = new System.Drawing.Point(122, 414);
             this.tapani_regen.Name = "tapani_regen";
             this.tapani_regen.Size = new System.Drawing.Size(187, 25);
-            this.tapani_regen.TabIndex = 12;
+            this.tapani_regen.TabIndex = 15;
             this.tapani_regen.TabStop = false;
             this.tapani_regen.Text = "Tapani Regen Code";
             this.tapani_regen.UseVisualStyleBackColor = false;
@@ -302,7 +303,7 @@
             this.uncap.Location = new System.Drawing.Point(472, 414);
             this.uncap.Name = "uncap";
             this.uncap.Size = new System.Drawing.Size(125, 25);
-            this.uncap.TabIndex = 13;
+            this.uncap.TabIndex = 16;
             this.uncap.TabStop = false;
             this.uncap.Text = "Uncap 20\'s";
             this.uncap.UseVisualStyleBackColor = false;
@@ -316,10 +317,24 @@
             this.misc_patches.Location = new System.Drawing.Point(122, 460);
             this.misc_patches.Name = "misc_patches";
             this.misc_patches.Size = new System.Drawing.Size(259, 25);
-            this.misc_patches.TabIndex = 14;
+            this.misc_patches.TabIndex = 17;
             this.misc_patches.TabStop = false;
             this.misc_patches.Text = "Use Miscellaneous Patches";
             this.misc_patches.UseVisualStyleBackColor = false;
+            // 
+            // hidden_attributes
+            // 
+            this.hidden_attributes.AutoSize = true;
+            this.hidden_attributes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.hidden_attributes.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.hidden_attributes.ForeColor = System.Drawing.Color.White;
+            this.hidden_attributes.Location = new System.Drawing.Point(472, 460);
+            this.hidden_attributes.Name = "hidden_attributes";
+            this.hidden_attributes.Size = new System.Drawing.Size(229, 25);
+            this.hidden_attributes.TabIndex = 18;
+            this.hidden_attributes.TabStop = false;
+            this.hidden_attributes.Text = "Show Hidden Attributes";
+            this.hidden_attributes.UseVisualStyleBackColor = false;
             // 
             // apply
             // 
@@ -357,7 +372,7 @@
             this.apply_patch.Margin = new System.Windows.Forms.Padding(0);
             this.apply_patch.Name = "apply_patch";
             this.apply_patch.Size = new System.Drawing.Size(183, 30);
-            this.apply_patch.TabIndex = 21;
+            this.apply_patch.TabIndex = 20;
             this.apply_patch.TabStop = false;
             this.apply_patch.Text = "Apply Separate Patch";
             this.apply_patch.UseVisualStyleBackColor = false;
@@ -374,7 +389,7 @@
             this.transparent_panel.Location = new System.Drawing.Point(107, 120);
             this.transparent_panel.Name = "transparent_panel";
             this.transparent_panel.Size = new System.Drawing.Size(683, 372);
-            this.transparent_panel.TabIndex = 20;
+            this.transparent_panel.TabIndex = 21;
             this.transparent_panel.TabStop = false;
             // 
             // NickPatcherMenu
@@ -399,6 +414,7 @@
             this.Controls.Add(this.force_all_players);
             this.Controls.Add(this.regen_fixes);
             this.Controls.Add(this.misc_patches);
+            this.Controls.Add(this.hidden_attributes);
             this.Controls.Add(this.apply);
             this.Controls.Add(this.apply_patch);
             this.Controls.Add(this.transparent_panel);
@@ -431,6 +447,7 @@
         private System.Windows.Forms.CheckBox tapani_regen;
         private System.Windows.Forms.CheckBox uncap;
         private System.Windows.Forms.CheckBox misc_patches;
+        private System.Windows.Forms.CheckBox hidden_attributes;
         private System.Windows.Forms.Button apply;
         private System.Windows.Forms.Button apply_patch;
         private System.Windows.Forms.OpenFileDialog applyPatchDialog;
