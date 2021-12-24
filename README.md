@@ -73,13 +73,16 @@ I have also added the ability to save and load your own custom databases. Previo
 
 As of version 1.2.2, the Custom Database functionality will allow you to load up any CM 01/02 database you like, provided it is in a zip file. So if there's a particular database you want to play that isn't on the Starter Kit, just download it from the forum for example, and then find the zip file via the Load Custom Database button. This _should_ work completely fine, provided the database you have downloaded does not have it's own executable file. Having to cater for that would have been far beyond the initial purpose of the Starter Kit, and thus is not supported!
 
-**Please note:** The April 2021 database should _not_ be started in the year 2021 - although the database has been updated up until the end of the winter transfer windows of early 2021, any fixes the patchers have made (for competitions, etc) were based on a 2020 starting year. Of course, you can start in 2001 as per normal so you won't have to worry about any of this! Equally, the October 2021 database _should_ be either started in 2021 or 2001 for the same reasons.
+**Please note:** The April 2021 database should _not_ be started in the year 2021 - although the database has been updated up until the end of the winter transfer windows of early 2021, any fixes the tech wizards have made (for competitions, etc) were based on a 2020 starting year. Of course, you can start in 2001 as per normal so you won't have to worry about any of this! Equally, the October 2021 database _should_ be either started in 2021 or 2001 for the same reasons, and the November 2020 database in 2020 or 2001 too.
 
 #### Nick's Patcher Menu
 
 <p align="left"><img src="https://i.ibb.co/Lt4grDv/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"/></p>
 
 Most of the options here are pretty straightforward, but for those that aren't, I'll give a brief explanation.
+
+-   **Starting Year** - It's quite obvious what this option does. However, please note that changing the start year can be prone to errors as certain magic is done in the background in order to get it working properly. If you want to take as little risk as possible, start in the year 2001 regardless as to the database you are using! Although bear in mind certain custom databases don't allow you to change the starting year, so ignore this advice in that instance. *Please note* if you have loaded the November 2020 or April 2021 databases, and want to start in the year 2020 rather than 2001, you should apply the year change and any other patches via Nick's Patcher _*before*_ editing any of the data. This is because changing the year will trigger a copy of a different dataset that includes Nick's "year specific patches" and thus the transfer windows and competition name patches. Once you've applied the patches you want, then feel free to edit the database after that point! The same goes for the October 2021 database being started in the year 2021.
+
 
 -   **Regen Fixes** - Fixes a few minor things related to regens - only clubs with 45 or less players in the squad will now have regens generated (to keep AI squads free for other transfers), and it also fixes the issue of older regens (25+) being generated within smaller nations.
 
