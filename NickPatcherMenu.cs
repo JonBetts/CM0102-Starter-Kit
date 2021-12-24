@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CM0102_Starter_Kit.Properties;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -120,8 +121,11 @@ namespace CM0102_Starter_Kit {
         }
 
         private void Apply_Click(object sender, EventArgs e) {
+            ProgressWindow progressWindow = CreateNewProgressWindow("Applying changes", 95);
+            progressWindow.SetProgressPercentage(0);
+
             List<string> values = new List<string> {
-                "Year = " + (this.starting_year.Enabled ? this.starting_year.Value.ToString() : "0"),
+                "Year = " + GetStartingYear(),
                 "SpeedMultiplier = " + this.game_speed.SelectedItem.ToString().Replace("x", ""),
                 "CurrencyMultiplier = " + this.currency_inflation.Value.ToString(),
                 "ColouredAttributes = " + (this.coloured_attributes.Enabled ? this.coloured_attributes.Checked.ToString().ToLower() : "false"),
@@ -142,7 +146,7 @@ namespace CM0102_Starter_Kit {
                 "NoCD = true"
             };
             WriteToFile(values, Path.Combine(GameFolder, CmLoaderCustomConfigFilename));
-            DisplayMessage("Settings successfully changed!");
+            progressWindow.SetProgressPercentage(10);
 
             // Copy miscellaneous patches to main Patches folder
             if (this.misc_patches.Enabled && this.misc_patches.Checked) {
@@ -160,6 +164,7 @@ namespace CM0102_Starter_Kit {
                     }
                 }
             }
+            progressWindow.SetProgressPercentage(20);
 
             string leagueCupSubsPatch = "LeagueCupSubs.patch";
             if (this.seven_substitutes.Enabled && this.seven_substitutes.Checked) {
@@ -182,12 +187,39 @@ namespace CM0102_Starter_Kit {
             } else {
                 File.Delete(Path.Combine(PatchesFolder, hiddenAttributesPatch));
             }
+            progressWindow.SetProgressPercentage(30);
+
+            // We may need to also update the data files, depending on which database is active and what the chosen starting year is.
+            // Currently, this will trigger with the November 2020 and April 2021 databases with a 2020 starting year, and the October 2021 database with a 2021 starting year.
+            Database currentDatabase = CurrentDatabase();
+
+            if (currentDatabase.Equals(NovemberDatabase) && starting_year.Value.Equals(2020)) {
+                mainMenu.versionMenu.SetupDatabase(NovemberDatabasePatched, progressWindow);
+            } else if (currentDatabase.Equals(NovemberDatabasePatched) && !starting_year.Value.Equals(2020)) {
+                mainMenu.versionMenu.SetupDatabase(NovemberDatabase, progressWindow);
+            } else if (currentDatabase.Equals(AprilDatabase) && starting_year.Value.Equals(2020)) {
+                mainMenu.versionMenu.SetupDatabase(AprilDatabasePatched, progressWindow);
+            } else if (currentDatabase.Equals(AprilDatabasePatched) && !starting_year.Value.Equals(2020)) {
+                mainMenu.versionMenu.SetupDatabase(AprilDatabase, progressWindow);
+            } else if (currentDatabase.Equals(OctoberDatabase) && starting_year.Value.Equals(2021)) {
+                mainMenu.versionMenu.SetupDatabase(OctoberDatabasePatched, progressWindow);
+                // Apply Reading and Derby points deduction patch
+                File.Copy(Path.Combine(OptionalPatchesFolder, PointsDeductionPatch), Path.Combine(PatchesFolder, PointsDeductionPatch), true);
+            } else if (currentDatabase.Equals(OctoberDatabasePatched) && !starting_year.Value.Equals(2021)) {
+                mainMenu.versionMenu.SetupDatabase(OctoberDatabase, progressWindow);
+            }
+            progressWindow.SetProgressPercentage(100);
+            DisplayMessage("Settings successfully changed!");
+            progressWindow.Close();
         }
 
         private void NickPatcherMenu_FormClosed(object sender, FormClosedEventArgs e) {
             Application.Exit();
         }
 
+        internal string GetStartingYear() {
+            return this.starting_year.Enabled ? this.starting_year.Value.ToString() : "0";
+        }
 
         private void ApplyPatch_Click(object sender, EventArgs e) {
             if (Directory.Exists(PatchesFolder)) {

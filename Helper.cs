@@ -21,6 +21,7 @@ namespace CM0102_Starter_Kit {
         internal static readonly string PatchesFolderName = "Patches";
         internal static readonly string PatchesFolder = Path.Combine(GameFolder, PatchesFolderName);
         internal static readonly string OptionalPatchesFolder = Path.Combine(PatchesFolder, "Optional");
+        internal static readonly string PointsDeductionPatch = "PointsDeductions.patch";
         internal static readonly string ExagearFolder = Path.Combine(GameFolder, "Android", "Exagear");
         internal static readonly string SwitchUpdateMessage = "Please use the Data Updates menu to load up a database first!";
         internal static readonly CultureInfo CultureInfo = new CultureInfo("en-GB");
@@ -105,20 +106,24 @@ namespace CM0102_Starter_Kit {
             internal byte[] ExeFile { get; }
         }
 
-        private static readonly Database OriginalDatabase = new Database("original_database", "Original (3.9.60)", Resources.original_data, true, Resources.cm0102_exe);
-        private static readonly Database PatchedDatabase = new Database("patched_database", "Patched (3.9.68)", Resources.patched_data, true, Resources.cm0102_exe);
-        private static readonly Database OctoberDatabase = new Database("october_database", "October 2021", Resources.october_data, false, Resources.cm0102_exe, PatchedDatabase);
-        private static readonly Database NovemberDatabase = new Database("november_database", "November 2020", Resources.november_data, false, Resources.cm0102_exe, PatchedDatabase);
-        private static readonly Database AprilDatabase = new Database("april_database", "April 2021", Resources.april_data, false, Resources.cm0102_exe, PatchedDatabase);
-        private static readonly Database LuessenhoffDatabase = new Database("luessenhoff_database", "Luessenhoff", Resources.luessenhoff_data, false, Resources.cm0102_exe, OriginalDatabase);
-        private static readonly Database Cm89Database = new Database("cm89_database", "1989/90", Resources.cm89_data, true, Resources.cm89_exe, Cm89ConfigLines);
-        private static readonly Database Cm93Database = new Database("cm93_database", "1993/94", Resources.cm93_data, true, Resources.cm93_exe, Cm93ConfigLines);
-        private static readonly Database Cm95Database = new Database("cm95_database", "1995/96", Resources.cm95_data, true, Resources.cm95_exe, Cm95ConfigLines);
-        private static readonly Database Cm3Database = new Database("cm3_database", "1998/99", Resources.cm3_data, true, Resources.cm3_exe, Cm3ConfigLines);
-        public static readonly Database CustomDatabase = new Database("custom_database", "Custom Database", null, false, Resources.cm0102_exe, PatchedDatabase);
+        internal static readonly Database OriginalDatabase = new Database("original_database", "Original (3.9.60)", Resources.original_data, true, Resources.cm0102_exe);
+        internal static readonly Database PatchedDatabase = new Database("patched_database", "Patched (3.9.68)", Resources.patched_data, true, Resources.cm0102_exe);
+        internal static readonly Database OctoberDatabase = new Database("october_database", "October 2021", Resources.october_data, false, Resources.cm0102_exe, PatchedDatabase);
+        internal static readonly Database NovemberDatabase = new Database("november_database", "November 2020", Resources.november_data, false, Resources.cm0102_exe, PatchedDatabase);
+        internal static readonly Database AprilDatabase = new Database("april_database", "April 2021", Resources.april_data, false, Resources.cm0102_exe, PatchedDatabase);
+        internal static readonly Database LuessenhoffDatabase = new Database("luessenhoff_database", "Luessenhoff", Resources.luessenhoff_data, false, Resources.cm0102_exe, OriginalDatabase);
+        internal static readonly Database Cm89Database = new Database("cm89_database", "1989/90", Resources.cm89_data, true, Resources.cm89_exe, Cm89ConfigLines);
+        internal static readonly Database Cm93Database = new Database("cm93_database", "1993/94", Resources.cm93_data, true, Resources.cm93_exe, Cm93ConfigLines);
+        internal static readonly Database Cm95Database = new Database("cm95_database", "1995/96", Resources.cm95_data, true, Resources.cm95_exe, Cm95ConfigLines);
+        internal static readonly Database Cm3Database = new Database("cm3_database", "1998/99", Resources.cm3_data, true, Resources.cm3_exe, Cm3ConfigLines);
+        internal static readonly Database CustomDatabase = new Database("custom_database", "Custom Database", null, false, Resources.cm0102_exe, PatchedDatabase);
+        internal static readonly Database OctoberDatabasePatched = new Database("october_database_patched", "October 2021", Resources.october_data_patched, false, Resources.cm0102_oct_exe, PatchedDatabase);
+        internal static readonly Database NovemberDatabasePatched = new Database("november_database_patched", "November 2020", Resources.november_data_patched, false, Resources.cm0102_nov_exe, PatchedDatabase);
+        internal static readonly Database AprilDatabasePatched = new Database("april_database_patched", "April 2021", Resources.april_data_patched, false, Resources.cm0102_apr_exe, PatchedDatabase);
 
         internal static readonly List<Database> Databases = new List<Database> {
-            OriginalDatabase, PatchedDatabase, OctoberDatabase, NovemberDatabase, AprilDatabase, LuessenhoffDatabase, Cm89Database, Cm93Database, Cm95Database, Cm3Database
+            OriginalDatabase, PatchedDatabase, OctoberDatabase, NovemberDatabase, AprilDatabase, LuessenhoffDatabase, Cm89Database,
+            Cm93Database, Cm95Database, Cm3Database, OctoberDatabasePatched, NovemberDatabasePatched, AprilDatabasePatched
         };
 
         internal static Database CurrentDatabase() {

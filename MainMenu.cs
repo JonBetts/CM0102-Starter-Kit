@@ -16,10 +16,10 @@ namespace CM0102_Starter_Kit {
         : HidableForm
     #endif
     {
-        private readonly NickPatcherMenu nickPatcherMenu;
-        private readonly VersionMenu versionMenu;
-        private readonly PlayMenu playMenu;
-        private readonly AndroidMenu androidMenu;
+        internal readonly NickPatcherMenu nickPatcherMenu;
+        internal readonly VersionMenu versionMenu;
+        internal readonly PlayMenu playMenu;
+        internal readonly AndroidMenu androidMenu;
 
         public MainMenu() {
             this.nickPatcherMenu = new NickPatcherMenu(this);

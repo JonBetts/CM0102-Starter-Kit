@@ -71,6 +71,16 @@ namespace CM0102_Starter_Kit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] april_data_patched {
+            get {
+                object obj = ResourceManager.GetObject("april_data_patched", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap batigol {
@@ -93,9 +103,39 @@ namespace CM0102_Starter_Kit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] cm0102_apr_exe {
+            get {
+                object obj = ResourceManager.GetObject("cm0102_apr_exe", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] cm0102_exe {
             get {
                 object obj = ResourceManager.GetObject("cm0102_exe", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] cm0102_nov_exe {
+            get {
+                object obj = ResourceManager.GetObject("cm0102_nov_exe", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] cm0102_oct_exe {
+            get {
+                object obj = ResourceManager.GetObject("cm0102_oct_exe", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -243,9 +283,29 @@ namespace CM0102_Starter_Kit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] november_data_patched {
+            get {
+                object obj = ResourceManager.GetObject("november_data_patched", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] october_data {
             get {
                 object obj = ResourceManager.GetObject("october_data", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] october_data_patched {
+            get {
+                object obj = ResourceManager.GetObject("october_data_patched", resourceCulture);
                 return ((byte[])(obj));
             }
         }

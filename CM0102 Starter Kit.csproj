@@ -161,13 +161,16 @@
     <None Include="app.config" />
     <None Include="app.manifest" />
     <None Include="data\april_data.zip" />
+    <None Include="data\april_data_patched.zip" />
     <None Include="data\cm3_data.zip" />
     <None Include="data\cm89_data.zip" />
     <None Include="data\cm93_data.zip" />
     <None Include="data\cm95_data.zip" />
     <None Include="data\luessenhoff_data.zip" />
     <None Include="data\november_data.zip" />
+    <None Include="data\november_data_patched.zip" />
     <None Include="data\october_data.zip" />
+    <None Include="data\october_data_patched.zip" />
     <None Include="data\original_data.zip" />
     <None Include="data\patched_data.zip" />
     <None Include="external\events_eng.cfg" />
@@ -177,6 +180,9 @@
     <None Include="external\Files\cm89.exe" />
     <None Include="external\Files\cm93.exe" />
     <None Include="external\Files\cm95.exe" />
+    <None Include="external\Files\cm0102_apr.exe" />
+    <None Include="external\Files\cm0102_nov.exe" />
+    <None Include="external\Files\cm0102_oct.exe" />
     <None Include="images\batigol.jpg" />
     <None Include="images\boca.jpg" />
     <None Include="images\owen.jpg" />
