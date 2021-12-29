@@ -143,6 +143,7 @@ namespace CM0102_Starter_Kit {
                 "AutoLoadPatchFiles = true",
                 "PatchFileDirectory = " + PatchesFolderName,
                 "DataDirectory = data",
+                "DisableSplashScreen = false",
                 "Debug = false",
                 "NoCD = true"
             };
