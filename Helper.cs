@@ -79,6 +79,19 @@ namespace CM0102_Starter_Kit {
             { 16, new ConfigLine(16, "PatchFileDirectory", "Patches") }
         };
 
+        private static readonly Dictionary<int, ConfigLine> Nov2020ConfigLines = new Dictionary<int, ConfigLine> {
+            { 1, new ConfigLine(1, "Year", "2020") }
+        };
+
+        private static readonly Dictionary<int, ConfigLine> Apr2021ConfigLines = new Dictionary<int, ConfigLine> {
+            { 1, new ConfigLine(1, "Year", "2020") }
+        };
+
+        private static readonly Dictionary<int, ConfigLine> Oct2021ConfigLines = new Dictionary<int, ConfigLine> {
+            { 1, new ConfigLine(1, "Year", "2021") }
+        };
+
+
         internal class Database {
             internal Database(string name, string label, byte[] dataFile, bool deleteDataFolder, byte[] exeFile) {
                 this.Name = name;
@@ -94,6 +107,10 @@ namespace CM0102_Starter_Kit {
             }
 
             internal Database(string name, string label, byte[] dataFile, bool deleteDataFolder, byte[] exeFile, Dictionary<int, ConfigLine> configLines) : this(name, label, dataFile, deleteDataFolder, exeFile) {
+                this.ConfigLines = configLines;
+            }
+
+            internal Database(string name, string label, byte[] dataFile, bool deleteDataFolder, byte[] exeFile, Database prerequisiteDatabase, Dictionary<int, ConfigLine> configLines) : this(name, label, dataFile, deleteDataFolder, exeFile, prerequisiteDatabase) {
                 this.ConfigLines = configLines;
             }
 
@@ -117,9 +134,9 @@ namespace CM0102_Starter_Kit {
         internal static readonly Database Cm95Database = new Database("cm95_database", "1995/96", Resources.cm95_data, true, Resources.cm95_exe, Cm95ConfigLines);
         internal static readonly Database Cm3Database = new Database("cm3_database", "1998/99", Resources.cm3_data, true, Resources.cm3_exe, Cm3ConfigLines);
         internal static readonly Database CustomDatabase = new Database("custom_database", "Custom Database", null, false, Resources.cm0102_exe, PatchedDatabase);
-        internal static readonly Database OctoberDatabasePatched = new Database("october_database_patched", "October 2021", Resources.october_data_patched, false, Resources.cm0102_oct_exe, PatchedDatabase);
-        internal static readonly Database NovemberDatabasePatched = new Database("november_database_patched", "November 2020", Resources.november_data_patched, false, Resources.cm0102_nov_exe, PatchedDatabase);
-        internal static readonly Database AprilDatabasePatched = new Database("april_database_patched", "April 2021", Resources.april_data_patched, false, Resources.cm0102_apr_exe, PatchedDatabase);
+        internal static readonly Database OctoberDatabasePatched = new Database("october_database_patched", "October 2021", Resources.october_data_patched, false, Resources.cm0102_oct_exe, PatchedDatabase, Oct2021ConfigLines);
+        internal static readonly Database NovemberDatabasePatched = new Database("november_database_patched", "November 2020", Resources.november_data_patched, false, Resources.cm0102_nov_exe, PatchedDatabase, Nov2020ConfigLines);
+        internal static readonly Database AprilDatabasePatched = new Database("april_database_patched", "April 2021", Resources.april_data_patched, false, Resources.cm0102_apr_exe, PatchedDatabase, Apr2021ConfigLines);
 
         internal static readonly List<Database> Databases = new List<Database> {
             OriginalDatabase, PatchedDatabase, OctoberDatabase, NovemberDatabase, AprilDatabase, LuessenhoffDatabase, Cm89Database,
