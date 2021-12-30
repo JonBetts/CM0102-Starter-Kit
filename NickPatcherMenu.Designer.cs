@@ -154,10 +154,10 @@
             this.coloured_attributes.ForeColor = System.Drawing.Color.White;
             this.coloured_attributes.Location = new System.Drawing.Point(122, 274);
             this.coloured_attributes.Name = "coloured_attributes";
-            this.coloured_attributes.Size = new System.Drawing.Size(194, 25);
+            this.coloured_attributes.Size = new System.Drawing.Size(231, 25);
             this.coloured_attributes.TabIndex = 9;
             this.coloured_attributes.TabStop = false;
-            this.coloured_attributes.Text = "Coloured Attributes";
+            this.coloured_attributes.Text = "Add Coloured Attributes";
             this.coloured_attributes.UseVisualStyleBackColor = false;
             // 
             // resolution
@@ -182,10 +182,10 @@
             this.work_permits.ForeColor = System.Drawing.Color.White;
             this.work_permits.Location = new System.Drawing.Point(472, 125);
             this.work_permits.Name = "work_permits";
-            this.work_permits.Size = new System.Drawing.Size(170, 25);
+            this.work_permits.Size = new System.Drawing.Size(211, 25);
             this.work_permits.TabIndex = 2;
             this.work_permits.TabStop = false;
-            this.work_permits.Text = "No Work Permits";
+            this.work_permits.Text = "Remove Work Permits";
             this.work_permits.UseVisualStyleBackColor = false;
             // 
             // non_public_bids
@@ -260,10 +260,10 @@
             this.regen_fixes.ForeColor = System.Drawing.Color.White;
             this.regen_fixes.Location = new System.Drawing.Point(122, 368);
             this.regen_fixes.Name = "regen_fixes";
-            this.regen_fixes.Size = new System.Drawing.Size(130, 25);
+            this.regen_fixes.Size = new System.Drawing.Size(167, 25);
             this.regen_fixes.TabIndex = 13;
             this.regen_fixes.TabStop = false;
-            this.regen_fixes.Text = "Regen Fixes";
+            this.regen_fixes.Text = "Add Regen Fixes";
             this.regen_fixes.UseVisualStyleBackColor = false;
             // 
             // force_all_players
@@ -291,7 +291,7 @@
             this.tapani_regen.Size = new System.Drawing.Size(187, 25);
             this.tapani_regen.TabIndex = 15;
             this.tapani_regen.TabStop = false;
-            this.tapani_regen.Text = "Tapani Regen Code";
+            this.tapani_regen.Text = "Add Tapani Regens";
             this.tapani_regen.UseVisualStyleBackColor = false;
             // 
             // uncap
@@ -302,10 +302,10 @@
             this.uncap.ForeColor = System.Drawing.Color.White;
             this.uncap.Location = new System.Drawing.Point(472, 414);
             this.uncap.Name = "uncap";
-            this.uncap.Size = new System.Drawing.Size(125, 25);
+            this.uncap.Size = new System.Drawing.Size(173, 25);
             this.uncap.TabIndex = 16;
             this.uncap.TabStop = false;
-            this.uncap.Text = "Uncap 20\'s";
+            this.uncap.Text = "Uncap Attributes";
             this.uncap.UseVisualStyleBackColor = false;
             // 
             // misc_patches
