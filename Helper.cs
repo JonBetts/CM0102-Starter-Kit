@@ -46,7 +46,6 @@ namespace CM0102_Starter_Kit {
             { 1, new ConfigLine(1, "Year", "1989") },
             { 4, new ConfigLine(4, "ColouredAttributes", "false") },
             { 5, new ConfigLine(5, "DisableUnprotectedContracts", "false") },
-            { 7, new ConfigLine(7, "IncreaseToSevenSubs", "false") },
             { 12, new ConfigLine(12, "RemoveForeignPlayerLimit", "false") }
         };
 
@@ -68,7 +67,6 @@ namespace CM0102_Starter_Kit {
             { 1, new ConfigLine(1, "Year", "1998") },
             { 4, new ConfigLine(4, "ColouredAttributes", "false") },
             { 5, new ConfigLine(5, "DisableUnprotectedContracts", "false") },
-            { 7, new ConfigLine(7, "IncreaseToSevenSubs", "false") },
             { 8, new ConfigLine(8, "RegenFixes", "false") },
             { 10, new ConfigLine(10, "AddTapaniRegenCode", "false") }
         };

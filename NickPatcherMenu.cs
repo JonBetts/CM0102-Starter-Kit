@@ -44,7 +44,7 @@ namespace CM0102_Starter_Kit {
                 { this.coloured_attributes, 4 },
                 { this.unprotected_contracts, 5 },
                 { this.non_public_bids, 6 },
-                { this.seven_substitutes, 7 },
+                { this.nine_substitutes, 7 },
                 { this.regen_fixes, 8 },
                 { this.force_all_players, 9 },
                 { this.tapani_regen, 10 },
@@ -57,7 +57,8 @@ namespace CM0102_Starter_Kit {
         private Dictionary<CheckBox, string> GetCheckboxPatches() {
             return new Dictionary<CheckBox, string> {
                 { this.foreign_player_limit, "NoForeignRestrictionsForAll.patch" },
-                { this.hidden_attributes, "HiddenAttributes.patch" }
+                { this.hidden_attributes, "HiddenAttributes.patch" },
+                { this.nine_substitutes, "IncreaseToNineSubs.patch" }
             };
         }
 
@@ -132,7 +133,7 @@ namespace CM0102_Starter_Kit {
                 "ColouredAttributes = " + (this.coloured_attributes.Enabled ? this.coloured_attributes.Checked.ToString().ToLower() : "false"),
                 "DisableUnprotectedContracts = " + (this.unprotected_contracts.Enabled ? this.unprotected_contracts.Checked.ToString().ToLower() : "false"),
                 "HideNonPublicBids = " + (this.non_public_bids.Enabled ? this.non_public_bids.Checked.ToString().ToLower() : "false"),
-                "IncreaseToSevenSubs = " + (this.seven_substitutes.Enabled ? this.seven_substitutes.Checked.ToString().ToLower() : "false"),
+                "IncreaseToSevenSubs = false",
                 "RegenFixes = " + (this.regen_fixes.Enabled ? this.regen_fixes.Checked.ToString().ToLower() : "false"),
                 "ForceLoadAllPlayers = " + this.force_all_players.Checked.ToString().ToLower(),
                 "AddTapaniRegenCode = " + (this.regen_fixes.Enabled ? this.tapani_regen.Checked.ToString().ToLower() : "false"),
@@ -167,15 +168,15 @@ namespace CM0102_Starter_Kit {
                 }
             }
             progressWindow.SetProgressPercentage(20);
-
-            string leagueCupSubsPatch = "LeagueCupSubs.patch";
-            if (this.seven_substitutes.Enabled && this.seven_substitutes.Checked) {
-                File.Copy(Path.Combine(OptionalPatchesFolder, leagueCupSubsPatch), Path.Combine(PatchesFolder, leagueCupSubsPatch), true);
+            
+            // Copy other patches not provided by default in the CM0102 Loader
+            string nineSubsPatch = "IncreaseToNineSubs.patch";
+            if (this.nine_substitutes.Enabled && this.nine_substitutes.Checked) {
+                File.Copy(Path.Combine(OptionalPatchesFolder, nineSubsPatch), Path.Combine(PatchesFolder, nineSubsPatch), true);
             } else {
-                File.Delete(Path.Combine(PatchesFolder, leagueCupSubsPatch));
+                File.Delete(Path.Combine(PatchesFolder, nineSubsPatch));
             }
 
-            // Copy other patches not provided by default in the CM0102 Loader
             string foreignLimitPatch = "NoForeignRestrictionsForAll.patch";
             if (this.foreign_player_limit.Enabled && this.foreign_player_limit.Checked) {
                 File.Copy(Path.Combine(OptionalPatchesFolder, foreignLimitPatch), Path.Combine(PatchesFolder, foreignLimitPatch), true);
@@ -195,20 +196,14 @@ namespace CM0102_Starter_Kit {
             // Currently, this will trigger with the November 2020 and April 2021 databases with a 2020 starting year, and the October 2021 database with a 2021 starting year.
             Database currentDatabase = CurrentDatabase();
 
-            if (currentDatabase.Equals(NovemberDatabase) && starting_year.Value.Equals(2020)) {
-                mainMenu.versionMenu.SetupDatabase(NovemberDatabasePatched, progressWindow);
-            } else if (currentDatabase.Equals(NovemberDatabasePatched) && !starting_year.Value.Equals(2020)) {
-                mainMenu.versionMenu.SetupDatabase(NovemberDatabase, progressWindow);
-            } else if (currentDatabase.Equals(AprilDatabase) && starting_year.Value.Equals(2020)) {
-                mainMenu.versionMenu.SetupDatabase(AprilDatabasePatched, progressWindow);
-            } else if (currentDatabase.Equals(AprilDatabasePatched) && !starting_year.Value.Equals(2020)) {
-                mainMenu.versionMenu.SetupDatabase(AprilDatabase, progressWindow);
-            } else if (currentDatabase.Equals(OctoberDatabase) && starting_year.Value.Equals(2021)) {
-                mainMenu.versionMenu.SetupDatabase(OctoberDatabasePatched, progressWindow);
+            if (currentDatabase.Equals(NovemberDatabase) || currentDatabase.Equals(NovemberDatabasePatched)) {
+                mainMenu.versionMenu.SetupDatabase(starting_year.Value.Equals(2020) ? NovemberDatabasePatched : NovemberDatabase, progressWindow);
+            } else if (currentDatabase.Equals(AprilDatabase) || currentDatabase.Equals(AprilDatabasePatched)) {
+                mainMenu.versionMenu.SetupDatabase(starting_year.Value.Equals(2020) ? AprilDatabasePatched : AprilDatabase, progressWindow);
+            } else if (currentDatabase.Equals(OctoberDatabase) || currentDatabase.Equals(OctoberDatabasePatched)) {
+                mainMenu.versionMenu.SetupDatabase(starting_year.Value.Equals(2021) ? OctoberDatabasePatched : OctoberDatabase, progressWindow);
                 // Apply Reading and Derby points deduction patch
                 File.Copy(Path.Combine(OptionalPatchesFolder, PointsDeductionPatch), Path.Combine(PatchesFolder, PointsDeductionPatch), true);
-            } else if (currentDatabase.Equals(OctoberDatabasePatched) && !starting_year.Value.Equals(2021)) {
-                mainMenu.versionMenu.SetupDatabase(OctoberDatabase, progressWindow);
             }
             progressWindow.SetProgressPercentage(100);
             DisplayMessage("Settings successfully changed!");

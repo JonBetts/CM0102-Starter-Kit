@@ -17,7 +17,7 @@
             this.resolution = new System.Windows.Forms.CheckBox();
             this.work_permits = new System.Windows.Forms.CheckBox();
             this.non_public_bids = new System.Windows.Forms.CheckBox();
-            this.seven_substitutes = new System.Windows.Forms.CheckBox();
+            this.nine_substitutes = new System.Windows.Forms.CheckBox();
             this.unprotected_contracts = new System.Windows.Forms.CheckBox();
             this.foreign_player_limit = new System.Windows.Forms.CheckBox();
             this.regen_fixes = new System.Windows.Forms.CheckBox();
@@ -204,21 +204,21 @@
             this.non_public_bids.Text = "Hide Non-Public Bids";
             this.non_public_bids.UseVisualStyleBackColor = false;
             // 
-            // seven_substitutes
+            // nine_substitutes
             // 
-            this.seven_substitutes.AutoSize = true;
-            this.seven_substitutes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.seven_substitutes.Checked = true;
-            this.seven_substitutes.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.seven_substitutes.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
-            this.seven_substitutes.ForeColor = System.Drawing.Color.White;
-            this.seven_substitutes.Location = new System.Drawing.Point(472, 220);
-            this.seven_substitutes.Name = "seven_substitutes";
-            this.seven_substitutes.Size = new System.Drawing.Size(242, 25);
-            this.seven_substitutes.TabIndex = 8;
-            this.seven_substitutes.TabStop = false;
-            this.seven_substitutes.Text = "Increase To 7 Substitutes";
-            this.seven_substitutes.UseVisualStyleBackColor = false;
+            this.nine_substitutes.AutoSize = true;
+            this.nine_substitutes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.nine_substitutes.Checked = true;
+            this.nine_substitutes.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.nine_substitutes.Font = new System.Drawing.Font("Savile ExtraBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.nine_substitutes.ForeColor = System.Drawing.Color.White;
+            this.nine_substitutes.Location = new System.Drawing.Point(472, 220);
+            this.nine_substitutes.Name = "nine_substitutes";
+            this.nine_substitutes.Size = new System.Drawing.Size(244, 25);
+            this.nine_substitutes.TabIndex = 8;
+            this.nine_substitutes.TabStop = false;
+            this.nine_substitutes.Text = "Increase To 9 Substitutes";
+            this.nine_substitutes.UseVisualStyleBackColor = false;
             // 
             // unprotected_contracts
             // 
@@ -406,7 +406,7 @@
             this.Controls.Add(this.resolution);
             this.Controls.Add(this.work_permits);
             this.Controls.Add(this.non_public_bids);
-            this.Controls.Add(this.seven_substitutes);
+            this.Controls.Add(this.nine_substitutes);
             this.Controls.Add(this.unprotected_contracts);
             this.Controls.Add(this.foreign_player_limit);
             this.Controls.Add(this.uncap);
@@ -439,7 +439,7 @@
         private System.Windows.Forms.CheckBox resolution;
         private System.Windows.Forms.CheckBox work_permits;
         private System.Windows.Forms.CheckBox non_public_bids;
-        private System.Windows.Forms.CheckBox seven_substitutes;
+        private System.Windows.Forms.CheckBox nine_substitutes;
         private System.Windows.Forms.CheckBox unprotected_contracts;
         private System.Windows.Forms.CheckBox foreign_player_limit;
         private System.Windows.Forms.CheckBox regen_fixes;
