@@ -77,7 +77,7 @@ As of version 1.2.2, the Custom Database functionality will allow you to load up
 
 #### Nick's Patcher Menu
 
-<p align="left"><img src="https://i.ibb.co/1GXVMzs/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"/></p>
+<p align="left"><img src="https://i.ibb.co/D4q68nQ/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"/></p>
 
 Most of the options here are pretty straightforward, but for those that aren't, I'll give a brief explanation.
 
@@ -85,13 +85,13 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
 -   **Increase To 9 Substitutes** - All competitions should now allow 9 subs to be named, and 5 to be used.
 
--   **Regen Fixes** - Fixes a few minor things related to regens - only clubs with 45 or less players in the squad will now have regens generated (to keep AI squads free for other transfers), and it also fixes the issue of older regens (25+) being generated within smaller nations.
+-   **Add Regen Fixes** - Fixes a few minor things related to regens - only clubs with 45 or less players in the squad will now have regens generated (to keep AI squads free for other transfers), and it also fixes the issue of older regens (25+) being generated within smaller nations.
 
 -   **Load All Players** - Ensures all players from your chosen database are loaded into the game regardless as to how many leagues you select. Very useful if you normally select lots of leagues just to increase the number of available players, as having more leagues makes the game much slower. Loading all players doesn't seem to slow down performance, but it does make save game files around 25% larger. Loading all leagues also means a much higher chance of a game-breaking bug occurring at any point, so it's a nice, different option to have. Obviously if you select the "minimum database" in the game options, then all players won't load, but there will be more than there were when you previously selected it!
 
--   **Tapani Regen Code** - Fixes an issue where regens get an ever increasing 'Positioning' attribute, which eventually leads to very low scoring games years down the line (basically every defender becomes Maldini!). I believe it also makes changes so that regens are created to be more balanced (supposedly by default regens can generate with low physical attributes, etc - I think this patch attempts to fix that).
+-   **Add Tapani Regens** - Fixes an issue where regens get an ever increasing 'Positioning' attribute, which eventually leads to very low scoring games years down the line (basically every defender becomes Maldini!). I believe it also makes changes so that regens are created to be more balanced (supposedly by default regens can generate with low physical attributes, etc - I think this patch attempts to fix that).
 
--   **Uncap 20's** - Removes the upper attribute limit of 20 set in the game, allowing you to see a much more accurate value when certain players have some extremely good attributes. The values can now range from 1 to 46 (as far as I remember!). A prime example is of course Maxim Tsigalko where his Finishing attribute is actually much higher than 20 under the bonnet,  due to his low current ability and high attacking attributes.
+-   **Uncap Attributes** - Removes the upper attribute limit of 20 set in the game, allowing you to see a much more accurate value when certain players have some extremely good attributes. The values can now range from 1 to 46 (as far as I remember!). A prime example is of course Maxim Tsigalko where his Finishing attribute is actually much higher than 20 under the bonnet,  due to his low current ability and high attacking attributes.
 
 -   **Show Hidden Attributes** - This adds a 4th column to the player attributes screen that let's you see attributes that would otherwise remain hidden. Seeing attributes such as Big Matches, Consistency, Injury Proneness and Penalties can really have a bearing on who you buy and sell!
 
