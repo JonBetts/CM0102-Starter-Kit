@@ -77,7 +77,7 @@ As of version 1.2.2, the Custom Database functionality will allow you to load up
 
 #### Nick's Patcher Menu
 
-<p align="left"><img src="https://i.ibb.co/1GXVMzs/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"></p>
+<p align="left"><img src="https://i.ibb.co/1GXVMzs/Nick-Patcher-Menu.png" alt="Nick-Patcher-Menu" border="0"/></p>
 
 Most of the options here are pretty straightforward, but for those that aren't, I'll give a brief explanation.
 
