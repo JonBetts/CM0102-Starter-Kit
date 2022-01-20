@@ -73,7 +73,7 @@
             this.step_4.Name = "step_4";
             this.step_4.Size = new System.Drawing.Size(659, 57);
             this.step_4.TabIndex = 3;
-            this.step_4.Text = "4. Go to the Starter Kit \'/Game/Android\' folder and copy the \'Exagear\' folder to " +
+            this.step_4.Text = "4. Go to the Starter Kit \'/Game/Android\' folder and copy the \'ExaGear\' folder to " +
     "the root folder of your phone. Then copy the \'com.eltechs.es\' folder to \'/Androi" +
     "d/obb\' on your phone as well.";
             // 
@@ -89,7 +89,7 @@
             this.step_5.Size = new System.Drawing.Size(650, 57);
             this.step_5.TabIndex = 4;
             this.step_5.Text = "5. Eject and unplug your device from the computer, and then on your phone, use a " +
-    "file browser to navigate to the \'Exagear\' folder you just created. Click on the " +
+    "file browser to navigate to the \'ExaGear\' folder you just created. Click on the " +
     "\'exagear.apk\' file and install it.";
             // 
             // step_6
