@@ -61,7 +61,10 @@ namespace CM0102_Starter_Kit {
             if (DataFolderExists()) {
                 if (database.DeleteDataFolder) {
                     foreach (string folder in Directory.GetDirectories(DataFolder)) {
-                        Directory.Delete(folder, true);
+                        // Do not delete the Fonts folder!
+                        if (!Path.GetFileName(folder).Equals("Fonts")) {
+                            Directory.Delete(folder, true);
+                        }
                     }
                     foreach (string file in Directory.GetFiles(DataFolder)) {
                         File.Delete(file);
@@ -83,6 +86,14 @@ namespace CM0102_Starter_Kit {
                 progressWindow.SetProgressPercentage(40);
             }
             CopyDataToGame(database);
+            progressWindow.SetProgressPercentage(70);
+            // Copy Fonts folder across if it doesn't already exist
+            if (!Directory.Exists(FontsFolder)) {
+                DirectoryInfo fontsFolder = Directory.CreateDirectory(FontsFolder);
+                foreach (FileInfo file in new DirectoryInfo(Path.Combine(GameFolder, "Fonts")).GetFiles()) {
+                    File.Copy(file.FullName, Path.Combine(fontsFolder.FullName, Path.GetFileName(file.FullName)), true);
+                }
+            }
             progressWindow.SetProgressPercentage(80);
             // Update the loader config files as switching between CM89, CM93 and anything else requires some changes
             UpdateConfigFiles(database);

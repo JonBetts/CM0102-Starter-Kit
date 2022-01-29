@@ -9,6 +9,7 @@ namespace CM0102_Starter_Kit {
         internal static readonly string GameFolder = Path.Combine(Directory.GetCurrentDirectory(), "Game");
         internal static readonly string DataFolderName = "Data";
         internal static readonly string DataFolder = Path.Combine(GameFolder, DataFolderName);
+        internal static readonly string FontsFolder = Path.Combine(DataFolder, "Fonts");
         internal static readonly string CmLoaderConfigFilename = "CM0102LoaderDefault.ini";
         internal static readonly string CmLoaderCustomConfigFilename = "CM0102LoaderCustom.ini";
         internal static readonly string Cm0102ExeFilename = "cm0102.exe";
