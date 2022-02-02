@@ -108,6 +108,7 @@ namespace CM0102_Starter_Kit {
 
         private void PlayGame_Click(object sender, EventArgs e) {
             if (DataFolderExists()) {
+                playMenu.ShowOrHideRetroButton();
                 ShowNewScreen(playMenu);
             } else {
                 DisplayMessage(SwitchUpdateMessage);

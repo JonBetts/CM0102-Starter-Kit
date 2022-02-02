@@ -199,6 +199,8 @@ More details about Nick's Patcher, including what each of the standard options d
 
 This is simply where you decide whether you want to play standard CM, or you want to apply the options selected on Nick's Patcher. Please note, that the Starter Kit now detects what database you have loaded, and only allows you to select the correct options for playing, to save on any confusion.
 
+There is now also a 'retro' option when playing the 89/90 database. If you use this it applies a few minor changes to bring the game more inline with how football was back then. The changes include old school match day shirt numbers, 5 substitutes for every competition, 3 foreign players for domestic competitions, all English finals to be played at Wembley, and a few more. Shoutout to jukilo1888 from the forum for adding these changes.
+
 #### Android Menu
 
 <p align="left"><img src="https://i.ibb.co/hfCvhXK/Android-Menu.png" alt="Android-Menu" border="0"/></p>

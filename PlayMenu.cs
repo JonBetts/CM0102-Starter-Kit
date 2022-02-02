@@ -23,7 +23,8 @@ namespace CM0102_Starter_Kit {
         protected override List<Button> GetButtons() {
             return new List<Button> {
                 this.cm0102_standard,
-                this.cm0102_nick_patcher
+                this.cm0102_nick_patcher,
+                this.cm0102_retro
             };
         }
 
@@ -40,15 +41,21 @@ namespace CM0102_Starter_Kit {
             }
             this.cm0102_standard.Text = databaseLabel + " (Standard)";
             this.cm0102_nick_patcher.Text = databaseLabel + " (Nick's Patcher)";
+            this.cm0102_retro.Text = databaseLabel + " (Retro)";
         }
 
         protected override void RefreshForm() {
             RenameButtons();
         }
 
-        private void CopyExe(bool setup) {
+        private void CopyExe(bool setup, bool usingRetroOption) {
             if (setup) {
-                File.WriteAllBytes(Path.Combine(GameFolder, Cm0102ExeFilename), CurrentDatabase().ExeFile);
+                // Right now only CM 89/90 has the retro option, so let's not overcomplicate it.
+                if (usingRetroOption) {
+                    File.WriteAllBytes(Path.Combine(GameFolder, Cm0102ExeFilename), Resources.cm89_retro_exe);
+                } else {
+                    File.WriteAllBytes(Path.Combine(GameFolder, Cm0102ExeFilename), CurrentDatabase().ExeFile);
+                }
             } else {
                 File.WriteAllBytes(Path.Combine(GameFolder, Cm0102ExeFilename), Resources.cm0102_exe);
             }
@@ -72,8 +79,9 @@ namespace CM0102_Starter_Kit {
                 }
             }
 
-            CopyExe(true);
-            bool useDefaultConfig = button.Equals(this.cm0102_standard);
+            bool usingRetroOption = button.Equals(this.cm0102_retro);
+            CopyExe(true, usingRetroOption);
+            bool useDefaultConfig = !button.Equals(this.cm0102_nick_patcher);
 
             ProcessStartInfo playPsi = new ProcessStartInfo {
                 WorkingDirectory = GameFolder,
@@ -91,13 +99,19 @@ namespace CM0102_Starter_Kit {
                 process.WaitForExit();
                 process.Close();
             }
-            CopyExe(false);
+            CopyExe(false, usingRetroOption);
             HideLoader();
             RefreshForm();
         }
 
         private void PlayMenu_FormClosed(object sender, FormClosedEventArgs e) {
             Application.Exit();
+        }
+
+        internal void ShowOrHideRetroButton() {
+            if (CurrentDatabase().Equals(Cm89Database)) {
+                this.cm0102_retro.Visible = true;
+            }
         }
     }
 }

@@ -178,6 +178,7 @@
     <None Include="external\Files\cm0102.exe" />
     <None Include="external\Files\cm3.exe" />
     <None Include="external\Files\cm89.exe" />
+    <None Include="external\Files\cm89_retro.exe" />
     <None Include="external\Files\cm93.exe" />
     <None Include="external\Files\cm95.exe" />
     <None Include="external\Files\cm0102_apr.exe" />
