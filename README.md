@@ -181,9 +181,23 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
     * **UnlockYourPotential** - This sets your own Potential Ability to 200, which I believe means you are more likely to get better job offers, the higher this attribute increases. Still haven't confirmed this myself.
 
-If you really do want to pick and choose which of these you use, after applying the Misc Patches, you can go into the **Patches** folder and remove some of the files there, and they then won't be loaded by the game.
+If you really do want to pick and choose which of these you use, after applying the **Misc Patches**, you can go into the **Patches** folder and remove some of the files there, and they then won't be loaded by the game.
 
--   **Applying Protection Patches** - This functionality is no longer displayed directly in the Starter Kit, as too many people were just applying it willy nilly! So if you need to use it, manually copy it from the Optional subfolder of the Patches folder to the Patches folder itself. Only use this if you are coming across error messages in your game that you cannot continue or 'holiday' past. It protects against specific crashes where the Argentinian league being loaded causes a crash, or a null pointer crash that usually occurs when all leagues are selected (which is never recommended!). There is also a fix for a "virtual_staff 195" error - if you get that error message, exit the game, apply these patches, and then when you reload the game, you should be able to continue past the error message. Like I said before, only apply these fixes if you desperately need to and cannot continue with your game otherwise.
+-   **Applying Protection Patches** - This functionality is no longer displayed directly in the Starter Kit, as too many people were just applying it willy nilly! So if you need to use it, manually copy it from the **Optional -> Unused** subfolder of the **Patches** folder to the **Patches** folder itself. Only use this if you are coming across error messages in your game that you cannot continue or 'holiday' past. It protects against specific crashes where the Argentinian league being loaded causes a crash, or a null pointer crash that usually occurs when all leagues are selected (which is never recommended!). There is also a fix for a "virtual_staff 195" error - if you get that error message, exit the game, apply these patches, and then when you reload the game, you should be able to continue past the error message. Like I said before, only apply these fixes if you desperately need to and cannot continue with your game otherwise.
+
+-   **Unused Patches** - There is a subfolder of the **Patches** folder called **Unused** which contains a few minor patches that the Starter Kit never applies itself. As always, use any patches with caution. The following patches are included here:
+
+    * **ExpiringContracts** - When searching for players whose contracts are expiring, it now only returns players who have 6 months left rather than 12 months. Useful if you only want to see players you are able to negotiate with right away.
+
+    * **FindAllPlayers** - A lot more players are now shown in the player search results list, so you are able to find many more players based on attributes, etc. *DO NOT* use this alongside the *LoadAllPlayers* patch as it might break the game.
+
+    * **GoldCupCrashFix** - Only one issue seems to keep cropping up on the October 2021 database when being used alongside Nick's Patcher, and that's a problem with the Gold Cup that causes error messages to occur. Use this patch to resolve this.
+
+    * **NoComplainingAboutTrainingNewPositions** - Simply put, players will never moan about being trained in a new position.
+
+    * **RemoveBasqueRestrictions** - Removes restrictions from any Spanish teams that can only buy Basque players.
+
+    * **UnlimitedWages** - Allows you to offer players any amount you like on the contract screen. This is completely untested, so use with caution!
 
 **Please note:** When certain databases are loaded, some of the options in Nick's Patcher will be disabled ("greyed out"). This is because they have already been pre-applied to that database's executable file. Therefore, they were disabled to avoid 'double patching'.
 
