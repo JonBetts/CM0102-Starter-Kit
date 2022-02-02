@@ -109,9 +109,7 @@ namespace CM0102_Starter_Kit {
         }
 
         internal void ShowOrHideRetroButton() {
-            if (CurrentDatabase().Equals(Cm89Database)) {
-                this.cm0102_retro.Visible = true;
-            }
+            this.cm0102_retro.Visible = CurrentDatabase().Equals(Cm89Database);
         }
     }
 }
