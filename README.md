@@ -135,6 +135,8 @@ Most of the options here are pretty straightforward, but for those that aren't, 
 
     * **LoadContinentalComps** - Loads all continental club competitions regardless as to what leagues you have selected.
 
+    * **LoadPresetTactics** - Gives you the choice to use any of the default AI tactics built in to the game.
+
     * **LoansBoost** - Increases the likelihood of more loan deals being made in the game.
 
     * **LoansUpdateIncreaseLoans** - Increases the number of loans that teams in England, Scotland, Ireland and France can make at any one time from 2 to 9.
