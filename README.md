@@ -16,7 +16,7 @@ If you have any issues upon first usage of the tool, please head to the support 
 
 Please be aware that the Mac version is a port of the original Windows application. Because of that, certain things won't work in exactly the same way as the Windows version. Here are the important things you need to know:
 
-- I'm not sure if it will run on the new M1 Macbooks, as it uses Wineskin under the bonnet rather than Crossover. But I have yet to receive feedback either way to confirm, so would be good if somebody could try it out on one of the newer models!
+- I have had confirmation from someone that the Starter Kit does indeed run well on the new M1 Macbooks.
 
 -   Previously, I gave advice about removing the quarantine flag from the Starter Kit application after unzipping the file, etc. Well it's actually easier to do this before doing anything else. So as soon as the Starter Kit zip file has been downloaded, open up Terminal, and run the following command:
 `xattr -drs com.apple.quarantine ~/Downloads/CM0102.Starter.Kit.Mac.v1.2.2.zip`.
