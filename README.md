@@ -20,7 +20,7 @@ Please be aware that the Mac version is a port of the original Windows applicati
 
 -   Previously, I gave advice about removing the quarantine flag from the Starter Kit application after unzipping the file, etc. Well it's actually easier to do this before doing anything else. So as soon as the Starter Kit zip file has been downloaded, open up Terminal, and run the following command:
 `xattr -drs com.apple.quarantine ~/Downloads/CM0102.Starter.Kit.Mac.v1.2.2.zip`.
-This should now allow you to unzip and run the application properly without any messages about the application being "damaged". If you have changed where your download folder is located, then adjust the command above accordingly. Do not extract the zip file using Keka!
+This should now allow you to unzip and run the application properly without any messages about the application being "damaged". If you have changed where your download folder is located, then adjust the command above accordingly. Once that command has run successfully, extract the zip file and double click on the CM0102StarterKit app, and give it 20-30 seconds to load for the first time. **DO NOT** extract the zip file using Keka!
 
 -   In High Sierra (and potentially other versions), when you play the game in windowed mode, there is a black border around the game, and you cannot see the rest of your windows and applications. Unfortunately there isn't a way around this, unless you upgrade to Big Sur as the behaviour isn't present on there.
 
