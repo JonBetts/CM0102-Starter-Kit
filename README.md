@@ -18,7 +18,7 @@ Please be aware that the Mac version is a port of the original Windows applicati
 
 - I have had confirmation from someone that the Starter Kit does indeed run well on the new M1 Macbooks.
 
--   Previously, I gave advice about removing the quarantine flag from the Starter Kit application after unzipping the file, etc. Well it's actually easier to do this before doing anything else. So as soon as the Starter Kit zip file has been downloaded, open up Terminal, and run the following command:
+-   Previously, I gave advice about removing the quarantine flag ("the app is damaged" message) from the Starter Kit application after unzipping the file, etc. Well it's actually easier to do this before doing anything else. So as soon as the Starter Kit zip file has been downloaded, open up Terminal, and run the following command:
 `xattr -drs com.apple.quarantine ~/Downloads/CM0102.Starter.Kit.Mac.v1.2.2.zip`.
 This should now allow you to unzip and run the application properly without any messages about the application being "damaged". If you have changed where your download folder is located, then adjust the command above accordingly. Once that command has run successfully, extract the zip file and double click on the CM0102StarterKit app, and give it 20-30 seconds to load for the first time. **DO NOT** extract the zip file using Keka!
 
