@@ -235,6 +235,8 @@ When you are using the Starter Kit, please do not restart the game from the in-g
 
 I have fixed the language issues occurring on 3.9.60 and Luessenhoff so that you can now play these databases in many languages other than English. However, due to some poor coding in the 3.9.68 patch, unfortunately nations and nationality names will always be in English regardless. Any error messages due to language translations not working should now be suppressed so they can't be seen.
 
+It has come to my attention that you could potentially have issues if you've started a save game on one of the databases, and are continuing playing it in the future, but with another database loaded in the background. The problem with that is that most of the databases have their own pre-patched executable files, so to continue playing on a save game from one of those databases, you'll need to ensure it is still loaded in the background so that the correct executable file is used. Otherwise you could corrupt your save games. Unfortunately there is no workaround for this due to the Starter Kit not knowing which save game you are going to be loading up each time you play the game.
+
 ## Troubleshooting
 
 The Starter Kit was made to limit the number of issues you get when setting CM 01/02 up. However, different setups and operating systems may result in unforeseen issues. Please have a look at the support thread for the tool (specifically the FAQ post) if you need help: https://champman0102.net/viewtopic.php?f=43&t=2449
