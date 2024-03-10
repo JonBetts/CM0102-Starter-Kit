@@ -3,7 +3,7 @@
 Welcome to the Championship Manager 01/02 Starter Kit!
 
 The purpose of this little tool is to get you up and running as quickly as possible with CM 01/02. No need for worrying about downloading files, installing anything, using external patchers or tools, or changing compatibility settings - this tool does everything required to get you setup on an original or updated version of CM!
-Please note that this tool works with **Windows XP, Vista, 7, 8 and 10** and now (should) work on all **Mac OSX** versions from **High Sierra** all the way up to **Big Sur**. Whilst I have done my best to test on each operating system, there will undoubtedly be scenarios and configurations I haven't managed to cater for. Also if you do use an older operating system
+Please note that this tool works with **Windows XP, Vista, 7, 8 and 10** and now (should) work on all **Mac OSX** versions from **High Sierra** all the way up to **Sonoma**, although it may not work on the newer M2 and M3 chips for MacOS. Whilst I have done my best to test on each operating system, there will undoubtedly be scenarios and configurations I haven't managed to cater for. Also if you do use an older operating system
 (i.e. XP or Vista) performance may be choppy as it's hard to cater for a 20 year old operating system! I've attempted to make the tool look and feel like the game interface so it's a bit more familiar.
 
 For the Windows version, you will need to make sure you have the **Microsoft .NET 4.0** runtime or higher on your computer before running the tool. This should come pre-installed on Windows 7, 8 and 10, but XP and Vista may require you to manually install it. I've included the installation file with this tool (dotNetFx40setup.exe). Just run that to install it, and you should be good to go (you will need an Internet connection for this though). If you don't install .NET 4.0 or higher, it will come up with an error message saying that the application "**failed to initialise properly**".
@@ -16,7 +16,7 @@ If you have any issues upon first usage of the tool, please head to the support 
 
 Please be aware that the Mac version is a port of the original Windows application. Because of that, certain things won't work in exactly the same way as the Windows version. Here are the important things you need to know:
 
-- I have had confirmation from someone that the Starter Kit does indeed run well on the new M1 Macbooks.
+- I have had confirmation from someone that the Starter Kit does indeed run well on the new M1 Macbooks, but as I said previously, it may not run on the newer M2 and M3 chips. Unfortunately I won't be releasing a new version just to cater for these.
 
 -   Previously, I gave advice about removing the quarantine flag ("the app is damaged" message) from the Starter Kit application after unzipping the file, etc. Well it's actually easier to do this before doing anything else. So as soon as the Starter Kit zip file has been downloaded, open up Terminal, and run the following command:
 `xattr -drs com.apple.quarantine ~/Downloads/CM0102.Starter.Kit.Mac.v1.2.2.zip`.
